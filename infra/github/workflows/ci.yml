@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (Elixir)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: kale
+          POSTGRES_PASSWORD: kale_test
+          POSTGRES_DB: kale_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U kale -d kale_test"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      MIX_ENV: test
+      DATABASE_URL: postgres://kale:kale_test@localhost:5432/kale_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: "1.18.3"
+          otp-version: "27.2"
+      - name: Install hex & rebar
+        run: mix local.hex --force && mix local.rebar --force
+      - name: Install deps
+        working-directory: apps/backend
+        run: mix deps.get
+      - name: Compile (with warnings as errors)
+        working-directory: apps/backend
+        run: mix compile --warnings-as-errors
+      - name: Create & migrate test DB
+        working-directory: apps/backend
+        run: mix ecto.create && mix ecto.migrate
+      - name: Run tests
+        working-directory: apps/backend
+        run: mix test
+      - name: Check formatting
+        working-directory: apps/backend
+        run: mix format --check-formatted
+
+  mobile:
+    name: Mobile (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Install deps
+        run: flutter pub get
+      - name: Analyze
+        run: flutter analyze
+      - name: Test
+        run: flutter test
+      - name: Build web (smoke)
+        run: flutter build web --release
+
+  web:
+    name: Web (PWA React)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install deps
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build

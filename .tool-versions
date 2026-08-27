@@ -1,0 +1,8 @@
+# Versions cibles (informatif sur Windows — installer la dernière stable)
+# Vérifier avec : elixir --version, flutter --version, node --version
+elixir 1.18+ (OTP 27)
+erlang 27+
+node 24
+flutter stable (Dart 3.x)
+postgres 16
+redis 7

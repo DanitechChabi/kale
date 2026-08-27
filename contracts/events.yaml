@@ -1,0 +1,79 @@
+# Kalé — Schémas des enveloppes temps réel (Channels) et push
+#
+# Source de vérité pour le protocole temps réel (Phoenix Channels) et les
+# payloads FCM. Tous les évènements sont data-frugaux (< 1 Ko).
+#
+# Canaux (topics) :
+#   conversation:<uuid>   — messages, typing, presence, read receipts
+#   user:<uuid>           — notifications in-app
+
+MessageEvent:
+  description: Un message dans une conversation
+  type: object
+  required: [id, conversation_id, sender_id, client_uuid, type, sent_at]
+  properties:
+    id:            { type: string, format: uuid, description: id serveur }
+    conversation_id: { type: string, format: uuid }
+    sender_id:     { type: string, format: uuid }
+    client_uuid:   { type: string, format: uuid, description: idempotence offline }
+    type:
+      type: string
+      enum: [text, image, audio, video, location, system]
+    content:
+      type: string
+      nullable: true
+      description: texte (pour type=text) ou légende
+    media:
+      type: object
+      nullable: true
+      properties:
+        url:        { type: string, format: uri, description: URL CDN (déjà compressée) }
+        thumb_url:  { type: string, format: uri, nullable: true }
+        width:      { type: integer, nullable: true }
+        height:     { type: integer, nullable: true }
+        duration_s: { type: integer, nullable: true }
+    reply_to_id: { type: string, format: uuid, nullable: true }
+    sent_at:     { type: string, format: date-time }
+
+TypingEvent:
+  description: Indicateur de frappe (throttlé par le client)
+  type: object
+  required: [conversation_id, user_id, typing]
+  properties:
+    conversation_id: { type: string, format: uuid }
+    user_id:         { type: string, format: uuid }
+    typing:          { type: boolean }
+
+ReadReceiptEvent:
+  description: Marqueur de lecture (un seul par fil, throttlé)
+  type: object
+  required: [conversation_id, user_id, last_read_message_id]
+  properties:
+    conversation_id:    { type: string, format: uuid }
+    user_id:            { type: string, format: uuid }
+    last_read_message_id: { type: string, format: uuid }
+
+PresenceEvent:
+  description: Présence d'un membre (join/leave)
+  type: object
+  required: [conversation_id, user_id, status, last_seen_at]
+  properties:
+    conversation_id: { type: string, format: uuid }
+    user_id:         { type: string, format: uuid }
+    status:
+      type: string
+      enum: [online, offline]
+    last_seen_at:    { type: string, format: date-time, nullable: true }
+
+# --- Payload FCM (push app fermée, Phase 2) ---
+# Règle : < 1 Ko, pas de `content-available`, regroupement (5 msg/60 s → 1 push).
+FcmDataMessage:
+  description: Payload data FCM (champ `data`)
+  type: object
+  required: [t, n]
+  properties:
+    t:          { type: string, enum: [msg, post, market, system], description: type }
+    c:          { type: string, format: uuid, description: conversation_id }
+    n:          { type: integer, description: nb de messages non lus (regroupés) }
+    preview:    { type: string, nullable: true, description: extrait (~80 chars max) }
+    sender:     { type: string, nullable: true, description: nom de l'expéditeur }

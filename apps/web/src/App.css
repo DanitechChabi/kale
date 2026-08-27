@@ -1,0 +1,153 @@
+/* Kalé — splash (Phase 0) */
+
+.splash {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 24px 20px calc(20px + env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.mark {
+  filter: drop-shadow(0 10px 20px rgba(225, 96, 46, 0.25));
+}
+
+.wordmark {
+  margin: 20px 0 4px;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--kale-ink);
+}
+
+.tagline {
+  margin: 0 0 28px;
+  color: var(--kale-muted);
+  font-size: 17px;
+}
+
+.status-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--kale-surface);
+  border: 1px solid var(--kale-border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 16px rgba(42, 30, 19, 0.06);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--kale-muted);
+}
+
+.status--loading .dot {
+  background: var(--kale-muted);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.status--online .dot {
+  background: var(--kale-online);
+}
+
+.status--offline .dot {
+  background: var(--kale-offline);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.details {
+  margin: 16px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.details div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.details dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--kale-muted);
+}
+
+.details dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.details dd.ok {
+  color: var(--kale-online);
+}
+
+.details dd.ko {
+  color: var(--kale-offline);
+}
+
+.retry {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--kale-primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.retry:active {
+  background: var(--kale-primary-strong);
+}
+
+.foot {
+  position: fixed;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--kale-muted);
+}
+
+.foot .sep {
+  opacity: 0.5;
+}
+
+.foot .api-base {
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

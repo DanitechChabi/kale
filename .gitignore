@@ -1,0 +1,50 @@
+# --- Secrets & env ---
+.env
+*.local
+
+# --- Elixir / Phoenix ---
+apps/backend/_build/
+apps/backend/deps/
+apps/backend/cover/
+apps/backend/erl_crash.dump
+apps/backend/*.ez
+apps/backend/kale-*.tar
+/apps/backend/priv/static/
+/apps/backend/.elixir_ls/
+
+# --- Flutter / Dart ---
+apps/mobile/.dart_tool/
+apps/mobile/build/
+apps/mobile/.flutter-plugins
+apps/mobile/.flutter-plugins-dependencies
+apps/mobile/.packages
+apps/mobile/.pub-cache/
+apps/mobile/.pub/
+apps/mobile/android/.gradle/
+apps/mobile/android/app/.cxx/
+apps/mobile/ios/Pods/
+apps/mobile/ios/.symlinks/
+apps/mobile/ios/Flutter/ephemeral/
+apps/mobile/ios/Flutter/Generated.xcconfig
+apps/mobile/ios/Flutter/flutter_export_environment.sh
+
+# --- Node / web ---
+apps/web/node_modules/
+apps/web/dist/
+apps/web/dev-dist/
+apps/web/*.tsbuildinfo
+npm-debug.log*
+
+# --- Python (scripts tools) ---
+__pycache__/
+*.pyc
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- IDE ---
+.idea/
+.vscode/
+*.iml
