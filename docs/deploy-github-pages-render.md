@@ -50,11 +50,12 @@ le workflow `Deploy PWA → GitHub Pages` (Actions → workflow → Run workflow
 ### Étapes
 1. Sur Render : **New → Blueprint**.
 2. Connecter le compte GitHub **DanitechChabi** et sélectionner le repo `kale`.
-3. Render détecte `services/health-api/render.yaml` → créer le service.
-4. Nommer le service **`kale-api`** → l'URL devient
+3. Render détecte le blueprint `render.yaml` (racine du dépôt, `rootDir:
+   services/health-api`) → « 1 service selected ».
+4. Le service est nommé **`kale-api`** → l'URL devient
    `https://kale-api.onrender.com`.
    (Si Render attribue un autre nom, noter l'URL finale.)
-5. **BluePrint Apply** → le service démarre (plan free).
+5. **Apply Blueprint** → le service démarre (plan free).
 
 ### Vérification
 ```bash

@@ -1,7 +1,8 @@
 # ============================================================
-# Kalé — déploiement Render (plan gratuit) du backend santé
-# Usage : connecter le repo GitHub à Render → "New Blueprint"
-#         → sélectionner ce fichier.
+# Kalé — Blueprint Render (plan gratuit)
+# Déploie le backend santé temporaire (services/health-api).
+# Découvert automatiquement par Render à la racine du dépôt.
+# Usage : connecter le repo à Render → "New Blueprint" → Apply.
 # ============================================================
 
 services:

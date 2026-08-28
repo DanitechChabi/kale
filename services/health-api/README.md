@@ -26,7 +26,8 @@ curl http://localhost:4000/health
 
 ## Déploiement
 
-Le fichier `render.yaml` est un Blueprint Render (plan gratuit).
+Le blueprint `render.yaml` (racine du dépôt, `rootDir: services/health-api`)
+déploie ce service sur Render (plan gratuit).
 Voir la procédure dans `docs/deploy-github-pages-render.md`.
 
 - Port d'écoute : `PORT` (Render injecte automatiquement un port libre).
