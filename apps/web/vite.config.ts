@@ -2,8 +2,15 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
+// Chemin de base : GitHub Pages projette le site sous /kale/.
+// Surchargeable via VITE_BASE_PATH (ex: "/" pour un domaine dédié).
+const basePath =
+  process.env.VITE_BASE_PATH ||
+  (process.env.NODE_ENV === 'production' ? '/kale/' : '/')
+
 // https://vite.dev/config/
 export default defineConfig({
+  base: basePath,
   plugins: [
     react(),
     VitePWA({
@@ -16,11 +23,12 @@ export default defineConfig({
         theme_color: '#E1602E',
         background_color: '#FAF5EF',
         display: 'standalone',
-        start_url: '/',
+        start_url: basePath,
+        scope: basePath,
         lang: 'fr',
         icons: [
           {
-            src: '/favicon.svg',
+            src: `${basePath}favicon.svg`,
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any maskable',

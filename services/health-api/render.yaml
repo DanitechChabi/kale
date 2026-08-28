@@ -1,0 +1,17 @@
+# ============================================================
+# Kalé — déploiement Render (plan gratuit) du backend santé
+# Usage : connecter le repo GitHub à Render → "New Blueprint"
+#         → sélectionner ce fichier.
+# ============================================================
+
+services:
+  - type: web
+    name: kale-api
+    runtime: node
+    plan: free
+    rootDir: services/health-api
+    startCommand: node index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production

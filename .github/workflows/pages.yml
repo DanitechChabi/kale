@@ -1,0 +1,65 @@
+# ============================================================
+# Kalé — déploiement de la PWA web sur GitHub Pages
+# Déclencheur : push sur main (apps/web, contracts, workflow).
+# La variable du repo `API_BASE` (Settings → Secrets and variables
+# → Actions → Variables) fixe l'URL du backend. Défaut :
+# https://kale-api.onrender.com
+# ============================================================
+
+name: Deploy PWA → GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/web/**'
+      - 'contracts/**'
+      - 'services/health-api/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build PWA
+        env:
+          VITE_API_BASE: ${{ vars.API_BASE || 'https://kale-api.onrender.com' }}
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
