@@ -73,6 +73,15 @@ npm run dev:frontend
 
 En développement, le frontend appelle `/api`, que Vite redirige vers `http://localhost:4000`.
 
+## Premier compte administrateur
+
+```bash
+npm run creer-super-admin --prefix backend -- --nom NOM --prenoms "Prénoms" --telephone 0197000000 --email admin@exemple.bj
+```
+
+Le mot de passe temporaire s'affiche une seule fois ; il doit être changé à la première connexion.
+Le super-administrateur crée ensuite les comptes du ministère depuis l'API (`POST /api/admin/comptes`).
+
 ## Vérifications
 
 ```bash
@@ -106,7 +115,7 @@ relevés immuables, code commenté en français.
 
 1. ✅ Initialisation (monorepo, docker-compose, Express, Vite, PWA, identité visuelle)
 2. ✅ Schéma de base de données (26 tables, triggers, référentiel national)
-3. Authentification et rôles
+3. ✅ Authentification, rôles, inscription et vérification des établissements
 4. Gestion scolaire (élèves, classes, matières, inscriptions, import Excel)
 5. Notes, moyennes pondérées, rangs, clôture de trimestre
 6. Relevés PDF archivés, QR code, vérification publique, duplicatas

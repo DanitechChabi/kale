@@ -1,5 +1,5 @@
 import {
-  ArrowDown,
+  ArrowRight,
   BookOpenCheck,
   Fingerprint,
   GraduationCap,
@@ -10,7 +10,7 @@ import {
   Users,
 } from 'lucide-react';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LienAncre from '../components/LienAncre.jsx';
 import Apparition from '../components/animation/Apparition.jsx';
 import CarteProjecteur from '../components/animation/CarteProjecteur.jsx';
@@ -178,13 +178,13 @@ export default function Accueil() {
               relevé est archivé définitivement et vérifiable en ligne par numéro ou QR code.
             </p>
             <div className="entree flex flex-wrap gap-3 pt-2" style={{ '--delai': '800ms' }}>
-              <LienAncre
-                cible="espaces"
+              <Link
+                to="/inscription-ecole"
                 className="bouton-brillant group inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-marque-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Découvrir les espaces
-                <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-              </LienAncre>
+                Inscrire mon établissement
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Link>
               <LienAncre
                 cible="fonctionnement"
                 className="rounded-lg px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0"

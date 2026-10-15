@@ -30,6 +30,16 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
   `est_verifie = true` (validée par le ministère) n'est jamais écrasée par le seed.
 - Vérification des établissements : `SUPER_ADMIN` et `MINISTERE` peuvent valider ou rejeter.
 
+## Sécurité et isolation
+
+- Dans une route d'établissement, toujours utiliser `req.db` (client isolé par `ecole_id`), jamais
+  `prisma` directement. Exceptions documentées dans le code : parents (sans `ecole_id`), comptes
+  nationaux, unicité globale des identifiants.
+- Pas de SQL brut (`$queryRaw`) avec un client isolé.
+- Fichiers déposés : contrôle du contenu par signature (`utils/fichiers.js`), jamais par
+  l'extension ; servis avec `Content-Disposition: inline` et une CSP `sandbox`.
+- Côté web : le jeton d'accès reste en mémoire (jamais `localStorage`).
+
 ## Règles de code
 
 - Code commenté en français, noms de variables en français cohérents.

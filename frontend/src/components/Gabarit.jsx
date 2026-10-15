@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { LogIn } from 'lucide-react';
+import { useAuth } from '../contexte/Auth.jsx';
 import LienAncre from './LienAncre.jsx';
 import Logo from './Logo.jsx';
 
 // Mise en page commune : en-tête, contenu, pied de page (mobile d'abord).
 export default function Gabarit() {
+  const { statut } = useAuth();
   // L'en-tête prend une ombre dès que la page défile
   const [defile, setDefile] = useState(false);
   useEffect(() => {
@@ -25,7 +28,7 @@ export default function Gabarit() {
           <Link to="/" aria-label="EduRelevé — accueil" className="entree">
             <Logo anime />
           </Link>
-          <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 sm:flex">
+          <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 md:flex">
             {[
               ['espaces', 'Espaces'],
               ['fonctionnement', 'Fonctionnement'],
@@ -42,6 +45,31 @@ export default function Gabarit() {
               </LienAncre>
             ))}
           </nav>
+          <div className="entree flex items-center gap-2" style={{ '--delai': '360ms' }}>
+            {statut === 'connecte' ? (
+              <Link
+                to="/espace"
+                className="rounded-lg bg-marque-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-marque-700"
+              >
+                Mon espace
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to="/inscription-ecole"
+                  className="hidden rounded-lg px-3 py-2 text-sm font-semibold text-marque-700 transition hover:bg-marque-50 lg:block"
+                >
+                  Inscrire mon établissement
+                </Link>
+                <Link
+                  to="/connexion"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-marque-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-marque-700"
+                >
+                  <LogIn className="h-4 w-4" /> Connexion
+                </Link>
+              </>
+            )}
+          </div>
         </div>
         {/* Liseré aux couleurs nationales, déployé au chargement */}
         <div className="flex h-[3px]" aria-hidden="true">

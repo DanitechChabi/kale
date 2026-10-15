@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from './App.jsx';
+import { FournisseurAuth } from './contexte/Auth.jsx';
 import './index.css';
 
 // Routeur « hash » (#/chemin) pour un hébergement statique sans réécriture d'URL
@@ -11,7 +12,9 @@ const Routeur = import.meta.env.VITE_ROUTEUR === 'hash' ? HashRouter : BrowserRo
 createRoot(document.getElementById('racine')).render(
   <StrictMode>
     <Routeur>
-      <App />
+      <FournisseurAuth>
+        <App />
+      </FournisseurAuth>
     </Routeur>
   </StrictMode>,
 );

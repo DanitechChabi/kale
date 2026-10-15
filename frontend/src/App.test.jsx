@@ -1,32 +1,36 @@
-import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import App from './App.jsx';
-
-function rendre(route = '/') {
-  return render(
-    <MemoryRouter initialEntries={[route]}>
-      <App />
-    </MemoryRouter>,
-  );
-}
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { screen } from '@testing-library/react';
+import { rendreApp, simulerApi } from './test/aide.jsx';
 
 describe('Application', () => {
+  afterEach(() => vi.unstubAllGlobals());
+
   it('affiche la page d’accueil avec les quatre espaces', () => {
-    rendre('/');
+    simulerApi();
+    rendreApp('/');
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/sans vous déplacer/);
     for (const espace of ['École', 'Élève', 'Parent', 'Ministère']) {
       expect(screen.getByRole('heading', { level: 3, name: espace })).toBeInTheDocument();
     }
   });
 
-  it('affiche le logo dans l’en-tête', () => {
-    rendre('/');
+  it('affiche le logo et les accès connexion / inscription', async () => {
+    simulerApi();
+    rendreApp('/');
     expect(screen.getByRole('link', { name: /EduRelevé — accueil/ })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: /Connexion/ })).toHaveAttribute(
+      'href',
+      '/connexion',
+    );
+    expect(screen.getAllByRole('link', { name: /Inscrire mon établissement/ })[0]).toHaveAttribute(
+      'href',
+      '/inscription-ecole',
+    );
   });
 
   it('affiche une page 404 pour une route inconnue', () => {
-    rendre('/nimporte-quoi');
+    simulerApi();
+    rendreApp('/nimporte-quoi');
     expect(screen.getByRole('heading', { name: 'Page introuvable' })).toBeInTheDocument();
   });
 });
