@@ -1,43 +1,116 @@
 @import 'tailwindcss';
 @import './animations.css';
 
-/* Charte EduRelevé : vert institutionnel, or et rouge en accents (couleurs nationales) */
-@theme {
-  --color-marque-50: #edf8f1;
-  --color-marque-100: #d3eedd;
-  --color-marque-200: #bfe3cc;
-  --color-marque-400: #34b36f;
-  --color-marque-500: #0e8a48;
-  --color-marque-600: #0b7a3f;
-  --color-marque-700: #065f33;
-  --color-marque-900: #0b2a1a;
-  --color-or: #fcd116;
-  --color-rouge: #e8112d;
-  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
+/* =============================================================================
+   Identité EduRelevé — « le registre »
+   Le vocabulaire visuel vient des documents scolaires et officiels : marge rouge
+   du cahier, lignes réglées, guillochis des diplômes, tampon encreur, chiffres
+   alignés du registre de notes.
+   ========================================================================== */
 
-/* Police Inter (licence OFL), limitée aux alphabets latins pour économiser la data.
-   Le sous-ensemble « latin étendu » couvre les noms en langues nationales (ɔ, ɛ, ŋ…). */
+/* Schibsted Grotesk (texte et titres) et IBM Plex Mono (chiffres, identifiants),
+   licence OFL, limitées aux alphabets latins ; le latin étendu couvre ɔ, ɛ, ŋ. */
 @font-face {
-  font-family: 'Inter Variable';
+  font-family: 'Schibsted Grotesk';
   font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url('./assets/polices/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  font-weight: 400 900;
+  src: url('./assets/polices/schibsted-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 900;
+  src: url('./assets/polices/schibsted-grotesk-latin-ext-wght-normal.woff2')
+    format('woff2-variations');
   unicode-range:
     U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
     U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
     U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Inter Variable';
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url('./assets/polices/inter-latin-wght-normal.woff2') format('woff2-variations');
-  unicode-range:
-    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
-    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-weight: 400;
+  src: url('./assets/polices/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2212;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./assets/polices/ibm-plex-mono-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2212;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./assets/polices/ibm-plex-mono-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./assets/polices/ibm-plex-mono-latin-ext-600-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F;
+}
+
+@theme {
+  /* Vert institutionnel, encre, sceau */
+  --color-marque-50: #eef7f1;
+  --color-marque-100: #d4ecdd;
+  --color-marque-200: #b4dcc4;
+  --color-marque-400: #34b36f;
+  --color-marque-500: #0e8a48;
+  --color-marque-600: #0b7a3f;
+  --color-marque-700: #065f33;
+  --color-marque-800: #0a4a2a;
+  --color-marque-900: #0b2a1a;
+  --color-encre: #0b2a1a;
+  --color-or: #fcd116;
+  --color-sceau: #a8820f;
+  --color-rouge: #c8102e;
+  /* Encre bleue des lignes de cahier */
+  --color-reglure: #c9dceb;
+
+  /* Neutres légèrement teintés de vert (jamais un gris « par défaut ») */
+  --color-slate-50: oklch(0.982 0.004 150);
+  --color-slate-100: oklch(0.962 0.006 150);
+  --color-slate-200: oklch(0.918 0.009 150);
+  --color-slate-300: oklch(0.862 0.012 150);
+  --color-slate-400: oklch(0.7 0.016 150);
+  --color-slate-500: oklch(0.555 0.018 150);
+  --color-slate-600: oklch(0.45 0.019 150);
+  --color-slate-700: oklch(0.37 0.019 150);
+  --color-slate-800: oklch(0.28 0.017 150);
+  --color-slate-900: oklch(0.21 0.015 150);
+  --color-slate-950: oklch(0.15 0.012 150);
+
+  /* Angles nets de document, ombres en filet */
+  --radius-md: 0.3125rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.625rem;
+  --radius-3xl: 0.875rem;
+  --shadow-sm: 0 1px 0 rgb(11 42 26 / 0.05);
+  --shadow-md: 0 1px 0 rgb(11 42 26 / 0.05), 0 4px 10px -4px rgb(11 42 26 / 0.12);
+  --shadow-lg: 0 1px 0 rgb(11 42 26 / 0.05), 0 10px 24px -8px rgb(11 42 26 / 0.18);
+  --shadow-xl: 0 1px 0 rgb(11 42 26 / 0.06), 0 18px 36px -12px rgb(11 42 26 / 0.24);
+  --shadow-2xl: 0 2px 0 rgb(11 42 26 / 0.06), 0 30px 60px -20px rgb(11 42 26 / 0.45);
+
+  --font-sans: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --tracking-tight: -0.018em;
 }
 
 html {
@@ -46,8 +119,79 @@ html {
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased;
-  font-feature-settings: 'cv11', 'ss01';
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-feature-settings:
+    'ss01',
+    'tnum' 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Chiffres du registre : notes, moyennes, rangs, identifiants */
+@utility chiffres {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+  letter-spacing: -0.01em;
+}
+
+/* Petite étiquette de rubrique */
+@utility etiquette {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-slate-500);
+}
+
+/* Page de cahier : marge rouge à gauche et lignes réglées */
+@utility cahier {
+  position: relative;
+  background-color: white;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.75rem - 1px),
+    var(--color-reglure) calc(1.75rem - 1px),
+    var(--color-reglure) 1.75rem
+  );
+  background-position: 0 0.4rem;
+}
+@utility marge-rouge {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.75rem;
+    width: 1px;
+    background: color-mix(in oklab, var(--color-rouge) 55%, transparent);
+    box-shadow: 3px 0 0 color-mix(in oklab, var(--color-rouge) 30%, transparent);
+    pointer-events: none;
+  }
+}
+
+/* Tampon encreur : double filet, capitales, légère inclinaison */
+@utility tampon-encre {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border: 2px solid currentColor;
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  mix-blend-mode: multiply;
 }
 
 /* Impression des fiches de connexion : seule la zone d'impression est visible */

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Check, Copy, KeyRound, Pencil, Trash2 } from 'lucide-react';
 import EnTetePage from '../../components/EnTetePage.jsx';
+import Guilloche from '../../components/Guilloche.jsx';
 import FichesConnexion from '../../components/FichesConnexion.jsx';
 import FormulaireEleve from '../../components/FormulaireEleve.jsx';
 import Alerte from '../../components/ui/Alerte.jsx';

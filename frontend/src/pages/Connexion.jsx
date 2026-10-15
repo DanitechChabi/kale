@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { LogIn, ShieldCheck } from 'lucide-react';
+import Guilloche from '../components/Guilloche.jsx';
 import Logo from '../components/Logo.jsx';
 import Alerte from '../components/ui/Alerte.jsx';
 import Bouton from '../components/ui/Bouton.jsx';
@@ -40,11 +41,12 @@ export default function Connexion() {
   return (
     <div className="grid min-h-dvh lg:grid-cols-2">
       {/* Panneau de marque (ordinateur) */}
-      <aside className="relative isolate hidden overflow-hidden bg-gradient-to-br from-marque-700 via-marque-600 to-marque-900 p-12 text-white lg:flex lg:flex-col lg:justify-between">
-        <div className="absolute inset-0 -z-10" aria-hidden="true">
-          <div className="aurore aurore-1" />
-          <div className="aurore aurore-2" />
-          <div className="quadrillage absolute inset-0" />
+      <aside className="relative isolate hidden overflow-hidden bg-encre p-12 text-white lg:flex lg:flex-col lg:justify-between">
+        <div
+          className="absolute -right-48 -bottom-48 -z-10 h-[46rem] w-[46rem] text-or/20"
+          aria-hidden="true"
+        >
+          <Guilloche variante="rosace" largeur={600} anime className="rosace-lente h-full w-full" />
         </div>
         <Link to="/" aria-label="EduRelevé — accueil" className="entree">
           <Logo inverse />

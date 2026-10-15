@@ -83,7 +83,7 @@ export default function Gabarit() {
         <Outlet />
       </main>
 
-      <footer className="border-t border-slate-200 bg-slate-50">
+      <footer className="border-t-2 border-slate-900 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div className="space-y-1">
             <Logo taille="h-7 w-7" texte="text-base" />

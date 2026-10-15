@@ -43,7 +43,7 @@ export default function FichesConnexion({ fiches, titre }) {
         {fiches.map((f) => (
           <article
             key={f.cle}
-            className="fiche-connexion flex gap-4 rounded-xl border border-dashed border-slate-300 bg-white p-4 print:rounded-none"
+            className="fiche-connexion marge-rouge flex gap-4 rounded-md border border-dashed border-slate-400 bg-white p-4 pl-11 print:rounded-none"
           >
             <div className="min-w-0 flex-1 space-y-2">
               <div className="flex items-center gap-1.5 text-xs font-bold text-marque-700">
@@ -57,7 +57,7 @@ export default function FichesConnexion({ fiches, titre }) {
               <dl className="space-y-1 text-sm">
                 <div>
                   <dt className="text-xs text-slate-500">Identifiant</dt>
-                  <dd className="font-mono text-base font-bold tracking-wide">
+                  <dd className="chiffres text-base font-semibold tracking-wide">
                     {/^[0-9A-Z]{10}$/.test(f.identifiant)
                       ? formaterIdentifiant(f.identifiant)
                       : f.identifiant}
@@ -65,7 +65,7 @@ export default function FichesConnexion({ fiches, titre }) {
                 </div>
                 <div>
                   <dt className="text-xs text-slate-500">Mot de passe provisoire</dt>
-                  <dd className="font-mono text-base font-bold tracking-wide">
+                  <dd className="chiffres text-base font-semibold tracking-wide">
                     {f.motDePasseTemporaire}
                   </dd>
                 </div>

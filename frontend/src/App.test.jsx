@@ -8,9 +8,9 @@ describe('Application', () => {
   it('affiche la page d’accueil avec les quatre espaces', () => {
     simulerApi();
     rendreApp('/');
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/sans vous déplacer/);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/sans le déplacement/);
     for (const espace of ['École', 'Élève', 'Parent', 'Ministère']) {
-      expect(screen.getByRole('heading', { level: 3, name: espace })).toBeInTheDocument();
+      expect(screen.getByText(espace, { selector: 'dt' })).toBeInTheDocument();
     }
   });
 
