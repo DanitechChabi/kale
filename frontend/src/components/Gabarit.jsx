@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import LienAncre from './LienAncre.jsx';
 import Logo from './Logo.jsx';
 
 // Mise en page commune : en-tête, contenu, pied de page (mobile d'abord).
@@ -26,19 +27,19 @@ export default function Gabarit() {
           </Link>
           <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 sm:flex">
             {[
-              ['/#espaces', 'Espaces'],
-              ['/#fonctionnement', 'Fonctionnement'],
+              ['espaces', 'Espaces'],
+              ['fonctionnement', 'Fonctionnement'],
             ].map(([lien, libelle], i) => (
-              <a
+              <LienAncre
                 key={lien}
-                href={lien}
+                cible={lien}
                 className="entree group relative rounded-lg px-3 py-2 transition-colors hover:text-marque-700"
                 style={{ '--delai': `${200 + i * 80}ms` }}
               >
                 {libelle}
                 {/* Soulignement qui se déploie au survol */}
                 <span className="absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-marque-500 transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+              </LienAncre>
             ))}
           </nav>
         </div>

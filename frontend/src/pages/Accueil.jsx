@@ -9,6 +9,9 @@ import {
   ShieldCheck,
   Users,
 } from 'lucide-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import LienAncre from '../components/LienAncre.jsx';
 import Apparition from '../components/animation/Apparition.jsx';
 import CarteProjecteur from '../components/animation/CarteProjecteur.jsx';
 import Compteur from '../components/animation/Compteur.jsx';
@@ -133,6 +136,12 @@ function ApercuReleve() {
 }
 
 export default function Accueil() {
+  // Arrivée depuis une autre page via un lien de section : on fait défiler jusqu'à elle
+  const { state } = useLocation();
+  useEffect(() => {
+    if (state?.ancre) document.getElementById(state.ancre)?.scrollIntoView({ block: 'start' });
+  }, [state]);
+
   return (
     <>
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-marque-700 via-marque-600 to-marque-900 text-white">
@@ -169,19 +178,19 @@ export default function Accueil() {
               relevé est archivé définitivement et vérifiable en ligne par numéro ou QR code.
             </p>
             <div className="entree flex flex-wrap gap-3 pt-2" style={{ '--delai': '800ms' }}>
-              <a
-                href="#espaces"
+              <LienAncre
+                cible="espaces"
                 className="bouton-brillant group inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-marque-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
                 Découvrir les espaces
                 <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-              </a>
-              <a
-                href="#fonctionnement"
+              </LienAncre>
+              <LienAncre
+                cible="fonctionnement"
                 className="rounded-lg px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0"
               >
                 Comment ça marche
-              </a>
+              </LienAncre>
             </div>
           </div>
           <ApercuReleve />

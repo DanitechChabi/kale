@@ -9,6 +9,8 @@ export default defineConfig({
     tailwindcss(),
     // Application installable (PWA) : manifeste + service worker généré par Workbox
     VitePWA({
+      // SANS_PWA=1 : pas de service worker (aperçu hébergé dans un sous-dossier)
+      disable: process.env.SANS_PWA === '1',
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png'],
       manifest: {
