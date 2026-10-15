@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import {
   changerStatutCompte,
+  creerComptesClasse,
   creerCompteEcole,
   listerComptes,
   reinitialiserMotDePasse,
@@ -39,7 +40,7 @@ const schemaCreation = z
       .optional(),
   })
   .superRefine((d, ctx) => {
-    if (!d.email && !d.telephone) {
+    if (d.role !== 'ELEVE' && !d.email && !d.telephone) {
       ctx.addIssue({
         code: 'custom',
         path: ['telephone'],
@@ -90,5 +91,14 @@ routeurUtilisateurs.post(
   valider({ params: schemaId }),
   async (req, res) => {
     res.json(await reinitialiserMotDePasse(req.db, auteur(req), req.valide.params.id));
+  },
+);
+
+/** Comptes de tous les élèves d'une classe, avec fiches de connexion à imprimer. */
+routeurUtilisateurs.post(
+  '/comptes-classe',
+  valider({ body: z.object({ classeId: z.uuid() }) }),
+  async (req, res) => {
+    res.status(201).json(await creerComptesClasse(req.db, auteur(req), req.valide.body.classeId));
   },
 );

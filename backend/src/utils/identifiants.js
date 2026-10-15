@@ -1,5 +1,6 @@
 // Normalisation des identifiants de connexion (e-mail ou téléphone).
 import { z } from 'zod';
+import { normaliserIdentifiantEleve } from './identifiantEleve.js';
 
 /**
  * Normalise un numéro béninois au format international « +229XXXXXXXXXX ».
@@ -22,10 +23,14 @@ export function normaliserTelephone(brut) {
 
 export const normaliserEmail = (email) => email.trim().toLowerCase();
 
-/** Identifiant saisi à la connexion : e-mail ou numéro de téléphone. */
+/** Identifiant saisi à la connexion : e-mail, identifiant élève ou numéro de téléphone. */
 export function analyserIdentifiant(identifiant) {
   const valeur = identifiant.trim();
   if (valeur.includes('@')) return { email: normaliserEmail(valeur) };
+  if (/[a-z]/i.test(valeur)) {
+    const identifiantEleve = normaliserIdentifiantEleve(valeur);
+    return identifiantEleve ? { identifiantEleve } : null;
+  }
   const telephone = normaliserTelephone(valeur);
   return telephone ? { telephone } : null;
 }

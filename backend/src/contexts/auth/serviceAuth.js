@@ -100,9 +100,15 @@ const identifiantsInvalides = () =>
 
 export async function connexion({ identifiant, motDePasse }, meta) {
   const critere = analyserIdentifiant(identifiant);
-  const utilisateur = critere
-    ? await prisma.utilisateur.findUnique({ where: critere, select: SELECTION_UTILISATEUR })
-    : null;
+  const utilisateur = !critere
+    ? null
+    : critere.identifiantEleve
+      ? // Un élève se connecte avec l'identifiant EduRelevé de sa fiche
+        await prisma.utilisateur.findFirst({
+          where: { role: 'ELEVE', eleve: { identifiant: critere.identifiantEleve } },
+          select: SELECTION_UTILISATEUR,
+        })
+      : await prisma.utilisateur.findUnique({ where: critere, select: SELECTION_UTILISATEUR });
 
   // Même temps de calcul que le compte existe ou non
   const motDePasseValide = await verifierMotDePasse(

@@ -77,7 +77,10 @@ export async function creerCompteEcole(db, auteur, donnees) {
     },
     select: SELECTION_PUBLIQUE,
   });
-  if (eleve) await db.eleve.update({ where: { id: eleve.id }, data: { utilisateurId: compte.id } });
+  if (eleve) {
+    await db.eleve.update({ where: { id: eleve.id }, data: { utilisateurId: compte.id } });
+    compte.identifiantEleve = eleve.identifiant;
+  }
   await journaliser(db, {
     ...contexte,
     action: 'CREATION',
@@ -151,6 +154,75 @@ async function creerOuRelierParent(db, auteur, donnees, contexte) {
     select: SELECTION_PUBLIQUE,
   });
   return { compte, motDePasseTemporaire, compteExistant: Boolean(existant) };
+}
+
+/**
+ * Crée d'un coup les comptes de tous les élèves d'une classe qui n'en ont pas.
+ * Renvoie les fiches de connexion à imprimer (identifiant + mot de passe temporaire).
+ */
+export async function creerComptesClasse(db, auteur, classeId) {
+  const classe = await db.classe.findUnique({
+    where: { id: classeId },
+    include: {
+      inscriptions: {
+        where: { statut: 'INSCRIT', eleve: { utilisateurId: null } },
+        include: { eleve: true },
+        orderBy: [{ eleve: { nom: 'asc' } }, { eleve: { prenoms: 'asc' } }],
+      },
+    },
+  });
+  if (!classe) throw new ErreurApi(404, 'INTROUVABLE', 'Classe introuvable');
+
+  const fiches = [];
+  // Par petits lots : le hachage des mots de passe est volontairement coûteux
+  for (let i = 0; i < classe.inscriptions.length; i += 8) {
+    const lot = classe.inscriptions.slice(i, i + 8);
+    fiches.push(
+      ...(await Promise.all(
+        lot.map(async ({ eleve }) => {
+          const motDePasseTemporaire = genererMotDePasseTemporaire();
+          return {
+            eleve,
+            motDePasseTemporaire,
+            hache: await hacherMotDePasse(motDePasseTemporaire),
+          };
+        }),
+      )),
+    );
+  }
+
+  await db.$transaction(async (tx) => {
+    for (const fiche of fiches) {
+      const compte = await tx.utilisateur.create({
+        data: {
+          role: 'ELEVE',
+          nom: fiche.eleve.nom,
+          prenoms: fiche.eleve.prenoms,
+          motDePasseHash: fiche.hache,
+        },
+      });
+      await tx.eleve.update({ where: { id: fiche.eleve.id }, data: { utilisateurId: compte.id } });
+    }
+    await journaliser(tx, {
+      utilisateurId: auteur.id,
+      adresseIp: auteur.adresseIp,
+      action: 'CREATION',
+      entite: 'Classe',
+      entiteId: classeId,
+      apres: { comptesEleves: fiches.length },
+    });
+  });
+
+  return {
+    classe: { id: classe.id, nom: classe.nom },
+    fiches: fiches.map(({ eleve, motDePasseTemporaire }) => ({
+      eleveId: eleve.id,
+      nom: eleve.nom,
+      prenoms: eleve.prenoms,
+      identifiant: eleve.identifiant,
+      motDePasseTemporaire,
+    })),
+  };
 }
 
 /** Comptes de l'établissement, et parents de ses élèves. */

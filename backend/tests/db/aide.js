@@ -2,6 +2,7 @@
 import request from 'supertest';
 import { creerApp } from '../../src/app.js';
 import { prisma } from '../../src/config/prisma.js';
+import { genererIdentifiantEleve } from '../../src/utils/identifiantEleve.js';
 import { hacherMotDePasse } from '../../src/utils/motDePasse.js';
 
 export { prisma };
@@ -28,7 +29,11 @@ export async function communeTest() {
   });
 }
 
-export async function creerEcole({ statutVerification = 'VERIFIEE', statut = 'PUBLIC' } = {}) {
+export async function creerEcole({
+  statutVerification = 'VERIFIEE',
+  statut = 'PUBLIC',
+  ordres = ['GENERAL'],
+} = {}) {
   const commune = await communeTest();
   return prisma.ecole.create({
     data: {
@@ -36,7 +41,7 @@ export async function creerEcole({ statutVerification = 'VERIFIEE', statut = 'PU
       nom: `Établissement ${unique()}`,
       statut,
       type: 'LYCEE',
-      ordres: ['GENERAL'],
+      ordres,
       communeId: commune.id,
       statutVerification,
       motifDecision: ['REJETEE', 'SUSPENDUE'].includes(statutVerification) ? 'Motif de test' : null,
@@ -67,6 +72,7 @@ export async function creerEleve(ecoleId) {
   return prisma.eleve.create({
     data: {
       ecoleId,
+      identifiant: genererIdentifiantEleve(),
       matricule: unique(),
       nom: 'ELEVE',
       prenoms: `Test ${unique()}`,
@@ -89,3 +95,12 @@ export const avecJeton = (jeton) => ({ Authorization: `Bearer ${jeton}` });
 // Fichiers minimaux reconnus par leur signature
 export const PDF = Buffer.from('%PDF-1.4\n1 0 obj << >> endobj\ntrailer << >>\n%%EOF\n');
 export const PNG = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 0]);
+
+/** Charge le référentiel national dans la base de test (une seule fois). */
+let referentielCharge;
+export function chargerReferentiel() {
+  referentielCharge ??= import('../../prisma/seed.js').then((m) =>
+    m.chargerReferentielNational(prisma),
+  );
+  return referentielCharge;
+}

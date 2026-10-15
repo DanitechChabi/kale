@@ -2,6 +2,7 @@
 // indépendamment du code applicatif.
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { PrismaClient } from '@prisma/client';
+import { genererIdentifiantEleve } from '../../src/utils/identifiantEleve.js';
 
 const prisma = new PrismaClient();
 const ctx = {};
@@ -86,6 +87,7 @@ beforeAll(async () => {
   ctx.eleve = await prisma.eleve.create({
     data: {
       ecoleId: ctx.ecole.id,
+      identifiant: genererIdentifiantEleve(),
       matricule: '2025-0001',
       nom: 'DOSSOU',
       prenoms: 'Afi',
@@ -96,6 +98,7 @@ beforeAll(async () => {
   ctx.eleve2 = await prisma.eleve.create({
     data: {
       ecoleId: ctx.ecole.id,
+      identifiant: genererIdentifiantEleve(),
       matricule: '2025-0002',
       nom: 'HOUNSOU',
       prenoms: 'Koffi',
@@ -197,8 +200,10 @@ describe('organisation scolaire', () => {
       data: { code: 'T-FR', nom: 'Français (test)', nomCourt: 'Français' },
     });
     const ligne = { niveau: 'SIXIEME', matiereReferenceId: matiere.id, coefficient: 2 };
-    await prisma.programmeMatiere.create({ data: ligne });
+    const creee = await prisma.programmeMatiere.create({ data: ligne });
     await expect(prisma.programmeMatiere.create({ data: ligne })).rejects.toThrow();
+    // Nettoyage : la base de test est partagée avec les autres fichiers
+    await prisma.programmeMatiere.delete({ where: { id: creee.id } });
   });
 
   it('exige des minutes de retard pour un retard, et seulement dans ce cas', async () => {

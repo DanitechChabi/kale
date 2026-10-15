@@ -26,6 +26,10 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - Ne jamais contourner les triggers (relevés, journal d'audit, périodes clôturées) : ils sont la
   dernière ligne de défense. Toute nouvelle règle d'intégrité forte va aussi en SQL dans une
   migration, avec un test dans `backend/tests/db/`.
+- Nouvelle migration : `prisma migrate diff --from-migrations prisma/migrations
+--to-schema-datamodel prisma/schema.prisma --shadow-database-url … --script`, puis relire le SQL.
+  Prisma propose toujours de supprimer `programmes_matieres_unique` (index NULLS NOT DISTINCT
+  qu'il ne sait pas décrire) : retirer cette ligne.
 - Le référentiel pédagogique est une donnée (`prisma/donnees/`), jamais du code en dur. Une ligne
   `est_verifie = true` (validée par le ministère) n'est jamais écrasée par le seed.
 - Vérification des établissements : `SUPER_ADMIN` et `MINISTERE` peuvent valider ou rejeter.

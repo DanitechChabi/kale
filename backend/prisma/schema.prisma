@@ -336,7 +336,8 @@ model Utilisateur {
   role                  Role
   nom                   String    @db.VarChar(100)
   prenoms               String    @db.VarChar(150)
-  /// Identifiants de connexion : au moins un des deux (contrainte CHECK)
+  /// Identifiants de connexion : au moins un des deux (contrainte CHECK),
+  /// sauf pour un élève, qui se connecte avec son identifiant EduRelevé
   email                 String?   @unique @db.VarChar(255)
   telephone             String?   @unique @db.VarChar(30)
   motDePasseHash        String    @map("mot_de_passe_hash") @db.VarChar(255)
@@ -523,20 +524,26 @@ model Enseignement {
 // -----------------------------------------------------------------------------
 
 model Eleve {
-  id            String   @id @default(uuid()) @db.Uuid
-  ecoleId       String   @map("ecole_id") @db.Uuid
-  matricule     String   @db.VarChar(30) // unique dans l'établissement
+  id                     String   @id @default(uuid()) @db.Uuid
+  ecoleId                String   @map("ecole_id") @db.Uuid
+  matricule              String   @db.VarChar(30) // unique dans l'établissement
+  /// Identifiant EduRelevé : unique dans tout le pays, avec caractère de contrôle,
+  /// suit l'élève d'un établissement à l'autre et lui sert d'identifiant de connexion
+  identifiant            String   @unique @db.VarChar(10)
   /// Numéro personnel d'identification (futur lien avec les registres de l'État)
-  npi           String?  @db.VarChar(20)
-  nom           String   @db.VarChar(100)
-  prenoms       String   @db.VarChar(150)
-  sexe          Sexe
-  dateNaissance DateTime @map("date_naissance") @db.Date
-  lieuNaissance String?  @map("lieu_naissance") @db.VarChar(100)
+  npi                    String?  @db.VarChar(20)
+  nom                    String   @db.VarChar(100)
+  prenoms                String   @db.VarChar(150)
+  sexe                   Sexe
+  dateNaissance          DateTime @map("date_naissance") @db.Date
+  lieuNaissance          String?  @map("lieu_naissance") @db.VarChar(100)
+  /// Contact du parent ou tuteur (utile même sans compte : notifications par SMS)
+  nomContactParent       String?  @map("nom_contact_parent") @db.VarChar(200)
+  telephoneContactParent String?  @map("telephone_contact_parent") @db.VarChar(30)
   /// Compte de connexion de l'élève (facultatif)
-  utilisateurId String?  @unique @map("utilisateur_id") @db.Uuid
-  creeLe        DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
-  modifieLe     DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+  utilisateurId          String?  @unique @map("utilisateur_id") @db.Uuid
+  creeLe                 DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe              DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
   ecole             Ecole              @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
   utilisateur       Utilisateur?       @relation(fields: [utilisateurId], references: [id], onDelete: SetNull)
