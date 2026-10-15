@@ -1,0 +1,27 @@
+// Limitation du nombre de requêtes sur les routes sensibles (anti force brute).
+import { rateLimit } from 'express-rate-limit';
+
+function limiteur({ fenetreMs, max, message }) {
+  return rateLimit({
+    windowMs: fenetreMs,
+    limit: max,
+    standardHeaders: 'draft-8',
+    legacyHeaders: false,
+    handler: (_req, res) =>
+      res.status(429).json({ erreur: { code: 'TROP_DE_TENTATIVES', message } }),
+  });
+}
+
+export const limiterConnexion = (max) =>
+  limiteur({
+    fenetreMs: 15 * 60 * 1000,
+    max,
+    message: 'Trop de tentatives de connexion. Réessayez dans quelques minutes.',
+  });
+
+export const limiterInscription = (max) =>
+  limiteur({
+    fenetreMs: 60 * 60 * 1000,
+    max,
+    message: 'Trop de dossiers déposés depuis cette connexion. Réessayez plus tard.',
+  });

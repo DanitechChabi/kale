@@ -17,14 +17,19 @@
     "prisma:studio": "prisma studio",
     "postinstall": "prisma generate",
     "prisma:seed": "prisma db seed",
-    "test:db": "node scripts/preparer-base-test.js && vitest run -c vitest.db.config.js"
+    "test:db": "node scripts/preparer-base-test.js && vitest run -c vitest.db.config.js",
+    "creer-super-admin": "node --env-file-if-exists=.env scripts/creer-super-admin.js"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.7.1",
     "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
     "morgan": "^1.10.1",
+    "multer": "^2.4.0",
     "zod": "^4.1.12"
   },
   "devDependencies": {

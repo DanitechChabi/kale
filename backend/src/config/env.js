@@ -14,6 +14,18 @@ const schemaEnv = z
     CORS_ORIGINES: z.string().default('http://localhost:5173'),
     URL_PUBLIQUE_FRONTEND: z.url().default('http://localhost:5173'),
     DOSSIER_STOCKAGE: z.string().default('./stockage'),
+    // Cookie du jeton de rafraîchissement
+    COOKIE_SECURE: z
+      .enum(['true', 'false'])
+      .optional()
+      .transform((v) => (v === undefined ? undefined : v === 'true')),
+    COOKIE_SAMESITE: z.enum(['strict', 'lax', 'none']).default('strict'),
+    // Pièces justificatives : taille maximale par fichier (Mo)
+    TAILLE_MAX_DOCUMENT_MO: z.coerce.number().positive().default(5),
+    // Tentatives de connexion autorisées par adresse IP et par quart d'heure
+    LIMITE_CONNEXION: z.coerce.number().int().positive().default(10),
+    // Dossiers d'inscription autorisés par adresse IP et par heure
+    LIMITE_INSCRIPTION: z.coerce.number().int().positive().default(5),
   })
   .refine((env) => env.JWT_ACCESS_SECRET !== env.JWT_REFRESH_SECRET, {
     message: 'Les secrets JWT d’accès et de rafraîchissement doivent être différents',
@@ -36,6 +48,8 @@ export const config = Object.freeze({
   ...brut,
   estProduction: brut.NODE_ENV === 'production',
   estTest: brut.NODE_ENV === 'test',
+  // Cookie sécurisé (HTTPS) par défaut en production
+  cookieSecurise: brut.COOKIE_SECURE ?? brut.NODE_ENV === 'production',
   // Liste des origines autorisées pour le CORS
   originesCors: brut.CORS_ORIGINES.split(',')
     .map((origine) => origine.trim())

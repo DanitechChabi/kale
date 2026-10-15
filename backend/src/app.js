@@ -3,11 +3,13 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
 import { config } from './config/env.js';
-import { routeurApi } from './routes/index.js';
+import { creerRouteurApi } from './routes/index.js';
 import { gestionnaireErreurs, routeIntrouvable } from './middlewares/erreurs.js';
 
-export function creerApp() {
+// `options` permet aux tests d'ajuster certains réglages (limites de requêtes…).
+export function creerApp(options = {}) {
   const app = express();
 
   app.disable('x-powered-by');
@@ -23,10 +25,11 @@ export function creerApp() {
   );
   // Petite limite : l'API échange du JSON, les fichiers passeront par des routes dédiées
   app.use(express.json({ limit: '1mb' }));
+  app.use(cookieParser());
 
   if (!config.estTest) app.use(morgan(config.estProduction ? 'combined' : 'dev'));
 
-  app.use('/api', routeurApi);
+  app.use('/api', creerRouteurApi(options));
 
   app.use(routeIntrouvable);
   app.use(gestionnaireErreurs);

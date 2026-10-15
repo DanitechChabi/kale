@@ -8,13 +8,19 @@ const ctx = {};
 const empreinte = (c) => c.repeat(64);
 
 beforeAll(async () => {
-  const departement = await prisma.departement.create({ data: { code: 'AQ', nom: 'Atlantique' } });
-  const commune = await prisma.commune.create({
-    data: { nom: 'Abomey-Calavi', departementId: departement.id },
+  const departement = await prisma.departement.upsert({
+    where: { code: 'AQ' },
+    update: {},
+    create: { code: 'AQ', nom: 'Atlantique' },
+  });
+  const commune = await prisma.commune.upsert({
+    where: { departementId_nom: { departementId: departement.id, nom: 'Abomey-Calavi' } },
+    update: {},
+    create: { nom: 'Abomey-Calavi', departementId: departement.id },
   });
   ctx.ecole = await prisma.ecole.create({
     data: {
-      code: 'TEST-001',
+      code: 'REGLES-001',
       nom: 'CEG Test',
       statut: 'PUBLIC',
       type: 'CEG',
@@ -28,7 +34,7 @@ beforeAll(async () => {
       role: 'ENSEIGNANT',
       nom: 'AHOUNOU',
       prenoms: 'Marc',
-      email: 'marc@test.bj',
+      email: 'marc.regles@test.bj',
       motDePasseHash: 'x',
     },
   });
@@ -168,7 +174,7 @@ describe('organisation scolaire', () => {
 
   it('exige une série au second cycle et l’interdit au premier', async () => {
     const serie = await prisma.serie.create({
-      data: { code: 'D', libelle: 'Biologie - Géologie', ordre: 'GENERAL' },
+      data: { code: 'T-D', libelle: 'Série de test', ordre: 'GENERAL' },
     });
     const base = { ecoleId: ctx.ecole.id, anneeScolaireId: ctx.annee.id };
     await expect(
@@ -188,7 +194,7 @@ describe('organisation scolaire', () => {
 
   it('interdit une matière en double dans le programme du premier cycle', async () => {
     const matiere = await prisma.matiereReference.create({
-      data: { code: 'FR', nom: 'Français', nomCourt: 'Français' },
+      data: { code: 'T-FR', nom: 'Français (test)', nomCourt: 'Français' },
     });
     const ligne = { niveau: 'SIXIEME', matiereReferenceId: matiere.id, coefficient: 2 };
     await prisma.programmeMatiere.create({ data: ligne });
