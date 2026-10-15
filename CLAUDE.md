@@ -44,6 +44,13 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
   l'extension ; servis avec `Content-Disposition: inline` et une CSP `sandbox`.
 - Côté web : le jeton d'accès reste en mémoire (jamais `localStorage`).
 
+## Hors connexion
+
+- Saisie des notes : `frontend/src/lib/horsLigne.js` (IndexedDB : file d'envoi, brouillons, copies
+  des lectures). Envoi au retour du réseau (événement `online`), jamais d'interrogation périodique.
+- Toute écriture rejouable doit être idempotente côté API (identifiant fourni par le client, feuille
+  complète renvoyée) et testée.
+
 ## Règles de code
 
 - Code commenté en français, noms de variables en français cohérents.

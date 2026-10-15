@@ -73,11 +73,15 @@ export function rafraichirSession() {
   return rafraichissementEnCours;
 }
 
+// Codes pour lesquels une session renouvelée peut réussir : jeton expiré, ou
+// absent (application rouverte hors connexion, puis retour du réseau)
+const SESSION_A_RENOUVELER = ['JETON_EXPIRE', 'NON_AUTHENTIFIE'];
+
 export async function appelApi(chemin, options = {}) {
   try {
     return await executer(chemin, options);
   } catch (erreur) {
-    if (erreur.code !== 'JETON_EXPIRE') throw erreur;
+    if (!SESSION_A_RENOUVELER.includes(erreur.code) || chemin.startsWith('/auth/')) throw erreur;
     try {
       await rafraichirSession();
     } catch {

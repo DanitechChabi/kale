@@ -22,6 +22,11 @@ const Eleves = lazy(() => import('./pages/espace/Eleves.jsx'));
 const EleveDetail = lazy(() => import('./pages/espace/EleveDetail.jsx'));
 const ImportEleves = lazy(() => import('./pages/espace/ImportEleves.jsx'));
 const Comptes = lazy(() => import('./pages/espace/Comptes.jsx'));
+const Notes = lazy(() => import('./pages/espace/Notes.jsx'));
+const NotesEnseignement = lazy(() => import('./pages/espace/NotesEnseignement.jsx'));
+const SaisieNotes = lazy(() => import('./pages/espace/SaisieNotes.jsx'));
+const Resultats = lazy(() => import('./pages/espace/Resultats.jsx'));
+const Cloture = lazy(() => import('./pages/espace/Cloture.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -44,12 +49,19 @@ export default function App() {
               <Route path="dossier" element={<Dossier />} />
               <Route path="comptes" element={<Comptes />} />
               <Route path="annee" element={<AnneeScolaire />} />
+              <Route path="cloture" element={<Cloture />} />
             </Route>
             <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT']} />}>
               <Route path="classes" element={<Classes />} />
               <Route path="classes/:id" element={<ClasseDetail />} />
               <Route path="eleves" element={<Eleves />} />
               <Route path="eleves/:id" element={<EleveDetail />} />
+              <Route path="resultats" element={<Resultats />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'ENSEIGNANT']} />}>
+              <Route path="notes" element={<Notes />} />
+              <Route path="notes/:id" element={<NotesEnseignement />} />
+              <Route path="notes/evaluation/:id" element={<SaisieNotes />} />
             </Route>
             <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT']} />}>
               <Route path="import" element={<ImportEleves />} />

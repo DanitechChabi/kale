@@ -122,7 +122,7 @@ relevés immuables, code commenté en français.
 2. ✅ Schéma de base de données (26 tables, triggers, référentiel national)
 3. ✅ Authentification, rôles, inscription et vérification des établissements
 4. ✅ Gestion scolaire (élèves, classes, matières, inscriptions, import Excel, identifiant élève)
-5. Notes, moyennes pondérées, rangs, clôture de trimestre
+5. ✅ Notes (saisie hors connexion), moyennes pondérées, rangs, détection des notes suspectes, clôture
 6. Relevés PDF archivés, QR code, vérification publique, duplicatas
 7. Espace parent et notifications
 8. Emplois du temps et cours en ligne

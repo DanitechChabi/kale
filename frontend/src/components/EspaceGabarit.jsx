@@ -2,46 +2,62 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
   CalendarDays,
+  ChartColumn,
   ChevronDown,
   FileCheck2,
   GraduationCap,
   KeyRound,
   LayoutDashboard,
   LogOut,
+  PenLine,
   School,
   ShieldCheck,
   UsersRound,
 } from 'lucide-react';
 import { LIBELLES_ROLES, useAuth } from '../contexte/Auth.jsx';
+import EtatSynchronisation from './EtatSynchronisation.jsx';
 import Logo from './Logo.jsx';
 
 // Entrées de navigation selon le rôle
 const ECOLE = ['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT'];
 const NAVIGATION = [
   { vers: '/espace', libelle: 'Accueil', icone: LayoutDashboard, fin: true },
+  {
+    vers: '/espace/notes',
+    libelle: 'Notes',
+    icone: PenLine,
+    roles: ['ADMIN_ECOLE', 'ENSEIGNANT'],
+    verifiee: true,
+  },
   { vers: '/espace/classes', libelle: 'Classes', icone: School, roles: ECOLE, verifiee: true },
   { vers: '/espace/eleves', libelle: 'Élèves', icone: GraduationCap, roles: ECOLE, verifiee: true },
   {
-    vers: '/espace/comptes',
-    libelle: 'Comptes',
-    icone: UsersRound,
-    roles: ['ADMIN_ECOLE'],
+    vers: '/espace/resultats',
+    libelle: 'Résultats',
+    icone: ChartColumn,
+    roles: ECOLE,
     verifiee: true,
   },
   {
-    vers: '/espace/annee',
-    libelle: 'Année',
-    icone: CalendarDays,
+    vers: '/espace/dossier',
+    libelle: 'Dossier',
+    icone: FileCheck2,
     roles: ['ADMIN_ECOLE'],
-    verifiee: true,
+    nonVerifiee: true,
   },
-  { vers: '/espace/dossier', libelle: 'Dossier', icone: FileCheck2, roles: ['ADMIN_ECOLE'] },
   {
     vers: '/espace/verification',
     libelle: 'Vérification des établissements',
     icone: ShieldCheck,
     roles: ['SUPER_ADMIN', 'MINISTERE'],
   },
+];
+
+// Pages d'administration de l'établissement, rangées dans le menu du compte
+const MENU_ETABLISSEMENT = [
+  { vers: '/espace/comptes', libelle: 'Comptes', icone: UsersRound },
+  { vers: '/espace/annee', libelle: 'Année scolaire', icone: CalendarDays },
+  { vers: '/espace/dossier', libelle: 'Dossier de vérification', icone: FileCheck2 },
 ];
 
 function MenuCompte() {
@@ -100,6 +116,22 @@ function MenuCompte() {
               {utilisateur.ecole?.nom ?? LIBELLES_ROLES[utilisateur.role]}
             </p>
           </div>
+          {utilisateur.role === 'ADMIN_ECOLE' &&
+            utilisateur.ecole?.statutVerification === 'VERIFIEE' && (
+              <div className="border-b border-slate-100 py-1">
+                {MENU_ETABLISSEMENT.map(({ vers, libelle, icone: Icone }) => (
+                  <Link
+                    key={vers}
+                    to={vers}
+                    role="menuitem"
+                    onClick={() => setOuvert(false)}
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-slate-50"
+                  >
+                    <Icone className="h-4 w-4 text-slate-500" /> {libelle}
+                  </Link>
+                ))}
+              </div>
+            )}
           <Link
             to="/espace/mot-de-passe"
             role="menuitem"
@@ -130,7 +162,10 @@ export default function EspaceGabarit() {
   const { utilisateur } = useAuth();
   const ecoleVerifiee = utilisateur.ecole?.statutVerification === 'VERIFIEE';
   const liens = NAVIGATION.filter(
-    (l) => (!l.roles || l.roles.includes(utilisateur.role)) && (!l.verifiee || ecoleVerifiee),
+    (l) =>
+      (!l.roles || l.roles.includes(utilisateur.role)) &&
+      (!l.verifiee || ecoleVerifiee) &&
+      (!l.nonVerifiee || !ecoleVerifiee),
   );
 
   return (
@@ -160,7 +195,10 @@ export default function EspaceGabarit() {
               ))}
             </nav>
           )}
-          <MenuCompte />
+          <div className="flex items-center gap-2">
+            <EtatSynchronisation />
+            <MenuCompte />
+          </div>
         </div>
         {/* Navigation mobile : onglets défilants */}
         {!utilisateur.doitChangerMotDePasse && liens.length > 1 && (
