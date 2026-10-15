@@ -1,10 +1,12 @@
 @import 'tailwindcss';
+@import './animations.css';
 
 /* Charte EduRelevé : vert institutionnel, or et rouge en accents (couleurs nationales) */
 @theme {
   --color-marque-50: #edf8f1;
   --color-marque-100: #d3eedd;
   --color-marque-200: #bfe3cc;
+  --color-marque-400: #34b36f;
   --color-marque-500: #0e8a48;
   --color-marque-600: #0b7a3f;
   --color-marque-700: #065f33;

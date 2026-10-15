@@ -34,6 +34,9 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - Produit professionnel, pas un prototype : aucune mention « prototype », « démo » ou concours
   dans l'interface. Pas d'emojis dans l'UI : icônes `lucide-react`.
 - Logo : `components/Logo.jsx` et `branding/*.svg` (icônes générées par `npm run icones`).
+- Motion design : `src/animations.css` + `components/animation/` (Apparition, TexteRevele,
+  Compteur, Inclinaison, CarteProjecteur). N'animer que `transform` et `opacity` ; toujours
+  respecter `prefers-reduced-motion` ; aucune bibliothèque d'animation.
 - Couleurs via les jetons Tailwind `marque-*`, `or`, `rouge` définis dans `src/index.css`.
 
 ## Méthode de travail
