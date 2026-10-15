@@ -28,7 +28,7 @@ describe('connexion et accès', () => {
     rendreApp('/connexion');
     await screen.findByRole('heading', { name: 'Connexion' });
 
-    remplir(/E-mail ou téléphone/, '01 96 00 05 55');
+    remplir(/Identifiant, e-mail ou téléphone/, '01 96 00 05 55');
     remplir(/^Mot de passe/, 'Cotonou2026');
     fireEvent.click(screen.getByRole('button', { name: 'Se connecter' }));
 
@@ -59,7 +59,7 @@ describe('connexion et accès', () => {
     });
     rendreApp('/connexion');
     await screen.findByRole('heading', { name: 'Connexion' });
-    remplir(/E-mail ou téléphone/, 'x@test.bj');
+    remplir(/Identifiant, e-mail ou téléphone/, 'x@test.bj');
     remplir(/^Mot de passe/, 'mauvais');
     fireEvent.click(screen.getByRole('button', { name: 'Se connecter' }));
     expect(await screen.findByRole('alert')).toHaveTextContent(

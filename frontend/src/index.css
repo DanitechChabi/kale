@@ -49,3 +49,30 @@ body {
   @apply bg-white text-slate-900 antialiased;
   font-feature-settings: 'cv11', 'ss01';
 }
+
+/* Impression des fiches de connexion : seule la zone d'impression est visible */
+@media print {
+  @page {
+    margin: 10mm;
+  }
+  body:has(.zone-impression) * {
+    visibility: hidden;
+  }
+  body:has(.zone-impression) .zone-impression,
+  body:has(.zone-impression) .zone-impression * {
+    visibility: visible;
+  }
+  body:has(.zone-impression) .zone-impression {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+  }
+  .fiche-connexion {
+    break-inside: avoid;
+  }
+}
+
+/* Boîte de dialogue : apparition */
+.dialogue[open] {
+  animation: fondu-haut 0.35s var(--ease-sortie);
+}

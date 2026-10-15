@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, FileCheck2, ShieldCheck, UserRound } from 'lucide-react';
 import Apparition from '../../components/animation/Apparition.jsx';
+import MiseEnRoute from '../../components/MiseEnRoute.jsx';
 import Badge, { STATUTS_ECOLE } from '../../components/ui/Badge.jsx';
 import { LIBELLES_ROLES, useAuth } from '../../contexte/Auth.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
@@ -56,6 +57,10 @@ export default function TableauDeBord() {
           Bonjour {utilisateur.prenoms}
         </h1>
       </div>
+
+      {utilisateur.role === 'ADMIN_ECOLE' && ecole?.statutVerification === 'VERIFIEE' && (
+        <MiseEnRoute />
+      )}
 
       <div className="grid gap-4 md:grid-cols-2">
         {ecole && (

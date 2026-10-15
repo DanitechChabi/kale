@@ -30,7 +30,7 @@ const SELECTION_UTILISATEUR = {
   actif: true,
   doitChangerMotDePasse: true,
   motDePasseHash: true,
-  ecole: { select: { id: true, nom: true, statutVerification: true, actif: true } },
+  ecole: { select: { id: true, nom: true, statutVerification: true, actif: true, ordres: true, typePeriode: true } },
 };
 
 /** Données de profil renvoyées au client (jamais le hachage du mot de passe). */
@@ -48,6 +48,8 @@ export function profil(utilisateur) {
           id: utilisateur.ecole.id,
           nom: utilisateur.ecole.nom,
           statutVerification: utilisateur.ecole.statutVerification,
+          ordres: utilisateur.ecole.ordres,
+          typePeriode: utilisateur.ecole.typePeriode,
         }
       : null,
   };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { LogIn, ShieldCheck } from 'lucide-react';
 import Logo from '../components/Logo.jsx';
 import Alerte from '../components/ui/Alerte.jsx';
@@ -12,7 +12,9 @@ export default function Connexion() {
   const { connexion, statut, utilisateur } = useAuth();
   const naviguer = useNavigate();
   const { state } = useLocation();
-  const [identifiant, setIdentifiant] = useState('');
+  // Identifiant pré-rempli depuis le QR code d'une fiche de connexion
+  const [parametres] = useSearchParams();
+  const [identifiant, setIdentifiant] = useState(parametres.get('identifiant') ?? '');
   const [motDePasse, setMotDePasse] = useState('');
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState(null);
@@ -75,7 +77,8 @@ export default function Connexion() {
           <div className="entree space-y-2" style={{ '--delai': '80ms' }}>
             <h1 className="text-2xl font-bold tracking-tight">Connexion</h1>
             <p className="text-sm text-slate-600">
-              Utilisez l’e-mail ou le numéro de téléphone communiqué par votre établissement.
+              Utilisez votre téléphone, votre e-mail ou l’identifiant élève figurant sur votre fiche
+              de connexion.
             </p>
           </div>
 
@@ -99,11 +102,11 @@ export default function Connexion() {
             noValidate
           >
             <Champ
-              libelle="E-mail ou téléphone"
+              libelle="Identifiant, e-mail ou téléphone"
               name="identifiant"
               autoComplete="username"
-              inputMode="email"
-              placeholder="01 97 00 00 00 ou nom@exemple.bj"
+              autoCapitalize="none"
+              placeholder="01 97 00 00 00 ou 7KQ4M-9X2PD"
               value={identifiant}
               onChange={(e) => setIdentifiant(e.target.value)}
               obligatoire

@@ -1,25 +1,41 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
+  CalendarDays,
   ChevronDown,
   FileCheck2,
+  GraduationCap,
   KeyRound,
   LayoutDashboard,
   LogOut,
+  School,
   ShieldCheck,
+  UsersRound,
 } from 'lucide-react';
 import { LIBELLES_ROLES, useAuth } from '../contexte/Auth.jsx';
 import Logo from './Logo.jsx';
 
 // Entrées de navigation selon le rôle
+const ECOLE = ['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT'];
 const NAVIGATION = [
-  { vers: '/espace', libelle: 'Tableau de bord', icone: LayoutDashboard, fin: true },
+  { vers: '/espace', libelle: 'Accueil', icone: LayoutDashboard, fin: true },
+  { vers: '/espace/classes', libelle: 'Classes', icone: School, roles: ECOLE, verifiee: true },
+  { vers: '/espace/eleves', libelle: 'Élèves', icone: GraduationCap, roles: ECOLE, verifiee: true },
   {
-    vers: '/espace/dossier',
-    libelle: 'Dossier de l’établissement',
-    icone: FileCheck2,
+    vers: '/espace/comptes',
+    libelle: 'Comptes',
+    icone: UsersRound,
     roles: ['ADMIN_ECOLE'],
+    verifiee: true,
   },
+  {
+    vers: '/espace/annee',
+    libelle: 'Année',
+    icone: CalendarDays,
+    roles: ['ADMIN_ECOLE'],
+    verifiee: true,
+  },
+  { vers: '/espace/dossier', libelle: 'Dossier', icone: FileCheck2, roles: ['ADMIN_ECOLE'] },
   {
     vers: '/espace/verification',
     libelle: 'Vérification des établissements',
@@ -112,7 +128,10 @@ function MenuCompte() {
 /** Mise en page de l'espace connecté. */
 export default function EspaceGabarit() {
   const { utilisateur } = useAuth();
-  const liens = NAVIGATION.filter((l) => !l.roles || l.roles.includes(utilisateur.role));
+  const ecoleVerifiee = utilisateur.ecole?.statutVerification === 'VERIFIEE';
+  const liens = NAVIGATION.filter(
+    (l) => (!l.roles || l.roles.includes(utilisateur.role)) && (!l.verifiee || ecoleVerifiee),
+  );
 
   return (
     <div className="flex min-h-dvh flex-col bg-slate-50">
