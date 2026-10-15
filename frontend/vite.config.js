@@ -10,9 +10,9 @@ export default defineConfig({
     // Application installable (PWA) : manifeste + service worker généré par Workbox
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'EduRelevé — Scolarité et relevés vérifiables',
+        name: 'EduRelevé',
         short_name: 'EduRelevé',
         description:
           'Notes, bulletins et relevés scolaires archivés et vérifiables en ligne, pour les établissements du Bénin.',
@@ -22,15 +22,15 @@ export default defineConfig({
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#00843d',
+        theme_color: '#065f33',
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         // Les appels API ne sont jamais servis depuis le cache (données toujours à jour)
         navigateFallbackDenylist: [/^\/api\//],
       },

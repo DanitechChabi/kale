@@ -9,9 +9,11 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "icones": "node scripts/generer-icones.mjs"
   },
   "dependencies": {
+    "lucide-react": "^1.57.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.5"
@@ -23,9 +25,11 @@
     "@testing-library/react": "^16.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.5.0",
     "jsdom": "^27.2.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.4",
     "vite-plugin-pwa": "^1.3.0",

@@ -29,6 +29,13 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - Configuration lue uniquement via `src/config/env.js` (validée au démarrage).
 - Tests : Vitest (+ Supertest côté API, Testing Library côté web). `npm test` doit rester vert.
 
+## Interface
+
+- Produit professionnel, pas un prototype : aucune mention « prototype », « démo » ou concours
+  dans l'interface. Pas d'emojis dans l'UI : icônes `lucide-react`.
+- Logo : `components/Logo.jsx` et `branding/*.svg` (icônes générées par `npm run icones`).
+- Couleurs via les jetons Tailwind `marque-*`, `or`, `rouge` définis dans `src/index.css`.
+
 ## Méthode de travail
 
 Développement phase par phase (voir README). À la fin de chaque phase : résumé, commandes de test,

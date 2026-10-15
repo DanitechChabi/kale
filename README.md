@@ -4,8 +4,6 @@ Plateforme scolaire multi-établissements pour le Bénin : notes, bulletins et *
 définitivement et vérifiables en ligne** (numéro unique, QR code, empreinte SHA-256). Un ancien
 élève peut demander un duplicata sans se déplacer.
 
-Prototype présenté au **Prix national de la simplification administrative du Bénin**.
-
 ## Espaces
 
 | Espace    | Utilisateurs                       | Fonctions principales                                   |
@@ -35,8 +33,10 @@ Page publique sans compte : `/verifier/:numero`.
 │   │   └── server.js            # démarrage du serveur
 │   └── tests/                   # Vitest + Supertest
 ├── frontend/
-│   ├── public/                  # icônes PWA
-│   └── src/                     # pages, composants, client API
+│   ├── branding/                # logo source (SVG) : icone.svg, icone-pleine.svg
+│   ├── public/                  # icônes générées (PWA, Apple, favicon)
+│   ├── scripts/                 # generer-icones.mjs
+│   └── src/                     # pages, composants, client API, polices
 ├── docker-compose.yml
 └── .env.example
 ```
@@ -99,7 +99,7 @@ relevés immuables, code commenté en français.
 
 ## Feuille de route
 
-1. ✅ Initialisation (monorepo, docker-compose, Express, Vite, PWA)
+1. ✅ Initialisation (monorepo, docker-compose, Express, Vite, PWA, identité visuelle)
 2. Schéma de base de données
 3. Authentification et rôles
 4. Gestion scolaire (élèves, classes, matières, inscriptions, import Excel)
