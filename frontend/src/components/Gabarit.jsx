@@ -30,6 +30,7 @@ export default function Gabarit() {
           </Link>
           <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 md:flex">
             {[
+              ['verifier', 'Vérifier un document'],
               ['espaces', 'Espaces'],
               ['fonctionnement', 'Fonctionnement'],
             ].map(([lien, libelle], i) => (
@@ -91,6 +92,17 @@ export default function Gabarit() {
               Gestion scolaire et relevés de notes vérifiables.
             </p>
           </div>
+          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
+            <a href="/verifier" className="hover:text-marque-700">
+              Vérifier un document
+            </a>
+            <Link to="/duplicata" className="hover:text-marque-700">
+              Demander un duplicata
+            </Link>
+            <Link to="/duplicata/suivi" className="hover:text-marque-700">
+              Suivre une demande
+            </Link>
+          </nav>
           <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} EduRelevé. Tous droits réservés.
           </p>

@@ -799,32 +799,39 @@ model ReleveArchive {
 
 /// Demande de duplicata déposée en ligne (par un élève, ancien élève ou parent).
 model DemandeDuplicata {
-  id              String        @id @default(uuid()) @db.Uuid
-  ecoleId         String        @map("ecole_id") @db.Uuid
+  id               String        @id @default(uuid()) @db.Uuid
+  ecoleId          String        @map("ecole_id") @db.Uuid
   /// Numéro de suivi communiqué au demandeur
-  numeroSuivi     String        @unique @map("numero_suivi") @db.VarChar(30)
+  numeroSuivi      String        @unique @map("numero_suivi") @db.VarChar(30)
   /// Élève concerné, s'il a été identifié dans la base de l'école
-  eleveId         String?       @map("eleve_id") @db.Uuid
+  eleveId          String?       @map("eleve_id") @db.Uuid
   /// Compte du demandeur, s'il en a un
-  demandeurId     String?       @map("demandeur_id") @db.Uuid
+  demandeurId      String?       @map("demandeur_id") @db.Uuid
   /// Identité et contact déclarés (obligatoires même sans compte)
-  nomDemandeur    String        @map("nom_demandeur") @db.VarChar(250)
-  telephone       String        @db.VarChar(30)
-  email           String?       @db.VarChar(255)
-  typeDocument    TypeDocument  @map("type_document")
+  nomDemandeur     String        @map("nom_demandeur") @db.VarChar(250)
+  telephone        String        @db.VarChar(30)
+  email            String?       @db.VarChar(255)
+  typeDocument     TypeDocument  @map("type_document")
+  /// Élève concerné, tel que déclaré par le demandeur
+  nomEleve         String        @map("nom_eleve") @db.VarChar(100)
+  prenomsEleve     String        @map("prenoms_eleve") @db.VarChar(150)
+  dateNaissance    DateTime      @map("date_naissance") @db.Date
+  matriculeDeclare String?       @map("matricule_declare") @db.VarChar(30)
+  /// Trimestre ou semestre demandé (bulletin de période)
+  numeroPeriode    Int?          @map("numero_periode") @db.SmallInt
   /// Année concernée si elle existe dans la base, sinon libellé saisi (ex. « 2012-2013 »)
-  anneeScolaireId String?       @map("annee_scolaire_id") @db.Uuid
-  libelleAnnee    String        @map("libelle_annee") @db.VarChar(9)
-  classeDeclaree  String?       @map("classe_declaree") @db.VarChar(50)
-  motif           String?       @db.VarChar(500)
-  statut          StatutDemande @default(EN_ATTENTE)
-  motifRejet      String?       @map("motif_rejet") @db.VarChar(500)
-  traiteParId     String?       @map("traite_par_id") @db.Uuid
+  anneeScolaireId  String?       @map("annee_scolaire_id") @db.Uuid
+  libelleAnnee     String        @map("libelle_annee") @db.VarChar(9)
+  classeDeclaree   String?       @map("classe_declaree") @db.VarChar(50)
+  motif            String?       @db.VarChar(500)
+  statut           StatutDemande @default(EN_ATTENTE)
+  motifRejet       String?       @map("motif_rejet") @db.VarChar(500)
+  traiteParId      String?       @map("traite_par_id") @db.Uuid
   /// Document délivré
-  releveId        String?       @map("releve_id") @db.Uuid
-  demandeLe       DateTime      @default(now()) @map("demande_le") @db.Timestamptz(3)
-  priseEnChargeLe DateTime?     @map("prise_en_charge_le") @db.Timestamptz(3)
-  clotureLe       DateTime?     @map("cloture_le") @db.Timestamptz(3) // délivrance ou rejet
+  releveId         String?       @map("releve_id") @db.Uuid
+  demandeLe        DateTime      @default(now()) @map("demande_le") @db.Timestamptz(3)
+  priseEnChargeLe  DateTime?     @map("prise_en_charge_le") @db.Timestamptz(3)
+  clotureLe        DateTime?     @map("cloture_le") @db.Timestamptz(3) // délivrance ou rejet
 
   ecole         Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
   eleve         Eleve?         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
@@ -862,4 +869,18 @@ model JournalAudit {
   @@index([ecoleId, creeLe])
   @@index([entite, entiteId])
   @@map("journal_audit")
+}
+
+/// Contenu des fichiers lorsque le stockage est en base (STOCKAGE=base) : les PDF
+/// archivés survivent ainsi aux redéploiements d'un hébergement sans disque durable.
+/// Table technique, sans ecole_id : seul utils/fichiers.js y accède, par clé.
+model FichierStocke {
+  cle             String   @id @db.VarChar(500)
+  contenu         Bytes
+  typeMime        String   @map("type_mime") @db.VarChar(100)
+  tailleOctets    Int      @map("taille_octets")
+  empreinteSha256 String   @map("empreinte_sha256") @db.Char(64)
+  creeLe          DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  @@map("fichiers_stockes")
 }

@@ -3,6 +3,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { PrismaClient } from '@prisma/client';
 import { genererIdentifiantEleve } from '../../src/utils/identifiantEleve.js';
+import { genererNumero } from '../../src/utils/numeroDocument.js';
 
 const prisma = new PrismaClient();
 const ctx = {};
@@ -279,7 +280,7 @@ describe('tables en ajout seul', () => {
     const releve = await prisma.releveArchive.create({
       data: {
         ecoleId: ctx.ecole.id,
-        numero: 'ER-2026-000001',
+        numero: genererNumero('B', 2026),
         type: 'BULLETIN_PERIODE',
         eleveId: ctx.eleve.id,
         anneeScolaireId: ctx.annee.id,
@@ -300,12 +301,12 @@ describe('tables en ajout seul', () => {
   });
 
   it('exige un motif pour un relevé correctif', async () => {
-    const [ancien] = await prisma.releveArchive.findMany({ take: 1 });
+    const ancien = await prisma.releveArchive.findFirst({ where: { ecoleId: ctx.ecole.id } });
     await expect(
       prisma.releveArchive.create({
         data: {
           ecoleId: ctx.ecole.id,
-          numero: 'ER-2026-000002',
+          numero: genererNumero('B', 2026),
           type: 'BULLETIN_PERIODE',
           eleveId: ctx.eleve.id,
           anneeScolaireId: ctx.annee.id,

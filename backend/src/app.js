@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import { config } from './config/env.js';
 import { creerRouteurApi } from './routes/index.js';
+import { creerRouteurPageVerification } from './routes/pageVerification.js';
 import { gestionnaireErreurs, routeIntrouvable } from './middlewares/erreurs.js';
 
 // `options` permet aux tests d'ajuster certains réglages (limites de requêtes…).
@@ -19,6 +20,8 @@ export function creerApp(options = {}) {
   app.set('trust proxy', 1);
 
   app.use(helmet());
+  // API publique (vérification, duplicata) : ouverte à toutes les origines, sans cookie
+  app.use('/api/public', cors({ origin: '*', credentials: false }));
   app.use(
     cors({
       origin: config.originesCors,
@@ -32,6 +35,8 @@ export function creerApp(options = {}) {
   if (!config.estTest) app.use(morgan(config.estProduction ? 'combined' : 'dev'));
 
   app.use('/api', creerRouteurApi(options));
+  // Page de vérification légère (lien du QR code imprimé sur chaque document)
+  app.use('/verifier', creerRouteurPageVerification(options.verification));
 
   if (config.DOSSIER_FRONTEND) servirSite(app, resolve(config.DOSSIER_FRONTEND));
 

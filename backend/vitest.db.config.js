@@ -15,7 +15,11 @@ export default defineConfig({
         'postgresql://edureleve:edureleve@localhost:5433/edureleve_test?schema=public',
       JWT_ACCESS_SECRET: 'secret-acces-de-test-suffisamment-long-0123456789',
       JWT_REFRESH_SECRET: 'secret-rafraichissement-de-test-assez-long-012345',
+      // Stockage en base, comme en production
+      STOCKAGE: 'base',
       DOSSIER_STOCKAGE: join(tmpdir(), 'edureleve-tests'),
+      LIMITE_VERIFICATION: '10000',
+      LIMITE_DUPLICATA: '10000',
       LIMITE_CONNEXION: '10000',
       LIMITE_INSCRIPTION: '10000',
     },

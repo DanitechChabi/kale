@@ -106,6 +106,21 @@ npm run build   # build de production de la PWA (frontend/dist)
 Pour tester l'installation PWA : `npm run build && npm run preview --prefix frontend`, puis ouvrir
 http://localhost:4173 dans Chrome (menu « Installer l'application »).
 
+## Bulletins, vérification et duplicatas
+
+- **Délivrance** : après la clôture d'une période (ou de toute l'année pour le relevé annuel), le
+  secrétariat délivre les documents d'une classe en un geste. Chaque PDF est figé, son empreinte
+  SHA-256 enregistrée ; PostgreSQL interdit toute modification. Une correction produit un nouveau
+  document qui référence l'ancien, toujours vérifiable avec la mention « remplacé ».
+- **Vérification** : le QR code mène à `/verifier/<numéro>`, une page d'environ 8 Ko servie par
+  l'API (sans application à charger, utilisable en 2G). Elle affiche la rosace propre au document
+  et compare un fichier PDF à l'original sans l'envoyer. Les universités disposent d'une API :
+  [docs/api-verification.md](docs/api-verification.md).
+- **Duplicata** : `/duplicata` (demande sans compte), `/duplicata/suivi` (suivi et téléchargement
+  avec le numéro de suivi et le téléphone), traitement par l'établissement dans « Duplicatas ».
+- **Stockage** : `STOCKAGE=base` conserve les fichiers dans PostgreSQL (choix par défaut en
+  production) ; `STOCKAGE=disque` les écrit dans `DOSSIER_STOCKAGE`.
+
 ## Commandes utiles
 
 | Commande                                  | Rôle                                |
@@ -127,7 +142,7 @@ relevés immuables, code commenté en français.
 3. ✅ Authentification, rôles, inscription et vérification des établissements
 4. ✅ Gestion scolaire (élèves, classes, matières, inscriptions, import Excel, identifiant élève)
 5. ✅ Notes (saisie hors connexion), moyennes pondérées, rangs, détection des notes suspectes, clôture
-6. Relevés PDF archivés, QR code, vérification publique, duplicatas
+6. ✅ Bulletins et relevés PDF archivés, QR code, vérification publique légère, API de vérification, duplicatas en ligne
 7. Espace parent et notifications
 8. Emplois du temps et cours en ligne
 9. Tableau de bord ministère

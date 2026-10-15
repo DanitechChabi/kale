@@ -330,6 +330,12 @@
   }
 }
 
+/* Tampon apposé sur une ligne du registre (document archivé), échelonné par --delai */
+.tampon-frappe {
+  display: inline-flex;
+  animation: tamponner 0.5s var(--ease-ressort) var(--delai, 0ms) both;
+}
+
 /* ---------- Accessibilité : moins d'animations ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

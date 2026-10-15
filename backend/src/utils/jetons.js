@@ -45,3 +45,29 @@ export function dureeEnMs(duree) {
   if (!correspondance) throw new Error(`Durée invalide : ${duree}`);
   return Number(correspondance[1]) * UNITES[correspondance[2]];
 }
+
+// Lien de téléchargement d'un duplicata délivré : JWT de 15 minutes, d'audience
+// distincte (il ne peut jamais servir de jeton d'accès à l'API).
+const AUDIENCE_DUPLICATA = 'edureleve-duplicata';
+
+export const signerJetonDuplicata = (demandeId) =>
+  jwt.sign({}, config.JWT_ACCESS_SECRET, {
+    subject: demandeId,
+    expiresIn: '15m',
+    issuer: EMETTEUR,
+    audience: AUDIENCE_DUPLICATA,
+    algorithm: 'HS256',
+  });
+
+/** Identifiant de la demande, ou null si le jeton est invalide ou expiré. */
+export function verifierJetonDuplicata(jeton) {
+  try {
+    return jwt.verify(jeton, config.JWT_ACCESS_SECRET, {
+      algorithms: ['HS256'],
+      issuer: EMETTEUR,
+      audience: AUDIENCE_DUPLICATA,
+    }).sub;
+  } catch {
+    return null;
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Check, Copy, KeyRound, Pencil, Trash2 } from 'lucide-react';
+import { Check, Copy, FileText, KeyRound, Pencil, Trash2 } from 'lucide-react';
 import EnTetePage from '../../components/EnTetePage.jsx';
 import Guilloche from '../../components/Guilloche.jsx';
 import FichesConnexion from '../../components/FichesConnexion.jsx';
@@ -13,7 +13,47 @@ import { useAuth } from '../../contexte/Auth.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
 import { appelApi } from '../../lib/api.js';
 import { formaterDate, formaterTelephone } from '../../lib/navigation.js';
+import { ouvrirPdf, titreDocument } from '../../lib/releves.js';
 import { age, formaterIdentifiant } from '../../lib/scolarite.js';
+
+/** Documents archivés de l'élève (toutes versions, la plus récente en premier). */
+function DocumentsArchives({ eleveId }) {
+  const { donnees } = useRequete(`/releves/eleve/${eleveId}`);
+  if (!donnees) return null;
+  return (
+    <section
+      className="entree rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"
+      style={{ '--delai': '260ms' }}
+    >
+      <h2 className="mb-3 font-semibold">Bulletins et relevés archivés</h2>
+      {donnees.documents.length ? (
+        <ul className="divide-y divide-slate-100">
+          {donnees.documents.map((d) => (
+            <li key={d.id} className="flex flex-wrap items-center gap-x-4 gap-y-1 py-2.5 text-sm">
+              <span className="min-w-0 flex-1">
+                <span className="font-medium">{titreDocument(d)}</span> · {d.anneeScolaire}
+                {d.remplacePar && (
+                  <span className="ml-2 text-xs font-semibold text-sceau">remplacé</span>
+                )}
+              </span>
+              <span className="chiffres text-xs text-slate-500">{d.numeroAffiche}</span>
+              <button
+                type="button"
+                onClick={() => ouvrirPdf(`/releves/${d.id}/pdf`)}
+                className="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 hover:text-marque-700"
+                aria-label={`Ouvrir le document ${d.numeroAffiche}`}
+              >
+                <FileText className="h-4 w-4" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-sm text-slate-500">Aucun document délivré.</p>
+      )}
+    </section>
+  );
+}
 
 const STATUTS = { INSCRIT: 'Inscrit', TRANSFERE: 'Transféré', ABANDON: 'Abandon', EXCLU: 'Exclu' };
 
@@ -210,6 +250,8 @@ export default function EleveDetail() {
           <p className="text-sm text-slate-500">Aucune inscription.</p>
         )}
       </section>
+
+      {gestion && <DocumentsArchives eleveId={eleve.id} />}
 
       {gestion && !eleve.utilisateur && (
         <div className="border-t border-slate-200 pt-4">

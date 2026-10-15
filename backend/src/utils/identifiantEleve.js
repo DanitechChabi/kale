@@ -9,7 +9,7 @@ const ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 const N = ALPHABET.length; // 32
 const LONGUEUR_CORPS = 9;
 
-function caractereControle(corps) {
+export function caractereControle(corps) {
   let somme = 0;
   let facteur = 2;
   for (let i = corps.length - 1; i >= 0; i--) {

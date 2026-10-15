@@ -18,6 +18,11 @@ const schemaEnv = z
       .default(process.env.RENDER_EXTERNAL_URL ?? 'http://localhost:5173'),
     // Dossier du site compilé (frontend/dist) : s'il est défini, l'API sert aussi le site
     DOSSIER_FRONTEND: z.string().optional(),
+    // Stockage des fichiers (pièces, PDF archivés) : « disque » (DOSSIER_STOCKAGE) ou
+    // « base » (PostgreSQL), indispensable sur un hébergement sans disque durable
+    STOCKAGE: z
+      .enum(['disque', 'base'])
+      .default(process.env.NODE_ENV === 'production' ? 'base' : 'disque'),
     DOSSIER_STOCKAGE: z.string().default('./stockage'),
     // Cookie du jeton de rafraîchissement
     COOKIE_SECURE: z
@@ -31,6 +36,10 @@ const schemaEnv = z
     LIMITE_CONNEXION: z.coerce.number().int().positive().default(10),
     // Dossiers d'inscription autorisés par adresse IP et par heure
     LIMITE_INSCRIPTION: z.coerce.number().int().positive().default(5),
+    // Vérifications publiques de documents par adresse IP et par minute
+    LIMITE_VERIFICATION: z.coerce.number().int().positive().default(60),
+    // Demandes de duplicata par adresse IP et par heure
+    LIMITE_DUPLICATA: z.coerce.number().int().positive().default(5),
   })
   .refine((env) => env.JWT_ACCESS_SECRET !== env.JWT_REFRESH_SECRET, {
     message: 'Les secrets JWT d’accès et de rafraîchissement doivent être différents',

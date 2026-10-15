@@ -9,6 +9,8 @@ import PageIntrouvable from './pages/PageIntrouvable.jsx';
 
 // Pages chargées à la demande : la page d'accueil reste légère (data mobile chère)
 const InscriptionEcole = lazy(() => import('./pages/InscriptionEcole.jsx'));
+const DemandeDuplicata = lazy(() => import('./pages/DemandeDuplicata.jsx'));
+const SuiviDuplicata = lazy(() => import('./pages/SuiviDuplicata.jsx'));
 const EspaceGabarit = lazy(() => import('./components/EspaceGabarit.jsx'));
 const TableauDeBord = lazy(() => import('./pages/espace/TableauDeBord.jsx'));
 const MotDePasse = lazy(() => import('./pages/espace/MotDePasse.jsx'));
@@ -27,6 +29,10 @@ const NotesEnseignement = lazy(() => import('./pages/espace/NotesEnseignement.js
 const SaisieNotes = lazy(() => import('./pages/espace/SaisieNotes.jsx'));
 const Resultats = lazy(() => import('./pages/espace/Resultats.jsx'));
 const Cloture = lazy(() => import('./pages/espace/Cloture.jsx'));
+const Bulletins = lazy(() => import('./pages/espace/Bulletins.jsx'));
+const Duplicatas = lazy(() => import('./pages/espace/Duplicatas.jsx'));
+const DuplicataDetail = lazy(() => import('./pages/espace/DuplicataDetail.jsx'));
+const MesDocuments = lazy(() => import('./pages/espace/MesDocuments.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -36,6 +42,8 @@ export default function App() {
         <Route element={<Gabarit />}>
           <Route index element={<Accueil />} />
           <Route path="inscription-ecole" element={<InscriptionEcole />} />
+          <Route path="duplicata" element={<DemandeDuplicata />} />
+          <Route path="duplicata/suivi" element={<SuiviDuplicata />} />
           <Route path="*" element={<PageIntrouvable />} />
         </Route>
         <Route path="connexion" element={<Connexion />} />
@@ -65,6 +73,12 @@ export default function App() {
             </Route>
             <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT']} />}>
               <Route path="import" element={<ImportEleves />} />
+              <Route path="bulletins" element={<Bulletins />} />
+              <Route path="duplicatas" element={<Duplicatas />} />
+              <Route path="duplicatas/:id" element={<DuplicataDetail />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ELEVE']} />}>
+              <Route path="mes-documents" element={<MesDocuments />} />
             </Route>
             <Route element={<RouteProtegee roles={['SUPER_ADMIN', 'MINISTERE']} />}>
               <Route path="verification" element={<Verification />} />

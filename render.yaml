@@ -43,8 +43,9 @@ services:
         generateValue: true
       - key: DOSSIER_FRONTEND
         value: ../frontend/dist
-      - key: DOSSIER_STOCKAGE
-        value: ./stockage
+      # Fichiers (pièces, PDF archivés) en base : le disque de Render est effacé à chaque déploiement
+      - key: STOCKAGE
+        value: base
       # Premier compte administrateur (créé au premier démarrage uniquement)
       - key: SUPER_ADMIN_NOM
         sync: false

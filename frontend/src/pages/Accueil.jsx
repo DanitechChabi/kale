@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, QrCode } from 'lucide-react';
+import { ArrowRight, QrCode, ScanLine } from 'lucide-react';
 import Apparition from '../components/animation/Apparition.jsx';
 import Compteur from '../components/animation/Compteur.jsx';
 import Inclinaison from '../components/animation/Inclinaison.jsx';
@@ -8,6 +8,7 @@ import TexteRevele from '../components/animation/TexteRevele.jsx';
 import Guilloche from '../components/Guilloche.jsx';
 import LienAncre from '../components/LienAncre.jsx';
 import { useApparition } from '../hooks/useApparition.js';
+import { adresseVerification } from '../lib/releves.js';
 
 // Les quatre espaces, présentés comme les colonnes d'un registre
 const espaces = [
@@ -141,6 +142,77 @@ function Releve() {
   );
 }
 
+/** Vérification d'un document et duplicata : les deux services ouverts à tous. */
+function Services() {
+  const [numero, setNumero] = useState('');
+  return (
+    <section id="verifier" className="scroll-mt-20 border-b border-slate-200 bg-white">
+      <div className="mx-auto grid max-w-6xl lg:grid-cols-2">
+        <Apparition className="space-y-4 px-4 py-10 sm:px-6 lg:border-r lg:border-slate-200 lg:py-14 lg:pr-12">
+          <p className="etiquette flex items-center gap-2">
+            <ScanLine className="h-4 w-4 text-marque-600" /> Employeurs, universités
+          </p>
+          <h2 className="text-2xl font-bold tracking-tight">Vérifier un document</h2>
+          <p className="text-slate-600">
+            Scannez le QR code du bulletin ou saisissez son numéro. Sans compte, gratuit.
+          </p>
+          <form
+            className="flex flex-col gap-2 sm:flex-row"
+            onSubmit={(e) => {
+              e.preventDefault();
+              // Page servie par le serveur (légère, sans l'application)
+              window.location.assign(adresseVerification(numero));
+            }}
+          >
+            <input
+              aria-label="Numéro du document"
+              value={numero}
+              onChange={(e) => setNumero(e.target.value)}
+              placeholder="B26-7K3M-Q9P2X"
+              required
+              autoComplete="off"
+              spellCheck="false"
+              className="chiffres min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2.5 text-base uppercase focus:border-marque-500 focus:ring-2 focus:ring-marque-500/20 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-encre px-5 text-sm font-semibold text-white transition hover:bg-marque-700"
+            >
+              Vérifier
+            </button>
+          </form>
+        </Apparition>
+        <Apparition
+          delai={120}
+          className="space-y-4 border-t border-slate-200 px-4 py-10 sm:px-6 lg:border-t-0 lg:py-14 lg:pl-12"
+        >
+          <p className="etiquette">Anciens élèves, parents</p>
+          <h2 className="text-2xl font-bold tracking-tight">Obtenir un duplicata</h2>
+          <p className="text-slate-600">
+            Demandez votre bulletin ou relevé en ligne : l’établissement le retrouve dans ses
+            archives et vous le téléchargez, sans vous déplacer.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              to="/duplicata"
+              className="group inline-flex min-h-11 items-center gap-2 rounded-lg bg-marque-600 px-5 text-sm font-semibold text-white transition hover:bg-marque-700"
+            >
+              Faire une demande
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              to="/duplicata/suivi"
+              className="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-semibold text-marque-700 ring-1 ring-slate-300 transition hover:bg-slate-50"
+            >
+              Suivre une demande
+            </Link>
+          </div>
+        </Apparition>
+      </div>
+    </section>
+  );
+}
+
 export default function Accueil() {
   // Arrivée depuis une autre page via un lien de section : on fait défiler jusqu'à elle
   const { state } = useLocation();
@@ -199,6 +271,8 @@ export default function Accueil() {
           <Releve />
         </div>
       </section>
+
+      <Services />
 
       <section id="espaces" className="scroll-mt-20 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

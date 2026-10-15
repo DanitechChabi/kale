@@ -34,7 +34,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         // Les appels API ne sont jamais servis depuis le cache (données toujours à jour)
-        navigateFallbackDenylist: [/^\/api\//],
+        // La page de vérification (/verifier) est servie par l'API, jamais par l'application
+        navigateFallbackDenylist: [/^\/api\//, /^\/verifier/],
       },
     }),
   ],
@@ -43,6 +44,7 @@ export default defineConfig({
     // En développement, /api est redirigé vers le backend Express
     proxy: {
       '/api': 'http://localhost:4000',
+      '/verifier': 'http://localhost:4000',
     },
   },
   test: {

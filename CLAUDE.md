@@ -19,7 +19,13 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - **Notes** : toute création/modification est tracée dans `journal_audit` (qui, quand, ancienne
   valeur, nouvelle valeur). Une note d'un trimestre clôturé n'est plus modifiable.
 - **Relevés** : un relevé archivé n'est jamais modifié ni supprimé. Une correction crée un
-  nouveau relevé qui référence l'ancien.
+  nouveau relevé qui référence l'ancien. Délivrance seulement après clôture de la période (ou de
+  toute l'année) ; le PDF est rendu une seule fois depuis l'instantané `donnees`
+  (`contexts/releves/pdf.js`), jamais régénéré. Un seul document d'origine par élève et période
+  (index `releves_original_unique`, à retirer aussi des propositions de `migrate diff`).
+- **Numéros publics** (`utils/numeroDocument.js`) : B/R/D + année + 8 caractères aléatoires +
+  contrôle. La rosace du document (`utils/rosace.js`) dérive du numéro : même tracé sur le PDF et
+  sur la page de vérification.
 
 ## Base de données
 
@@ -38,7 +44,12 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 
 - Dans une route d'établissement, toujours utiliser `req.db` (client isolé par `ecole_id`), jamais
   `prisma` directement. Exceptions documentées dans le code : parents (sans `ecole_id`), comptes
-  nationaux, unicité globale des identifiants.
+  nationaux, unicité globale des identifiants, vérification publique par numéro et dépôt/suivi
+  public des duplicatas (`/api/public`, CORS ouvert, limité par IP).
+- Fichiers : toujours via `utils/fichiers.js` (pilote `disque` ou `base`) ; la table
+  `fichiers_stockes` refuse toute réécriture et toute suppression sous `releves/`.
+- `/verifier/:numero` est une page HTML autonome servie par l'API (CSP à nonce, sans JavaScript
+  obligatoire, < 16 Ko) : ne pas la déplacer dans l'application React.
 - Pas de SQL brut (`$queryRaw`) avec un client isolé.
 - Fichiers déposés : contrôle du contenu par signature (`utils/fichiers.js`), jamais par
   l'extension ; servis avec `Content-Disposition: inline` et une CSP `sandbox`.

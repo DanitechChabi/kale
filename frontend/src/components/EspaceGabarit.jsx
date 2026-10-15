@@ -6,10 +6,12 @@ import {
   ChevronDown,
   FileCheck2,
   GraduationCap,
+  Inbox,
   KeyRound,
   LayoutDashboard,
   LogOut,
   PenLine,
+  ScrollText,
   School,
   ShieldCheck,
   UsersRound,
@@ -37,6 +39,26 @@ const NAVIGATION = [
     icone: ChartColumn,
     roles: ECOLE,
     verifiee: true,
+  },
+  {
+    vers: '/espace/bulletins',
+    libelle: 'Bulletins',
+    icone: ScrollText,
+    roles: ['ADMIN_ECOLE', 'SECRETARIAT'],
+    verifiee: true,
+  },
+  {
+    vers: '/espace/duplicatas',
+    libelle: 'Duplicatas',
+    icone: Inbox,
+    roles: ['ADMIN_ECOLE', 'SECRETARIAT'],
+    verifiee: true,
+  },
+  {
+    vers: '/espace/mes-documents',
+    libelle: 'Mes bulletins',
+    icone: ScrollText,
+    roles: ['ELEVE'],
   },
   {
     vers: '/espace/dossier',
@@ -92,7 +114,7 @@ function MenuCompte() {
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-marque-600 text-xs font-bold text-white">
           {initiales}
         </span>
-        <span className="hidden text-left text-sm leading-tight sm:block">
+        <span className="hidden text-left text-sm leading-tight sm:block lg:hidden">
           <span className="block font-semibold text-slate-900">
             {utilisateur.prenoms} {utilisateur.nom}
           </span>
@@ -176,7 +198,7 @@ export default function EspaceGabarit() {
             <Logo />
           </Link>
           {!utilisateur.doitChangerMotDePasse && (
-            <nav className="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
+            <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
               {liens.map(({ vers, libelle, icone: Icone, fin }) => (
                 <NavLink
                   key={vers}
@@ -203,7 +225,7 @@ export default function EspaceGabarit() {
         {/* Navigation mobile : onglets défilants */}
         {!utilisateur.doitChangerMotDePasse && liens.length > 1 && (
           <nav
-            className="flex gap-1 overflow-x-auto px-4 pb-2 md:hidden"
+            className="flex gap-1 overflow-x-auto px-4 pb-2 lg:hidden"
             aria-label="Navigation principale"
           >
             {liens.map(({ vers, libelle, icone: Icone, fin }) => (

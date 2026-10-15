@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, FileCheck2, ShieldCheck, UserRound } from 'lucide-react';
+import {
+  ArrowRight,
+  Building2,
+  FileCheck2,
+  Inbox,
+  ScrollText,
+  ShieldCheck,
+  UserRound,
+} from 'lucide-react';
 import Apparition from '../../components/animation/Apparition.jsx';
 import MiseEnRoute from '../../components/MiseEnRoute.jsx';
 import Badge, { STATUTS_ECOLE } from '../../components/ui/Badge.jsx';
@@ -45,6 +53,51 @@ function SyntheseVerification() {
   );
 }
 
+function SyntheseDuplicata() {
+  const { donnees } = useRequete('/duplicatas?statut=EN_ATTENTE');
+  const c = donnees?.compteurs ?? {};
+  const aTraiter = (c.EN_ATTENTE ?? 0) + (c.EN_COURS ?? 0);
+  return (
+    <Carte icone={Inbox} titre="Demandes de duplicata" delai={80}>
+      <p>
+        <span className="chiffres text-3xl font-semibold text-slate-900">
+          {donnees ? aTraiter : '–'}
+        </span>{' '}
+        demande{aTraiter > 1 ? 's' : ''} en attente · {c.DELIVREE ?? 0} délivrée
+        {(c.DELIVREE ?? 0) > 1 ? 's' : ''}
+      </p>
+      <Link
+        to="/espace/duplicatas"
+        className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+      >
+        Traiter les demandes <ArrowRight className="h-4 w-4" />
+      </Link>
+    </Carte>
+  );
+}
+
+function SyntheseDocumentsEleve() {
+  const { donnees } = useRequete('/releves/mes-documents');
+  const enVigueur = donnees?.documents.filter((d) => !d.remplacePar) ?? [];
+  return (
+    <Carte icone={ScrollText} titre="Mes bulletins et relevés" delai={80}>
+      <p>
+        <span className="chiffres text-3xl font-semibold text-slate-900">
+          {donnees ? enVigueur.length : '–'}
+        </span>{' '}
+        document{enVigueur.length > 1 ? 's' : ''} archivé{enVigueur.length > 1 ? 's' : ''},
+        vérifiable{enVigueur.length > 1 ? 's' : ''} en ligne
+      </p>
+      <Link
+        to="/espace/mes-documents"
+        className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+      >
+        Voir mes documents <ArrowRight className="h-4 w-4" />
+      </Link>
+    </Carte>
+  );
+}
+
 export default function TableauDeBord() {
   const { utilisateur } = useAuth();
   const { ecole } = utilisateur;
@@ -78,6 +131,9 @@ export default function TableauDeBord() {
           </Carte>
         )}
         {['SUPER_ADMIN', 'MINISTERE'].includes(utilisateur.role) && <SyntheseVerification />}
+        {['ADMIN_ECOLE', 'SECRETARIAT'].includes(utilisateur.role) &&
+          ecole?.statutVerification === 'VERIFIEE' && <SyntheseDuplicata />}
+        {utilisateur.role === 'ELEVE' && <SyntheseDocumentsEleve />}
         <Carte icone={UserRound} titre="Votre compte" delai={160}>
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
             <dt className="text-slate-500">Nom</dt>

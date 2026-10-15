@@ -35,10 +35,9 @@ Chaque `git push` sur la branche redéploie automatiquement.
 
 - **Mise en veille** : sans visite pendant 15 minutes, le service s'endort ; la visite suivante
   attend environ 50 secondes. Pour une présentation, ouvrir le site quelques minutes avant.
-- **Fichiers déposés** : le disque du service gratuit est effacé à chaque redéploiement ou
-  redémarrage. Les pièces justificatives déposées disparaissent alors (leurs références restent
-  en base). Un stockage durable (disque Render payant ou stockage objet gratuit) sera branché
-  avant l'archivage des relevés PDF en phase 6.
+- **Fichiers** : le disque du service gratuit est effacé à chaque redéploiement. Les pièces
+  justificatives et les PDF archivés sont donc conservés dans PostgreSQL (`STOCKAGE=base`) : ils
+  ont la durée de vie de la base.
 - **Base de données gratuite** : Render limite à une base gratuite par compte et la supprime
   après 30 jours. Pour un usage durable, passer au plan payant ou utiliser une base externe
   (par exemple Neon) en remplaçant `DATABASE_URL`.
