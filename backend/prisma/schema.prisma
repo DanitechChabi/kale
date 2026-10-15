@@ -42,13 +42,59 @@ enum StatutEcole {
   PRIVE_CONFESSIONNEL
 }
 
+/// Nature de l'établissement
+enum TypeEtablissement {
+  CEG // collège d'enseignement général (premier cycle)
+  LYCEE // lycée d'enseignement général
+  LYCEE_TECHNIQUE // lycée technique et professionnel
+  COMPLEXE_SCOLAIRE // établissement privé couvrant plusieurs ordres ou cycles
+}
+
+/// Ordre d'enseignement : général ou technique
+enum OrdreEnseignement {
+  GENERAL
+  TECHNIQUE
+}
+
+/// Vérification de l'établissement avant activation de son compte
+enum StatutVerification {
+  EN_ATTENTE // dossier déposé, pas encore examiné
+  EN_EXAMEN // en cours d'examen
+  VERIFIEE // établissement actif
+  REJETEE // dossier refusé (motif obligatoire)
+  SUSPENDUE // accès suspendu après vérification
+}
+
+/// Pièces du dossier de vérification d'un établissement
+enum TypeDocumentEcole {
+  AUTORISATION_CREATION_OUVERTURE // arrêté d'autorisation de création et d'ouverture (privé)
+  AUTORISATION_DIRIGER // autorisation de diriger du chef d'établissement (privé)
+  ACTE_NOMINATION_CHEF // acte de nomination du directeur / proviseur (public)
+  PIECE_IDENTITE_RESPONSABLE // pièce d'identité du responsable du compte
+  LETTRE_MANDAT // lettre désignant le responsable du compte sur la plateforme
+  AUTRE
+}
+
+enum StatutDocument {
+  EN_ATTENTE
+  ACCEPTE
+  REFUSE
+}
+
+/// Statut d'un élève lors d'un appel
+enum StatutPresence {
+  PRESENT
+  ABSENT
+  RETARD
+}
+
 /// Découpage de l'année : trimestres ou semestres selon l'établissement
 enum TypePeriode {
   TRIMESTRE
   SEMESTRE
 }
 
-/// Niveaux de l'enseignement secondaire général
+/// Niveaux de l'enseignement secondaire (6e à 3e : premier cycle ; 2nde à Tle : second cycle)
 enum Niveau {
   SIXIEME
   CINQUIEME
@@ -132,26 +178,98 @@ model Commune {
 }
 
 // -----------------------------------------------------------------------------
+// Référentiel pédagogique national (sans ecole_id)
+// Sert à proposer les matières et coefficients par défaut à la création d'une
+// classe. Modifiable par le ministère ; chaque ligne indique si elle a été
+// vérifiée sur un texte officiel.
+// -----------------------------------------------------------------------------
+
+/// Séries du second cycle : A1, A2, B, C, D (général) ; E, F1-F4, G1-G3 (technique)
+model Serie {
+  id      String            @id @default(uuid()) @db.Uuid
+  code    String            @unique @db.VarChar(10)
+  libelle String            @db.VarChar(100) // ex. « Biologie - Géologie »
+  ordre   OrdreEnseignement
+  actif   Boolean           @default(true)
+
+  programmes ProgrammeMatiere[]
+  classes    Classe[]
+
+  @@map("series")
+}
+
+/// Catalogue national des disciplines
+model MatiereReference {
+  id             String  @id @default(uuid()) @db.Uuid
+  code           String  @unique @db.VarChar(20) // ex. « PCT », « SVT », « LV2-ALL »
+  nom            String  @db.VarChar(100)
+  nomCourt       String  @map("nom_court") @db.VarChar(20) // affichage sur le bulletin
+  ordreAffichage Int     @default(0) @map("ordre_affichage") @db.SmallInt
+  actif          Boolean @default(true)
+
+  programmes ProgrammeMatiere[]
+  matieres   Matiere[]
+
+  @@map("matieres_reference")
+}
+
+/// Programme officiel : matières d'un niveau (et d'une série au second cycle)
+/// avec coefficient et volume horaire par défaut.
+/// Unicité (niveau, série, matière) assurée par un index NULLS NOT DISTINCT
+/// dans la migration (la série est vide au premier cycle).
+model ProgrammeMatiere {
+  id                 String   @id @default(uuid()) @db.Uuid
+  niveau             Niveau
+  serieId            String?  @map("serie_id") @db.Uuid
+  matiereReferenceId String   @map("matiere_reference_id") @db.Uuid
+  coefficient        Int      @db.SmallInt
+  /// Heures de cours par semaine
+  heuresHebdo        Decimal? @map("heures_hebdo") @db.Decimal(3, 1)
+  /// Matières au choix : l'élève en suit une seule par groupe (ex. « LV2 »)
+  groupeOption       String?  @map("groupe_option") @db.VarChar(30)
+  /// Faux tant que la ligne n'a pas été confirmée sur un texte officiel
+  estVerifie         Boolean  @default(false) @map("est_verifie")
+  source             String?  @db.VarChar(255)
+
+  serie            Serie?           @relation(fields: [serieId], references: [id], onDelete: Restrict)
+  matiereReference MatiereReference @relation(fields: [matiereReferenceId], references: [id], onDelete: Restrict)
+
+  @@index([niveau, serieId])
+  @@map("programmes_matieres")
+}
+
+// -----------------------------------------------------------------------------
 // Établissements et utilisateurs
 // -----------------------------------------------------------------------------
 
 model Ecole {
-  id          String      @id @default(uuid()) @db.Uuid
-  code        String      @unique @db.VarChar(30) // code officiel de l'établissement
-  nom         String      @db.VarChar(200)
-  sigle       String?     @db.VarChar(30)
-  statut      StatutEcole
-  communeId   String      @map("commune_id") @db.Uuid
-  adresse     String?     @db.VarChar(255)
-  telephone   String?     @db.VarChar(30)
-  email       String?     @db.VarChar(255)
+  id                   String              @id @default(uuid()) @db.Uuid
+  code                 String              @unique @db.VarChar(30) // code officiel de l'établissement
+  nom                  String              @db.VarChar(200)
+  sigle                String?             @db.VarChar(30)
+  statut               StatutEcole
+  type                 TypeEtablissement
+  /// Ordres d'enseignement proposés (général, technique ou les deux)
+  ordres               OrdreEnseignement[]
+  nomChefEtablissement String?             @map("nom_chef_etablissement") @db.VarChar(200)
+  communeId            String              @map("commune_id") @db.Uuid
+  adresse              String?             @db.VarChar(255)
+  telephone            String?             @db.VarChar(30)
+  email                String?             @db.VarChar(255)
   /// Type de découpage de l'année appliqué par l'établissement
-  typePeriode TypePeriode @default(TRIMESTRE) @map("type_periode")
-  actif       Boolean     @default(true)
-  creeLe      DateTime    @default(now()) @map("cree_le") @db.Timestamptz(3)
-  modifieLe   DateTime    @updatedAt @map("modifie_le") @db.Timestamptz(3)
+  typePeriode          TypePeriode         @default(TRIMESTRE) @map("type_periode")
+  /// Un établissement n'accède à la plateforme qu'une fois VERIFIEE
+  statutVerification   StatutVerification  @default(EN_ATTENTE) @map("statut_verification")
+  verifieeLe           DateTime?           @map("verifiee_le") @db.Timestamptz(3)
+  verifieeParId        String?             @map("verifiee_par_id") @db.Uuid
+  motifDecision        String?             @map("motif_decision") @db.VarChar(500)
+  actif                Boolean             @default(true)
+  creeLe               DateTime            @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe            DateTime            @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
-  commune           Commune            @relation(fields: [communeId], references: [id], onDelete: Restrict)
+  commune           Commune                @relation(fields: [communeId], references: [id], onDelete: Restrict)
+  verifieePar       Utilisateur?           @relation("VerificationEcole", fields: [verifieeParId], references: [id], onDelete: Restrict)
+  documents         DocumentEcole[]
   utilisateurs      Utilisateur[]
   anneesScolaires   AnneeScolaire[]
   periodes          Periode[]
@@ -163,16 +281,49 @@ model Ecole {
   inscriptions      Inscription[]
   evaluations       Evaluation[]
   notes             Note[]
-  absences          Absence[]
+  creneaux          CreneauEmploiDuTemps[]
+  choixOptions      ChoixOption[]
+  appels            Appel[]
+  presences         Presence[]
   relevesArchives   ReleveArchive[]
   demandesDuplicata DemandeDuplicata[]
   journalAudit      JournalAudit[]
 
   @@index([communeId])
+  @@index([statutVerification])
   @@map("ecoles")
 }
 
-/// Compte de connexion. ecole_id est obligatoire pour les rôles d'établissement
+/// Pièce justificative déposée par l'établissement pour sa vérification.
+model DocumentEcole {
+  id              String            @id @default(uuid()) @db.Uuid
+  ecoleId         String            @map("ecole_id") @db.Uuid
+  type            TypeDocumentEcole
+  /// Référence portée par l'acte (ex. n° d'arrêté)
+  referenceActe   String?           @map("reference_acte") @db.VarChar(100)
+  dateActe        DateTime?         @map("date_acte") @db.Date
+  nomFichier      String            @map("nom_fichier") @db.VarChar(255)
+  cheminFichier   String            @map("chemin_fichier") @db.VarChar(500)
+  typeMime        String            @map("type_mime") @db.VarChar(100)
+  tailleOctets    Int               @map("taille_octets")
+  empreinteSha256 String            @map("empreinte_sha256") @db.Char(64)
+  statut          StatutDocument    @default(EN_ATTENTE)
+  commentaire     String?           @db.VarChar(500)
+  deposeParId     String?           @map("depose_par_id") @db.Uuid
+  deposeLe        DateTime          @default(now()) @map("depose_le") @db.Timestamptz(3)
+  examineParId    String?           @map("examine_par_id") @db.Uuid
+  examineLe       DateTime?         @map("examine_le") @db.Timestamptz(3)
+
+  ecole      Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  deposePar  Utilisateur? @relation("DocumentDepose", fields: [deposeParId], references: [id], onDelete: SetNull)
+  examinePar Utilisateur? @relation("DocumentExamine", fields: [examineParId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId])
+  @@map("documents_ecoles")
+}
+
+/// Compte de connexion. Les comptes d'un établissement restent inactifs tant
+/// que celui-ci n'est pas vérifié. ecole_id est obligatoire pour les rôles d'établissement
 /// (ADMIN_ECOLE, SECRETARIAT, ENSEIGNANT, ELEVE) et vide pour SUPER_ADMIN,
 /// MINISTERE et PARENT (un parent peut avoir des enfants dans plusieurs écoles).
 /// Cette règle est vérifiée par une contrainte CHECK dans la migration.
@@ -202,7 +353,11 @@ model Utilisateur {
   periodesCloturees      Periode[]               @relation("ClotureePar")
   evaluationsCreees      Evaluation[]
   notesSaisies           Note[]
-  absencesSaisies        Absence[]
+  appelsFaits            Appel[]
+  presencesJustifiees    Presence[]              @relation("JustifieePar")
+  ecolesVerifiees        Ecole[]                 @relation("VerificationEcole")
+  documentsDeposes       DocumentEcole[]         @relation("DocumentDepose")
+  documentsExamines      DocumentEcole[]         @relation("DocumentExamine")
   relevesGeneres         ReleveArchive[]
   demandesDeposees       DemandeDuplicata[]      @relation("Demandeur")
   demandesTraitees       DemandeDuplicata[]      @relation("TraitePar")
@@ -288,33 +443,40 @@ model Classe {
   ecoleId               String   @map("ecole_id") @db.Uuid
   anneeScolaireId       String   @map("annee_scolaire_id") @db.Uuid
   niveau                Niveau
-  serie                 String?  @db.VarChar(10) // A1, A2, B, C, D… (second cycle)
+  /// Obligatoire au second cycle, vide au premier cycle (contrainte CHECK)
+  serieId               String?  @map("serie_id") @db.Uuid
   nom                   String   @db.VarChar(50) // ex. « 6e A », « Tle D 2 »
   professeurPrincipalId String?  @map("professeur_principal_id") @db.Uuid
   creeLe                DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
   modifieLe             DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
-  ecole               Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  anneeScolaire       AnneeScolaire  @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
-  professeurPrincipal Utilisateur?   @relation("ProfesseurPrincipal", fields: [professeurPrincipalId], references: [id], onDelete: SetNull)
+  ecole               Ecole                  @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  anneeScolaire       AnneeScolaire          @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  serie               Serie?                 @relation(fields: [serieId], references: [id], onDelete: Restrict)
+  professeurPrincipal Utilisateur?           @relation("ProfesseurPrincipal", fields: [professeurPrincipalId], references: [id], onDelete: SetNull)
   enseignements       Enseignement[]
   inscriptions        Inscription[]
-  absences            Absence[]
+  creneaux            CreneauEmploiDuTemps[]
+  appels              Appel[]
 
   @@unique([anneeScolaireId, nom])
   @@index([ecoleId])
   @@map("classes")
 }
 
+/// Matière telle qu'enseignée dans l'établissement (rattachée au catalogue
+/// national quand elle en provient, libre sinon).
 model Matiere {
-  id      String  @id @default(uuid()) @db.Uuid
-  ecoleId String  @map("ecole_id") @db.Uuid
-  code    String  @db.VarChar(20) // ex. « MATH », « FR », « SVT »
-  nom     String  @db.VarChar(100)
-  actif   Boolean @default(true)
+  id                 String  @id @default(uuid()) @db.Uuid
+  ecoleId            String  @map("ecole_id") @db.Uuid
+  matiereReferenceId String? @map("matiere_reference_id") @db.Uuid
+  code               String  @db.VarChar(20) // ex. « MATH », « FR », « SVT »
+  nom                String  @db.VarChar(100)
+  actif              Boolean @default(true)
 
-  ecole         Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  enseignements Enseignement[]
+  ecole            Ecole             @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  matiereReference MatiereReference? @relation(fields: [matiereReferenceId], references: [id], onDelete: Restrict)
+  enseignements    Enseignement[]
 
   @@unique([ecoleId, code])
   @@index([ecoleId])
@@ -322,20 +484,27 @@ model Matiere {
 }
 
 /// Une matière enseignée dans une classe : porte le coefficient et l'enseignant.
+/// Créée automatiquement depuis le programme officiel à la création de la
+/// classe, puis ajustable par l'établissement.
 model Enseignement {
-  id           String  @id @default(uuid()) @db.Uuid
-  ecoleId      String  @map("ecole_id") @db.Uuid
-  classeId     String  @map("classe_id") @db.Uuid
-  matiereId    String  @map("matiere_id") @db.Uuid
-  coefficient  Int     @db.SmallInt // > 0 (contrainte CHECK)
-  enseignantId String? @map("enseignant_id") @db.Uuid
+  id           String   @id @default(uuid()) @db.Uuid
+  ecoleId      String   @map("ecole_id") @db.Uuid
+  classeId     String   @map("classe_id") @db.Uuid
+  matiereId    String   @map("matiere_id") @db.Uuid
+  coefficient  Int      @db.SmallInt // > 0 (contrainte CHECK)
+  heuresHebdo  Decimal? @map("heures_hebdo") @db.Decimal(3, 1)
+  /// Copié du programme : matières au choix (ex. « LV2 »)
+  groupeOption String?  @map("groupe_option") @db.VarChar(30)
+  enseignantId String?  @map("enseignant_id") @db.Uuid
 
-  ecole       Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  classe      Classe       @relation(fields: [classeId], references: [id], onDelete: Restrict)
-  matiere     Matiere      @relation(fields: [matiereId], references: [id], onDelete: Restrict)
-  enseignant  Utilisateur? @relation(fields: [enseignantId], references: [id], onDelete: SetNull)
-  evaluations Evaluation[]
-  absences    Absence[]
+  ecole        Ecole                  @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  classe       Classe                 @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  matiere      Matiere                @relation(fields: [matiereId], references: [id], onDelete: Restrict)
+  enseignant   Utilisateur?           @relation(fields: [enseignantId], references: [id], onDelete: SetNull)
+  evaluations  Evaluation[]
+  creneaux     CreneauEmploiDuTemps[]
+  choixOptions ChoixOption[]
+  appels       Appel[]
 
   @@unique([classeId, matiereId])
   @@index([ecoleId])
@@ -368,7 +537,7 @@ model Eleve {
   parents           LienParentEleve[]
   inscriptions      Inscription[]
   notes             Note[]
-  absences          Absence[]
+  presences         Presence[]
   relevesArchives   ReleveArchive[]
   demandesDuplicata DemandeDuplicata[]
 
@@ -414,6 +583,7 @@ model Inscription {
   eleve         Eleve         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
   classe        Classe        @relation(fields: [classeId], references: [id], onDelete: Restrict)
   anneeScolaire AnneeScolaire @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  choixOptions  ChoixOption[]
 
   @@unique([eleveId, anneeScolaireId])
   @@index([ecoleId])
@@ -421,8 +591,103 @@ model Inscription {
   @@map("inscriptions")
 }
 
+/// Matière choisie par l'élève dans un groupe d'options (ex. LV2 : allemand ou espagnol).
+model ChoixOption {
+  id             String @id @default(uuid()) @db.Uuid
+  ecoleId        String @map("ecole_id") @db.Uuid
+  inscriptionId  String @map("inscription_id") @db.Uuid
+  enseignementId String @map("enseignement_id") @db.Uuid
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  inscription  Inscription  @relation(fields: [inscriptionId], references: [id], onDelete: Restrict)
+  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+
+  @@unique([inscriptionId, enseignementId])
+  @@index([ecoleId])
+  @@map("choix_options")
+}
+
 // -----------------------------------------------------------------------------
-// Notes et absences
+// Emploi du temps et présences
+// -----------------------------------------------------------------------------
+
+/// Créneau hebdomadaire récurrent de l'emploi du temps d'une classe.
+/// Les chevauchements (classe, enseignant, salle) sont refusés par l'application.
+model CreneauEmploiDuTemps {
+  id             String    @id @default(uuid()) @db.Uuid
+  ecoleId        String    @map("ecole_id") @db.Uuid
+  classeId       String    @map("classe_id") @db.Uuid
+  enseignementId String    @map("enseignement_id") @db.Uuid
+  /// 1 = lundi … 6 = samedi
+  jour           Int       @db.SmallInt
+  heureDebut     DateTime  @map("heure_debut") @db.Time(0)
+  heureFin       DateTime  @map("heure_fin") @db.Time(0)
+  salle          String?   @db.VarChar(50)
+  /// Période de validité (un emploi du temps peut changer en cours d'année)
+  valideDu       DateTime  @map("valide_du") @db.Date
+  valideAu       DateTime? @map("valide_au") @db.Date
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  classe       Classe       @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  appels       Appel[]
+
+  @@index([ecoleId])
+  @@index([classeId, jour])
+  @@map("creneaux_emploi_du_temps")
+}
+
+/// Appel fait en début de cours : preuve que la présence a été relevée.
+model Appel {
+  id             String   @id @default(uuid()) @db.Uuid
+  ecoleId        String   @map("ecole_id") @db.Uuid
+  classeId       String   @map("classe_id") @db.Uuid
+  /// Créneau de l'emploi du temps concerné (vide pour un appel hors emploi du temps)
+  creneauId      String?  @map("creneau_id") @db.Uuid
+  enseignementId String?  @map("enseignement_id") @db.Uuid
+  date           DateTime @db.Date
+  heureDebut     DateTime @map("heure_debut") @db.Time(0)
+  faitParId      String   @map("fait_par_id") @db.Uuid
+  creeLe         DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole        Ecole                 @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  classe       Classe                @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  creneau      CreneauEmploiDuTemps? @relation(fields: [creneauId], references: [id], onDelete: Restrict)
+  enseignement Enseignement?         @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  faitPar      Utilisateur           @relation(fields: [faitParId], references: [id], onDelete: Restrict)
+  presences    Presence[]
+
+  @@unique([classeId, date, heureDebut])
+  @@index([ecoleId, date])
+  @@map("appels")
+}
+
+/// Ligne du relevé de présence : une par élève inscrit et par appel.
+model Presence {
+  id             String         @id @default(uuid()) @db.Uuid
+  ecoleId        String         @map("ecole_id") @db.Uuid
+  appelId        String         @map("appel_id") @db.Uuid
+  eleveId        String         @map("eleve_id") @db.Uuid
+  statut         StatutPresence
+  minutesRetard  Int?           @map("minutes_retard") @db.SmallInt
+  justifiee      Boolean        @default(false)
+  motif          String?        @db.VarChar(255)
+  justifieeParId String?        @map("justifiee_par_id") @db.Uuid
+  justifieeLe    DateTime?      @map("justifiee_le") @db.Timestamptz(3)
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  appel        Appel        @relation(fields: [appelId], references: [id], onDelete: Restrict)
+  eleve        Eleve        @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  justifieePar Utilisateur? @relation("JustifieePar", fields: [justifieeParId], references: [id], onDelete: Restrict)
+
+  @@unique([appelId, eleveId])
+  @@index([ecoleId])
+  @@index([eleveId, statut])
+  @@map("presences")
+}
+
+// -----------------------------------------------------------------------------
+// Notes
 // -----------------------------------------------------------------------------
 
 /// Une évaluation (interrogation, devoir, composition) dans une matière d'une classe.
@@ -472,32 +737,6 @@ model Note {
   @@index([ecoleId])
   @@index([eleveId])
   @@map("notes")
-}
-
-model Absence {
-  id             String   @id @default(uuid()) @db.Uuid
-  ecoleId        String   @map("ecole_id") @db.Uuid
-  eleveId        String   @map("eleve_id") @db.Uuid
-  classeId       String   @map("classe_id") @db.Uuid
-  /// Cours manqué (facultatif : une absence peut couvrir une demi-journée)
-  enseignementId String?  @map("enseignement_id") @db.Uuid
-  date           DateTime @db.Date
-  dureeMinutes   Int      @map("duree_minutes") @db.SmallInt
-  justifiee      Boolean  @default(false)
-  motif          String?  @db.VarChar(255)
-  saisieParId    String   @map("saisie_par_id") @db.Uuid
-  creeLe         DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
-  modifieLe      DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
-
-  ecole        Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  eleve        Eleve         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
-  classe       Classe        @relation(fields: [classeId], references: [id], onDelete: Restrict)
-  enseignement Enseignement? @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
-  saisiePar    Utilisateur   @relation(fields: [saisieParId], references: [id], onDelete: Restrict)
-
-  @@index([ecoleId, date])
-  @@index([eleveId, date])
-  @@map("absences")
 }
 
 // -----------------------------------------------------------------------------
