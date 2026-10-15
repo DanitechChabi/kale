@@ -1,61 +1,25 @@
-# ============================================================
-# Kalé — services locaux de développement (100 % gratuits)
-#   postgres : base de données source de vérité
-#   redis    : cache, timelines, présence, pub/sub
-#   minio    : parité locale de Cloudflare R2 (stockage objet)
-# ============================================================
-
+# Base de données PostgreSQL pour le développement local d'EduRelevé.
+# Lancement : docker compose up -d
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: kale-postgres
+    container_name: edureleve-postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: kale
-      POSTGRES_PASSWORD: kale_dev
-      POSTGRES_DB: kale_dev
+      POSTGRES_USER: ${POSTGRES_USER:-edureleve}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-edureleve}
+      POSTGRES_DB: ${POSTGRES_DB:-edureleve}
+      # Fuseau horaire du Bénin (UTC+1)
+      TZ: Africa/Porto-Novo
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - kale_pg_data:/var/lib/postgresql/data
+      - edureleve_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U kale -d kale_dev"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-edureleve} -d ${POSTGRES_DB:-edureleve}"]
       interval: 5s
-      timeout: 3s
-      retries: 10
-
-  redis:
-    image: redis:7-alpine
-    container_name: kale-redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - kale_redis_data:/data
-    command: ["redis-server", "--appendonly", "yes"]
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-
-  minio:
-    image: minio/minio:latest
-    container_name: kale-minio
-    environment:
-      MINIO_ROOT_USER: kale
-      MINIO_ROOT_PASSWORD: kale_dev_secret
-    ports:
-      - "9000:9000"   # API S3
-      - "9001:9001"   # console
-    volumes:
-      - kale_minio_data:/data
-    command: server /data --console-address ":9001"
-    healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
-      interval: 5s
-      timeout: 3s
+      timeout: 5s
       retries: 10
 
 volumes:
-  kale_pg_data:
-  kale_redis_data:
-  kale_minio_data:
+  edureleve_pgdata:

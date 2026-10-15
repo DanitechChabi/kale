@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+/* Couleurs inspirées du drapeau béninois */
+@theme {
+  --color-vert: #00843d;
+  --color-vert-fonce: #006b31;
+  --color-jaune: #fcd116;
+  --color-rouge: #e8112d;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}

@@ -1,0 +1,11 @@
+// Schéma Prisma d'EduRelevé.
+// Les modèles métier (écoles, élèves, notes, relevés…) seront ajoutés en phase 2.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

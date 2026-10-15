@@ -1,51 +1,35 @@
-# Kalé — conventions du projet pour développement assisté
+# EduRelevé — conventions du projet
 
 ## Ce projet
 
-Réseau social communautaire africain « Kalé ». Monorepo : un backend Elixir/Phoenix, une app Flutter,
-une PWA React. Conçu pour les réalités africaines : téléphones bas de gamme, 3G, data chère,
-offline-first, mobile money. Zéro budget : tiers gratuits uniquement.
+Plateforme scolaire multi-établissements (Bénin) : espaces École, Élève, Parent, Ministère.
+Fonction centrale : relevés et bulletins archivés définitivement (PDF figé + SHA-256), numéro
+unique, QR code, vérification publique `/verifier/:numero`, duplicata en ligne.
 
-## Contraintes de design (non négociables)
+Monorepo : `backend/` (Node.js + Express 5, PostgreSQL, Prisma, Zod, JWT accès + rafraîchissement)
+et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-first).
 
-1. **Data frugale** : ~1–3 Ko par message texte. Texte d'abord, médias compressés (WebP, max 1280 px).
-   Jamais de téléchargement auto, jamais de préfetch.
-2. **Mobile-first** : tous les écrans pensés pour un téléphone Android 1–2 Go RAM. min SDK 26.
-3. **Offline-first** : files d'attente hors-ligne, delta sync, idempotence via `client_uuid`.
-4. **Batterie** : push only (FCM), pas de polling, pas de sync en arrière-plan.
-5. **Paiements** : jamais de wallet propriétaire. Rails agrégateurs (Orange Money etc.) en Phase 3.
+## Règles métier (non négociables)
+
+- **Multi-tenant** : toute table métier a un `ecole_id` ; chaque requête est filtrée par
+  l'établissement de l'utilisateur. Jamais de données d'une autre école, sauf `MINISTERE`
+  (lecture agrégée) et `SUPER_ADMIN`.
+- **Rôles** : `SUPER_ADMIN`, `MINISTERE`, `ADMIN_ECOLE`, `SECRETARIAT`, `ENSEIGNANT`, `ELEVE`, `PARENT`.
+- **Élève** : champ `npi` optionnel (future interconnexion avec l'État).
+- **Notes** : toute création/modification est tracée dans `journal_audit` (qui, quand, ancienne
+  valeur, nouvelle valeur). Une note d'un trimestre clôturé n'est plus modifiable.
+- **Relevés** : un relevé archivé n'est jamais modifié ni supprimé. Une correction crée un
+  nouveau relevé qui référence l'ancien.
 
 ## Règles de code
 
-- **Backend** : contexts Phoenix, pas d'umbrella. Tout passe par les contexts, jamais par `Repo` direct
-  depuis les controllers. Argent en `_cents` (jamais de float). Toutes les clés UUID, `timestamptz`,
-  soft-delete.
-- **API** : OpenAPI-first — `contracts/openapi.yaml` est la vérité unique. Ne pas modifier les clients
-  générés à la main.
-- **Offline sync** : `client_uuid` sur `messages` = cheville ouvrière. Ne jamais le concevoir hors.
-  Voir `docs/offline-sync.md`.
-- **Commits** : petits, un par tranche shippable. Messages en anglais.
-- **Format** : `mix format`, `dart format`, Prettier pour le web. `make test` doit rester vert.
+- Code commenté en français, noms de variables en français cohérents.
+- Validation des entrées avec Zod (middleware `valider`), erreurs au format
+  `{ erreur: { code, message, details? } }` via `ErreurApi`.
+- Configuration lue uniquement via `src/config/env.js` (validée au démarrage).
+- Tests : Vitest (+ Supertest côté API, Testing Library côté web). `npm test` doit rester vert.
 
-## Commandes
+## Méthode de travail
 
-```bash
-make up          # docker compose up -d (postgres, redis, minio)
-make migrate     # mix ecto.migrate
-make seed        # mix run priv/repo/seeds.exs
-make dev-api     # mix phx.server (port 4000)
-make dev-mobile  # cd apps/mobile && flutter run
-make dev-web     # cd apps/web && npm run dev
-make test        # mix test + flutter test + npm test
-```
-
-## Anti-scope-creep
-
-Si un feature ne survit pas au contact d'un téléphone Android 1–2 Go RAM sur 3G, il est hors MVP.
-Pas d'E2EE, pas de wallet, pas de web3, pas de Kafka, pas d'ads avant la Phase 4.
-
-## Vérification
-
-- `curl localhost:4000/health` → `{"status":"ok"}`
-- `make test` vert après chaque tranche
-- Tests manuels sur vrai téléphone bas de gamme via proxy 3G (~300 kbps, 5 % perte)
+Développement phase par phase (voir README). À la fin de chaque phase : résumé, commandes de test,
+puis attendre la validation avant la phase suivante. Poser la question en cas de choix ambigu.
