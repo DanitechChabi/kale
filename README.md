@@ -82,6 +82,15 @@ npm run creer-super-admin --prefix backend -- --nom NOM --prenoms "Prénoms" --t
 Le mot de passe temporaire s'affiche une seule fois ; il doit être changé à la première connexion.
 Le super-administrateur crée ensuite les comptes du ministère depuis l'API (`POST /api/admin/comptes`).
 
+## Dépannage
+
+- **`P1010: User was denied access on the database`** : un autre PostgreSQL répond à la place de
+  celui du projet. Le projet utilise le port **5433** (`.env` et `backend/.env`) ; si vos fichiers
+  `.env` datent d'avant ce changement, supprimez-les puis relancez `npm run preparer`, puis
+  `docker compose down` et `docker compose up -d`.
+- **`GET / 404` sur le port 4000** : normal, le port 4000 est l'API. Le site s'ouvre sur
+  http://localhost:5173 (après `npm run dev:frontend`).
+
 ## Vérifications
 
 ```bash

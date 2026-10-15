@@ -8,7 +8,7 @@ export default defineConfig({
     // Variables d'environnement minimales pour que la config Zod passe en test
     env: {
       NODE_ENV: 'test',
-      DATABASE_URL: 'postgresql://edureleve:edureleve@localhost:5432/edureleve_test?schema=public',
+      DATABASE_URL: 'postgresql://edureleve:edureleve@localhost:5433/edureleve_test?schema=public',
       JWT_ACCESS_SECRET: 'secret-acces-de-test-suffisamment-long-0123456789',
       JWT_REFRESH_SECRET: 'secret-rafraichissement-de-test-assez-long-012345',
     },

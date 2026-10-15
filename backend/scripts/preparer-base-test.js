@@ -6,7 +6,7 @@ import { PrismaClient } from '@prisma/client';
 
 const url = new URL(
   process.env.TEST_DATABASE_URL ??
-    'postgresql://edureleve:edureleve@localhost:5432/edureleve_test?schema=public',
+    'postgresql://edureleve:edureleve@localhost:5433/edureleve_test?schema=public',
 );
 const nomBase = url.pathname.slice(1);
 
