@@ -1,5 +1,16 @@
-// Schéma Prisma d'EduRelevé.
-// Les modèles métier (écoles, élèves, notes, relevés…) seront ajoutés en phase 2.
+// =============================================================================
+// Schéma de base de données d'EduRelevé
+//
+// Conventions :
+// - Modèles et champs en français (camelCase côté code), tables et colonnes en
+//   snake_case côté PostgreSQL (@@map / @map).
+// - Identifiants UUID, dates en timestamptz.
+// - Multi-tenant : chaque table métier porte un ecole_id, toujours indexé.
+//   Seuls les référentiels nationaux (départements, communes) n'en ont pas.
+// - Les suppressions en cascade sont interdites sur les données scolaires
+//   (onDelete: Restrict) : on n'efface jamais un élève, une note ou un relevé
+//   par effet de bord.
+// =============================================================================
 
 generator client {
   provider = "prisma-client-js"
@@ -8,4 +19,594 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------------------------------
+// Énumérations
+// -----------------------------------------------------------------------------
+
+enum Role {
+  SUPER_ADMIN
+  MINISTERE
+  ADMIN_ECOLE
+  SECRETARIAT
+  ENSEIGNANT
+  ELEVE
+  PARENT
+}
+
+/// Statut juridique de l'établissement
+enum StatutEcole {
+  PUBLIC
+  PRIVE_LAIC
+  PRIVE_CONFESSIONNEL
+}
+
+/// Découpage de l'année : trimestres ou semestres selon l'établissement
+enum TypePeriode {
+  TRIMESTRE
+  SEMESTRE
+}
+
+/// Niveaux de l'enseignement secondaire général
+enum Niveau {
+  SIXIEME
+  CINQUIEME
+  QUATRIEME
+  TROISIEME
+  SECONDE
+  PREMIERE
+  TERMINALE
+}
+
+enum Sexe {
+  M
+  F
+}
+
+enum StatutInscription {
+  INSCRIT
+  TRANSFERE
+  ABANDON
+  EXCLU
+}
+
+enum LienParente {
+  PERE
+  MERE
+  TUTEUR
+  AUTRE
+}
+
+/// Nature d'une évaluation (sert au calcul des moyennes en phase 5)
+enum TypeEvaluation {
+  INTERROGATION
+  DEVOIR
+  COMPOSITION
+}
+
+/// Type de document officiel archivé
+enum TypeDocument {
+  BULLETIN_PERIODE // bulletin d'un trimestre / semestre
+  RELEVE_ANNUEL // relevé de notes de toute l'année
+}
+
+enum StatutDemande {
+  EN_ATTENTE // déposée, pas encore examinée
+  EN_COURS // prise en charge par le secrétariat
+  REJETEE // refusée (motif obligatoire)
+  DELIVREE // document mis à disposition
+}
+
+enum ActionAudit {
+  CREATION
+  MODIFICATION
+  SUPPRESSION
+}
+
+// -----------------------------------------------------------------------------
+// Référentiel géographique national (sans ecole_id)
+// -----------------------------------------------------------------------------
+
+/// Les 12 départements du Bénin
+model Departement {
+  id       String    @id @default(uuid()) @db.Uuid
+  code     String    @unique @db.VarChar(10) // ex. « ATL » pour Atlantique
+  nom      String    @unique @db.VarChar(80)
+  communes Commune[]
+
+  @@map("departements")
+}
+
+/// Les 77 communes du Bénin
+model Commune {
+  id            String      @id @default(uuid()) @db.Uuid
+  nom           String      @db.VarChar(80)
+  departementId String      @map("departement_id") @db.Uuid
+  departement   Departement @relation(fields: [departementId], references: [id], onDelete: Restrict)
+  ecoles        Ecole[]
+
+  @@unique([departementId, nom])
+  @@index([departementId])
+  @@map("communes")
+}
+
+// -----------------------------------------------------------------------------
+// Établissements et utilisateurs
+// -----------------------------------------------------------------------------
+
+model Ecole {
+  id          String      @id @default(uuid()) @db.Uuid
+  code        String      @unique @db.VarChar(30) // code officiel de l'établissement
+  nom         String      @db.VarChar(200)
+  sigle       String?     @db.VarChar(30)
+  statut      StatutEcole
+  communeId   String      @map("commune_id") @db.Uuid
+  adresse     String?     @db.VarChar(255)
+  telephone   String?     @db.VarChar(30)
+  email       String?     @db.VarChar(255)
+  /// Type de découpage de l'année appliqué par l'établissement
+  typePeriode TypePeriode @default(TRIMESTRE) @map("type_periode")
+  actif       Boolean     @default(true)
+  creeLe      DateTime    @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe   DateTime    @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  commune           Commune            @relation(fields: [communeId], references: [id], onDelete: Restrict)
+  utilisateurs      Utilisateur[]
+  anneesScolaires   AnneeScolaire[]
+  periodes          Periode[]
+  classes           Classe[]
+  matieres          Matiere[]
+  enseignements     Enseignement[]
+  eleves            Eleve[]
+  liensParentEleve  LienParentEleve[]
+  inscriptions      Inscription[]
+  evaluations       Evaluation[]
+  notes             Note[]
+  absences          Absence[]
+  relevesArchives   ReleveArchive[]
+  demandesDuplicata DemandeDuplicata[]
+  journalAudit      JournalAudit[]
+
+  @@index([communeId])
+  @@map("ecoles")
+}
+
+/// Compte de connexion. ecole_id est obligatoire pour les rôles d'établissement
+/// (ADMIN_ECOLE, SECRETARIAT, ENSEIGNANT, ELEVE) et vide pour SUPER_ADMIN,
+/// MINISTERE et PARENT (un parent peut avoir des enfants dans plusieurs écoles).
+/// Cette règle est vérifiée par une contrainte CHECK dans la migration.
+model Utilisateur {
+  id                    String    @id @default(uuid()) @db.Uuid
+  ecoleId               String?   @map("ecole_id") @db.Uuid
+  role                  Role
+  nom                   String    @db.VarChar(100)
+  prenoms               String    @db.VarChar(150)
+  /// Identifiants de connexion : au moins un des deux (contrainte CHECK)
+  email                 String?   @unique @db.VarChar(255)
+  telephone             String?   @unique @db.VarChar(30)
+  motDePasseHash        String    @map("mot_de_passe_hash") @db.VarChar(255)
+  doitChangerMotDePasse Boolean   @default(true) @map("doit_changer_mot_de_passe")
+  actif                 Boolean   @default(true)
+  derniereConnexionLe   DateTime? @map("derniere_connexion_le") @db.Timestamptz(3)
+  creeLe                DateTime  @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe             DateTime  @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole                  Ecole?                  @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  /// Fiche élève associée (rôle ELEVE uniquement)
+  eleve                  Eleve?
+  jetonsRafraichissement JetonRafraichissement[]
+  enfants                LienParentEleve[]
+  enseignements          Enseignement[]
+  classesPrincipales     Classe[]                @relation("ProfesseurPrincipal")
+  periodesCloturees      Periode[]               @relation("ClotureePar")
+  evaluationsCreees      Evaluation[]
+  notesSaisies           Note[]
+  absencesSaisies        Absence[]
+  relevesGeneres         ReleveArchive[]
+  demandesDeposees       DemandeDuplicata[]      @relation("Demandeur")
+  demandesTraitees       DemandeDuplicata[]      @relation("TraitePar")
+  actionsAudit           JournalAudit[]
+
+  @@index([ecoleId])
+  @@index([role])
+  @@map("utilisateurs")
+}
+
+/// Jetons de rafraîchissement JWT. Seule l'empreinte SHA-256 du jeton est stockée.
+model JetonRafraichissement {
+  id               String    @id @default(uuid()) @db.Uuid
+  utilisateurId    String    @map("utilisateur_id") @db.Uuid
+  empreinte        String    @unique @db.Char(64)
+  expireLe         DateTime  @map("expire_le") @db.Timestamptz(3)
+  revoqueLe        DateTime? @map("revoque_le") @db.Timestamptz(3)
+  /// Jeton émis en remplacement lors d'une rotation (détection de réutilisation)
+  remplaceParId    String?   @map("remplace_par_id") @db.Uuid
+  agentUtilisateur String?   @map("agent_utilisateur") @db.VarChar(255)
+  adresseIp        String?   @map("adresse_ip") @db.VarChar(45)
+  creeLe           DateTime  @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  utilisateur Utilisateur @relation(fields: [utilisateurId], references: [id], onDelete: Cascade)
+
+  @@index([utilisateurId])
+  @@map("jetons_rafraichissement")
+}
+
+// -----------------------------------------------------------------------------
+// Organisation de l'année scolaire
+// -----------------------------------------------------------------------------
+
+model AnneeScolaire {
+  id          String   @id @default(uuid()) @db.Uuid
+  ecoleId     String   @map("ecole_id") @db.Uuid
+  libelle     String   @db.VarChar(9) // ex. « 2025-2026 »
+  dateDebut   DateTime @map("date_debut") @db.Date
+  dateFin     DateTime @map("date_fin") @db.Date
+  /// Année en cours pour l'établissement (une seule à la fois, index partiel)
+  estCourante Boolean  @default(false) @map("est_courante")
+  creeLe      DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole             Ecole              @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  periodes          Periode[]
+  classes           Classe[]
+  inscriptions      Inscription[]
+  relevesArchives   ReleveArchive[]
+  demandesDuplicata DemandeDuplicata[]
+
+  @@unique([ecoleId, libelle])
+  @@index([ecoleId])
+  @@map("annees_scolaires")
+}
+
+/// Trimestre ou semestre. Une fois clôturé, ses notes ne sont plus modifiables
+/// (contrôlé par l'application ET par un trigger PostgreSQL).
+model Periode {
+  id              String      @id @default(uuid()) @db.Uuid
+  ecoleId         String      @map("ecole_id") @db.Uuid
+  anneeScolaireId String      @map("annee_scolaire_id") @db.Uuid
+  type            TypePeriode
+  numero          Int         @db.SmallInt // 1, 2, 3 (trimestres) ou 1, 2 (semestres)
+  dateDebut       DateTime    @map("date_debut") @db.Date
+  dateFin         DateTime    @map("date_fin") @db.Date
+  estCloturee     Boolean     @default(false) @map("est_cloturee")
+  clotureeLe      DateTime?   @map("cloturee_le") @db.Timestamptz(3)
+  clotureeParId   String?     @map("cloturee_par_id") @db.Uuid
+
+  ecole           Ecole           @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  anneeScolaire   AnneeScolaire   @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  clotureePar     Utilisateur?    @relation("ClotureePar", fields: [clotureeParId], references: [id], onDelete: Restrict)
+  evaluations     Evaluation[]
+  relevesArchives ReleveArchive[]
+
+  @@unique([anneeScolaireId, numero])
+  @@index([ecoleId])
+  @@map("periodes")
+}
+
+model Classe {
+  id                    String   @id @default(uuid()) @db.Uuid
+  ecoleId               String   @map("ecole_id") @db.Uuid
+  anneeScolaireId       String   @map("annee_scolaire_id") @db.Uuid
+  niveau                Niveau
+  serie                 String?  @db.VarChar(10) // A1, A2, B, C, D… (second cycle)
+  nom                   String   @db.VarChar(50) // ex. « 6e A », « Tle D 2 »
+  professeurPrincipalId String?  @map("professeur_principal_id") @db.Uuid
+  creeLe                DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe             DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole               Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  anneeScolaire       AnneeScolaire  @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  professeurPrincipal Utilisateur?   @relation("ProfesseurPrincipal", fields: [professeurPrincipalId], references: [id], onDelete: SetNull)
+  enseignements       Enseignement[]
+  inscriptions        Inscription[]
+  absences            Absence[]
+
+  @@unique([anneeScolaireId, nom])
+  @@index([ecoleId])
+  @@map("classes")
+}
+
+model Matiere {
+  id      String  @id @default(uuid()) @db.Uuid
+  ecoleId String  @map("ecole_id") @db.Uuid
+  code    String  @db.VarChar(20) // ex. « MATH », « FR », « SVT »
+  nom     String  @db.VarChar(100)
+  actif   Boolean @default(true)
+
+  ecole         Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  enseignements Enseignement[]
+
+  @@unique([ecoleId, code])
+  @@index([ecoleId])
+  @@map("matieres")
+}
+
+/// Une matière enseignée dans une classe : porte le coefficient et l'enseignant.
+model Enseignement {
+  id           String  @id @default(uuid()) @db.Uuid
+  ecoleId      String  @map("ecole_id") @db.Uuid
+  classeId     String  @map("classe_id") @db.Uuid
+  matiereId    String  @map("matiere_id") @db.Uuid
+  coefficient  Int     @db.SmallInt // > 0 (contrainte CHECK)
+  enseignantId String? @map("enseignant_id") @db.Uuid
+
+  ecole       Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  classe      Classe       @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  matiere     Matiere      @relation(fields: [matiereId], references: [id], onDelete: Restrict)
+  enseignant  Utilisateur? @relation(fields: [enseignantId], references: [id], onDelete: SetNull)
+  evaluations Evaluation[]
+  absences    Absence[]
+
+  @@unique([classeId, matiereId])
+  @@index([ecoleId])
+  @@index([enseignantId])
+  @@map("enseignements")
+}
+
+// -----------------------------------------------------------------------------
+// Élèves, parents, inscriptions
+// -----------------------------------------------------------------------------
+
+model Eleve {
+  id            String   @id @default(uuid()) @db.Uuid
+  ecoleId       String   @map("ecole_id") @db.Uuid
+  matricule     String   @db.VarChar(30) // unique dans l'établissement
+  /// Numéro personnel d'identification (futur lien avec les registres de l'État)
+  npi           String?  @db.VarChar(20)
+  nom           String   @db.VarChar(100)
+  prenoms       String   @db.VarChar(150)
+  sexe          Sexe
+  dateNaissance DateTime @map("date_naissance") @db.Date
+  lieuNaissance String?  @map("lieu_naissance") @db.VarChar(100)
+  /// Compte de connexion de l'élève (facultatif)
+  utilisateurId String?  @unique @map("utilisateur_id") @db.Uuid
+  creeLe        DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe     DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole             Ecole              @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  utilisateur       Utilisateur?       @relation(fields: [utilisateurId], references: [id], onDelete: SetNull)
+  parents           LienParentEleve[]
+  inscriptions      Inscription[]
+  notes             Note[]
+  absences          Absence[]
+  relevesArchives   ReleveArchive[]
+  demandesDuplicata DemandeDuplicata[]
+
+  @@unique([ecoleId, matricule])
+  @@unique([ecoleId, npi])
+  @@index([npi])
+  @@index([ecoleId, nom, prenoms])
+  @@map("eleves")
+}
+
+model LienParentEleve {
+  id       String      @id @default(uuid()) @db.Uuid
+  ecoleId  String      @map("ecole_id") @db.Uuid // école de l'élève
+  parentId String      @map("parent_id") @db.Uuid
+  eleveId  String      @map("eleve_id") @db.Uuid
+  lien     LienParente
+  creeLe   DateTime    @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole  Ecole       @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  parent Utilisateur @relation(fields: [parentId], references: [id], onDelete: Restrict)
+  eleve  Eleve       @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+
+  @@unique([parentId, eleveId])
+  @@index([ecoleId])
+  @@index([eleveId])
+  @@map("liens_parent_eleve")
+}
+
+/// Inscription d'un élève dans une classe pour une année (une seule par année).
+model Inscription {
+  id              String            @id @default(uuid()) @db.Uuid
+  ecoleId         String            @map("ecole_id") @db.Uuid
+  eleveId         String            @map("eleve_id") @db.Uuid
+  classeId        String            @map("classe_id") @db.Uuid
+  anneeScolaireId String            @map("annee_scolaire_id") @db.Uuid
+  statut          StatutInscription @default(INSCRIT)
+  redoublant      Boolean           @default(false)
+  dateInscription DateTime          @default(now()) @map("date_inscription") @db.Date
+  creeLe          DateTime          @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe       DateTime          @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole         Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve         Eleve         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  classe        Classe        @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  anneeScolaire AnneeScolaire @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+
+  @@unique([eleveId, anneeScolaireId])
+  @@index([ecoleId])
+  @@index([classeId])
+  @@map("inscriptions")
+}
+
+// -----------------------------------------------------------------------------
+// Notes et absences
+// -----------------------------------------------------------------------------
+
+/// Une évaluation (interrogation, devoir, composition) dans une matière d'une classe.
+model Evaluation {
+  id             String         @id @default(uuid()) @db.Uuid
+  ecoleId        String         @map("ecole_id") @db.Uuid
+  enseignementId String         @map("enseignement_id") @db.Uuid
+  periodeId      String         @map("periode_id") @db.Uuid
+  type           TypeEvaluation
+  libelle        String         @db.VarChar(100) // ex. « Devoir 1 »
+  date           DateTime       @db.Date
+  bareme         Decimal        @default(20) @db.Decimal(5, 2) // note maximale
+  creeParId      String         @map("cree_par_id") @db.Uuid
+  creeLe         DateTime       @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  periode      Periode      @relation(fields: [periodeId], references: [id], onDelete: Restrict)
+  creePar      Utilisateur  @relation(fields: [creeParId], references: [id], onDelete: Restrict)
+  notes        Note[]
+
+  @@index([ecoleId])
+  @@index([enseignementId, periodeId])
+  @@map("evaluations")
+}
+
+/// Note d'un élève à une évaluation. Toute création ou modification est tracée
+/// dans journal_audit. Bloquée si la période est clôturée (trigger).
+model Note {
+  id           String   @id @default(uuid()) @db.Uuid
+  ecoleId      String   @map("ecole_id") @db.Uuid
+  evaluationId String   @map("evaluation_id") @db.Uuid
+  eleveId      String   @map("eleve_id") @db.Uuid
+  /// Valeur sur le barème de l'évaluation ; vide si l'élève était absent
+  valeur       Decimal? @db.Decimal(5, 2)
+  absent       Boolean  @default(false)
+  saisieParId  String   @map("saisie_par_id") @db.Uuid
+  creeLe       DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe    DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole      Ecole       @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  evaluation Evaluation  @relation(fields: [evaluationId], references: [id], onDelete: Restrict)
+  eleve      Eleve       @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  saisiePar  Utilisateur @relation(fields: [saisieParId], references: [id], onDelete: Restrict)
+
+  @@unique([evaluationId, eleveId])
+  @@index([ecoleId])
+  @@index([eleveId])
+  @@map("notes")
+}
+
+model Absence {
+  id             String   @id @default(uuid()) @db.Uuid
+  ecoleId        String   @map("ecole_id") @db.Uuid
+  eleveId        String   @map("eleve_id") @db.Uuid
+  classeId       String   @map("classe_id") @db.Uuid
+  /// Cours manqué (facultatif : une absence peut couvrir une demi-journée)
+  enseignementId String?  @map("enseignement_id") @db.Uuid
+  date           DateTime @db.Date
+  dureeMinutes   Int      @map("duree_minutes") @db.SmallInt
+  justifiee      Boolean  @default(false)
+  motif          String?  @db.VarChar(255)
+  saisieParId    String   @map("saisie_par_id") @db.Uuid
+  creeLe         DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe      DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole        Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve        Eleve         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  classe       Classe        @relation(fields: [classeId], references: [id], onDelete: Restrict)
+  enseignement Enseignement? @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  saisiePar    Utilisateur   @relation(fields: [saisieParId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId, date])
+  @@index([eleveId, date])
+  @@map("absences")
+}
+
+// -----------------------------------------------------------------------------
+// Documents officiels archivés et duplicatas
+// -----------------------------------------------------------------------------
+
+/// Relevé ou bulletin archivé DÉFINITIVEMENT : jamais modifié ni supprimé
+/// (trigger PostgreSQL). Une correction crée un nouveau relevé qui pointe vers
+/// l'ancien via remplaceReleveId.
+model ReleveArchive {
+  id               String       @id @default(uuid()) @db.Uuid
+  ecoleId          String       @map("ecole_id") @db.Uuid
+  /// Numéro public unique, imprimé sur le PDF et encodé dans le QR code
+  numero           String       @unique @db.VarChar(30)
+  type             TypeDocument
+  eleveId          String       @map("eleve_id") @db.Uuid
+  anneeScolaireId  String       @map("annee_scolaire_id") @db.Uuid
+  /// Renseigné pour un bulletin de période, vide pour un relevé annuel
+  periodeId        String?      @map("periode_id") @db.Uuid
+  /// Emplacement du PDF figé dans le stockage
+  cheminFichier    String       @map("chemin_fichier") @db.VarChar(500)
+  /// Empreinte SHA-256 du PDF (hexadécimal)
+  empreinteSha256  String       @unique @map("empreinte_sha256") @db.Char(64)
+  tailleOctets     Int          @map("taille_octets")
+  /// Instantané des données ayant servi à produire le document (notes, moyennes, rang…)
+  donnees          Json
+  /// Relevé corrigé par celui-ci (un relevé ne peut être remplacé qu'une fois)
+  remplaceReleveId String?      @unique @map("remplace_releve_id") @db.Uuid
+  motifCorrection  String?      @map("motif_correction") @db.VarChar(500)
+  genereParId      String       @map("genere_par_id") @db.Uuid
+  genereLe         DateTime     @default(now()) @map("genere_le") @db.Timestamptz(3)
+
+  ecole             Ecole              @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve             Eleve              @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  anneeScolaire     AnneeScolaire      @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  periode           Periode?           @relation(fields: [periodeId], references: [id], onDelete: Restrict)
+  generePar         Utilisateur        @relation(fields: [genereParId], references: [id], onDelete: Restrict)
+  remplace          ReleveArchive?     @relation("Correction", fields: [remplaceReleveId], references: [id], onDelete: Restrict)
+  remplacePar       ReleveArchive?     @relation("Correction")
+  demandesDuplicata DemandeDuplicata[]
+
+  @@index([ecoleId])
+  @@index([eleveId])
+  @@map("releves_archives")
+}
+
+/// Demande de duplicata déposée en ligne (par un élève, ancien élève ou parent).
+model DemandeDuplicata {
+  id              String        @id @default(uuid()) @db.Uuid
+  ecoleId         String        @map("ecole_id") @db.Uuid
+  /// Numéro de suivi communiqué au demandeur
+  numeroSuivi     String        @unique @map("numero_suivi") @db.VarChar(30)
+  /// Élève concerné, s'il a été identifié dans la base de l'école
+  eleveId         String?       @map("eleve_id") @db.Uuid
+  /// Compte du demandeur, s'il en a un
+  demandeurId     String?       @map("demandeur_id") @db.Uuid
+  /// Identité et contact déclarés (obligatoires même sans compte)
+  nomDemandeur    String        @map("nom_demandeur") @db.VarChar(250)
+  telephone       String        @db.VarChar(30)
+  email           String?       @db.VarChar(255)
+  typeDocument    TypeDocument  @map("type_document")
+  /// Année concernée si elle existe dans la base, sinon libellé saisi (ex. « 2012-2013 »)
+  anneeScolaireId String?       @map("annee_scolaire_id") @db.Uuid
+  libelleAnnee    String        @map("libelle_annee") @db.VarChar(9)
+  classeDeclaree  String?       @map("classe_declaree") @db.VarChar(50)
+  motif           String?       @db.VarChar(500)
+  statut          StatutDemande @default(EN_ATTENTE)
+  motifRejet      String?       @map("motif_rejet") @db.VarChar(500)
+  traiteParId     String?       @map("traite_par_id") @db.Uuid
+  /// Document délivré
+  releveId        String?       @map("releve_id") @db.Uuid
+  demandeLe       DateTime      @default(now()) @map("demande_le") @db.Timestamptz(3)
+  priseEnChargeLe DateTime?     @map("prise_en_charge_le") @db.Timestamptz(3)
+  clotureLe       DateTime?     @map("cloture_le") @db.Timestamptz(3) // délivrance ou rejet
+
+  ecole         Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve         Eleve?         @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  demandeur     Utilisateur?   @relation("Demandeur", fields: [demandeurId], references: [id], onDelete: SetNull)
+  traitePar     Utilisateur?   @relation("TraitePar", fields: [traiteParId], references: [id], onDelete: Restrict)
+  anneeScolaire AnneeScolaire? @relation(fields: [anneeScolaireId], references: [id], onDelete: Restrict)
+  releve        ReleveArchive? @relation(fields: [releveId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId, statut])
+  @@index([demandeurId])
+  @@map("demandes_duplicata")
+}
+
+// -----------------------------------------------------------------------------
+// Traçabilité
+// -----------------------------------------------------------------------------
+
+/// Journal d'audit en ajout seul (UPDATE et DELETE interdits par trigger).
+/// Utilisé obligatoirement pour les notes ; extensible aux autres entités.
+model JournalAudit {
+  id             String      @id @default(uuid()) @db.Uuid
+  ecoleId        String?     @map("ecole_id") @db.Uuid
+  utilisateurId  String?     @map("utilisateur_id") @db.Uuid
+  action         ActionAudit
+  entite         String      @db.VarChar(50) // ex. « Note »
+  entiteId       String      @map("entite_id") @db.Uuid
+  ancienneValeur Json?       @map("ancienne_valeur")
+  nouvelleValeur Json?       @map("nouvelle_valeur")
+  adresseIp      String?     @map("adresse_ip") @db.VarChar(45)
+  creeLe         DateTime    @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole       Ecole?       @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  utilisateur Utilisateur? @relation(fields: [utilisateurId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId, creeLe])
+  @@index([entite, entiteId])
+  @@map("journal_audit")
 }
