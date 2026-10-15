@@ -3,7 +3,7 @@
   "private": true,
   "description": "EduRelevé — plateforme scolaire multi-établissements avec relevés archivés et vérifiables (Bénin)",
   "scripts": {
-    "install:tout": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "install:tout": "node scripts/preparer-env.mjs && npm install && npm install --prefix backend && npm install --prefix frontend",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
     "dev:backend": "npm run dev --prefix backend",
@@ -11,7 +11,8 @@
     "test": "npm test --prefix backend && npm test --prefix frontend",
     "lint": "npm run lint --prefix backend && npm run lint --prefix frontend",
     "format": "prettier --write \"backend/**/*.{js,json}\" \"frontend/**/*.{js,jsx,json,css,html}\" \"*.{md,json}\"",
-    "build": "npm run build --prefix frontend"
+    "build": "npm run build --prefix frontend",
+    "preparer": "node scripts/preparer-env.mjs"
   },
   "devDependencies": {
     "prettier": "^3.6.2"

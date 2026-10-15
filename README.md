@@ -49,25 +49,20 @@ Page publique sans compte : `/verifier/:numero`.
 ## Démarrage
 
 ```bash
-# 1. Variables d'environnement
-cp .env.example .env
-cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
+# 1. Dépendances (racine + backend + frontend) ; crée aussi les fichiers .env
+npm run install:tout
 
 # 2. Base de données PostgreSQL
 docker compose up -d
 
-# 3. Dépendances (racine + backend + frontend)
-npm run install:tout
-
-# 4. Base de données : tables, protections, puis référentiel national
+# 3. Base de données : tables, protections, puis référentiel national
 npm run prisma:deploy --prefix backend   # applique les migrations
 npm run prisma:seed --prefix backend     # départements, communes, séries, matières
 
-# 5. Lancer l'API (http://localhost:4000) — dans un premier terminal
+# 4. Lancer l'API (http://localhost:4000) — dans un premier terminal
 npm run dev:backend
 
-# 6. Lancer le frontend (http://localhost:5173) — dans un second terminal
+# 5. Lancer le frontend (http://localhost:5173) — dans un second terminal
 npm run dev:frontend
 ```
 
