@@ -73,6 +73,11 @@ npm run dev:frontend
 
 En développement, le frontend appelle `/api`, que Vite redirige vers `http://localhost:4000`.
 
+## Mise en ligne
+
+Déploiement en un seul service sur Render (plan gratuit), faisable depuis un téléphone :
+voir [docs/deploiement-render.md](docs/deploiement-render.md).
+
 ## Premier compte administrateur
 
 ```bash

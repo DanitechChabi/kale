@@ -1,4 +1,6 @@
 // Construction de l'application Express (séparée du démarrage du serveur pour les tests).
+import { existsSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -31,8 +33,41 @@ export function creerApp(options = {}) {
 
   app.use('/api', creerRouteurApi(options));
 
+  if (config.DOSSIER_FRONTEND) servirSite(app, resolve(config.DOSSIER_FRONTEND));
+
   app.use(routeIntrouvable);
   app.use(gestionnaireErreurs);
 
   return app;
+}
+
+/**
+ * Sert le site compilé depuis la même adresse que l'API (déploiement en un seul
+ * service) : le cookie de session reste « SameSite=Strict » et aucune requête
+ * n'est inter-domaines.
+ */
+function servirSite(app, dossier) {
+  const index = join(dossier, 'index.html');
+  if (!existsSync(index))
+    throw new Error(`Site introuvable : ${index} (lancer « npm run build » dans frontend)`);
+
+  app.use(
+    express.static(dossier, {
+      index: false,
+      setHeaders(res, chemin) {
+        // Fichiers versionnés (nom avec empreinte) : cache long ; le reste : toujours revalidé
+        res.set(
+          'Cache-Control',
+          chemin.includes(`${join('assets', '')}`)
+            ? 'public, max-age=31536000, immutable'
+            : 'no-cache',
+        );
+      },
+    }),
+  );
+  // Toute autre adresse affichée par le navigateur renvoie l'application (routage côté client)
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' || req.path.startsWith('/api/')) return next();
+    res.set('Cache-Control', 'no-cache').sendFile(index);
+  });
 }

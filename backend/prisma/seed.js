@@ -2,11 +2,12 @@
 // - départements et communes du Bénin
 // - séries, catalogue des matières et programmes par défaut
 // Usage : npm run prisma:seed
+import { pathToFileURL } from 'node:url';
 import { PrismaClient } from '@prisma/client';
 import { departements } from './donnees/geographie.js';
 import { matieres, programmes, series } from './donnees/referentiel-pedagogique.js';
 
-const prisma = new PrismaClient();
+let prisma;
 
 async function chargerGeographie() {
   for (const { code, nom, communes } of departements) {
@@ -68,7 +69,9 @@ async function chargerReferentiel() {
   }
 }
 
-try {
+/** Charge tout le référentiel national avec le client fourni. */
+export async function chargerReferentielNational(client) {
+  prisma = client;
   await chargerGeographie();
   await chargerReferentiel();
   const [nbDep, nbCom, nbSeries, nbMat, nbProg] = await Promise.all([
@@ -78,9 +81,15 @@ try {
     prisma.matiereReference.count(),
     prisma.programmeMatiere.count(),
   ]);
-  console.log(
-    `✔ Référentiel chargé : ${nbDep} départements, ${nbCom} communes, ${nbSeries} séries, ${nbMat} matières, ${nbProg} lignes de programme`,
-  );
-} finally {
-  await prisma.$disconnect();
+  return `${nbDep} départements, ${nbCom} communes, ${nbSeries} séries, ${nbMat} matières, ${nbProg} lignes de programme`;
+}
+
+// Lancement direct : « npm run prisma:seed »
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const client = new PrismaClient();
+  try {
+    console.log(`✔ Référentiel chargé : ${await chargerReferentielNational(client)}`);
+  } finally {
+    await client.$disconnect();
+  }
 }

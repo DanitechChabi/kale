@@ -11,8 +11,13 @@ const schemaEnv = z
     JWT_REFRESH_SECRET: z.string().min(32, 'JWT_REFRESH_SECRET doit faire au moins 32 caractères'),
     JWT_ACCESS_EXPIRATION: z.string().default('15m'),
     JWT_REFRESH_EXPIRATION: z.string().default('7d'),
-    CORS_ORIGINES: z.string().default('http://localhost:5173'),
-    URL_PUBLIQUE_FRONTEND: z.url().default('http://localhost:5173'),
+    // Sur Render, l'adresse publique du service est fournie par RENDER_EXTERNAL_URL
+    CORS_ORIGINES: z.string().default(process.env.RENDER_EXTERNAL_URL ?? 'http://localhost:5173'),
+    URL_PUBLIQUE_FRONTEND: z
+      .url()
+      .default(process.env.RENDER_EXTERNAL_URL ?? 'http://localhost:5173'),
+    // Dossier du site compilé (frontend/dist) : s'il est défini, l'API sert aussi le site
+    DOSSIER_FRONTEND: z.string().optional(),
     DOSSIER_STOCKAGE: z.string().default('./stockage'),
     // Cookie du jeton de rafraîchissement
     COOKIE_SECURE: z

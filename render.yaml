@@ -1,0 +1,56 @@
+# =============================================================================
+# EduRelevé — déploiement Render (plan gratuit), en un seul service :
+# l'API Express sert aussi le site (même adresse → cookies de session sûrs).
+#
+# Mise en place (faisable depuis un téléphone) :
+#   dashboard.render.com → New → Blueprint → choisir ce dépôt et la branche,
+#   renseigner les 4 variables SUPER_ADMIN_* demandées → Apply.
+# =============================================================================
+
+databases:
+  - name: edureleve-db
+    plan: free
+    region: frankfurt
+    databaseName: edureleve
+    user: edureleve
+
+services:
+  - type: web
+    name: edureleve
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: claude/benin-school-platform-phase-1-knv2m4
+    buildCommand: >-
+      npm ci --include=dev --prefix frontend &&
+      npm run build --prefix frontend &&
+      npm ci --include=dev --prefix backend
+    # Migrations + référentiel national + premier administrateur, puis démarrage
+    startCommand: npm run demarrer:production --prefix backend
+    healthCheckPath: /api/sante
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: edureleve-db
+          property: connectionString
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: DOSSIER_FRONTEND
+        value: ../frontend/dist
+      - key: DOSSIER_STOCKAGE
+        value: ./stockage
+      # Premier compte administrateur (créé au premier démarrage uniquement)
+      - key: SUPER_ADMIN_NOM
+        sync: false
+      - key: SUPER_ADMIN_PRENOMS
+        sync: false
+      - key: SUPER_ADMIN_TELEPHONE
+        sync: false
+      - key: SUPER_ADMIN_MOT_DE_PASSE
+        sync: false

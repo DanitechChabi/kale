@@ -18,7 +18,8 @@
     "postinstall": "prisma generate",
     "prisma:seed": "prisma db seed",
     "test:db": "node scripts/preparer-base-test.js && vitest run -c vitest.db.config.js",
-    "creer-super-admin": "node --env-file-if-exists=.env scripts/creer-super-admin.js"
+    "creer-super-admin": "node --env-file-if-exists=.env scripts/creer-super-admin.js",
+    "demarrer:production": "node scripts/demarrer-production.js"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
@@ -45,5 +46,8 @@
   },
   "prisma": {
     "seed": "node --env-file-if-exists=.env prisma/seed.js"
+  },
+  "engines": {
+    "node": ">=22.12"
   }
 }
