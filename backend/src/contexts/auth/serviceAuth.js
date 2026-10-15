@@ -30,7 +30,16 @@ const SELECTION_UTILISATEUR = {
   actif: true,
   doitChangerMotDePasse: true,
   motDePasseHash: true,
-  ecole: { select: { id: true, nom: true, statutVerification: true, actif: true, ordres: true, typePeriode: true } },
+  ecole: {
+    select: {
+      id: true,
+      nom: true,
+      statutVerification: true,
+      actif: true,
+      ordres: true,
+      typePeriode: true,
+    },
+  },
 };
 
 /** Données de profil renvoyées au client (jamais le hachage du mot de passe). */

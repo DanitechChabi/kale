@@ -5,6 +5,7 @@ import { creerRouteurAuth } from './auth.js';
 import { routeurImport } from './import.js';
 import { creerRouteurInscriptionEcole } from './inscriptionEcole.js';
 import { routeurMonEcole } from './monEcole.js';
+import { routeurNotes } from './notes.js';
 import { routeurReferentiel } from './referentiel.js';
 import { routeurSante } from './sante.js';
 import { routeurScolarite } from './scolarite.js';
@@ -22,6 +23,7 @@ export function creerRouteurApi(options = {}) {
   routeur.use('/utilisateurs', routeurUtilisateurs);
   routeur.use('/admin', routeurAdmin);
   routeur.use('/import', routeurImport);
+  routeur.use('/', routeurNotes);
   // Préfixes variés (/classes, /eleves, /annees…), protégés dans le routeur lui-même
   routeur.use('/', routeurScolarite);
   return routeur;
