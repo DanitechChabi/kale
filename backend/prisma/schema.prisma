@@ -198,7 +198,7 @@ model Serie {
   @@map("series")
 }
 
-/// Catalogue national des disciplines
+/// Catalogue national des disciplines (le ministère peut en ajouter)
 model MatiereReference {
   id             String  @id @default(uuid()) @db.Uuid
   code           String  @unique @db.VarChar(20) // ex. « PCT », « SVT », « LV2-ALL »
@@ -228,6 +228,9 @@ model ProgrammeMatiere {
   /// Matières au choix : l'élève en suit une seule par groupe (ex. « LV2 »)
   groupeOption       String?  @map("groupe_option") @db.VarChar(30)
   /// Faux tant que la ligne n'a pas été confirmée sur un texte officiel
+  /// Matière facultative : suivie seulement par les élèves qui la choisissent ;
+  /// seuls les points au-dessus de 10 comptent dans la moyenne (bonus)
+  estFacultative     Boolean  @default(false) @map("est_facultative")
   estVerifie         Boolean  @default(false) @map("est_verifie")
   source             String?  @db.VarChar(255)
 
@@ -464,8 +467,9 @@ model Classe {
   @@map("classes")
 }
 
-/// Matière telle qu'enseignée dans l'établissement (rattachée au catalogue
-/// national quand elle en provient, libre sinon).
+/// Matière telle qu'enseignée dans l'établissement. Rattachée au catalogue
+/// national quand elle en provient ; sinon matière ajoutée par l'établissement
+/// (matiere_reference_id vide), par exemple une option locale.
 model Matiere {
   id                 String  @id @default(uuid()) @db.Uuid
   ecoleId            String  @map("ecole_id") @db.Uuid
@@ -487,15 +491,17 @@ model Matiere {
 /// Créée automatiquement depuis le programme officiel à la création de la
 /// classe, puis ajustable par l'établissement.
 model Enseignement {
-  id           String   @id @default(uuid()) @db.Uuid
-  ecoleId      String   @map("ecole_id") @db.Uuid
-  classeId     String   @map("classe_id") @db.Uuid
-  matiereId    String   @map("matiere_id") @db.Uuid
-  coefficient  Int      @db.SmallInt // > 0 (contrainte CHECK)
-  heuresHebdo  Decimal? @map("heures_hebdo") @db.Decimal(3, 1)
+  id             String   @id @default(uuid()) @db.Uuid
+  ecoleId        String   @map("ecole_id") @db.Uuid
+  classeId       String   @map("classe_id") @db.Uuid
+  matiereId      String   @map("matiere_id") @db.Uuid
+  coefficient    Int      @db.SmallInt // > 0 (contrainte CHECK)
+  heuresHebdo    Decimal? @map("heures_hebdo") @db.Decimal(3, 1)
   /// Copié du programme : matières au choix (ex. « LV2 »)
-  groupeOption String?  @map("groupe_option") @db.VarChar(30)
-  enseignantId String?  @map("enseignant_id") @db.Uuid
+  groupeOption   String?  @map("groupe_option") @db.VarChar(30)
+  /// Copié du programme ; voir ProgrammeMatiere.estFacultative
+  estFacultative Boolean  @default(false) @map("est_facultative")
+  enseignantId   String?  @map("enseignant_id") @db.Uuid
 
   ecole        Ecole                  @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
   classe       Classe                 @relation(fields: [classeId], references: [id], onDelete: Restrict)
@@ -591,7 +597,8 @@ model Inscription {
   @@map("inscriptions")
 }
 
-/// Matière choisie par l'élève dans un groupe d'options (ex. LV2 : allemand ou espagnol).
+/// Matière choisie par l'élève : une matière d'un groupe d'options (ex. LV2 :
+/// allemand ou espagnol) ou une matière facultative.
 model ChoixOption {
   id             String @id @default(uuid()) @db.Uuid
   ecoleId        String @map("ecole_id") @db.Uuid

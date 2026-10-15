@@ -62,6 +62,12 @@ export const matieres = [
   ['SPE-EA', 'Eau et Assainissement', 'Eau & assain.'],
   ['COMPTA', 'Comptabilité', 'Compta'],
   ['DROIT', 'Droit', 'Droit'],
+  // Matières pouvant être proposées en facultatif par les établissements
+  ['INFO', 'Informatique', 'Informatique'],
+  ['ARTS', 'Éducation artistique', 'Arts'],
+  ['MUS', 'Éducation musicale', 'Musique'],
+  // Toujours en dernière ligne du bulletin
+  ['CONDUITE', 'Conduite', 'Conduite'],
 ].map(([code, nom, nomCourt], i) => ({ code, nom, nomCourt, ordreAffichage: (i + 1) * 10 }));
 
 // -----------------------------------------------------------------------------
@@ -76,6 +82,7 @@ function ligne(niveau, serie, [matiere, coefficient, options = {}], source) {
     matiere,
     coefficient,
     groupeOption: options.groupeOption ?? null,
+    estFacultative: options.estFacultative ?? false,
     estVerifie: false,
     source: options.source ?? source,
   };
@@ -265,5 +272,14 @@ const secondCycle = [
   ),
 ];
 
+// --- Conduite : notée dans toutes les classes ---------------------------------
+const niveauxEtSeries = [
+  ...['SIXIEME', 'CINQUIEME', 'QUATRIEME', 'TROISIEME'].map((niveau) => [niveau, null]),
+  ...niveauxLycee.flatMap((niveau) => series.map((s) => [niveau, s.code])),
+];
+const conduite = niveauxEtSeries.map(([niveau, serie]) =>
+  ligne(niveau, serie, ['CONDUITE', 1], A_CONFIRMER),
+);
+
 /** Programme par défaut de chaque niveau / série */
-export const programmes = [...premierCycle, ...secondCycle];
+export const programmes = [...premierCycle, ...secondCycle, ...conduite];

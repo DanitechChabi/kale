@@ -60,10 +60,14 @@ docker compose up -d
 # 3. Dépendances (racine + backend + frontend)
 npm run install:tout
 
-# 4. Lancer l'API (http://localhost:4000) — dans un premier terminal
+# 4. Base de données : tables, protections, puis référentiel national
+npm run prisma:deploy --prefix backend   # applique les migrations
+npm run prisma:seed --prefix backend     # départements, communes, séries, matières
+
+# 5. Lancer l'API (http://localhost:4000) — dans un premier terminal
 npm run dev:backend
 
-# 5. Lancer le frontend (http://localhost:5173) — dans un second terminal
+# 6. Lancer le frontend (http://localhost:5173) — dans un second terminal
 npm run dev:frontend
 ```
 
@@ -76,6 +80,7 @@ curl http://localhost:4000/api/sante        # {"statut":"ok",...}
 curl http://localhost:4000/api/sante/base   # {"statut":"ok","base":"connectée"}
 
 npm test        # tests backend + frontend
+npm run test:db --prefix backend   # règles garanties par PostgreSQL (base edureleve_test)
 npm run lint    # ESLint backend + frontend
 npm run build   # build de production de la PWA (frontend/dist)
 ```
@@ -100,7 +105,7 @@ relevés immuables, code commenté en français.
 ## Feuille de route
 
 1. ✅ Initialisation (monorepo, docker-compose, Express, Vite, PWA, identité visuelle)
-2. Schéma de base de données
+2. ✅ Schéma de base de données (26 tables, triggers, référentiel national)
 3. Authentification et rôles
 4. Gestion scolaire (élèves, classes, matières, inscriptions, import Excel)
 5. Notes, moyennes pondérées, rangs, clôture de trimestre

@@ -70,3 +70,29 @@ describe('référentiel pédagogique par défaut', () => {
     expect(programmes.every((p) => p.estVerifie === false)).toBe(true);
   });
 });
+
+describe('conduite et matières facultatives', () => {
+  it('note la conduite dans chaque classe', () => {
+    const combinaisons = new Set(programmes.map((p) => `${p.niveau}|${p.serie}`));
+    const avecConduite = new Set(
+      programmes.filter((p) => p.matiere === 'CONDUITE').map((p) => `${p.niveau}|${p.serie}`),
+    );
+    expect(avecConduite).toEqual(combinaisons);
+  });
+
+  it('expose le caractère facultatif sur chaque ligne', () => {
+    expect(programmes.every((p) => typeof p.estFacultative === 'boolean')).toBe(true);
+    expect(matieres.some((m) => m.code === 'INFO')).toBe(true);
+  });
+});
+
+describe('géographie', () => {
+  it('compte 12 départements et 77 communes, sans doublon', async () => {
+    const { departements } = await import('../prisma/donnees/geographie.js');
+    expect(departements).toHaveLength(12);
+    const communes = departements.flatMap((d) => d.communes);
+    expect(communes).toHaveLength(77);
+    expect(new Set(communes).size).toBe(77);
+    expect(new Set(departements.map((d) => d.code)).size).toBe(12);
+  });
+});

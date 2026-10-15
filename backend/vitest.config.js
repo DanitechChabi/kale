@@ -3,6 +3,8 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     environment: 'node',
+    // Les tests sur base réelle se lancent à part : npm run test:db
+    exclude: ['tests/db/**', 'node_modules/**'],
     // Variables d'environnement minimales pour que la config Zod passe en test
     env: {
       NODE_ENV: 'test',

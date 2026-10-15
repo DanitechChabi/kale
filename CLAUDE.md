@@ -21,6 +21,15 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - **Relevés** : un relevé archivé n'est jamais modifié ni supprimé. Une correction crée un
   nouveau relevé qui référence l'ancien.
 
+## Base de données
+
+- Ne jamais contourner les triggers (relevés, journal d'audit, périodes clôturées) : ils sont la
+  dernière ligne de défense. Toute nouvelle règle d'intégrité forte va aussi en SQL dans une
+  migration, avec un test dans `backend/tests/db/`.
+- Le référentiel pédagogique est une donnée (`prisma/donnees/`), jamais du code en dur. Une ligne
+  `est_verifie = true` (validée par le ministère) n'est jamais écrasée par le seed.
+- Vérification des établissements : `SUPER_ADMIN` et `MINISTERE` peuvent valider ou rejeter.
+
 ## Règles de code
 
 - Code commenté en français, noms de variables en français cohérents.
