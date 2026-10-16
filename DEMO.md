@@ -12,11 +12,11 @@ Tout passe par l'API : mêmes règles, mêmes triggers, PDF réellement archivé
 
 **Contenu** : 3 établissements fictifs dans 3 départements, deux années scolaires.
 
-| Établissement | Commune (département) | Classes 2026-2027 |
-| --- | --- | --- |
-| CEG Les Cocotiers (public) | Cotonou (Littoral) | 6e ×2, 5e, 4e, 3e |
-| Lycée Les Rôniers (public) | Parakou (Borgou) | 3e, 2nde C, 2nde A2, 1re D, Tle D |
-| Complexe scolaire La Lumière (privé) | Abomey (Zou) | 6e, 4e, 3e, Tle A1 |
+| Établissement                        | Commune (département) | Classes 2026-2027                 |
+| ------------------------------------ | --------------------- | --------------------------------- |
+| CEG Les Cocotiers (public)           | Cotonou (Littoral)    | 6e ×2, 5e, 4e, 3e                 |
+| Lycée Les Rôniers (public)           | Parakou (Borgou)      | 3e, 2nde C, 2nde A2, 1re D, Tle D |
+| Complexe scolaire La Lumière (privé) | Abomey (Zou)          | 6e, 4e, 3e, Tle A1                |
 
 - **2025-2026** : trois trimestres notés et clôturés, bulletins et relevés annuels archivés (QR code,
   empreinte), appels de mars 2026.
@@ -29,15 +29,15 @@ Tout passe par l'API : mêmes règles, mêmes triggers, PDF réellement archivé
 
 Mot de passe commun : **`EduReleve2026`**. Identifiant : le téléphone (ou l'identifiant de l'élève).
 
-| Rôle | Identifiant |
-| --- | --- |
-| Super-administrateur | `01 00 00 00 01` |
-| Ministère | `01 00 00 00 02` |
-| Parent (2 enfants, 2 établissements) | `01 00 00 00 03` |
-| Direction / secrétariat / enseignant — CEG Les Cocotiers | `01 00 00 00 10` / `11` / `12` |
-| Direction / secrétariat / enseignant — Lycée Les Rôniers | `01 00 00 00 20` / `21` / `22` |
-| Direction / secrétariat / enseignant — Complexe scolaire La Lumière | `01 00 00 00 30` / `31` / `32` |
-| Élève (Sèna HOUNKPATIN, 6e A) | identifiant affiché à la fin du chargement |
+| Rôle                                                                | Identifiant                                |
+| ------------------------------------------------------------------- | ------------------------------------------ |
+| Super-administrateur                                                | `01 00 00 00 01`                           |
+| Ministère                                                           | `01 00 00 00 02`                           |
+| Parent (2 enfants, 2 établissements)                                | `01 00 00 00 03`                           |
+| Direction / secrétariat / enseignant — CEG Les Cocotiers            | `01 00 00 00 10` / `11` / `12`             |
+| Direction / secrétariat / enseignant — Lycée Les Rôniers            | `01 00 00 00 20` / `21` / `22`             |
+| Direction / secrétariat / enseignant — Complexe scolaire La Lumière | `01 00 00 00 30` / `31` / `32`             |
+| Élève (Sèna HOUNKPATIN, 6e A)                                       | identifiant affiché à la fin du chargement |
 
 ## Parcours jury (≈ 10 minutes)
 
