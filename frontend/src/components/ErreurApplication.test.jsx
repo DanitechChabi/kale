@@ -17,6 +17,10 @@ describe('filet de sécurité de l’affichage', () => {
     expect(screen.getByText('Un problème d’affichage est survenu')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Recharger la page/ })).toBeInTheDocument();
     expect(screen.getByText(/Panne simulée/)).toBeInTheDocument();
+    // Page et emplacement de l'erreur, pour la situer depuis un simple signalement
+    expect(
+      screen.getByText(/ErreurApplication\.test\.jsx:\d+:\d+/, { exact: false }),
+    ).toBeInTheDocument();
     vi.restoreAllMocks();
   });
 });

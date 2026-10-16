@@ -6,6 +6,33 @@ import { RotateCcw, TriangleAlert } from 'lucide-react';
  * Les saisies en cours (brouillons) restent sur l'appareil ; le message technique
  * est affiché pour pouvoir être transmis au support.
  */
+/** Premier emplacement de la pile (fichier:ligne:colonne), pour situer l'erreur. */
+function origineErreur(erreur) {
+  const ligne = (erreur?.stack ?? '')
+    .split('\n')
+    .map((l) => /([^/\s(]+\.m?jsx?(?:\?[^:]*)?:\d+:\d+)/.exec(l)?.[1])
+    .find(Boolean);
+  return ligne ?? '';
+}
+
+/**
+ * Recharge en repartant d'une version propre : désinscrit le service worker et vide
+ * le cache des fichiers de l'application (une version ancienne restée sur le
+ * téléphone peut se mélanger à la nouvelle après une mise à jour). Les brouillons
+ * et la file d'envoi (IndexedDB) ne sont pas touchés.
+ */
+async function reparerEtRecharger() {
+  try {
+    const inscriptions = (await navigator.serviceWorker?.getRegistrations()) ?? [];
+    await Promise.all(inscriptions.map((i) => i.unregister()));
+    const caches = window.caches ? await window.caches.keys() : [];
+    await Promise.all(caches.map((cle) => window.caches.delete(cle)));
+  } catch {
+    // Rien à nettoyer ou accès refusé : le rechargement simple reste possible
+  }
+  window.location.reload();
+}
+
 export default class ErreurApplication extends Component {
   state = { erreur: null };
 
@@ -30,15 +57,19 @@ export default class ErreurApplication extends Component {
         </p>
         <button
           type="button"
-          onClick={() => window.location.reload()}
+          onClick={reparerEtRecharger}
           className="inline-flex min-h-11 w-fit items-center gap-2 rounded-lg bg-marque-600 px-5 text-sm font-semibold text-white hover:bg-marque-700"
         >
           <RotateCcw className="h-4 w-4" /> Recharger la page
         </button>
         <p className="chiffres rounded-lg bg-slate-100 p-3 text-xs break-words text-slate-600">
-          {navigator.userAgent}
+          {window.location.pathname}
           <br />
           {erreur.message}
+          <br />
+          {origineErreur(erreur)}
+          <br />
+          {navigator.userAgent}
         </p>
       </div>
     );
