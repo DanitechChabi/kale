@@ -55,6 +55,9 @@ function lireBrouillon() {
       ? {
           ...VIDE,
           ...brut,
+          // Brouillon d'une version antérieure du formulaire : champs manquants complétés
+          ecole: { ...VIDE.ecole, ...brut.ecole },
+          references: { ...brut.references },
           responsable: {
             ...VIDE.responsable,
             ...brut.responsable,

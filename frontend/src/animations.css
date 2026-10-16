@@ -26,9 +26,10 @@
 }
 
 /* ---------- Entrées au chargement ---------- */
+/* « both » : l'état de départ vient de l'animation elle-même ; si le navigateur
+   n'exécute pas l'animation (économie d'énergie…), le contenu reste visible */
 .entree {
-  opacity: 0;
-  animation: fondu-haut 0.9s var(--ease-sortie) var(--delai, 0ms) forwards;
+  animation: fondu-haut 0.9s var(--ease-sortie) var(--delai, 0ms) both;
 }
 @keyframes fondu-haut {
   from {
@@ -164,8 +165,7 @@
 
 /* Lignes de notes qui s'inscrivent une à une */
 .ligne-note {
-  opacity: 0;
-  animation: ligne-entre 0.6s var(--ease-sortie) var(--delai, 0ms) forwards;
+  animation: ligne-entre 0.6s var(--ease-sortie) var(--delai, 0ms) both;
 }
 @keyframes ligne-entre {
   from {
