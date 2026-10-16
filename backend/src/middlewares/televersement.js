@@ -37,3 +37,16 @@ export const recevoirSupport = () =>
       fieldSize: 16 * 1024,
     },
   }).single('fichier');
+
+/** Copie d'un élève : jusqu'à 5 pages (champ « pages ») et un commentaire. */
+export const recevoirCopie = () =>
+  multer({
+    storage: multer.memoryStorage(),
+    defParamCharset: 'utf8',
+    limits: {
+      fileSize: config.TAILLE_MAX_COURS_MO * 1024 * 1024,
+      files: 5,
+      fields: 5,
+      fieldSize: 4 * 1024,
+    },
+  }).array('pages', 5);

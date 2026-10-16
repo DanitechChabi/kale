@@ -318,6 +318,8 @@ model Ecole {
   cours             Cours[]
   devoirs           Devoir[]
   devoirsFaits      DevoirFait[]
+  rendus            RenduDevoir[]
+  rendusFichiers    RenduFichier[]
 
   @@index([communeId])
   @@index([statutVerification])
@@ -587,6 +589,7 @@ model Eleve {
   demandesDuplicata DemandeDuplicata[]
   notifications     Notification[]
   devoirsFaits      DevoirFait[]
+  rendus            RenduDevoir[]
 
   @@unique([ecoleId, matricule])
   @@unique([ecoleId, npi])
@@ -998,10 +1001,11 @@ model Devoir {
   creeLe          DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
   modifieLe       DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
-  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
-  auteur       Utilisateur? @relation(fields: [auteurId], references: [id], onDelete: SetNull)
+  ecole        Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  enseignement Enseignement  @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  auteur       Utilisateur?  @relation(fields: [auteurId], references: [id], onDelete: SetNull)
   faits        DevoirFait[]
+  rendus       RenduDevoir[]
 
   @@index([ecoleId])
   @@index([enseignementId, pourLe])
@@ -1023,4 +1027,47 @@ model DevoirFait {
   @@unique([devoirId, eleveId])
   @@index([ecoleId])
   @@map("devoirs_faits")
+}
+
+/// Copie rendue par un élève (photos ou PDF), une par élève et par devoir ;
+/// un nouvel envoi remplace le précédent.
+model RenduDevoir {
+  id           String    @id @default(uuid()) @db.Uuid
+  ecoleId      String    @map("ecole_id") @db.Uuid
+  devoirId     String    @map("devoir_id") @db.Uuid
+  eleveId      String    @map("eleve_id") @db.Uuid
+  commentaire  String?   @db.VarChar(500)
+  rendLe       DateTime  @default(now()) @map("rend_le") @db.Timestamptz(3)
+  /// Lecture et appréciation de l'enseignant
+  vuLe         DateTime? @map("vu_le") @db.Timestamptz(3)
+  appreciation String?   @db.VarChar(500)
+
+  ecole    Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  devoir   Devoir         @relation(fields: [devoirId], references: [id], onDelete: Cascade)
+  eleve    Eleve          @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  fichiers RenduFichier[]
+
+  @@unique([devoirId, eleveId])
+  @@index([ecoleId])
+  @@map("rendus_devoirs")
+}
+
+/// Page d'une copie rendue (photo JPEG/PNG ou PDF, contenu contrôlé par signature).
+model RenduFichier {
+  id              String @id @default(uuid()) @db.Uuid
+  ecoleId         String @map("ecole_id") @db.Uuid
+  renduId         String @map("rendu_id") @db.Uuid
+  ordre           Int    @db.SmallInt
+  nomFichier      String @map("nom_fichier") @db.VarChar(255)
+  cheminFichier   String @map("chemin_fichier") @db.VarChar(500)
+  typeMime        String @map("type_mime") @db.VarChar(100)
+  tailleOctets    Int    @map("taille_octets")
+  empreinteSha256 String @map("empreinte_sha256") @db.Char(64)
+
+  ecole Ecole       @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  rendu RenduDevoir @relation(fields: [renduId], references: [id], onDelete: Cascade)
+
+  @@unique([renduId, ordre])
+  @@index([ecoleId])
+  @@map("rendus_fichiers")
 }

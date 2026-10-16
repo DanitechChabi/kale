@@ -9,6 +9,7 @@ import {
   listerCours,
   listerDevoirs,
 } from '../contexts/cours/serviceCours.js';
+import { fichierRendu, pagesRendu } from '../contexts/cours/serviceRendus.js';
 import { emploiDuTempsClasse } from '../contexts/emploiDuTemps/serviceEmploiDuTemps.js';
 import { contenuDocument } from '../contexts/releves/serviceReleves.js';
 import {
@@ -112,5 +113,30 @@ routeurParent.get(
   async (req, res) => {
     const { db, classeId } = await classeEnfant(req);
     envoyerDocument(res, await fichierDevoir(db, req.valide.params.id, { classeId }));
+  },
+);
+
+routeurParent.get(
+  '/enfants/:eleveId/devoirs/:id/copie',
+  valider({ params: avecDocument }),
+  async (req, res) => {
+    const { db, eleveId } = await classeEnfant(req);
+    const rendu = await pagesRendu(db, { devoirId: req.valide.params.id, eleveId });
+    res.json({
+      pages: (rendu?.fichiers ?? []).map((f) => ({
+        id: f.id,
+        nom: f.nomFichier,
+        typeMime: f.typeMime,
+      })),
+    });
+  },
+);
+
+routeurParent.get(
+  '/enfants/:eleveId/copies/fichiers/:id',
+  valider({ params: avecDocument }),
+  async (req, res) => {
+    const { db, eleveId } = await classeEnfant(req);
+    envoyerDocument(res, await fichierRendu(db, req.valide.params.id, { eleveId }));
   },
 );

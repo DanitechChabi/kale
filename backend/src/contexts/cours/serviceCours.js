@@ -6,6 +6,7 @@
 // Les fichiers sont contrôlés par leur signature et stockés via utils/fichiers.js.
 import { basename } from 'node:path';
 import { ErreurApi } from '../../middlewares/erreurs.js';
+import { resumeRendu } from './serviceRendus.js';
 import {
   detecterTypeFichier,
   empreinteSha256,
@@ -169,8 +170,15 @@ const presenterDevoir = (d, { eleveId, effectif } = {}) => ({
   fichier: fichierPublic(d),
   auteur: auteurPublic(d.auteur),
   creeLe: d.creeLe,
-  ...(eleveId !== undefined && { fait: d.faits.some((f) => f.eleveId === eleveId) }),
-  ...(effectif !== undefined && { faits: d.faits.length, effectif }),
+  ...(eleveId !== undefined && {
+    fait: d.faits.some((f) => f.eleveId === eleveId),
+    rendu: resumeRendu(d.rendus?.[0] ?? null, d.pourLe),
+  }),
+  ...(effectif !== undefined && {
+    faits: d.faits.length,
+    rendus: d._count?.rendus ?? 0,
+    effectif,
+  }),
 });
 
 /**
@@ -183,7 +191,14 @@ export async function listerDevoirs(db, { enseignementId, classeId, eleveId, dep
       ...(enseignementId ? { enseignementId } : { enseignement: { classeId } }),
       ...(depuis && { pourLe: { gte: new Date(depuis) } }),
     },
-    include: { ...INCLURE, faits: { select: { eleveId: true } } },
+    include: {
+      ...INCLURE,
+      faits: { select: { eleveId: true } },
+      // Copie de l'élève (vue élève/parent) ou nombre de copies (vue enseignant)
+      ...(eleveId
+        ? { rendus: { where: { eleveId }, include: { _count: { select: { fichiers: true } } } } }
+        : { _count: { select: { rendus: true } } }),
+    },
     orderBy: [{ pourLe: eleveId ? 'asc' : 'desc' }, { creeLe: 'desc' }],
     take: 200,
   });

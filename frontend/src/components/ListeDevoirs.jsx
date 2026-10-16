@@ -1,6 +1,58 @@
-import { Check, Paperclip, Trash2 } from 'lucide-react';
+import { useState } from 'react';
+import { Check, FileText, FolderOpen, Image, Paperclip, Trash2, Upload } from 'lucide-react';
+import { appelApi } from '../lib/api.js';
 import { ouvrirDocument } from '../lib/documents.js';
 import { dateLocale } from '../lib/emploiDuTemps.js';
+import { formaterDate } from '../lib/navigation.js';
+
+/** Copie rendue : état, appréciation de l'enseignant et pages (chargées à la demande). */
+function CopieRendue({ rendu, cheminPages, cheminPage }) {
+  const [pages, setPages] = useState(null);
+  async function afficher() {
+    const { pages: liste } = await appelApi(cheminPages);
+    setPages(liste);
+  }
+  return (
+    <div className="space-y-1.5 rounded-lg bg-slate-50 p-3 text-sm">
+      <p className={`font-semibold ${rendu.enRetard ? 'text-sceau' : 'text-marque-700'}`}>
+        Copie rendue le {formaterDate(rendu.rendLe, true)}
+        {rendu.enRetard && ' · en retard'} · {rendu.pages} page{rendu.pages > 1 ? 's' : ''}
+      </p>
+      {rendu.appreciation && (
+        <p className="text-slate-700">
+          <span className="etiquette mr-1.5">Professeur</span>
+          {rendu.appreciation}
+        </p>
+      )}
+      {cheminPages &&
+        (pages ? (
+          <div className="flex flex-wrap gap-2 pt-1">
+            {pages.map((f, i) => {
+              const Icone = f.typeMime === 'application/pdf' ? FileText : Image;
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={() => ouvrirDocument(cheminPage(f))}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1 font-medium ring-1 ring-slate-200"
+                >
+                  <Icone className="h-4 w-4 text-marque-700" /> Page {i + 1}
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={afficher}
+            className="font-semibold text-marque-700 hover:underline"
+          >
+            Voir la copie
+          </button>
+        ))}
+    </div>
+  );
+}
 
 const dateLongue = (iso) =>
   new Intl.DateTimeFormat('fr-FR', {
@@ -26,6 +78,10 @@ export default function ListeDevoirs({
   cheminFichier,
   onBasculer,
   onRetirer,
+  onRendre,
+  onCopies,
+  cheminPages,
+  cheminPage,
   afficherMatiere = true,
 }) {
   if (!devoirs.length) {
@@ -110,7 +166,33 @@ export default function ListeDevoirs({
                           {d.faits > 1 ? 's' : ''} sur {d.effectif}
                         </span>
                       )}
+                      {onCopies && (
+                        <button
+                          type="button"
+                          onClick={() => onCopies(d)}
+                          className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+                        >
+                          <FolderOpen className="h-4 w-4" /> Copies rendues ({d.rendus ?? 0})
+                        </button>
+                      )}
+                      {onRendre && (
+                        <button
+                          type="button"
+                          onClick={() => onRendre(d)}
+                          className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+                        >
+                          <Upload className="h-4 w-4" />{' '}
+                          {d.rendu ? 'Remplacer ma copie' : 'Rendre ma copie'}
+                        </button>
+                      )}
                     </div>
+                    {d.rendu && (
+                      <CopieRendue
+                        rendu={d.rendu}
+                        cheminPages={cheminPages?.(d)}
+                        cheminPage={cheminPage}
+                      />
+                    )}
                   </div>
                   {onRetirer && (
                     <button

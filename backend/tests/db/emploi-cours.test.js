@@ -11,6 +11,7 @@ import {
   creerEcole,
   creerEleve,
   PDF,
+  PNG,
   prisma,
 } from './aide.js';
 
@@ -77,7 +78,8 @@ beforeAll(async () => {
     where: { id: ctx.eleve.id },
     data: { utilisateurId: compteEleve.id },
   });
-  ctx.eleveApi = client((await connecter(compteEleve)).jeton);
+  ctx.eleveJeton = (await connecter(compteEleve)).jeton;
+  ctx.eleveApi = client(ctx.eleveJeton);
 
   const parent = await creerCompte('PARENT');
   await prisma.lienParentEleve.create({
@@ -344,6 +346,94 @@ describe('devoirs', () => {
     await ctx.eleveApi.put(`/api/moi/devoirs/${ctx.devoir.id}/fait`, { fait: true });
     expect((await ctx.prof.api.delete(`/api/devoirs/${ctx.devoir.id}`)).body.retire).toBe(true);
     expect(await prisma.devoirFait.count({ where: { devoirId: ctx.devoir.id } })).toBe(0);
+  });
+});
+
+describe('copies rendues', () => {
+  it('l’élève rend des photos ou un PDF, l’enseignant corrige, le parent suit', async () => {
+    const hier = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
+    const { devoir } = (
+      await ctx.prof.api
+        .multipart('/api/devoirs')
+        .field('enseignementId', ctx.mathA.id)
+        .field('titre', 'Problème du jardin')
+        .field('consignes', 'Rédiger la solution.')
+        .field('pourLe', hier)
+    ).body;
+
+    const vide = await request(app)
+      .put(`/api/moi/devoirs/${devoir.id}/copie`)
+      .set(avecJeton(ctx.eleveJeton));
+    expect(vide.body.erreur.code).toBe('FICHIER_REQUIS');
+    const faux = await request(app)
+      .put(`/api/moi/devoirs/${devoir.id}/copie`)
+      .set(avecJeton(ctx.eleveJeton))
+      .attach('pages', Buffer.from('texte'), 'page.jpg');
+    expect(faux.body.erreur.code).toBe('FICHIER_INVALIDE');
+
+    const rendu = await request(app)
+      .put(`/api/moi/devoirs/${devoir.id}/copie`)
+      .set(avecJeton(ctx.eleveJeton))
+      .field('commentaire', 'Voici mes deux pages')
+      .attach('pages', PNG, 'page1.png')
+      .attach('pages', PDF, 'page2.pdf');
+    expect(rendu.status).toBe(200);
+    // Rendu après la date de remise : signalé en retard
+    expect(rendu.body.rendu).toMatchObject({
+      pages: 2,
+      enRetard: true,
+      commentaire: 'Voici mes deux pages',
+    });
+
+    const liste = await ctx.eleveApi.get('/api/moi/devoirs');
+    const ligne = liste.body.devoirs.find((d) => d.id === devoir.id);
+    expect(ligne).toMatchObject({ fait: true, rendu: { pages: 2 } });
+
+    // L'enseignant voit les copies de la classe et les ouvre
+    expect((await ctx.autreProf.api.get(`/api/devoirs/${devoir.id}/copies`)).status).toBe(403);
+    const copies = await ctx.prof.api.get(`/api/devoirs/${devoir.id}/copies`);
+    const copie = copies.body.copies.find((c) => c.eleve.id === ctx.eleve.id).rendu;
+    expect(copie.fichiers.map((f) => f.typeMime)).toEqual(['image/png', 'application/pdf']);
+    const page = await ctx.prof.api.get(`/api/copies/fichiers/${copie.fichiers[0].id}`);
+    expect(page.status).toBe(200);
+    expect(page.headers['content-type']).toBe('image/png');
+    await ctx.prof.api.patch(`/api/copies/${copie.id}`, {
+      appreciation: 'Bon raisonnement, soigne la rédaction.',
+    });
+
+    // Le parent voit l'appréciation et les pages
+    const parent = await ctx.parentApi.get(`/api/parent/enfants/${ctx.eleve.id}/devoirs`);
+    expect(parent.body.devoirs.find((d) => d.id === devoir.id).rendu).toMatchObject({
+      appreciation: 'Bon raisonnement, soigne la rédaction.',
+    });
+    const pages = await ctx.parentApi.get(
+      `/api/parent/enfants/${ctx.eleve.id}/devoirs/${devoir.id}/copie`,
+    );
+    expect(pages.body.pages).toHaveLength(2);
+    expect(
+      (
+        await ctx.parentApi.get(
+          `/api/parent/enfants/${ctx.eleve.id}/copies/fichiers/${pages.body.pages[1].id}`,
+        )
+      ).status,
+    ).toBe(200);
+
+    // Un nouvel envoi remplace la copie et efface l'appréciation (nouvelle version à lire)
+    const anciens = (await prisma.renduFichier.findMany({ where: { renduId: copie.id } })).map(
+      (f) => f.cheminFichier,
+    );
+    const nouveau = await request(app)
+      .put(`/api/moi/devoirs/${devoir.id}/copie`)
+      .set(avecJeton(ctx.eleveJeton))
+      .attach('pages', PDF, 'copie-complete.pdf');
+    expect(nouveau.body.rendu).toMatchObject({ pages: 1, appreciation: null });
+    expect(await prisma.fichierStocke.count({ where: { cle: { in: anciens } } })).toBe(0);
+
+    const prof = await ctx.prof.api.get(`/api/enseignements/${ctx.mathA.id}/devoirs`);
+    expect(prof.body.devoirs.find((d) => d.id === devoir.id)).toMatchObject({
+      rendus: 1,
+      faits: 1,
+    });
   });
 });
 

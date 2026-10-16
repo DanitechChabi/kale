@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { BookPlus, ClipboardPlus, Send } from 'lucide-react';
+import CopiesDevoir from '../../components/CopiesDevoir.jsx';
 import EnTetePage from '../../components/EnTetePage.jsx';
 import ListeCours from '../../components/ListeCours.jsx';
 import ListeDevoirs from '../../components/ListeDevoirs.jsx';
@@ -222,6 +223,7 @@ export default function CoursEnseignant() {
   );
   const actif = onglet === 'cours' ? cours : devoirs;
   const [publication, setPublication] = useState(null);
+  const [copies, setCopies] = useState(null);
   const [erreur, setErreur] = useState(null);
 
   async function retirer(chemin) {
@@ -296,6 +298,16 @@ export default function CoursEnseignant() {
           afficherMatiere={false}
           cheminFichier={(d) => `/devoirs/${d.id}/fichier`}
           onRetirer={(d) => retirer(`/devoirs/${d.id}`)}
+          onCopies={setCopies}
+        />
+      )}
+      {copies && (
+        <CopiesDevoir
+          devoir={copies}
+          onFermer={() => {
+            setCopies(null);
+            devoirs.recharger();
+          }}
         />
       )}
       {publication && (

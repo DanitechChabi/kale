@@ -10,6 +10,8 @@ import {
 } from '../contexts/cours/serviceCours.js';
 import { emploiDuTempsClasse } from '../contexts/emploiDuTemps/serviceEmploiDuTemps.js';
 import { classeActuelle, suiviEleve } from '../contexts/suivi/serviceSuivi.js';
+import { fichierRendu, pagesRendu, rendreCopie } from '../contexts/cours/serviceRendus.js';
+import { recevoirCopie } from '../middlewares/televersement.js';
 import { valider } from '../middlewares/valider.js';
 import { envoyerDocument, schemaId } from './aide.js';
 import { ErreurApi } from '../middlewares/erreurs.js';
@@ -82,3 +84,45 @@ routeurEleve.put(
     );
   },
 );
+
+// Copie rendue (photos ou PDF) : un nouvel envoi remplace le précédent
+routeurEleve.put(
+  '/devoirs/:id/copie',
+  valider({ params: schemaId }),
+  recevoirCopie(),
+  async (req, res) => {
+    const { eleveId, classeId } = await eleveConnecte(req);
+    const commentaire = z
+      .string()
+      .trim()
+      .max(500)
+      .optional()
+      .parse(req.body?.commentaire || undefined);
+    res.json(
+      await rendreCopie(req.db, {
+        eleveId,
+        classeId,
+        devoirId: req.valide.params.id,
+        commentaire,
+        fichiers: req.files,
+      }),
+    );
+  },
+);
+
+routeurEleve.get('/devoirs/:id/copie', valider({ params: schemaId }), async (req, res) => {
+  const { eleveId } = await eleveConnecte(req);
+  const rendu = await pagesRendu(req.db, { devoirId: req.valide.params.id, eleveId });
+  res.json({
+    pages: (rendu?.fichiers ?? []).map((f) => ({
+      id: f.id,
+      nom: f.nomFichier,
+      typeMime: f.typeMime,
+    })),
+  });
+});
+
+routeurEleve.get('/copies/fichiers/:id', valider({ params: schemaId }), async (req, res) => {
+  const { eleveId } = await eleveConnecte(req);
+  envoyerDocument(res, await fichierRendu(req.db, req.valide.params.id, { eleveId }));
+});

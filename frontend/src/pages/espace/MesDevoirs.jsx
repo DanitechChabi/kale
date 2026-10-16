@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EnTetePage from '../../components/EnTetePage.jsx';
+import DialogueCopie from '../../components/DialogueCopie.jsx';
 import ListeDevoirs from '../../components/ListeDevoirs.jsx';
 import Alerte from '../../components/ui/Alerte.jsx';
 import Chargement from '../../components/ui/Chargement.jsx';
@@ -13,15 +14,27 @@ import { memoriser, mettreEnFile } from '../../lib/horsLigne.js';
  * Cahier de textes de la classe. `basculer` : l'élève coche ses devoirs (même
  * hors connexion : la coche part au retour du réseau, l'API est idempotente).
  */
-export function DevoirsClasse({ chemin, cheminFichier, basculer = false }) {
+export function DevoirsClasse({
+  chemin,
+  cheminFichier,
+  cheminPages,
+  cheminPage,
+  basculer = false,
+}) {
   const { donnees, erreur, chargement, horsLigne } = useLectureHorsLigne(chemin);
   const [faits, setFaits] = useState({}); // coches modifiées localement
   const [vue, setVue] = useState('aFaire');
+  const [aRendre, setARendre] = useState(null);
+  const [rendus, setRendus] = useState({}); // copies envoyées depuis l'ouverture de la page
   if (erreur) return <Alerte type="erreur">{erreur.message}</Alerte>;
   if (chargement) return <Chargement />;
 
   const aujourdhui = dateLocale();
-  const devoirs = donnees.devoirs.map((d) => ({ ...d, fait: faits[d.id] ?? d.fait }));
+  const devoirs = donnees.devoirs.map((d) => ({
+    ...d,
+    fait: rendus[d.id] ? true : (faits[d.id] ?? d.fait),
+    rendu: rendus[d.id] ?? d.rendu,
+  }));
   const visibles = devoirs.filter((d) =>
     vue === 'aFaire' ? d.pourLe >= aujourdhui : d.pourLe < aujourdhui,
   );
@@ -67,7 +80,20 @@ export function DevoirsClasse({ chemin, cheminFichier, basculer = false }) {
         devoirs={vue === 'passes' ? [...visibles].reverse() : visibles}
         cheminFichier={cheminFichier}
         onBasculer={basculer ? onBasculer : undefined}
+        onRendre={basculer ? setARendre : undefined}
+        cheminPages={cheminPages}
+        cheminPage={cheminPage}
       />
+      {aRendre && (
+        <DialogueCopie
+          devoir={aRendre}
+          onFermer={() => setARendre(null)}
+          onRendu={(rendu) => {
+            setRendus((r) => ({ ...r, [aRendre.id]: rendu }));
+            setARendre(null);
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -77,7 +103,7 @@ export default function MesDevoirs() {
     <div className="space-y-6">
       <EnTetePage
         titre="Devoirs"
-        description="Le cahier de textes de votre classe. Cochez ce que vous avez fait."
+        description="Le cahier de textes de votre classe. Cochez ce que vous avez fait ou rendez votre copie en photo."
       />
       <DevoirsClasse
         chemin="/moi/devoirs"

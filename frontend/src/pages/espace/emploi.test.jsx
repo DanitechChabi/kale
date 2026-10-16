@@ -137,6 +137,59 @@ describe('devoirs de l’élève', () => {
   });
 });
 
+describe('copie rendue par l’élève', () => {
+  it('envoie les pages choisies et affiche la copie rendue', async () => {
+    const { appels } = simulerApi({
+      'POST /auth/rafraichir': [200, { jetonAcces: 'j', utilisateur: compte('ELEVE') }],
+      'GET /moi/devoirs': [
+        200,
+        {
+          devoirs: [
+            {
+              id: 'd1',
+              matiere: 'Maths',
+              titre: 'Problème du jardin',
+              consignes: '…',
+              pourLe: '2999-01-15',
+              fichier: null,
+              fait: false,
+              rendu: null,
+            },
+          ],
+        },
+      ],
+      'PUT /moi/devoirs/d1/copie': [
+        200,
+        {
+          rendu: {
+            id: 'r1',
+            rendLe: '2026-10-16T09:00:00Z',
+            enRetard: false,
+            pages: 1,
+            appreciation: null,
+          },
+        },
+      ],
+    });
+    rendreApp('/espace/devoirs');
+    await screen.findByText('Problème du jardin', { exact: false });
+    fireEvent.click(await screen.findByRole('button', { name: /Rendre ma copie/ }));
+    const page = new File([new Uint8Array([0x89, 0x50, 0x4e, 0x47])], 'page1.png', {
+      type: 'image/png',
+    });
+    fireEvent.change(screen.getByLabelText('Choisir des photos ou un PDF'), {
+      target: { files: [page] },
+    });
+    expect(await screen.findByText(/1\/5/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Envoyer' }));
+    expect(await screen.findByText(/Copie rendue le/)).toBeInTheDocument();
+    const envoi = appels.find((a) => a.cle === 'PUT /moi/devoirs/d1/copie');
+    expect(envoi.options.body).toBeInstanceOf(FormData);
+    expect(envoi.options.body.getAll('pages')).toHaveLength(1);
+    expect(screen.getByRole('button', { name: /Remplacer ma copie/ })).toBeInTheDocument();
+  });
+});
+
 describe('appel depuis l’emploi du temps', () => {
   it('rattache l’appel au cours du jour choisi', async () => {
     const { appels } = simulerApi({

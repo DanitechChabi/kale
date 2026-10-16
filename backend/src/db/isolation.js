@@ -36,6 +36,8 @@ const MODELES_ISOLES = new Set([
   'Cours',
   'Devoir',
   'DevoirFait',
+  'RenduDevoir',
+  'RenduFichier',
 ]);
 
 /** Référentiels nationaux : lecture seule pour un établissement */

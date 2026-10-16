@@ -50,6 +50,8 @@ export default function EnfantDetail() {
         <DevoirsClasse
           chemin={`${base}/devoirs`}
           cheminFichier={(d) => `${base}/devoirs/${d.id}/fichier`}
+          cheminPages={(d) => `${base}/devoirs/${d.id}/copie`}
+          cheminPage={(f) => `${base}/copies/fichiers/${f.id}`}
         />
       )}
       {onglet === 'emploi' && <EmploiDuTempsEnfant id={id} />}

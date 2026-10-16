@@ -17,13 +17,18 @@ import {
   exigerMotDePasseDefinitif,
   exigerRole,
 } from '../middlewares/authentification.js';
+import {
+  apprecierCopie,
+  copiesDuDevoir,
+  fichierCopiePourEnseignant,
+} from '../contexts/cours/serviceRendus.js';
 import { recevoirSupport } from '../middlewares/televersement.js';
 import { valider } from '../middlewares/valider.js';
 import { envoyerDocument, schemaId } from './aide.js';
 
 export const routeurCours = Router();
 routeurCours.use(
-  ['/enseignements/:id/cours', '/enseignements/:id/devoirs', '/cours', '/devoirs'],
+  ['/enseignements/:id/cours', '/enseignements/:id/devoirs', '/cours', '/devoirs', '/copies'],
   authentifier,
   exigerMotDePasseDefinitif,
   exigerRole('ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT'),
@@ -88,3 +93,45 @@ routeurCours.delete(
 routeurCours.get('/devoirs/:id/fichier', valider({ params: schemaId }), async (req, res) => {
   envoyerDocument(res, await fichierDevoir(req.db, req.valide.params.id));
 });
+
+// --- Copies rendues par les élèves --------------------------------------------------
+
+routeurCours.get(
+  '/devoirs/:id/copies',
+  publication,
+  valider({ params: schemaId }),
+  async (req, res) => {
+    res.json(await copiesDuDevoir(req.db, req.utilisateur, req.valide.params.id));
+  },
+);
+
+routeurCours.patch(
+  '/copies/:id',
+  publication,
+  valider({
+    params: schemaId,
+    body: z.object({ appreciation: z.string().trim().max(500).optional() }),
+  }),
+  async (req, res) => {
+    res.json(
+      await apprecierCopie(
+        req.db,
+        req.utilisateur,
+        req.valide.params.id,
+        req.valide.body.appreciation,
+      ),
+    );
+  },
+);
+
+routeurCours.get(
+  '/copies/fichiers/:id',
+  publication,
+  valider({ params: schemaId }),
+  async (req, res) => {
+    envoyerDocument(
+      res,
+      await fichierCopiePourEnseignant(req.db, req.utilisateur, req.valide.params.id),
+    );
+  },
+);
