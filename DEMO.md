@@ -29,15 +29,15 @@ Tout passe par l'API : mêmes règles, mêmes triggers, PDF réellement archivé
 
 Mot de passe commun : **`EduReleve2026`**. Identifiant : le téléphone (ou l'identifiant de l'élève).
 
-| Rôle                                                                | Identifiant                                |
-| ------------------------------------------------------------------- | ------------------------------------------ |
-| Super-administrateur                                                | `01 00 00 00 01`                           |
-| Ministère                                                           | `01 00 00 00 02`                           |
-| Parent (2 enfants, 2 établissements)                                | `01 00 00 00 03`                           |
-| Direction / secrétariat / enseignant — CEG Les Cocotiers            | `01 00 00 00 10` / `11` / `12`             |
-| Direction / secrétariat / enseignant — Lycée Les Rôniers            | `01 00 00 00 20` / `21` / `22`             |
-| Direction / secrétariat / enseignant — Complexe scolaire La Lumière | `01 00 00 00 30` / `31` / `32`             |
-| Élève (Sèna HOUNKPATIN, 6e A)                                       | `SENAH-6EA2Q`                              |
+| Rôle                                                                | Identifiant                    |
+| ------------------------------------------------------------------- | ------------------------------ |
+| Super-administrateur                                                | `01 00 00 00 01`               |
+| Ministère                                                           | `01 00 00 00 02`               |
+| Parent (2 enfants, 2 établissements)                                | `01 00 00 00 03`               |
+| Direction / secrétariat / enseignant — CEG Les Cocotiers            | `01 00 00 00 10` / `11` / `12` |
+| Direction / secrétariat / enseignant — Lycée Les Rôniers            | `01 00 00 00 20` / `21` / `22` |
+| Direction / secrétariat / enseignant — Complexe scolaire La Lumière | `01 00 00 00 30` / `31` / `32` |
+| Élève (Sèna HOUNKPATIN, 6e A)                                       | `SENAH-6EA2Q`                  |
 
 ## Parcours jury (≈ 10 minutes)
 
