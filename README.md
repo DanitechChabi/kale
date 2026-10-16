@@ -191,4 +191,4 @@ relevés immuables, code commenté en français.
 7. ✅ Espace parent, appel et absences, SMS aux parents (fournisseur branchable), service USSD
 8. ✅ Emplois du temps (conflits refusés, appel par créneau), cours en ligne (PDF, vidéo, lien), devoirs
 9. ✅ Tableau de bord ministère (indicateurs par zone, carte des départements, export CSV)
-10. Données de démonstration et parcours jury (DEMO.md)
+10. ✅ Données de démonstration et parcours jury ([DEMO.md](DEMO.md))

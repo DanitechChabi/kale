@@ -19,7 +19,8 @@
     "prisma:seed": "prisma db seed",
     "test:db": "node scripts/preparer-base-test.js && vitest run -c vitest.db.config.js",
     "creer-super-admin": "node --env-file-if-exists=.env scripts/creer-super-admin.js",
-    "demarrer:production": "node scripts/demarrer-production.js"
+    "demarrer:production": "node scripts/demarrer-production.js",
+    "demo": "node --env-file-if-exists=.env prisma/demo.js"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
