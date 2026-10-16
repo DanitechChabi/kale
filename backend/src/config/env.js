@@ -36,6 +36,15 @@ const schemaEnv = z
     LIMITE_CONNEXION: z.coerce.number().int().positive().default(10),
     // Dossiers d'inscription autorisés par adresse IP et par heure
     LIMITE_INSCRIPTION: z.coerce.number().int().positive().default(5),
+    // Fournisseur d'envoi des SMS (voir contexts/notifications/fournisseursSms.js) :
+    // « journal » enregistre les messages sans les envoyer, en attendant un contrat opérateur
+    SMS_FOURNISSEUR: z.enum(['journal']).default('journal'),
+    // Passerelle USSD de l'opérateur : secret partagé (sans lui, la passerelle est fermée)
+    USSD_SECRET: z.string().min(16).optional(),
+    // Code à composer, affiché aux parents (ex. « *123*45# ») une fois attribué
+    USSD_CODE: z.string().max(20).optional(),
+    // Activations de compte parent par adresse IP et par heure
+    LIMITE_ACTIVATION: z.coerce.number().int().positive().default(10),
     // Vérifications publiques de documents par adresse IP et par minute
     LIMITE_VERIFICATION: z.coerce.number().int().positive().default(60),
     // Demandes de duplicata par adresse IP et par heure

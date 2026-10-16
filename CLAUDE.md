@@ -46,6 +46,12 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
   `prisma` directement. Exceptions documentées dans le code : parents (sans `ecole_id`), comptes
   nationaux, unicité globale des identifiants, vérification publique par numéro et dépôt/suivi
   public des duplicatas (`/api/public`, CORS ouvert, limité par IP).
+- Parents (sans `ecole_id`) : chaque enfant est lu avec `prismaPourEcole(lien.ecoleId)` après
+  contrôle du lien (`contexts/suivi/serviceSuivi.js` → `accesEnfant`), jamais autrement.
+- SMS : uniquement via `planifier` (`contexts/notifications`) avec une clé d'unicité par
+  événement ; jamais d'appel direct au fournisseur. Un SMS envoyé est immuable (trigger).
+  Nouveau fournisseur : `fournisseursSms.js` + valeur autorisée de `SMS_FOURNISSEUR`.
+- USSD : réponses `CON`/`END` de 182 caractères au plus, touches numériques seulement.
 - Fichiers : toujours via `utils/fichiers.js` (pilote `disque` ou `base`) ; la table
   `fichiers_stockes` refuse toute réécriture et toute suppression sous `releves/`.
 - `/verifier/:numero` est une page HTML autonome servie par l'API (CSP à nonce, sans JavaScript

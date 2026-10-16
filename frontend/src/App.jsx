@@ -11,6 +11,7 @@ import PageIntrouvable from './pages/PageIntrouvable.jsx';
 const InscriptionEcole = lazy(() => import('./pages/InscriptionEcole.jsx'));
 const DemandeDuplicata = lazy(() => import('./pages/DemandeDuplicata.jsx'));
 const SuiviDuplicata = lazy(() => import('./pages/SuiviDuplicata.jsx'));
+const ActivationParent = lazy(() => import('./pages/ActivationParent.jsx'));
 const EspaceGabarit = lazy(() => import('./components/EspaceGabarit.jsx'));
 const TableauDeBord = lazy(() => import('./pages/espace/TableauDeBord.jsx'));
 const MotDePasse = lazy(() => import('./pages/espace/MotDePasse.jsx'));
@@ -33,6 +34,13 @@ const Bulletins = lazy(() => import('./pages/espace/Bulletins.jsx'));
 const Duplicatas = lazy(() => import('./pages/espace/Duplicatas.jsx'));
 const DuplicataDetail = lazy(() => import('./pages/espace/DuplicataDetail.jsx'));
 const MesDocuments = lazy(() => import('./pages/espace/MesDocuments.jsx'));
+const MesNotes = lazy(() => import('./pages/espace/MesNotes.jsx'));
+const Appel = lazy(() => import('./pages/espace/Appel.jsx'));
+const Absences = lazy(() => import('./pages/espace/Absences.jsx'));
+const Notifications = lazy(() => import('./pages/espace/Notifications.jsx'));
+const Ussd = lazy(() => import('./pages/espace/Ussd.jsx'));
+const EnfantDetail = lazy(() => import('./pages/parent/EnfantDetail.jsx'));
+const Messages = lazy(() => import('./pages/parent/Messages.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -44,6 +52,7 @@ export default function App() {
           <Route path="inscription-ecole" element={<InscriptionEcole />} />
           <Route path="duplicata" element={<DemandeDuplicata />} />
           <Route path="duplicata/suivi" element={<SuiviDuplicata />} />
+          <Route path="parents" element={<ActivationParent />} />
           <Route path="*" element={<PageIntrouvable />} />
         </Route>
         <Route path="connexion" element={<Connexion />} />
@@ -79,6 +88,21 @@ export default function App() {
             </Route>
             <Route element={<RouteProtegee roles={['ELEVE']} />}>
               <Route path="mes-documents" element={<MesDocuments />} />
+              <Route path="mes-notes" element={<MesNotes />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['PARENT']} />}>
+              <Route path="enfants/:id" element={<EnfantDetail />} />
+              <Route path="messages" element={<Messages />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT']} />}>
+              <Route path="appel" element={<Appel />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT']} />}>
+              <Route path="absences" element={<Absences />} />
+              <Route path="sms" element={<Notifications />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['SUPER_ADMIN']} />}>
+              <Route path="ussd" element={<Ussd />} />
             </Route>
             <Route element={<RouteProtegee roles={['SUPER_ADMIN', 'MINISTERE']} />}>
               <Route path="verification" element={<Verification />} />

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Apparition from '../../components/animation/Apparition.jsx';
 import MiseEnRoute from '../../components/MiseEnRoute.jsx';
+import MesEnfants from '../parent/MesEnfants.jsx';
 import Badge, { STATUTS_ECOLE } from '../../components/ui/Badge.jsx';
 import { LIBELLES_ROLES, useAuth } from '../../contexte/Auth.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
@@ -113,6 +114,13 @@ export default function TableauDeBord() {
 
       {utilisateur.role === 'ADMIN_ECOLE' && ecole?.statutVerification === 'VERIFIEE' && (
         <MiseEnRoute />
+      )}
+
+      {utilisateur.role === 'PARENT' && (
+        <section className="space-y-3">
+          <h2 className="etiquette">Mes enfants</h2>
+          <MesEnfants />
+        </section>
       )}
 
       <div className="grid gap-4 md:grid-cols-2">

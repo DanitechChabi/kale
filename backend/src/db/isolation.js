@@ -32,6 +32,7 @@ const MODELES_ISOLES = new Set([
   'ReleveArchive',
   'DemandeDuplicata',
   'JournalAudit',
+  'Notification',
 ]);
 
 /** Référentiels nationaux : lecture seule pour un établissement */

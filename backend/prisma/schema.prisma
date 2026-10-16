@@ -144,6 +144,18 @@ enum StatutDemande {
   DELIVREE // document mis à disposition
 }
 
+enum TypeNotification {
+  ABSENCE // absence ou retard relevé à l'appel
+  BULLETIN // bulletin ou relevé délivré
+}
+
+enum StatutNotification {
+  EN_ATTENTE
+  ENVOI // pris en charge par un envoi en cours
+  ENVOYEE
+  ECHEC // abandonnée après plusieurs tentatives
+}
+
 enum ActionAudit {
   CREATION
   MODIFICATION
@@ -261,6 +273,9 @@ model Ecole {
   email                String?             @db.VarChar(255)
   /// Type de découpage de l'année appliqué par l'établissement
   typePeriode          TypePeriode         @default(TRIMESTRE) @map("type_periode")
+  /// Notifications SMS aux parents (activables par l'établissement)
+  smsAbsences          Boolean             @default(true) @map("sms_absences")
+  smsBulletins         Boolean             @default(true) @map("sms_bulletins")
   /// Un établissement n'accède à la plateforme qu'une fois VERIFIEE
   statutVerification   StatutVerification  @default(EN_ATTENTE) @map("statut_verification")
   verifieeLe           DateTime?           @map("verifiee_le") @db.Timestamptz(3)
@@ -291,6 +306,7 @@ model Ecole {
   relevesArchives   ReleveArchive[]
   demandesDuplicata DemandeDuplicata[]
   journalAudit      JournalAudit[]
+  notifications     Notification[]
 
   @@index([communeId])
   @@index([statutVerification])
@@ -365,6 +381,7 @@ model Utilisateur {
   relevesGeneres         ReleveArchive[]
   demandesDeposees       DemandeDuplicata[]      @relation("Demandeur")
   demandesTraitees       DemandeDuplicata[]      @relation("TraitePar")
+  notifications          Notification[]
   actionsAudit           JournalAudit[]
 
   @@index([ecoleId])
@@ -553,6 +570,7 @@ model Eleve {
   presences         Presence[]
   relevesArchives   ReleveArchive[]
   demandesDuplicata DemandeDuplicata[]
+  notifications     Notification[]
 
   @@unique([ecoleId, matricule])
   @@unique([ecoleId, npi])
@@ -883,4 +901,36 @@ model FichierStocke {
   creeLe          DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
 
   @@map("fichiers_stockes")
+}
+
+/// Notification envoyée par SMS à un parent (file d'envoi : chaque ligne est
+/// envoyée une fois par le fournisseur configuré, voir contexts/notifications).
+model Notification {
+  id             String             @id @default(uuid()) @db.Uuid
+  ecoleId        String             @map("ecole_id") @db.Uuid
+  eleveId        String             @map("eleve_id") @db.Uuid
+  /// Compte parent destinataire, s'il existe (sinon contact déclaré à l'inscription)
+  utilisateurId  String?            @map("utilisateur_id") @db.Uuid
+  telephone      String             @db.VarChar(30)
+  type           TypeNotification
+  message        String             @db.VarChar(480)
+  statut         StatutNotification @default(EN_ATTENTE)
+  /// Idempotence : un même événement ne produit qu'un message par téléphone
+  cleUnicite     String             @unique @map("cle_unicite") @db.VarChar(200)
+  fournisseur    String?            @db.VarChar(30)
+  idExterne      String?            @map("id_externe") @db.VarChar(100)
+  tentatives     Int                @default(0) @db.SmallInt
+  derniereErreur String?            @map("derniere_erreur") @db.VarChar(300)
+  creeLe         DateTime           @default(now()) @map("cree_le") @db.Timestamptz(3)
+  envoyeeLe      DateTime?          @map("envoyee_le") @db.Timestamptz(3)
+
+  ecole       Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve       Eleve        @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  utilisateur Utilisateur? @relation(fields: [utilisateurId], references: [id], onDelete: SetNull)
+
+  @@index([ecoleId, creeLe])
+  @@index([statut])
+  @@index([telephone])
+  @@index([utilisateurId])
+  @@map("notifications")
 }

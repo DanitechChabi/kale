@@ -14,6 +14,8 @@ import { arrondir, classer, moyenneAnnuelle, statistiques, surVingt } from '../n
 import { resultatsClasse } from '../notes/serviceNotes.js';
 import { appreciation, distinction } from './contenu.js';
 import { rendrePdf } from './pdf.js';
+import { messageBulletin } from '../notifications/messages.js';
+import { planifier } from '../notifications/serviceNotifications.js';
 
 const VERSION_DONNEES = 1;
 
@@ -469,23 +471,49 @@ export async function genererClasse(db, utilisateur, { classeId, periodeId = nul
     ? await instantanesBulletins(db, classe, periode, inscriptions, etablissement, signataire)
     : await instantanesAnnuels(db, classe, inscriptions, etablissement, signataire);
 
-  let generes = 0;
+  const archives = [];
   for (const inscription of aGenerer) {
     try {
-      await archiver(db, {
+      const releve = await archiver(db, {
         donnees: instantanes.get(inscription.eleveId),
         eleveId: inscription.eleveId,
         classe,
         periodeId: periode?.id ?? null,
         generePar: signataire,
       });
-      generes++;
+      archives.push({ releve, eleve: inscription.eleve });
     } catch (erreur) {
       // Génération simultanée (double clic, deux postes) : l'autre a déjà archivé
       if (erreur.code !== 'P2002') throw erreur;
     }
   }
-  return { generes, dejaArchives: inscriptions.length - aGenerer.length };
+  const smsEnFile = await prevenirParents(db, archives);
+  return {
+    generes: archives.length,
+    dejaArchives: inscriptions.length - aGenerer.length,
+    smsEnFile,
+  };
+}
+
+/** SMS « bulletin disponible » aux parents, si l'établissement l'a activé. */
+async function prevenirParents(db, archives) {
+  if (!archives.length) return 0;
+  const ecole = await db.ecole.findFirst({ select: { smsBulletins: true } });
+  if (!ecole.smsBulletins) return 0;
+  return planifier(
+    db,
+    archives.map(({ releve, eleve }) => ({
+      eleveId: eleve.id,
+      type: 'BULLETIN',
+      cle: `releve:${releve.id}`,
+      message: messageBulletin({
+        eleve,
+        donnees: releve.donnees,
+        numero: releve.numero,
+        url: urlVerification(releve.numero),
+      }),
+    })),
+  );
 }
 
 /** Résumé d'un document pour l'espace de l'établissement. */

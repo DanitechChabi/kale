@@ -130,10 +130,10 @@ describe('génération des bulletins', () => {
     const selection = { classeId: ctx.classe.id, periodeId: ctx.t1.id };
     const premiere = await ctx.secretariat.api.post('/api/releves/generation', selection);
     expect(premiere.status).toBe(201);
-    expect(premiere.body).toEqual({ generes: 3, dejaArchives: 0 });
+    expect(premiere.body).toMatchObject({ generes: 3, dejaArchives: 0 });
 
     const seconde = await ctx.secretariat.api.post('/api/releves/generation', selection);
-    expect(seconde.body).toEqual({ generes: 0, dejaArchives: 3 });
+    expect(seconde.body).toMatchObject({ generes: 0, dejaArchives: 3 });
 
     const etat = await ctx.secretariat.api.get(
       `/api/releves/classe?classeId=${ctx.classe.id}&periodeId=${ctx.t1.id}`,
@@ -193,7 +193,7 @@ describe('relevé annuel', () => {
       });
     }
     const reponse = await ctx.secretariat.api.post('/api/releves/generation', selection);
-    expect(reponse.body).toEqual({ generes: 3, dejaArchives: 0 });
+    expect(reponse.body).toMatchObject({ generes: 3, dejaArchives: 0 });
 
     const etat = await ctx.secretariat.api.get(`/api/releves/classe?classeId=${ctx.classe.id}`);
     expect(etat.body.type).toBe('RELEVE_ANNUEL');

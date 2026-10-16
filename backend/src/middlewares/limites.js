@@ -46,3 +46,10 @@ export const limiterSuivi = (max) =>
     max,
     message: 'Trop de consultations du suivi. Réessayez dans quelques minutes.',
   });
+
+export const limiterActivation = (max) =>
+  limiteur({
+    fenetreMs: 60 * 60 * 1000,
+    max,
+    message: 'Trop de tentatives d’activation depuis cette connexion. Réessayez plus tard.',
+  });

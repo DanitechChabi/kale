@@ -20,6 +20,7 @@ export default defineConfig({
       DOSSIER_STOCKAGE: join(tmpdir(), 'edureleve-tests'),
       LIMITE_VERIFICATION: '10000',
       LIMITE_DUPLICATA: '10000',
+      LIMITE_ACTIVATION: '10000',
       LIMITE_CONNEXION: '10000',
       LIMITE_INSCRIPTION: '10000',
     },

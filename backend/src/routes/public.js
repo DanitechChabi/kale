@@ -16,7 +16,14 @@ import {
   verifierEmpreinte,
 } from '../contexts/releves/serviceVerificationPublique.js';
 import { ErreurApi } from '../middlewares/erreurs.js';
-import { limiterDuplicata, limiterSuivi, limiterVerification } from '../middlewares/limites.js';
+import {
+  limiterActivation,
+  limiterDuplicata,
+  limiterSuivi,
+  limiterVerification,
+} from '../middlewares/limites.js';
+import { activerCompteParent } from '../contexts/suivi/activationParent.js';
+import { schemaMotDePasse } from '../utils/motDePasse.js';
 import { valider } from '../middlewares/valider.js';
 import { schemaEmail, schemaTelephone } from '../utils/identifiants.js';
 import { envoyerPdfArchive } from './aide.js';
@@ -54,6 +61,7 @@ export const schemaDemandeDuplicata = z
 export function creerRouteurPublic({
   limiteVerification = config.LIMITE_VERIFICATION,
   limiteDuplicata = config.LIMITE_DUPLICATA,
+  limiteActivation = config.LIMITE_ACTIVATION,
 } = {}) {
   const routeur = Router();
   const verification = limiterVerification(limiteVerification);
@@ -154,6 +162,27 @@ export function creerRouteurPublic({
       envoyerPdfArchive(res, await telechargerDuplicata(req.valide.params.jeton), {
         telechargement: true,
       });
+    },
+  );
+
+  // --- Activation d'un compte parent ------------------------------------------------
+
+  routeur.post(
+    '/parents/activation',
+    limiterActivation(limiteActivation),
+    valider({
+      body: z.object({
+        identifiantEleve: z.string().trim().min(10).max(20),
+        dateNaissance: z.coerce.date('Date invalide'),
+        telephone: schemaTelephone,
+        nom: texte(100),
+        prenoms: texte(150),
+        lien: z.enum(['PERE', 'MERE', 'TUTEUR', 'AUTRE']),
+        motDePasse: schemaMotDePasse,
+      }),
+    }),
+    async (req, res) => {
+      res.status(201).json(await activerCompteParent(req.valide.body, { adresseIp: req.ip }));
     },
   );
 

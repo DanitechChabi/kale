@@ -4,16 +4,19 @@ import {
   CalendarDays,
   ChartColumn,
   ChevronDown,
+  ClipboardCheck,
   FileCheck2,
   GraduationCap,
   Inbox,
   KeyRound,
   LayoutDashboard,
   LogOut,
+  MessageSquareText,
   PenLine,
   ScrollText,
   School,
   ShieldCheck,
+  Smartphone,
   UsersRound,
 } from 'lucide-react';
 import { LIBELLES_ROLES, useAuth } from '../contexte/Auth.jsx';
@@ -29,6 +32,13 @@ const NAVIGATION = [
     libelle: 'Notes',
     icone: PenLine,
     roles: ['ADMIN_ECOLE', 'ENSEIGNANT'],
+    verifiee: true,
+  },
+  {
+    vers: '/espace/appel',
+    libelle: 'Appel',
+    icone: ClipboardCheck,
+    roles: ECOLE,
     verifiee: true,
   },
   { vers: '/espace/classes', libelle: 'Classes', icone: School, roles: ECOLE, verifiee: true },
@@ -54,12 +64,15 @@ const NAVIGATION = [
     roles: ['ADMIN_ECOLE', 'SECRETARIAT'],
     verifiee: true,
   },
+  { vers: '/espace/mes-notes', libelle: 'Mes notes', icone: PenLine, roles: ['ELEVE'] },
   {
     vers: '/espace/mes-documents',
     libelle: 'Mes bulletins',
     icone: ScrollText,
     roles: ['ELEVE'],
   },
+  { vers: '/espace/messages', libelle: 'Messages', icone: MessageSquareText, roles: ['PARENT'] },
+  { vers: '/espace/ussd', libelle: 'Service USSD', icone: Smartphone, roles: ['SUPER_ADMIN'] },
   {
     vers: '/espace/dossier',
     libelle: 'Dossier',
@@ -78,6 +91,7 @@ const NAVIGATION = [
 // Pages d'administration de l'établissement, rangées dans le menu du compte
 const MENU_ETABLISSEMENT = [
   { vers: '/espace/comptes', libelle: 'Comptes', icone: UsersRound },
+  { vers: '/espace/sms', libelle: 'SMS aux parents', icone: MessageSquareText },
   { vers: '/espace/annee', libelle: 'Année scolaire', icone: CalendarDays },
   { vers: '/espace/dossier', libelle: 'Dossier de vérification', icone: FileCheck2 },
 ];

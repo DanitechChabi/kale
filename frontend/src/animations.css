@@ -336,6 +336,22 @@
   animation: tamponner 0.5s var(--ease-ressort) var(--delai, 0ms) both;
 }
 
+/* Jauge de moyenne : se remplit jusqu'à --echelle (0 à 1) */
+.jauge {
+  transform: scaleX(var(--echelle, 0));
+  animation: jauge-remplir 0.9s var(--ease-sortie) var(--delai, 0ms) both;
+}
+@keyframes jauge-remplir {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+/* Écran du simulateur USSD : le texte apparaît comme sur un téléphone simple */
+.ecran-ussd {
+  animation: fondu-haut 0.35s var(--ease-sortie) both;
+}
+
 /* ---------- Accessibilité : moins d'animations ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

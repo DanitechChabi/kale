@@ -136,6 +136,11 @@ export default function Connexion() {
             <Link to="/inscription-ecole" className="font-semibold text-marque-700 hover:underline">
               Déposer un dossier
             </Link>
+            <br />
+            Parent d’élève sans compte ?{' '}
+            <Link to="/parents" className="font-semibold text-marque-700 hover:underline">
+              Ouvrir mon compte parent
+            </Link>
           </p>
         </div>
       </main>

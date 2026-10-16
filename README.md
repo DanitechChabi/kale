@@ -121,6 +121,19 @@ http://localhost:4173 dans Chrome (menu « Installer l'application »).
 - **Stockage** : `STOCKAGE=base` conserve les fichiers dans PostgreSQL (choix par défaut en
   production) ; `STOCKAGE=disque` les écrit dans `DOSSIER_STOCKAGE`.
 
+## Parents, absences, SMS et USSD
+
+- **Appel** : l'enseignant signale absences et retards (tous présents par défaut). La feuille
+  renvoyée complète remplace la précédente ; le secrétariat justifie les absences.
+- **Espace parent** : un compte, plusieurs enfants, même dans plusieurs établissements. Notes au fil
+  de la période, moyennes, absences, bulletins. Le parent ouvre lui-même son compte sur `/parents`
+  avec l'identifiant de l'enfant, sa date de naissance et le téléphone enregistré par l'école.
+- **SMS** : absence ou retard relevé, bulletin délivré (moyenne, rang, numéro de vérification).
+  File d'envoi en base, un seul SMS par événement et par téléphone, 3 tentatives. Brancher un
+  opérateur : [docs/sms-ussd.md](docs/sms-ussd.md).
+- **USSD** : moyennes, absences et bulletins depuis un téléphone simple, sans internet. Passerelle
+  `POST /api/ussd` (fermée sans `USSD_SECRET`) et simulateur dans l'application.
+
 ## Commandes utiles
 
 | Commande                                  | Rôle                                |
@@ -143,7 +156,7 @@ relevés immuables, code commenté en français.
 4. ✅ Gestion scolaire (élèves, classes, matières, inscriptions, import Excel, identifiant élève)
 5. ✅ Notes (saisie hors connexion), moyennes pondérées, rangs, détection des notes suspectes, clôture
 6. ✅ Bulletins et relevés PDF archivés, QR code, vérification publique légère, API de vérification, duplicatas en ligne
-7. Espace parent et notifications
+7. ✅ Espace parent, appel et absences, SMS aux parents (fournisseur branchable), service USSD
 8. Emplois du temps et cours en ligne
 9. Tableau de bord ministère
 10. Données de démonstration et parcours jury (DEMO.md)
