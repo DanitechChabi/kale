@@ -147,6 +147,7 @@ export default function Appel() {
     );
   };
 
+  const creneauChoisi = feuille?.creneaux?.find((c) => c.heureDebut === heureDebut);
   const manquants = Object.values(saisies).filter((s) => s.statut !== 'PRESENT').length;
 
   async function enregistrer() {
@@ -158,6 +159,8 @@ export default function Appel() {
           classeId,
           date,
           heureDebut,
+          // Cours de l'emploi du temps à cette heure : la matière lui est rattachée
+          ...(creneauChoisi && { creneauId: creneauChoisi.id }),
           presences: Object.entries(saisies)
             .filter(([, s]) => s.statut !== 'PRESENT')
             .map(([eleveId, s]) => ({
@@ -239,6 +242,25 @@ export default function Appel() {
       {chargement && chemin && <Chargement />}
       {feuille && (
         <>
+          {feuille.creneaux?.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="etiquette">Cours du jour</span>
+              {feuille.creneaux.map((c) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={() => choisir('heure', c.heureDebut)}
+                  className={`rounded-lg px-3 py-1.5 text-sm ring-1 transition ${
+                    c.heureDebut === heureDebut
+                      ? 'bg-encre text-white ring-encre'
+                      : 'bg-white ring-slate-300 hover:ring-marque-500'
+                  }`}
+                >
+                  <span className="chiffres">{c.heureDebut}</span> · {c.matiere}
+                </button>
+              ))}
+            </div>
+          )}
           {feuille.appelsDuJour.length > 0 && (
             <p className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
               Appels du jour :

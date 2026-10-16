@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
+  CalendarRange,
+  NotebookPen,
   Building2,
   FileCheck2,
   Inbox,
@@ -15,10 +17,14 @@ import Badge, { STATUTS_ECOLE } from '../../components/ui/Badge.jsx';
 import { LIBELLES_ROLES, useAuth } from '../../contexte/Auth.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
 import { formaterTelephone } from '../../lib/navigation.js';
+import { dateLocale, jourDe } from '../../lib/emploiDuTemps.js';
 
 function Carte({ icone: Icone, titre, children, delai = 0 }) {
   return (
-    <Apparition delai={delai} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+    <Apparition
+      delai={delai}
+      className="min-w-0 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"
+    >
       <div className="flex items-center gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-marque-50 text-marque-600">
           <Icone className="h-5 w-5" />
@@ -49,6 +55,74 @@ function SyntheseVerification() {
         className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
       >
         Ouvrir la file de vérification <ArrowRight className="h-4 w-4" />
+      </Link>
+    </Carte>
+  );
+}
+
+/** Cours du jour (enseignant ou élève), avec accès direct à l'appel pour l'enseignant. */
+function CoursDuJour({ chemin, appel = false }) {
+  const { donnees } = useRequete(chemin);
+  const jour = jourDe();
+  const cours = (donnees?.creneaux ?? []).filter((c) => c.jour === jour);
+  const maintenant = new Date().toTimeString().slice(0, 5);
+  return (
+    <Carte icone={CalendarRange} titre="Aujourd’hui" delai={60}>
+      {donnees && !cours.length && <p>Pas de cours aujourd’hui.</p>}
+      <ul className="divide-y divide-slate-100">
+        {cours.map((c) => {
+          const enCours = c.heureDebut <= maintenant && maintenant < c.heureFin;
+          return (
+            <li key={c.id} className="flex items-center gap-3 py-2">
+              <span
+                className={`chiffres w-24 shrink-0 ${enCours ? 'font-semibold text-rouge' : ''}`}
+              >
+                {c.heureDebut}–{c.heureFin}
+              </span>
+              <span className="min-w-0 flex-1 truncate">
+                <span className="font-medium text-slate-900">{c.matiere}</span>
+                {appel ? ` · ${c.classe.nom}` : c.salle ? ` · ${c.salle}` : ''}
+              </span>
+              {appel && (
+                <Link
+                  to={`/espace/appel?classe=${c.classe.id}&date=${dateLocale()}&heure=${c.heureDebut}`}
+                  className="shrink-0 font-semibold text-marque-700 hover:underline"
+                >
+                  Appel
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      <Link
+        to="/espace/emploi-du-temps"
+        className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+      >
+        Emploi du temps de la semaine <ArrowRight className="h-4 w-4" />
+      </Link>
+    </Carte>
+  );
+}
+
+function DevoirsAFaire() {
+  const { donnees } = useRequete('/moi/devoirs');
+  const aujourdhui = dateLocale();
+  const aFaire = (donnees?.devoirs ?? []).filter((d) => d.pourLe >= aujourdhui && !d.fait);
+  return (
+    <Carte icone={NotebookPen} titre="Devoirs à faire" delai={120}>
+      <p>
+        <span className="chiffres text-3xl font-semibold text-slate-900">
+          {donnees ? aFaire.length : '–'}
+        </span>{' '}
+        {aFaire[0] &&
+          `· le prochain pour le ${new Date(`${aFaire[0].pourLe}T12:00:00`).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}`}
+      </p>
+      <Link
+        to="/espace/devoirs"
+        className="inline-flex items-center gap-1 font-semibold text-marque-700 hover:underline"
+      >
+        Cahier de textes <ArrowRight className="h-4 w-4" />
       </Link>
     </Carte>
   );
@@ -141,6 +215,11 @@ export default function TableauDeBord() {
         {['SUPER_ADMIN', 'MINISTERE'].includes(utilisateur.role) && <SyntheseVerification />}
         {['ADMIN_ECOLE', 'SECRETARIAT'].includes(utilisateur.role) &&
           ecole?.statutVerification === 'VERIFIEE' && <SyntheseDuplicata />}
+        {utilisateur.role === 'ENSEIGNANT' && ecole?.statutVerification === 'VERIFIEE' && (
+          <CoursDuJour chemin="/emplois-du-temps/moi" appel />
+        )}
+        {utilisateur.role === 'ELEVE' && <CoursDuJour chemin="/moi/emploi-du-temps" />}
+        {utilisateur.role === 'ELEVE' && <DevoirsAFaire />}
         {utilisateur.role === 'ELEVE' && <SyntheseDocumentsEleve />}
         <Carte icone={UserRound} titre="Votre compte" delai={160}>
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">

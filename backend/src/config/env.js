@@ -32,6 +32,8 @@ const schemaEnv = z
     COOKIE_SAMESITE: z.enum(['strict', 'lax', 'none']).default('strict'),
     // Pièces justificatives : taille maximale par fichier (Mo)
     TAILLE_MAX_DOCUMENT_MO: z.coerce.number().positive().default(5),
+    // Supports de cours et pièces jointes des devoirs : taille maximale (Mo)
+    TAILLE_MAX_COURS_MO: z.coerce.number().positive().default(15),
     // Tentatives de connexion autorisées par adresse IP et par quart d'heure
     LIMITE_CONNEXION: z.coerce.number().int().positive().default(10),
     // Dossiers d'inscription autorisés par adresse IP et par heure

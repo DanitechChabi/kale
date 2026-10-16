@@ -33,6 +33,9 @@ const MODELES_ISOLES = new Set([
   'DemandeDuplicata',
   'JournalAudit',
   'Notification',
+  'Cours',
+  'Devoir',
+  'DevoirFait',
 ]);
 
 /** Référentiels nationaux : lecture seule pour un établissement */

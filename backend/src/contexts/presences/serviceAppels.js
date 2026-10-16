@@ -5,12 +5,12 @@
 // Chaque absence ou retard nouvellement relevé déclenche un SMS aux parents,
 // une seule fois par élève et par appel.
 import { ErreurApi } from '../../middlewares/erreurs.js';
+import { depuisHeure, versHeure } from '../../utils/heures.js';
+import { creneauxDuJour } from '../emploiDuTemps/serviceEmploiDuTemps.js';
 import { messageAbsence } from '../notifications/messages.js';
 import { planifier } from '../notifications/serviceNotifications.js';
 
-/** « 08:30 » → Date de l'heure (colonne TIME) */
-export const versHeure = (texte) => new Date(`1970-01-01T${texte}:00.000Z`);
-export const depuisHeure = (date) => new Date(date).toISOString().slice(11, 16);
+export { depuisHeure, versHeure };
 const jour = (date) => new Date(date).toISOString().slice(0, 10);
 
 async function chargerClasse(db, classeId) {
@@ -52,7 +52,7 @@ async function inscrits(db, classeId) {
 export async function feuilleAppel(db, utilisateur, { classeId, date, heureDebut }) {
   const classe = await chargerClasse(db, classeId);
   verifierDroit(utilisateur, classe);
-  const [eleves, appel, appelsDuJour] = await Promise.all([
+  const [eleves, appel, appelsDuJour, creneaux] = await Promise.all([
     inscrits(db, classeId),
     db.appel.findUnique({
       where: {
@@ -72,6 +72,7 @@ export async function feuilleAppel(db, utilisateur, { classeId, date, heureDebut
       },
       orderBy: { heureDebut: 'asc' },
     }),
+    creneauxDuJour(db, classeId, date),
   ]);
   const parEleve = new Map(appel?.presences.map((p) => [p.eleveId, p]) ?? []);
   return {
@@ -80,6 +81,15 @@ export async function feuilleAppel(db, utilisateur, { classeId, date, heureDebut
     heureDebut,
     enregistre: Boolean(appel),
     faitPar: appel?.faitPar ?? null,
+    // Cours du jour selon l'emploi du temps : l'appel se fait en un geste
+    creneaux: creneaux.map((c) => ({
+      id: c.id,
+      heureDebut: c.heureDebut,
+      heureFin: c.heureFin,
+      matiere: c.matiere,
+      enseignementId: c.enseignementId,
+      enseignant: c.enseignant,
+    })),
     appelsDuJour: appelsDuJour.map((a) => ({
       heureDebut: depuisHeure(a.heureDebut),
       absences: a._count.presences,
@@ -101,9 +111,23 @@ export async function feuilleAppel(db, utilisateur, { classeId, date, heureDebut
  * considérés présents. Renvoie la feuille à jour et le nombre de SMS mis en file.
  */
 export async function enregistrerAppel(db, utilisateur, donnees) {
-  const { classeId, date, heureDebut, enseignementId = null, presences } = donnees;
+  const { classeId, date, presences, creneauId = null } = donnees;
+  let { heureDebut, enseignementId = null } = donnees;
   const classe = await chargerClasse(db, classeId);
   verifierDroit(utilisateur, classe);
+  // Appel d'un cours de l'emploi du temps : horaire et matière viennent du créneau
+  if (creneauId) {
+    const creneau = (await creneauxDuJour(db, classeId, date)).find((c) => c.id === creneauId);
+    if (!creneau) {
+      throw new ErreurApi(
+        400,
+        'CRENEAU_INVALIDE',
+        'Ce cours n’est pas à l’emploi du temps de ce jour',
+      );
+    }
+    heureDebut = creneau.heureDebut;
+    enseignementId = creneau.enseignementId;
+  }
   const { anneeScolaire } = classe;
   if (!anneeScolaire.estCourante) {
     throw new ErreurApi(
@@ -142,12 +166,13 @@ export async function enregistrerAppel(db, utilisateur, donnees) {
   };
   const appel = await db.appel.upsert({
     where: cleAppel,
-    update: { enseignementId, faitParId: utilisateur.id },
+    update: { enseignementId, creneauId, faitParId: utilisateur.id },
     create: {
       classeId,
       date: jourAppel,
       heureDebut: versHeure(heureDebut),
       enseignementId,
+      creneauId,
       faitParId: utilisateur.id,
     },
     include: { presences: true },

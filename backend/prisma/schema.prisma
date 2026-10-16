@@ -144,6 +144,12 @@ enum StatutDemande {
   DELIVREE // document mis à disposition
 }
 
+enum TypeCours {
+  DOCUMENT // fichier PDF déposé
+  VIDEO // lien vers une vidéo (YouTube…)
+  LIEN // autre ressource en ligne
+}
+
 enum TypeNotification {
   ABSENCE // absence ou retard relevé à l'appel
   BULLETIN // bulletin ou relevé délivré
@@ -309,6 +315,9 @@ model Ecole {
   demandesDuplicata DemandeDuplicata[]
   journalAudit      JournalAudit[]
   notifications     Notification[]
+  cours             Cours[]
+  devoirs           Devoir[]
+  devoirsFaits      DevoirFait[]
 
   @@index([communeId])
   @@index([statutVerification])
@@ -384,6 +393,8 @@ model Utilisateur {
   demandesDeposees       DemandeDuplicata[]      @relation("Demandeur")
   demandesTraitees       DemandeDuplicata[]      @relation("TraitePar")
   notifications          Notification[]
+  coursPublies           Cours[]
+  devoirsDonnes          Devoir[]
   actionsAudit           JournalAudit[]
 
   @@index([ecoleId])
@@ -531,6 +542,8 @@ model Enseignement {
   creneaux     CreneauEmploiDuTemps[]
   choixOptions ChoixOption[]
   appels       Appel[]
+  cours        Cours[]
+  devoirs      Devoir[]
 
   @@unique([classeId, matiereId])
   @@index([ecoleId])
@@ -573,6 +586,7 @@ model Eleve {
   relevesArchives   ReleveArchive[]
   demandesDuplicata DemandeDuplicata[]
   notifications     Notification[]
+  devoirsFaits      DevoirFait[]
 
   @@unique([ecoleId, matricule])
   @@unique([ecoleId, npi])
@@ -935,4 +949,78 @@ model Notification {
   @@index([telephone])
   @@index([utilisateurId])
   @@map("notifications")
+}
+
+/// Support de cours publié par l'enseignant pour une classe et une matière.
+model Cours {
+  id              String    @id @default(uuid()) @db.Uuid
+  ecoleId         String    @map("ecole_id") @db.Uuid
+  enseignementId  String    @map("enseignement_id") @db.Uuid
+  auteurId        String?   @map("auteur_id") @db.Uuid
+  titre           String    @db.VarChar(150)
+  description     String?   @db.VarChar(2000)
+  type            TypeCours
+  /// Vidéo ou lien (https uniquement)
+  url             String?   @db.VarChar(500)
+  /// Document déposé (contenu contrôlé par signature)
+  nomFichier      String?   @map("nom_fichier") @db.VarChar(255)
+  cheminFichier   String?   @map("chemin_fichier") @db.VarChar(500)
+  typeMime        String?   @map("type_mime") @db.VarChar(100)
+  tailleOctets    Int?      @map("taille_octets")
+  empreinteSha256 String?   @map("empreinte_sha256") @db.Char(64)
+  publieLe        DateTime  @default(now()) @map("publie_le") @db.Timestamptz(3)
+  modifieLe       DateTime  @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  auteur       Utilisateur? @relation(fields: [auteurId], references: [id], onDelete: SetNull)
+
+  @@index([ecoleId])
+  @@index([enseignementId, publieLe])
+  @@map("cours")
+}
+
+/// Devoir à faire (cahier de textes), avec pièce jointe facultative.
+model Devoir {
+  id              String   @id @default(uuid()) @db.Uuid
+  ecoleId         String   @map("ecole_id") @db.Uuid
+  enseignementId  String   @map("enseignement_id") @db.Uuid
+  auteurId        String?  @map("auteur_id") @db.Uuid
+  titre           String   @db.VarChar(150)
+  consignes       String   @db.VarChar(4000)
+  /// Date à laquelle le travail est attendu
+  pourLe          DateTime @map("pour_le") @db.Date
+  nomFichier      String?  @map("nom_fichier") @db.VarChar(255)
+  cheminFichier   String?  @map("chemin_fichier") @db.VarChar(500)
+  typeMime        String?  @map("type_mime") @db.VarChar(100)
+  tailleOctets    Int?     @map("taille_octets")
+  empreinteSha256 String?  @map("empreinte_sha256") @db.Char(64)
+  creeLe          DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe       DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole        Ecole        @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  enseignement Enseignement @relation(fields: [enseignementId], references: [id], onDelete: Restrict)
+  auteur       Utilisateur? @relation(fields: [auteurId], references: [id], onDelete: SetNull)
+  faits        DevoirFait[]
+
+  @@index([ecoleId])
+  @@index([enseignementId, pourLe])
+  @@map("devoirs")
+}
+
+/// Devoir marqué « fait » par l'élève (visible par ses parents et l'enseignant).
+model DevoirFait {
+  id       String   @id @default(uuid()) @db.Uuid
+  ecoleId  String   @map("ecole_id") @db.Uuid
+  devoirId String   @map("devoir_id") @db.Uuid
+  eleveId  String   @map("eleve_id") @db.Uuid
+  faitLe   DateTime @default(now()) @map("fait_le") @db.Timestamptz(3)
+
+  ecole  Ecole  @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  devoir Devoir @relation(fields: [devoirId], references: [id], onDelete: Cascade)
+  eleve  Eleve  @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+
+  @@unique([devoirId, eleveId])
+  @@index([ecoleId])
+  @@map("devoirs_faits")
 }

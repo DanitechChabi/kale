@@ -134,6 +134,19 @@ http://localhost:4173 dans Chrome (menu « Installer l'application »).
 - **USSD** : moyennes, absences et bulletins depuis un téléphone simple, sans internet. Passerelle
   `POST /api/ussd` (fermée sans `USSD_SECRET`) et simulateur dans l'application.
 
+## Emplois du temps, cours et devoirs
+
+- **Emploi du temps** : la direction ou le secrétariat place les cours de chaque classe sur une
+  grille du lundi au samedi. Une classe, un enseignant ou une salle ne peuvent pas être à deux
+  endroits à la fois (règle aussi garantie par PostgreSQL pour la classe). L'enseignant voit ses
+  cours de toutes ses classes ; l'élève et ses parents voient l'emploi du temps de la classe.
+- **Appel** : les cours du jour sont proposés en un geste ; l'appel est rattaché au créneau et à
+  sa matière. Un créneau déjà utilisé pour l'appel est clos, jamais effacé.
+- **Cours en ligne** : PDF (contenu contrôlé, 15 Mo au plus), vidéo ou lien `https`, publiés par
+  l'enseignant de la matière pour sa classe.
+- **Devoirs** : cahier de textes avec date de remise et pièce jointe ; l'élève coche « fait »
+  (même hors connexion), le parent le voit, l'enseignant sait combien l'ont fait.
+
 ## Commandes utiles
 
 | Commande                                  | Rôle                                |
@@ -157,6 +170,6 @@ relevés immuables, code commenté en français.
 5. ✅ Notes (saisie hors connexion), moyennes pondérées, rangs, détection des notes suspectes, clôture
 6. ✅ Bulletins et relevés PDF archivés, QR code, vérification publique légère, API de vérification, duplicatas en ligne
 7. ✅ Espace parent, appel et absences, SMS aux parents (fournisseur branchable), service USSD
-8. Emplois du temps et cours en ligne
+8. ✅ Emplois du temps (conflits refusés, appel par créneau), cours en ligne (PDF, vidéo, lien), devoirs
 9. Tableau de bord ministère
 10. Données de démonstration et parcours jury (DEMO.md)

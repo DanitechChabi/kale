@@ -15,7 +15,7 @@ import { documentsEleve } from '../releves/serviceReleves.js';
 const jour = (date) => new Date(date).toISOString().slice(0, 10);
 
 /** Inscription de l'année en cours (ou, à défaut, la plus récente). */
-async function inscriptionActuelle(db, eleveId) {
+export async function inscriptionActuelle(db, eleveId) {
   return db.inscription.findFirst({
     where: { eleveId },
     orderBy: [{ anneeScolaire: { estCourante: 'desc' } }, { anneeScolaire: { dateDebut: 'desc' } }],
@@ -218,4 +218,11 @@ export async function messagesParent(parent) {
     select: { id: true, type: true, message: true, statut: true, creeLe: true, eleveId: true },
   });
   return { messages: notifications };
+}
+
+/** Classe actuelle d'un élève (cours, devoirs, emploi du temps). */
+export async function classeActuelle(db, eleveId) {
+  const inscription = await inscriptionActuelle(db, eleveId);
+  if (!inscription) throw new ErreurApi(404, 'SANS_CLASSE', 'Aucune inscription en cours');
+  return inscription.classe.id;
 }

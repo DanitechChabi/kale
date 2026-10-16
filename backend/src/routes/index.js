@@ -2,6 +2,8 @@
 import { Router } from 'express';
 import { routeurAdmin } from './admin.js';
 import { routeurAppels } from './appels.js';
+import { routeurCours } from './cours.js';
+import { routeurEmploiDuTemps } from './emploiDuTemps.js';
 import { routeurEleve } from './eleve.js';
 import { routeurNotifications } from './notifications.js';
 import { routeurParent } from './parent.js';
@@ -39,6 +41,8 @@ export function creerRouteurApi(options = {}) {
   routeur.use('/moi', routeurEleve);
   routeur.use('/ussd', creerRouteurUssd());
   routeur.use('/', routeurAppels);
+  routeur.use('/', routeurEmploiDuTemps);
+  routeur.use('/', routeurCours);
   routeur.use('/', routeurNotes);
   // Préfixes variés (/classes, /eleves, /annees…), protégés dans le routeur lui-même
   routeur.use('/', routeurScolarite);

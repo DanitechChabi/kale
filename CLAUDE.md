@@ -51,6 +51,11 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - SMS : uniquement via `planifier` (`contexts/notifications`) avec une clé d'unicité par
   événement ; jamais d'appel direct au fournisseur. Un SMS envoyé est immuable (trigger).
   Nouveau fournisseur : `fournisseursSms.js` + valeur autorisée de `SMS_FOURNISSEUR`.
+- Emplois du temps : conflits classe/enseignant/salle contrôlés dans
+  `contexts/emploiDuTemps` ; chevauchement d'une classe refusé aussi par trigger. Un créneau qui a
+  servi à l'appel est clos (`valide_au`), jamais supprimé. Heures : `utils/heures.js`.
+- Cours et devoirs : publication réservée à l'enseignant de la matière (ou la direction) ; lecture
+  élève et parent toujours restreinte à la classe actuelle de l'élève (`classeActuelle`).
 - USSD : réponses `CON`/`END` de 182 caractères au plus, touches numériques seulement.
 - Fichiers : toujours via `utils/fichiers.js` (pilote `disque` ou `base`) ; la table
   `fichiers_stockes` refuse toute réécriture et toute suppression sous `releves/`.

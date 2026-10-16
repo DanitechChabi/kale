@@ -41,6 +41,10 @@ const Notifications = lazy(() => import('./pages/espace/Notifications.jsx'));
 const Ussd = lazy(() => import('./pages/espace/Ussd.jsx'));
 const EnfantDetail = lazy(() => import('./pages/parent/EnfantDetail.jsx'));
 const Messages = lazy(() => import('./pages/parent/Messages.jsx'));
+const EmploiDuTemps = lazy(() => import('./pages/espace/EmploiDuTemps.jsx'));
+const CoursEnseignant = lazy(() => import('./pages/espace/CoursEnseignant.jsx'));
+const MesCours = lazy(() => import('./pages/espace/MesCours.jsx'));
+const MesDevoirs = lazy(() => import('./pages/espace/MesDevoirs.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -89,6 +93,8 @@ export default function App() {
             <Route element={<RouteProtegee roles={['ELEVE']} />}>
               <Route path="mes-documents" element={<MesDocuments />} />
               <Route path="mes-notes" element={<MesNotes />} />
+              <Route path="mes-cours" element={<MesCours />} />
+              <Route path="devoirs" element={<MesDevoirs />} />
             </Route>
             <Route element={<RouteProtegee roles={['PARENT']} />}>
               <Route path="enfants/:id" element={<EnfantDetail />} />
@@ -96,6 +102,16 @@ export default function App() {
             </Route>
             <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT']} />}>
               <Route path="appel" element={<Appel />} />
+            </Route>
+            <Route
+              element={
+                <RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT', 'ENSEIGNANT', 'ELEVE']} />
+              }
+            >
+              <Route path="emploi-du-temps" element={<EmploiDuTemps />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ENSEIGNANT']} />}>
+              <Route path="cours" element={<CoursEnseignant />} />
             </Route>
             <Route element={<RouteProtegee roles={['ADMIN_ECOLE', 'SECRETARIAT']} />}>
               <Route path="absences" element={<Absences />} />

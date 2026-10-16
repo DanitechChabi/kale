@@ -24,3 +24,16 @@ export const recevoirPiecesInscription = () =>
 
 /** Un seul fichier, champ « fichier ». */
 export const recevoirFichierUnique = () => televerseur().single('fichier');
+
+/** Support de cours ou pièce jointe d'un devoir (champ « fichier », taille plus large). */
+export const recevoirSupport = () =>
+  multer({
+    storage: multer.memoryStorage(),
+    defParamCharset: 'utf8',
+    limits: {
+      fileSize: config.TAILLE_MAX_COURS_MO * 1024 * 1024,
+      files: 1,
+      fields: 10,
+      fieldSize: 16 * 1024,
+    },
+  }).single('fichier');

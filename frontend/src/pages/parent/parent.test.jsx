@@ -204,6 +204,7 @@ describe('appel', () => {
           enregistre: false,
           faitPar: null,
           appelsDuJour: [],
+          creneaux: [{ id: 'cr1', heureDebut: '10:00', heureFin: '11:00', matiere: 'Maths' }],
           eleves: [
             {
               id: 'a',

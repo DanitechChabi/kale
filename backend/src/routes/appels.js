@@ -39,6 +39,7 @@ routeurAppels.put(
   valider({
     body: selection.extend({
       enseignementId: z.uuid().optional(),
+      creneauId: z.uuid().optional(),
       presences: z
         .array(
           z.object({

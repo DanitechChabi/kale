@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
+  BookOpen,
   CalendarDays,
+  CalendarRange,
   ChartColumn,
   ChevronDown,
   ClipboardCheck,
@@ -12,6 +14,7 @@ import {
   LayoutDashboard,
   LogOut,
   MessageSquareText,
+  NotebookPen,
   PenLine,
   ScrollText,
   School,
@@ -41,6 +44,20 @@ const NAVIGATION = [
     roles: ECOLE,
     verifiee: true,
   },
+  {
+    vers: '/espace/emploi-du-temps',
+    libelle: 'Emploi du temps',
+    icone: CalendarRange,
+    roles: [...ECOLE, 'ELEVE'],
+    verifiee: true,
+  },
+  {
+    vers: '/espace/cours',
+    libelle: 'Cours',
+    icone: BookOpen,
+    roles: ['ENSEIGNANT'],
+    verifiee: true,
+  },
   { vers: '/espace/classes', libelle: 'Classes', icone: School, roles: ECOLE, verifiee: true },
   { vers: '/espace/eleves', libelle: 'Élèves', icone: GraduationCap, roles: ECOLE, verifiee: true },
   {
@@ -65,6 +82,8 @@ const NAVIGATION = [
     verifiee: true,
   },
   { vers: '/espace/mes-notes', libelle: 'Mes notes', icone: PenLine, roles: ['ELEVE'] },
+  { vers: '/espace/devoirs', libelle: 'Devoirs', icone: NotebookPen, roles: ['ELEVE'] },
+  { vers: '/espace/mes-cours', libelle: 'Cours', icone: BookOpen, roles: ['ELEVE'] },
   {
     vers: '/espace/mes-documents',
     libelle: 'Mes bulletins',
@@ -128,7 +147,7 @@ function MenuCompte() {
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-marque-600 text-xs font-bold text-white">
           {initiales}
         </span>
-        <span className="hidden text-left text-sm leading-tight sm:block lg:hidden">
+        <span className="hidden text-left text-sm leading-tight sm:block xl:hidden">
           <span className="block font-semibold text-slate-900">
             {utilisateur.prenoms} {utilisateur.nom}
           </span>
@@ -212,14 +231,14 @@ export default function EspaceGabarit() {
             <Logo />
           </Link>
           {!utilisateur.doitChangerMotDePasse && (
-            <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
+            <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Navigation principale">
               {liens.map(({ vers, libelle, icone: Icone, fin }) => (
                 <NavLink
                   key={vers}
                   to={vers}
                   end={fin}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition ${
+                    `flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium whitespace-nowrap transition ${
                       isActive
                         ? 'bg-marque-50 text-marque-700'
                         : 'text-slate-600 hover:bg-slate-100'
@@ -239,7 +258,7 @@ export default function EspaceGabarit() {
         {/* Navigation mobile : onglets défilants */}
         {!utilisateur.doitChangerMotDePasse && liens.length > 1 && (
           <nav
-            className="flex gap-1 overflow-x-auto px-4 pb-2 lg:hidden"
+            className="flex gap-1 overflow-x-auto px-4 pb-2 xl:hidden"
             aria-label="Navigation principale"
           >
             {liens.map(({ vers, libelle, icone: Icone, fin }) => (
