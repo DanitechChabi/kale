@@ -20,10 +20,7 @@ describe('connexion et accès', () => {
         200,
         { jetonAcces: 'jeton-test', utilisateur: UTILISATEUR_MINISTERE },
       ],
-      'GET /verification/ecoles': [
-        200,
-        { total: 0, page: 1, parPage: 20, compteurs: {}, ecoles: [] },
-      ],
+      'GET /ministere/tableau-de-bord': [200, { annees: [], annee: null }],
     });
     rendreApp('/connexion');
     await screen.findByRole('heading', { name: 'Connexion' });
@@ -32,16 +29,14 @@ describe('connexion et accès', () => {
     remplir(/^Mot de passe/, 'Cotonou2026');
     fireEvent.click(screen.getByRole('button', { name: 'Se connecter' }));
 
-    expect(
-      await screen.findByRole('heading', { name: 'Vérification des établissements' }),
-    ).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Tableau de bord' })).toBeInTheDocument();
     const connexion = appels.find((a) => a.cle === 'POST /auth/connexion');
     expect(JSON.parse(connexion.options.body)).toEqual({
       identifiant: '01 96 00 05 55',
       motDePasse: 'Cotonou2026',
     });
     // Le jeton d'accès accompagne les appels suivants
-    const liste = appels.find((a) => a.cle === 'GET /verification/ecoles');
+    const liste = appels.find((a) => a.cle === 'GET /ministere/tableau-de-bord');
     expect(liste.options.headers.Authorization).toBe('Bearer jeton-test');
   });
 

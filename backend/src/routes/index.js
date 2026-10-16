@@ -13,6 +13,7 @@ import { routeurDuplicata } from './duplicata.js';
 import { creerRouteurAuth } from './auth.js';
 import { routeurImport } from './import.js';
 import { creerRouteurInscriptionEcole } from './inscriptionEcole.js';
+import { routeurMinistere } from './ministere.js';
 import { routeurMonEcole } from './monEcole.js';
 import { routeurNotes } from './notes.js';
 import { creerRouteurPublic } from './public.js';
@@ -31,6 +32,7 @@ export function creerRouteurApi(options = {}) {
   routeur.use('/inscription-ecole', creerRouteurInscriptionEcole(options.inscription));
   routeur.use('/mon-ecole', routeurMonEcole);
   routeur.use('/verification', routeurVerification);
+  routeur.use('/ministere', routeurMinistere);
   routeur.use('/utilisateurs', routeurUtilisateurs);
   routeur.use('/admin', routeurAdmin);
   routeur.use('/import', routeurImport);

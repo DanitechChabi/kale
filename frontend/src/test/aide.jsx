@@ -20,7 +20,7 @@ export function simulerApi(routes = {}) {
   const fetch = vi.fn(async (url, options = {}) => {
     const chemin = url.replace(/^\/api/, '').split('?')[0];
     const cle = `${options.method ?? 'GET'} ${chemin}`;
-    appels.push({ cle, options });
+    appels.push({ cle, url, options });
     const reponse =
       routes[cle] ??
       (cle === 'POST /auth/rafraichir'

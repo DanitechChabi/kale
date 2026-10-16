@@ -147,6 +147,25 @@ http://localhost:4173 dans Chrome (menu « Installer l'application »).
 - **Devoirs** : cahier de textes avec date de remise et pièce jointe ; l'élève coche « fait »
   (même hors connexion), le parent le voit, l'enseignant sait combien l'ont fait.
 
+## EduCourses
+
+Cours en ligne de la 6e à la Terminale (`/educourses`), intégrés aux comptes EduRelevé : l'élève
+suit les cours de sa classe, le parent crée un profil par enfant et voit son avancement. La 6e est
+entièrement rédigée (84 leçons, exercices corrigés, quiz corrigés côté serveur).
+
+## Tableau de bord du ministère
+
+`/espace/tableau-de-bord` (comptes `MINISTERE` et `SUPER_ADMIN`, lecture seule) : effectifs,
+moyennes et taux de réussite, taux d'absence, documents délivrés, délai de délivrance des bulletins
+et des duplicatas, pour le pays, un département, une commune ou un établissement.
+
+- **Sources** : inscriptions de l'année ; bulletins et relevés **archivés** en vigueur (chiffres
+  officiels, une correction remplace l'original) ; appels (absents / élèves attendus) ; demandes de
+  duplicata déposées pendant l'année scolaire.
+- **Agrégation** : sommes calculées par établissement puis cumulées ; une moyenne de zone est
+  pondérée par ses élèves, jamais une moyenne de moyennes.
+- **Carte** des 12 départements (contours geoBoundaries, domaine public), export CSV pour tableur.
+
 ## Commandes utiles
 
 | Commande                                  | Rôle                                |
@@ -171,5 +190,5 @@ relevés immuables, code commenté en français.
 6. ✅ Bulletins et relevés PDF archivés, QR code, vérification publique légère, API de vérification, duplicatas en ligne
 7. ✅ Espace parent, appel et absences, SMS aux parents (fournisseur branchable), service USSD
 8. ✅ Emplois du temps (conflits refusés, appel par créneau), cours en ligne (PDF, vidéo, lien), devoirs
-9. Tableau de bord ministère
+9. ✅ Tableau de bord ministère (indicateurs par zone, carte des départements, export CSV)
 10. Données de démonstration et parcours jury (DEMO.md)

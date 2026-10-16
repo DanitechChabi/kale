@@ -353,6 +353,24 @@
 }
 
 /* ---------- Accessibilité : moins d'animations ---------- */
+/* Carte du Bénin : chaque département se pose, l'un après l'autre */
+.carte-benin .departement {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.2s;
+  animation: departement-pose 0.7s var(--ease-sortie) var(--delai, 0ms) backwards;
+}
+.carte-benin .departement:hover,
+.carte-benin .departement:focus-visible {
+  opacity: 0.8;
+}
+@keyframes departement-pose {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

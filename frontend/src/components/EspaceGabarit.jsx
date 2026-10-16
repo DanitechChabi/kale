@@ -107,6 +107,12 @@ const NAVIGATION = [
     nonVerifiee: true,
   },
   {
+    vers: '/espace/tableau-de-bord',
+    libelle: 'Tableau de bord',
+    icone: ChartColumn,
+    roles: ['SUPER_ADMIN', 'MINISTERE'],
+  },
+  {
     vers: '/espace/verification',
     libelle: 'Vérification des établissements',
     icone: ShieldCheck,

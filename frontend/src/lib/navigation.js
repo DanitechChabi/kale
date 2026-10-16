@@ -4,7 +4,8 @@ export function accueilSelonRole(utilisateur) {
   if (utilisateur.role === 'ADMIN_ECOLE' && utilisateur.ecole?.statutVerification !== 'VERIFIEE') {
     return '/espace/dossier';
   }
-  if (['SUPER_ADMIN', 'MINISTERE'].includes(utilisateur.role)) return '/espace/verification';
+  if (utilisateur.role === 'MINISTERE') return '/espace/tableau-de-bord';
+  if (utilisateur.role === 'SUPER_ADMIN') return '/espace/verification';
   return '/espace';
 }
 

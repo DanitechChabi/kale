@@ -50,6 +50,7 @@ const Apprenants = lazy(() => import('./pages/educourses/Apprenants.jsx'));
 const TableauApprenant = lazy(() => import('./pages/educourses/TableauApprenant.jsx'));
 const ProgrammeEduCourses = lazy(() => import('./pages/educourses/Programme.jsx'));
 const Lecon = lazy(() => import('./pages/educourses/Lecon.jsx'));
+const TableauMinistere = lazy(() => import('./pages/espace/TableauMinistere.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -136,6 +137,7 @@ export default function App() {
               <Route path="ussd" element={<Ussd />} />
             </Route>
             <Route element={<RouteProtegee roles={['SUPER_ADMIN', 'MINISTERE']} />}>
+              <Route path="tableau-de-bord" element={<TableauMinistere />} />
               <Route path="verification" element={<Verification />} />
               <Route path="verification/:id" element={<VerificationDetail />} />
             </Route>
