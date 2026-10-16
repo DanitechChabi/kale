@@ -33,6 +33,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        // Polices des formules (EduCourses) : chargées seulement à l'ouverture d'une leçon
+        globIgnores: ['**/KaTeX_*'],
         // Les appels API ne sont jamais servis depuis le cache (données toujours à jour)
         // La page de vérification (/verifier) est servie par l'API, jamais par l'application
         navigateFallbackDenylist: [/^\/api\//, /^\/verifier/],

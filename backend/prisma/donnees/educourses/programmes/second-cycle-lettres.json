@@ -1,0 +1,2249 @@
+[
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de français du second cycle (APC, situations d'apprentissage) : non accessibles en ligne, structure reconstituée",
+      "APFB (Association des Professeurs de Français du Bénin) — épreuve de français au BAC : contraction de texte (résumé ~700 mots, explication de deux mots ou expressions, discussion), commentaire composé, dissertation — https://apfb-ben.fipf.org/actualite/benin-activites-pedagogiques-dans-les-sections-1",
+      "Corrigé type — examen blanc départemental Donga 2023-2024, Français Tle A, B, C et D (Scribd)",
+      "Gaskiyani Info — « Année académique 2022-2023 : les vrais livres au programme » (même liste pour Tle A1, A2, B, C et D : A. Huannou, La littérature africaine en 20 thèmes et 1275 citations)",
+      "APFB Atlantique Sud — Ken Bugul, La Pièce d'or, au programme de Terminale 2024-2025 (ceo.fipf.org / apfp-phl.fipf.org)",
+      "La Nation (Bénin) — « La littérature africaine dans les lycées et collèges du Bénin » ; A. Towanou, Lettre à ma fille, document d'appui de la 6e à la Tle",
+      "Le Matinal — arrêté du 25 septembre 2024 fixant la liste des manuels autorisés 2024-2025 et 2025-2026"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Le texte narratif (récit, nouvelle, conte)",
+        "lecons": [
+          {
+            "titre": "Les caractéristiques du récit",
+            "objectifs": [
+              "Identifier narrateur, point de vue et focalisation",
+              "Repérer le schéma narratif et le schéma actantiel"
+            ]
+          },
+          {
+            "titre": "Le conte et la nouvelle africains",
+            "objectifs": [
+              "Distinguer conte, nouvelle et roman",
+              "Dégager la fonction sociale et morale du conte"
+            ]
+          },
+          {
+            "titre": "Le roman africain : lecture suivie d'une œuvre au programme",
+            "objectifs": [
+              "Situer l'œuvre et son auteur",
+              "Analyser personnages, thèmes et structure"
+            ]
+          },
+          {
+            "titre": "Le compte rendu de lecture",
+            "objectifs": ["Résumer une œuvre lue", "Exprimer une appréciation argumentée"]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Le texte argumentatif",
+        "lecons": [
+          {
+            "titre": "Thèse, arguments et exemples",
+            "objectifs": [
+              "Identifier la thèse défendue et la thèse réfutée",
+              "Classer arguments et exemples"
+            ]
+          },
+          {
+            "titre": "Les connecteurs logiques et la progression du raisonnement",
+            "objectifs": [
+              "Repérer les articulations logiques",
+              "Employer les connecteurs de manière pertinente"
+            ]
+          },
+          {
+            "titre": "Initiation au résumé de texte",
+            "objectifs": [
+              "Dégager les idées essentielles d'un texte",
+              "Reformuler au quart de la longueur sans trahir l'auteur"
+            ]
+          },
+          {
+            "titre": "Initiation à la discussion",
+            "objectifs": [
+              "Analyser un sujet de discussion",
+              "Construire un paragraphe argumentatif complet"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Le texte poétique",
+        "lecons": [
+          {
+            "titre": "Versification et formes poétiques",
+            "objectifs": [
+              "Identifier mètre, rime, strophe",
+              "Distinguer vers réguliers, vers libres et poème en prose"
+            ]
+          },
+          {
+            "titre": "Les figures de style",
+            "objectifs": [
+              "Reconnaître comparaison, métaphore, personnification, anaphore",
+              "Interpréter l'effet produit par une figure"
+            ]
+          },
+          {
+            "titre": "La poésie de la Négritude",
+            "objectifs": [
+              "Situer le mouvement (Senghor, Césaire, Damas)",
+              "Dégager les thèmes majeurs de la Négritude"
+            ]
+          },
+          {
+            "titre": "Initiation au commentaire de texte",
+            "objectifs": [
+              "Formuler une impression de lecture",
+              "Organiser des remarques en centres d'intérêt"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Le texte théâtral",
+        "lecons": [
+          {
+            "titre": "Le texte et la représentation",
+            "objectifs": [
+              "Distinguer dialogue, monologue, aparté et didascalies",
+              "Analyser la double énonciation"
+            ]
+          },
+          {
+            "titre": "Comédie et tragédie",
+            "objectifs": [
+              "Caractériser les registres comique et tragique",
+              "Repérer les procédés du comique"
+            ]
+          },
+          {
+            "titre": "Le théâtre africain : lecture d'une pièce au programme",
+            "objectifs": ["Analyser une scène clé", "Dégager la portée sociale de la pièce"]
+          }
+        ]
+      },
+      {
+        "titre": "Outils de la langue et communication orale",
+        "lecons": [
+          {
+            "titre": "Grammaire du texte et de la phrase",
+            "objectifs": [
+              "Maîtriser la phrase complexe et la concordance des temps",
+              "Utiliser les reprises pronominales et nominales"
+            ]
+          },
+          {
+            "titre": "Exposé et débat",
+            "objectifs": [
+              "Préparer et présenter un exposé structuré",
+              "Prendre la parole dans un débat en respectant autrui"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de français du second cycle (APC, situations d'apprentissage) : non accessibles en ligne, structure reconstituée",
+      "APFB (Association des Professeurs de Français du Bénin) — épreuve de français au BAC : contraction de texte (résumé ~700 mots, explication de deux mots ou expressions, discussion), commentaire composé, dissertation — https://apfb-ben.fipf.org/actualite/benin-activites-pedagogiques-dans-les-sections-1",
+      "Corrigé type — examen blanc départemental Donga 2023-2024, Français Tle A, B, C et D (Scribd)",
+      "Gaskiyani Info — « Année académique 2022-2023 : les vrais livres au programme » (même liste pour Tle A1, A2, B, C et D : A. Huannou, La littérature africaine en 20 thèmes et 1275 citations)",
+      "APFB Atlantique Sud — Ken Bugul, La Pièce d'or, au programme de Terminale 2024-2025 (ceo.fipf.org / apfp-phl.fipf.org)",
+      "La Nation (Bénin) — « La littérature africaine dans les lycées et collèges du Bénin » ; A. Towanou, Lettre à ma fille, document d'appui de la 6e à la Tle",
+      "Le Matinal — arrêté du 25 septembre 2024 fixant la liste des manuels autorisés 2024-2025 et 2025-2026"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Le texte argumentatif et l'essai",
+        "lecons": [
+          {
+            "titre": "Les types d'argumentation",
+            "objectifs": [
+              "Distinguer convaincre, persuader, délibérer",
+              "Identifier les types d'arguments (autorité, exemple, analogie)"
+            ]
+          },
+          {
+            "titre": "La contraction de texte : le résumé",
+            "objectifs": [
+              "Repérer la structure logique d'un texte de 600 à 700 mots",
+              "Rédiger un résumé au quart avec une marge de plus ou moins 10 %"
+            ]
+          },
+          {
+            "titre": "L'explication de mots ou d'expressions du texte",
+            "objectifs": [
+              "Expliquer un mot ou une expression en contexte",
+              "Éviter la paraphrase et le simple synonyme"
+            ]
+          },
+          {
+            "titre": "La discussion",
+            "objectifs": [
+              "Analyser un sujet tiré du texte",
+              "Bâtir un plan dialectique ou thématique",
+              "Rédiger introduction et conclusion"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Le roman et le récit",
+        "lecons": [
+          {
+            "titre": "Le roman africain francophone : courants et thèmes",
+            "objectifs": [
+              "Situer roman colonial, roman du désenchantement et roman contemporain",
+              "Relier une œuvre à son contexte historique"
+            ]
+          },
+          {
+            "titre": "Étude d'une œuvre intégrale au programme",
+            "objectifs": [
+              "Analyser l'intrigue et les personnages",
+              "Dégager les thèmes et la vision du monde de l'auteur"
+            ]
+          },
+          {
+            "titre": "Le roman français : du réalisme au roman moderne",
+            "objectifs": [
+              "Caractériser réalisme et naturalisme",
+              "Comparer avec une œuvre africaine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : La poésie",
+        "lecons": [
+          {
+            "titre": "Les mouvements poétiques (romantisme, symbolisme, Négritude)",
+            "objectifs": [
+              "Situer les grands mouvements",
+              "Dégager leurs caractéristiques formelles et thématiques"
+            ]
+          },
+          {
+            "titre": "Le commentaire composé",
+            "objectifs": [
+              "Élaborer un projet de lecture",
+              "Organiser deux ou trois centres d'intérêt",
+              "Lier toujours le procédé à l'interprétation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Le théâtre",
+        "lecons": [
+          {
+            "titre": "Le théâtre classique et le théâtre africain",
+            "objectifs": [
+              "Comparer règles classiques et théâtre africain engagé",
+              "Étudier une pièce (ex. J. Pliya, La Secrétaire particulière)"
+            ]
+          },
+          {
+            "titre": "Commentaire d'une scène de théâtre",
+            "objectifs": [
+              "Analyser les enjeux d'une scène",
+              "Étudier les rapports de force entre personnages"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 5 : La dissertation littéraire",
+        "lecons": [
+          {
+            "titre": "Analyse du sujet et problématique",
+            "objectifs": ["Identifier les mots clés et la citation", "Formuler une problématique"]
+          },
+          {
+            "titre": "Le plan et la rédaction de la dissertation",
+            "objectifs": [
+              "Choisir un type de plan adapté",
+              "Rédiger un développement illustré par des œuvres lues"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "FR",
+    "confiance": "recoupe",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de français du second cycle (APC, situations d'apprentissage) : non accessibles en ligne, structure reconstituée",
+      "APFB (Association des Professeurs de Français du Bénin) — épreuve de français au BAC : contraction de texte (résumé ~700 mots, explication de deux mots ou expressions, discussion), commentaire composé, dissertation — https://apfb-ben.fipf.org/actualite/benin-activites-pedagogiques-dans-les-sections-1",
+      "Corrigé type — examen blanc départemental Donga 2023-2024, Français Tle A, B, C et D (Scribd)",
+      "Gaskiyani Info — « Année académique 2022-2023 : les vrais livres au programme » (même liste pour Tle A1, A2, B, C et D : A. Huannou, La littérature africaine en 20 thèmes et 1275 citations)",
+      "APFB Atlantique Sud — Ken Bugul, La Pièce d'or, au programme de Terminale 2024-2025 (ceo.fipf.org / apfp-phl.fipf.org)",
+      "La Nation (Bénin) — « La littérature africaine dans les lycées et collèges du Bénin » ; A. Towanou, Lettre à ma fille, document d'appui de la 6e à la Tle",
+      "Le Matinal — arrêté du 25 septembre 2024 fixant la liste des manuels autorisés 2024-2025 et 2025-2026"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Contraction de texte (sujet I du BAC)",
+        "lecons": [
+          {
+            "titre": "Le résumé de texte argumentatif",
+            "objectifs": [
+              "Dégager le système d'énonciation et la structure du texte",
+              "Résumer en respectant l'ordre et le point de vue de l'auteur",
+              "Respecter le nombre de mots imposé"
+            ]
+          },
+          {
+            "titre": "L'explication de deux mots ou expressions",
+            "objectifs": ["Donner le sens contextuel", "Rédiger une explication brève et précise"]
+          },
+          {
+            "titre": "La discussion",
+            "objectifs": [
+              "Problématiser un sujet de culture générale",
+              "Argumenter de façon nuancée avec des exemples africains et universels"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Le commentaire composé (sujet II du BAC)",
+        "lecons": [
+          {
+            "titre": "Lecture méthodique et projet de lecture",
+            "objectifs": [
+              "Dégager le thème et la tonalité du texte",
+              "Formuler des centres d'intérêt pertinents"
+            ]
+          },
+          {
+            "titre": "Commentaire d'un texte poétique",
+            "objectifs": [
+              "Analyser la versification et les images",
+              "Interpréter la portée du poème"
+            ]
+          },
+          {
+            "titre": "Commentaire d'un texte narratif ou théâtral",
+            "objectifs": [
+              "Analyser narration, dialogue et portrait",
+              "Rédiger une introduction et une conclusion complètes"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : La dissertation littéraire (sujet III du BAC)",
+        "lecons": [
+          {
+            "titre": "Les grandes questions littéraires",
+            "objectifs": [
+              "Réfléchir sur la fonction de la littérature et l'engagement de l'écrivain",
+              "Mobiliser les thèmes de la littérature africaine (A. Huannou, La littérature africaine en 20 thèmes)"
+            ]
+          },
+          {
+            "titre": "Méthode de la dissertation",
+            "objectifs": [
+              "Analyser une citation et en dégager la problématique",
+              "Construire un plan dialectique ou analytique",
+              "Illustrer par des références précises"
+            ]
+          },
+          {
+            "titre": "Genres et mouvements littéraires",
+            "objectifs": [
+              "Récapituler roman, poésie et théâtre africains et français",
+              "Situer les auteurs dans leur époque"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Étude des œuvres au programme",
+        "lecons": [
+          {
+            "titre": "Œuvre romanesque au programme (ex. Ken Bugul, La Pièce d'or)",
+            "objectifs": [
+              "Analyser les thèmes (pouvoir, argent, condition de la femme)",
+              "Étudier la structure et l'écriture"
+            ]
+          },
+          {
+            "titre": "Œuvre d'appui et littérature béninoise (ex. A. Towanou, Lettre à ma fille)",
+            "objectifs": [
+              "Dégager les valeurs transmises",
+              "Situer l'œuvre dans la littérature béninoise (Hazoumé, Bhêly-Quenum, Pliya, Couao-Zotti)"
+            ]
+          },
+          {
+            "titre": "Thématique : la condition de la femme africaine",
+            "objectifs": [
+              "Comparer plusieurs œuvres sur l'émancipation de la femme",
+              "Réinvestir en discussion et en dissertation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Préparation de l'oral et de l'épreuve écrite",
+        "lecons": [
+          {
+            "titre": "Gestion du temps et choix du sujet",
+            "objectifs": [
+              "Choisir le sujet le mieux adapté à ses compétences",
+              "Planifier les quatre heures de l'épreuve"
+            ]
+          },
+          {
+            "titre": "Correction de la langue",
+            "objectifs": [
+              "Réviser accords, conjugaison et ponctuation",
+              "Relire et corriger sa copie"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'anglais du second cycle (APC, « learning situations ») : non accessible en ligne",
+      "Office du Baccalauréat — liste des épreuves (anglais LV1 pour toutes les séries) — https://www.officedubacbenin.bj/spip.php?article11",
+      "J. Dovonou, « Empowering Benin's English education for real-life fulfillment » (Revue ACAREF, 2024) — contexte"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning situation 1: Family and society",
+        "lecons": [
+          {
+            "titre": "Family life and relationships",
+            "objectifs": [
+              "Talk about family members and roles",
+              "Use the present simple and continuous"
+            ]
+          },
+          {
+            "titre": "Traditions and customs in Benin",
+            "objectifs": ["Describe a traditional ceremony", "Compare customs across cultures"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 2: Education",
+        "lecons": [
+          {
+            "titre": "School life",
+            "objectifs": ["Describe one's school and timetable", "Express likes and dislikes"]
+          },
+          {
+            "titre": "Education for all and girls' schooling",
+            "objectifs": [
+              "Discuss obstacles to girls' education",
+              "Write a short argumentative paragraph"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 3: Health",
+        "lecons": [
+          {
+            "titre": "Common diseases and prevention",
+            "objectifs": [
+              "Name common diseases (malaria, cholera)",
+              "Give advice with should / had better"
+            ]
+          },
+          {
+            "titre": "Hygiene and nutrition",
+            "objectifs": ["Describe a balanced diet", "Write a short awareness message"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 4: Environment",
+        "lecons": [
+          {
+            "titre": "Pollution and waste",
+            "objectifs": [
+              "Identify sources of pollution",
+              "Use the passive voice to describe processes"
+            ]
+          },
+          {
+            "titre": "Protecting nature",
+            "objectifs": ["Suggest solutions to deforestation", "Make a short oral presentation"]
+          }
+        ]
+      },
+      {
+        "titre": "Language and skills",
+        "lecons": [
+          {
+            "titre": "Reading comprehension strategies",
+            "objectifs": ["Skim and scan a text", "Answer true/false and wh- questions"]
+          },
+          {
+            "titre": "Guided writing: letters and e-mails",
+            "objectifs": ["Write an informal letter", "Respect layout and register"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'anglais du second cycle (APC, « learning situations ») : non accessible en ligne",
+      "Office du Baccalauréat — liste des épreuves (anglais LV1 pour toutes les séries) — https://www.officedubacbenin.bj/spip.php?article11",
+      "J. Dovonou, « Empowering Benin's English education for real-life fulfillment » (Revue ACAREF, 2024) — contexte"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning situation 1: Democracy and human rights",
+        "lecons": [
+          {
+            "titre": "Democracy and citizenship",
+            "objectifs": [
+              "Explain the principles of democracy",
+              "Discuss citizens' rights and duties"
+            ]
+          },
+          {
+            "titre": "Children's rights and child labour",
+            "objectifs": ["Describe forms of child exploitation", "Use modal verbs of obligation"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 2: Gender issues",
+        "lecons": [
+          {
+            "titre": "Women in society",
+            "objectifs": [
+              "Discuss the role of women in Benin",
+              "Express agreement and disagreement"
+            ]
+          },
+          {
+            "titre": "Early and forced marriage",
+            "objectifs": ["Analyse causes and consequences", "Write an argumentative essay plan"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 3: Science and technology",
+        "lecons": [
+          {
+            "titre": "ICT in everyday life",
+            "objectifs": [
+              "Discuss advantages and dangers of the Internet",
+              "Use comparatives and superlatives"
+            ]
+          },
+          {
+            "titre": "Inventions and progress",
+            "objectifs": ["Describe an invention", "Use the past simple and past perfect"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 4: Drug abuse and youth",
+        "lecons": [
+          {
+            "titre": "Drugs, alcohol and smoking",
+            "objectifs": ["Identify effects of drug abuse", "Give advice and warnings"]
+          },
+          {
+            "titre": "Youth and leisure",
+            "objectifs": [
+              "Talk about healthy leisure activities",
+              "Report speech (reported speech)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Language and skills",
+        "lecons": [
+          {
+            "titre": "Essay writing",
+            "objectifs": ["Organise ideas into paragraphs", "Use linking words"]
+          },
+          {
+            "titre": "Grammar review: conditionals and relative clauses",
+            "objectifs": [
+              "Form the three types of conditionals",
+              "Combine sentences with relative pronouns"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'anglais du second cycle (APC, « learning situations ») : non accessible en ligne",
+      "Office du Baccalauréat — liste des épreuves (anglais LV1 pour toutes les séries) — https://www.officedubacbenin.bj/spip.php?article11",
+      "J. Dovonou, « Empowering Benin's English education for real-life fulfillment » (Revue ACAREF, 2024) — contexte"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning situation 1: Economic development and employment",
+        "lecons": [
+          {
+            "titre": "Unemployment and self-employment",
+            "objectifs": ["Discuss causes of youth unemployment", "Write a job application letter"]
+          },
+          {
+            "titre": "Globalisation and trade",
+            "objectifs": ["Explain globalisation in simple terms", "Discuss its impact on Africa"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 2: Health and well-being",
+        "lecons": [
+          {
+            "titre": "HIV/AIDS and pandemics",
+            "objectifs": ["Describe prevention measures", "Write an argumentative essay"]
+          },
+          {
+            "titre": "Traditional and modern medicine",
+            "objectifs": ["Compare both systems", "Express opinion with nuance"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 3: Culture, arts and the media",
+        "lecons": [
+          {
+            "titre": "African literature and arts",
+            "objectifs": ["Talk about an African writer or artist", "Summarise a short text"]
+          },
+          {
+            "titre": "Media and information",
+            "objectifs": ["Discuss the role of the media", "Distinguish facts from opinions"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning situation 4: Peace, conflicts and migration",
+        "lecons": [
+          {
+            "titre": "Conflicts and peace building",
+            "objectifs": ["Discuss causes of conflicts in Africa", "Suggest peaceful solutions"]
+          },
+          {
+            "titre": "Migration and brain drain",
+            "objectifs": [
+              "Analyse causes and consequences of migration",
+              "Use the passive and reported speech"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "BAC preparation",
+        "lecons": [
+          {
+            "titre": "Reading comprehension and language use",
+            "objectifs": [
+              "Answer comprehension questions on an unseen text",
+              "Complete language-use exercises accurately"
+            ]
+          },
+          {
+            "titre": "Writing: essay, letter, dialogue",
+            "objectifs": ["Plan and write a 150-200-word essay", "Manage time during the exam"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "PHILO",
+    "confiance": "recoupe",
+    "sources": [
+      "Diotime n°80 — « Bénin, Burkina Faso et Cameroun : la philosophie dès la classe de seconde » : programme béninois de 2009 (orientations générales, compétences, situations d'apprentissage) ; Seconde SA1 « Du mythe à la philosophie ou l'éveil de la philosophie », SA2 « Introduction aux droits de l'homme » — https://diotime.lafabriquephilosophique.be/numeros/080/018/",
+      "Office du Baccalauréat — liste des épreuves (arrêté interministériel n°016-2003) : philosophie coef. 4 en A1, 3 en A2 et B — https://www.officedubacbenin.bj/spip.php?article11",
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de philosophie APC (non accessibles en ligne)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Du mythe à la philosophie ou l'éveil de la philosophie",
+        "lecons": [
+          {
+            "titre": "Le mythe et ses fonctions",
+            "objectifs": [
+              "Définir le mythe",
+              "Dégager ses fonctions explicative et sociale",
+              "Analyser un mythe africain de création"
+            ]
+          },
+          {
+            "titre": "La naissance de la philosophie en Grèce",
+            "objectifs": [
+              "Situer le passage du mythos au logos",
+              "Présenter les présocratiques et Socrate"
+            ]
+          },
+          {
+            "titre": "Qu'est-ce que philosopher ?",
+            "objectifs": [
+              "Définir la philosophie et l'étonnement",
+              "Distinguer opinion, croyance et savoir rationnel"
+            ]
+          },
+          {
+            "titre": "Philosopher dans la vie quotidienne",
+            "objectifs": [
+              "Appliquer l'esprit critique à un problème courant",
+              "Formuler une question philosophique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Introduction aux droits de l'homme",
+        "lecons": [
+          {
+            "titre": "Histoire des droits de l'homme",
+            "objectifs": [
+              "Situer les grandes déclarations (1789, 1948, Charte africaine de 1981)",
+              "Distinguer droits naturels et droits positifs"
+            ]
+          },
+          {
+            "titre": "Fondements philosophiques des droits de l'homme",
+            "objectifs": [
+              "Expliquer la notion de dignité humaine",
+              "Présenter les théories du contrat social"
+            ]
+          },
+          {
+            "titre": "Droits, devoirs et citoyenneté",
+            "objectifs": [
+              "Articuler droits et devoirs",
+              "Analyser une situation de violation des droits au quotidien"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "PHILO",
+    "confiance": "reconstitue",
+    "sources": [
+      "Diotime n°80 — « Bénin, Burkina Faso et Cameroun : la philosophie dès la classe de seconde » : programme béninois de 2009 (orientations générales, compétences, situations d'apprentissage) ; Seconde SA1 « Du mythe à la philosophie ou l'éveil de la philosophie », SA2 « Introduction aux droits de l'homme » — https://diotime.lafabriquephilosophique.be/numeros/080/018/",
+      "Office du Baccalauréat — liste des épreuves (arrêté interministériel n°016-2003) : philosophie coef. 4 en A1, 3 en A2 et B — https://www.officedubacbenin.bj/spip.php?article11",
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de philosophie APC (non accessibles en ligne)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : La philosophie et les autres formes de savoir",
+        "lecons": [
+          {
+            "titre": "Philosophie et religion",
+            "objectifs": [
+              "Distinguer foi et raison",
+              "Analyser leurs rapports de conflit et de complémentarité"
+            ]
+          },
+          {
+            "titre": "Philosophie et science",
+            "objectifs": [
+              "Caractériser la démarche scientifique",
+              "Montrer l'apport réflexif de la philosophie aux sciences"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : La logique et l'argumentation",
+        "lecons": [
+          {
+            "titre": "Le concept, le jugement et le raisonnement",
+            "objectifs": [
+              "Définir concept, jugement et raisonnement",
+              "Distinguer déduction, induction et analogie"
+            ]
+          },
+          {
+            "titre": "Les sophismes et l'esprit critique",
+            "objectifs": ["Repérer un raisonnement fallacieux", "Construire un argument valide"]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : L'homme et la culture",
+        "lecons": [
+          {
+            "titre": "Nature et culture",
+            "objectifs": [
+              "Distinguer l'inné et l'acquis",
+              "Analyser la diversité des cultures et le relativisme"
+            ]
+          },
+          {
+            "titre": "Le langage",
+            "objectifs": [
+              "Distinguer langage humain et communication animale",
+              "Réfléchir aux rapports entre langage et pensée"
+            ]
+          },
+          {
+            "titre": "Le travail et la technique",
+            "objectifs": [
+              "Analyser le travail comme contrainte et réalisation de soi",
+              "Évaluer les enjeux du progrès technique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Initiation à la dissertation philosophique",
+        "lecons": [
+          {
+            "titre": "Analyse du sujet et problématisation",
+            "objectifs": [
+              "Dégager les présupposés d'un sujet",
+              "Formuler un problème philosophique"
+            ]
+          },
+          {
+            "titre": "Le plan et l'usage des références",
+            "objectifs": ["Construire un plan dialectique", "Utiliser un auteur à bon escient"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "PHILO",
+    "confiance": "reconstitue",
+    "sources": [
+      "Diotime n°80 — « Bénin, Burkina Faso et Cameroun : la philosophie dès la classe de seconde » : programme béninois de 2009 (orientations générales, compétences, situations d'apprentissage) ; Seconde SA1 « Du mythe à la philosophie ou l'éveil de la philosophie », SA2 « Introduction aux droits de l'homme » — https://diotime.lafabriquephilosophique.be/numeros/080/018/",
+      "Office du Baccalauréat — liste des épreuves (arrêté interministériel n°016-2003) : philosophie coef. 4 en A1, 3 en A2 et B — https://www.officedubacbenin.bj/spip.php?article11",
+      "MESTFP / Direction de l'Inspection Pédagogique — programmes de philosophie APC (non accessibles en ligne)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : L'homme",
+        "lecons": [
+          {
+            "titre": "La conscience et l'inconscient",
+            "objectifs": [
+              "Définir la conscience et ses formes",
+              "Expliquer l'hypothèse freudienne de l'inconscient"
+            ]
+          },
+          {
+            "titre": "La liberté",
+            "objectifs": [
+              "Distinguer libre arbitre et déterminisme",
+              "Analyser la liberté comme conquête et responsabilité"
+            ]
+          },
+          {
+            "titre": "Autrui et la personne",
+            "objectifs": [
+              "Analyser le rapport à autrui",
+              "Réfléchir à la notion de personne dans la pensée africaine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : La connaissance",
+        "lecons": [
+          {
+            "titre": "La vérité",
+            "objectifs": ["Distinguer vérité et réalité", "Présenter les critères de la vérité"]
+          },
+          {
+            "titre": "Raison et expérience",
+            "objectifs": ["Opposer rationalisme et empirisme", "Expliquer la synthèse kantienne"]
+          },
+          {
+            "titre": "Épistémologie : la science et ses limites",
+            "objectifs": [
+              "Analyser la méthode expérimentale",
+              "Réfléchir aux enjeux éthiques de la science"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : La société et la politique",
+        "lecons": [
+          {
+            "titre": "L'État et le pouvoir",
+            "objectifs": [
+              "Définir l'État et ses fondements",
+              "Comparer les théories du contrat social (Hobbes, Locke, Rousseau)"
+            ]
+          },
+          {
+            "titre": "Le droit et la justice",
+            "objectifs": [
+              "Distinguer légalité et légitimité",
+              "Analyser la justice comme égalité et équité"
+            ]
+          },
+          {
+            "titre": "La démocratie",
+            "objectifs": [
+              "Caractériser la démocratie",
+              "Réfléchir aux conditions de la démocratie en Afrique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : La morale",
+        "lecons": [
+          {
+            "titre": "Le devoir et le bonheur",
+            "objectifs": [
+              "Distinguer morale du devoir et morale du bonheur",
+              "Analyser la morale kantienne"
+            ]
+          },
+          {
+            "titre": "Les valeurs et la responsabilité",
+            "objectifs": [
+              "Réfléchir au fondement des valeurs",
+              "Analyser une situation de dilemme moral"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 5 : La philosophie africaine",
+        "lecons": [
+          {
+            "titre": "Le débat sur l'existence de la philosophie africaine",
+            "objectifs": [
+              "Présenter l'ethnophilosophie (Tempels, Kagame)",
+              "Exposer la critique de P. Hountondji et de M. Towa"
+            ]
+          },
+          {
+            "titre": "Philosophie africaine et développement",
+            "objectifs": [
+              "Analyser le rôle de la philosophie dans la libération et le développement",
+              "Évaluer la place de la tradition dans la modernité africaine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Méthodologie du BAC",
+        "lecons": [
+          {
+            "titre": "La dissertation philosophique",
+            "objectifs": [
+              "Problématiser un sujet",
+              "Construire une argumentation dialectique",
+              "Rédiger introduction et conclusion"
+            ]
+          },
+          {
+            "titre": "Le commentaire de texte philosophique",
+            "objectifs": [
+              "Dégager thèse, problème et enjeu d'un texte",
+              "Expliquer puis discuter la thèse de l'auteur"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Ministère de l'Enseignement Secondaire — Programme d'histoire-géographie, classe de Seconde C et D (2009), structure APC « Situations d'apprentissage et connaissances notionnelles » — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf (sommaire seul consulté)",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » (ResearchGate / IJHSSE) : SA d'histoire nationale (poussées impérialistes et résistances au Bénin : Béhanzin, Saka Yérima ; décolonisation du Dahomey en Terminale)",
+      "Programme Histoire-Géographie Terminale C-D (Scribd, Programm-TleHG-C-D) — intitulés non lus",
+      "Office du Baccalauréat — liste des épreuves (HG à l'écrit pour toutes les séries) ; annales HG BAC Bénin (apresbac.bj, touteslesepreuves.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Méthodologie de l'histoire et sources de l'histoire africaine",
+        "lecons": [
+          {
+            "titre": "L'histoire et ses sources",
+            "objectifs": [
+              "Définir l'histoire et le travail de l'historien",
+              "Distinguer sources écrites, orales et archéologiques"
+            ]
+          },
+          {
+            "titre": "La tradition orale en Afrique",
+            "objectifs": [
+              "Expliquer le rôle des griots et des traditionnistes",
+              "Critiquer une source orale"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Les royaumes et empires de l'Afrique de l'Ouest",
+        "lecons": [
+          {
+            "titre": "Les empires du Soudan occidental (Ghana, Mali, Songhaï)",
+            "objectifs": [
+              "Situer ces empires dans le temps et l'espace",
+              "Expliquer les bases de leur puissance"
+            ]
+          },
+          {
+            "titre": "Les royaumes du Bénin actuel (Danxomè, Kétou, Xogbonou, Nikki)",
+            "objectifs": [
+              "Décrire l'organisation politique et sociale d'un royaume",
+              "Expliquer leurs relations avec les voisins"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : L'Europe moderne et l'Afrique (XVe-XIXe s.)",
+        "lecons": [
+          {
+            "titre": "Les grandes découvertes et la Renaissance",
+            "objectifs": [
+              "Expliquer les causes des grandes découvertes",
+              "Dégager leurs conséquences pour l'Afrique"
+            ]
+          },
+          {
+            "titre": "La traite négrière atlantique et les royaumes côtiers",
+            "objectifs": [
+              "Décrire le commerce triangulaire et la route de l'esclave (Ouidah)",
+              "Évaluer les conséquences démographiques et économiques"
+            ]
+          },
+          {
+            "titre": "Les révolutions (anglaise, américaine, française, industrielle)",
+            "objectifs": [
+              "Identifier les causes et les étapes",
+              "Dégager l'héritage politique et économique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : La Terre, planète du système solaire",
+        "lecons": [
+          {
+            "titre": "La Terre dans l'Univers",
+            "objectifs": [
+              "Décrire le système solaire",
+              "Expliquer rotation, révolution et leurs conséquences"
+            ]
+          },
+          {
+            "titre": "Les coordonnées géographiques et la carte",
+            "objectifs": ["Lire latitude, longitude et échelle", "Réaliser un croquis simple"]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 5 : Les milieux naturels et l'environnement",
+        "lecons": [
+          {
+            "titre": "Le relief et la géologie",
+            "objectifs": [
+              "Distinguer les grandes formes de relief",
+              "Expliquer les forces internes et externes"
+            ]
+          },
+          {
+            "titre": "Climats et domaines bioclimatiques",
+            "objectifs": [
+              "Identifier les éléments et facteurs du climat",
+              "Caractériser les zones climatiques du Bénin et de l'Afrique"
+            ]
+          },
+          {
+            "titre": "Les problèmes environnementaux",
+            "objectifs": [
+              "Analyser désertification, érosion côtière et déforestation",
+              "Proposer des mesures de protection"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 6 : Population et ressources",
+        "lecons": [
+          {
+            "titre": "La population mondiale et béninoise",
+            "objectifs": [
+              "Calculer les taux démographiques",
+              "Analyser la croissance démographique et la pyramide des âges"
+            ]
+          },
+          {
+            "titre": "Les ressources énergétiques et la crise énergétique au Bénin",
+            "objectifs": [
+              "Inventorier les sources d'énergie",
+              "Analyser la dépendance énergétique et les solutions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Ministère de l'Enseignement Secondaire — Programme d'histoire-géographie, classe de Seconde C et D (2009), structure APC « Situations d'apprentissage et connaissances notionnelles » — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf (sommaire seul consulté)",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » (ResearchGate / IJHSSE) : SA d'histoire nationale (poussées impérialistes et résistances au Bénin : Béhanzin, Saka Yérima ; décolonisation du Dahomey en Terminale)",
+      "Programme Histoire-Géographie Terminale C-D (Scribd, Programm-TleHG-C-D) — intitulés non lus",
+      "Office du Baccalauréat — liste des épreuves (HG à l'écrit pour toutes les séries) ; annales HG BAC Bénin (apresbac.bj, touteslesepreuves.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : L'impérialisme européen et les résistances africaines",
+        "lecons": [
+          {
+            "titre": "Les causes de l'impérialisme et la conférence de Berlin",
+            "objectifs": [
+              "Expliquer les causes économiques, politiques et idéologiques",
+              "Présenter les décisions de la conférence de Berlin (1884-1885)"
+            ]
+          },
+          {
+            "titre": "La conquête du Dahomey et les résistances au Bénin",
+            "objectifs": [
+              "Retracer la résistance de Béhanzin",
+              "Présenter la résistance de Bio Guéra, Kaba et Saka Yérima"
+            ]
+          },
+          {
+            "titre": "Les résistances en Afrique",
+            "objectifs": [
+              "Comparer Samory Touré, El Hadj Omar et Ménélik",
+              "Expliquer les raisons des échecs africains"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Le système colonial",
+        "lecons": [
+          {
+            "titre": "L'administration coloniale (AOF)",
+            "objectifs": [
+              "Décrire l'organisation de l'AOF",
+              "Comparer administration directe et indirecte"
+            ]
+          },
+          {
+            "titre": "L'exploitation économique et ses conséquences",
+            "objectifs": [
+              "Décrire l'économie de traite, l'impôt et les travaux forcés",
+              "Analyser les transformations sociales"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Les crises et conflits de la première moitié du XXe siècle",
+        "lecons": [
+          {
+            "titre": "La Première Guerre mondiale et la participation africaine",
+            "objectifs": [
+              "Expliquer les causes et les phases",
+              "Évaluer la contribution des tirailleurs africains"
+            ]
+          },
+          {
+            "titre": "La crise de 1929 et les régimes totalitaires",
+            "objectifs": [
+              "Expliquer le mécanisme de la crise",
+              "Caractériser fascisme, nazisme et stalinisme"
+            ]
+          },
+          {
+            "titre": "La Seconde Guerre mondiale",
+            "objectifs": [
+              "Retracer les grandes phases",
+              "Analyser les conséquences, dont l'éveil des nationalismes"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : L'Afrique et son développement",
+        "lecons": [
+          {
+            "titre": "Les espaces africains et leurs potentialités",
+            "objectifs": [
+              "Localiser les grandes régions et ressources",
+              "Analyser les atouts naturels et humains"
+            ]
+          },
+          {
+            "titre": "L'agriculture africaine",
+            "objectifs": [
+              "Distinguer cultures vivrières et d'exportation",
+              "Analyser les difficultés du secteur agricole"
+            ]
+          },
+          {
+            "titre": "Industrie, transports et commerce en Afrique",
+            "objectifs": [
+              "Expliquer la faiblesse de l'industrialisation",
+              "Analyser le rôle des corridors (port de Cotonou)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 5 : Le Bénin, étude géographique",
+        "lecons": [
+          {
+            "titre": "Le cadre physique et humain du Bénin",
+            "objectifs": [
+              "Décrire relief, climat et hydrographie",
+              "Analyser la répartition de la population"
+            ]
+          },
+          {
+            "titre": "L'économie du Bénin",
+            "objectifs": [
+              "Analyser la filière coton et le secteur informel",
+              "Expliquer le rôle du commerce avec le Nigeria"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Ministère de l'Enseignement Secondaire — Programme d'histoire-géographie, classe de Seconde C et D (2009), structure APC « Situations d'apprentissage et connaissances notionnelles » — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf (sommaire seul consulté)",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » (ResearchGate / IJHSSE) : SA d'histoire nationale (poussées impérialistes et résistances au Bénin : Béhanzin, Saka Yérima ; décolonisation du Dahomey en Terminale)",
+      "Programme Histoire-Géographie Terminale C-D (Scribd, Programm-TleHG-C-D) — intitulés non lus",
+      "Office du Baccalauréat — liste des épreuves (HG à l'écrit pour toutes les séries) ; annales HG BAC Bénin (apresbac.bj, touteslesepreuves.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Les relations internationales depuis 1945",
+        "lecons": [
+          {
+            "titre": "La guerre froide",
+            "objectifs": [
+              "Expliquer la formation des blocs",
+              "Analyser les grandes crises (Berlin, Corée, Cuba)"
+            ]
+          },
+          {
+            "titre": "De la détente à la fin de la guerre froide",
+            "objectifs": ["Retracer les étapes de la détente", "Expliquer l'effondrement de l'URSS"]
+          },
+          {
+            "titre": "L'ONU et le nouvel ordre mondial",
+            "objectifs": [
+              "Présenter les organes et missions de l'ONU",
+              "Analyser les conflits de l'après-guerre froide"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : La décolonisation et l'Afrique indépendante",
+        "lecons": [
+          {
+            "titre": "Les causes et formes de la décolonisation",
+            "objectifs": [
+              "Distinguer décolonisation pacifique et lutte armée",
+              "Présenter le cas de l'Algérie et de l'Asie"
+            ]
+          },
+          {
+            "titre": "La décolonisation du Dahomey",
+            "objectifs": [
+              "Retracer les étapes de 1945 à 1960 (loi-cadre, référendum de 1958)",
+              "Présenter les acteurs politiques dahoméens"
+            ]
+          },
+          {
+            "titre": "Le Tiers-monde et le non-alignement",
+            "objectifs": [
+              "Expliquer la conférence de Bandung",
+              "Analyser le panafricanisme et l'OUA/UA"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Le Bénin de 1960 à nos jours",
+        "lecons": [
+          {
+            "titre": "L'instabilité politique (1960-1972)",
+            "objectifs": [
+              "Expliquer les coups d'État successifs",
+              "Analyser le régionalisme politique"
+            ]
+          },
+          {
+            "titre": "La révolution (1972-1989)",
+            "objectifs": [
+              "Caractériser le régime marxiste-léniniste",
+              "Expliquer la crise de la fin des années 1980"
+            ]
+          },
+          {
+            "titre": "La Conférence nationale et le Renouveau démocratique",
+            "objectifs": [
+              "Retracer la Conférence des forces vives de février 1990",
+              "Analyser la Constitution du 11 décembre 1990"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Les grandes puissances économiques",
+        "lecons": [
+          {
+            "titre": "Les États-Unis",
+            "objectifs": [
+              "Analyser les fondements de la puissance",
+              "Évaluer leur rôle dans le monde"
+            ]
+          },
+          {
+            "titre": "La Chine et le Japon",
+            "objectifs": ["Expliquer l'essor de la Chine", "Analyser le modèle japonais"]
+          },
+          {
+            "titre": "L'Union européenne",
+            "objectifs": [
+              "Retracer la construction européenne",
+              "Analyser ses rapports avec l'Afrique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 5 : Mondialisation et intégration régionale",
+        "lecons": [
+          {
+            "titre": "La mondialisation et ses acteurs",
+            "objectifs": [
+              "Définir la mondialisation",
+              "Analyser le rôle des firmes multinationales et des institutions (FMI, OMC)"
+            ]
+          },
+          {
+            "titre": "L'intégration en Afrique de l'Ouest (CEDEAO, UEMOA)",
+            "objectifs": [
+              "Présenter les objectifs et réalisations",
+              "Analyser les obstacles à l'intégration"
+            ]
+          },
+          {
+            "titre": "Le sous-développement et les stratégies de développement",
+            "objectifs": [
+              "Définir les indicateurs du sous-développement (IDH)",
+              "Évaluer les stratégies de développement en Afrique"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["C", "D"],
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Ministère de l'Enseignement Secondaire — Programme d'histoire-géographie, classe de Seconde C et D (2009), structure APC « Situations d'apprentissage et connaissances notionnelles » — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf (sommaire seul consulté)",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » (ResearchGate / IJHSSE) : SA d'histoire nationale (poussées impérialistes et résistances au Bénin : Béhanzin, Saka Yérima ; décolonisation du Dahomey en Terminale)",
+      "Programme Histoire-Géographie Terminale C-D (Scribd, Programm-TleHG-C-D) — intitulés non lus",
+      "Office du Baccalauréat — liste des épreuves (HG à l'écrit pour toutes les séries) ; annales HG BAC Bénin (apresbac.bj, touteslesepreuves.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Le monde depuis 1945",
+        "lecons": [
+          {
+            "titre": "La guerre froide et ses crises",
+            "objectifs": ["Expliquer la formation des blocs", "Analyser une crise majeure"]
+          },
+          {
+            "titre": "L'ONU et la recherche de la paix",
+            "objectifs": ["Présenter les organes de l'ONU", "Évaluer son action en Afrique"]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : La décolonisation du Dahomey et de l'Afrique",
+        "lecons": [
+          {
+            "titre": "Les facteurs de la décolonisation",
+            "objectifs": [
+              "Identifier les facteurs internes et externes",
+              "Situer les grandes étapes"
+            ]
+          },
+          {
+            "titre": "Le Dahomey vers l'indépendance",
+            "objectifs": ["Retracer les étapes de 1945 à 1960", "Identifier les acteurs politiques"]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Le Bénin indépendant",
+        "lecons": [
+          {
+            "titre": "Du Dahomey à la République populaire du Bénin",
+            "objectifs": [
+              "Expliquer l'instabilité politique",
+              "Caractériser le régime révolutionnaire"
+            ]
+          },
+          {
+            "titre": "Le Renouveau démocratique",
+            "objectifs": [
+              "Expliquer la Conférence nationale de 1990",
+              "Analyser les institutions de la Constitution de 1990"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Mondialisation, puissances et développement",
+        "lecons": [
+          {
+            "titre": "Les grandes puissances économiques",
+            "objectifs": [
+              "Comparer États-Unis, Chine et Union européenne",
+              "Expliquer leurs rapports avec l'Afrique"
+            ]
+          },
+          {
+            "titre": "Intégration régionale et développement",
+            "objectifs": [
+              "Présenter CEDEAO et UEMOA",
+              "Analyser les défis du développement du Bénin"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["B"],
+    "matiere": "ECO",
+    "confiance": "recoupe",
+    "sources": [
+      "Educ'Action (media.eduactions.bj) — « L'économie au collège : une pédagogie centrée sur l'actualité » : Seconde (vocabulaire économique, démographie, comptes de la Nation et agrégats) ; Première (production, économie nationale, formation des prix, approche systémique de l'entreprise) ; Terminale (croissance et développement)",
+      "apresbac.bj — « Filières après Bac série B » : l'économie, matière dominante de la série B (coef. 4)",
+      "Aide Afrique — « Le programme et cours d'économie en Terminale B au Bénin » (page non accessible)",
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'économie série B (APC), non accessible en ligne"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Initiation à l'économie",
+        "lecons": [
+          {
+            "titre": "Objet et méthodes de la science économique",
+            "objectifs": [
+              "Définir l'économie et le problème de la rareté",
+              "Distinguer microéconomie et macroéconomie"
+            ]
+          },
+          {
+            "titre": "Besoins, biens et services",
+            "objectifs": [
+              "Classer les besoins et les biens",
+              "Expliquer la notion de coût d'opportunité"
+            ]
+          },
+          {
+            "titre": "Les agents économiques et le circuit économique",
+            "objectifs": [
+              "Identifier les agents et leurs fonctions",
+              "Représenter le circuit économique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : La démographie",
+        "lecons": [
+          {
+            "titre": "Les indicateurs démographiques",
+            "objectifs": ["Calculer natalité, mortalité, fécondité", "Lire une pyramide des âges"]
+          },
+          {
+            "titre": "Population et développement au Bénin",
+            "objectifs": [
+              "Analyser les effets de la croissance démographique",
+              "Discuter les théories (Malthus, Boserup)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : La comptabilité nationale",
+        "lecons": [
+          {
+            "titre": "Les comptes de la Nation",
+            "objectifs": [
+              "Présenter le rôle de l'INStaD",
+              "Distinguer opérations sur biens et services et opérations de répartition"
+            ]
+          },
+          {
+            "titre": "Les agrégats (PIB, PNB, revenu national)",
+            "objectifs": ["Calculer le PIB par trois optiques", "Distinguer PIB nominal et réel"]
+          },
+          {
+            "titre": "Les limites des agrégats",
+            "objectifs": [
+              "Expliquer la prise en compte du secteur informel",
+              "Critiquer le PIB comme mesure du bien-être"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : La monnaie",
+        "lecons": [
+          {
+            "titre": "Fonctions et formes de la monnaie",
+            "objectifs": [
+              "Énumérer les fonctions de la monnaie",
+              "Retracer l'évolution des formes monétaires"
+            ]
+          },
+          {
+            "titre": "La zone franc et la BCEAO",
+            "objectifs": ["Présenter l'UMOA et le franc CFA", "Expliquer le rôle de la BCEAO"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["B"],
+    "matiere": "ECO",
+    "confiance": "recoupe",
+    "sources": [
+      "Educ'Action (media.eduactions.bj) — « L'économie au collège : une pédagogie centrée sur l'actualité » : Seconde (vocabulaire économique, démographie, comptes de la Nation et agrégats) ; Première (production, économie nationale, formation des prix, approche systémique de l'entreprise) ; Terminale (croissance et développement)",
+      "apresbac.bj — « Filières après Bac série B » : l'économie, matière dominante de la série B (coef. 4)",
+      "Aide Afrique — « Le programme et cours d'économie en Terminale B au Bénin » (page non accessible)",
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'économie série B (APC), non accessible en ligne"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : La production",
+        "lecons": [
+          {
+            "titre": "Les facteurs de production",
+            "objectifs": [
+              "Identifier travail et capital",
+              "Expliquer la combinaison des facteurs et la productivité"
+            ]
+          },
+          {
+            "titre": "Les secteurs d'activité de l'économie béninoise",
+            "objectifs": [
+              "Classer les activités en secteurs",
+              "Analyser le poids de l'agriculture et des services"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : L'entreprise",
+        "lecons": [
+          {
+            "titre": "Approche systémique de l'entreprise",
+            "objectifs": [
+              "Définir l'entreprise comme système",
+              "Identifier ses sous-systèmes et son environnement"
+            ]
+          },
+          {
+            "titre": "Les formes juridiques d'entreprises",
+            "objectifs": [
+              "Distinguer entreprises individuelles et sociétés",
+              "Présenter le cadre OHADA"
+            ]
+          },
+          {
+            "titre": "Coûts, recettes et résultat",
+            "objectifs": [
+              "Calculer coût total, moyen et marginal",
+              "Déterminer le seuil de rentabilité"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Le marché et la formation des prix",
+        "lecons": [
+          {
+            "titre": "La demande et l'offre",
+            "objectifs": [
+              "Construire les courbes de demande et d'offre",
+              "Calculer les élasticités"
+            ]
+          },
+          {
+            "titre": "L'équilibre du marché",
+            "objectifs": [
+              "Déterminer prix et quantité d'équilibre",
+              "Analyser les déplacements de l'équilibre"
+            ]
+          },
+          {
+            "titre": "Les structures de marché",
+            "objectifs": [
+              "Distinguer concurrence, monopole et oligopole",
+              "Analyser l'intervention de l'État sur les prix"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : Répartition, consommation et épargne",
+        "lecons": [
+          {
+            "titre": "Revenus primaires et redistribution",
+            "objectifs": [
+              "Distinguer salaires, profits et rentes",
+              "Expliquer le rôle des prélèvements et prestations"
+            ]
+          },
+          {
+            "titre": "Consommation et épargne",
+            "objectifs": [
+              "Calculer propensions moyennes et marginales",
+              "Expliquer la loi psychologique de Keynes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["B"],
+    "matiere": "ECO",
+    "confiance": "recoupe",
+    "sources": [
+      "Educ'Action (media.eduactions.bj) — « L'économie au collège : une pédagogie centrée sur l'actualité » : Seconde (vocabulaire économique, démographie, comptes de la Nation et agrégats) ; Première (production, économie nationale, formation des prix, approche systémique de l'entreprise) ; Terminale (croissance et développement)",
+      "apresbac.bj — « Filières après Bac série B » : l'économie, matière dominante de la série B (coef. 4)",
+      "Aide Afrique — « Le programme et cours d'économie en Terminale B au Bénin » (page non accessible)",
+      "MESTFP / Direction de l'Inspection Pédagogique — programme d'économie série B (APC), non accessible en ligne"
+    ],
+    "chapitres": [
+      {
+        "titre": "Situation d'apprentissage 1 : Croissance et développement",
+        "lecons": [
+          {
+            "titre": "La croissance économique",
+            "objectifs": [
+              "Définir et mesurer la croissance",
+              "Identifier les facteurs de croissance"
+            ]
+          },
+          {
+            "titre": "Le développement et ses indicateurs",
+            "objectifs": ["Distinguer croissance et développement", "Calculer et interpréter l'IDH"]
+          },
+          {
+            "titre": "Les théories et stratégies de développement",
+            "objectifs": [
+              "Présenter Rostow et les théories de la dépendance",
+              "Comparer industrialisation par substitution aux importations et par promotion des exportations"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 2 : Les déséquilibres macroéconomiques",
+        "lecons": [
+          {
+            "titre": "L'inflation",
+            "objectifs": [
+              "Définir et mesurer l'inflation",
+              "Expliquer ses causes et ses conséquences"
+            ]
+          },
+          {
+            "titre": "Le chômage et le sous-emploi",
+            "objectifs": ["Mesurer le chômage", "Analyser l'emploi informel au Bénin"]
+          },
+          {
+            "titre": "Les politiques économiques",
+            "objectifs": [
+              "Distinguer politique budgétaire et monétaire",
+              "Analyser les programmes d'ajustement structurel"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 3 : Les échanges internationaux",
+        "lecons": [
+          {
+            "titre": "Les théories du commerce international",
+            "objectifs": [
+              "Expliquer avantages absolus et comparatifs",
+              "Discuter libre-échange et protectionnisme"
+            ]
+          },
+          {
+            "titre": "La balance des paiements",
+            "objectifs": [
+              "Présenter la structure de la balance des paiements",
+              "Interpréter le solde commercial du Bénin"
+            ]
+          },
+          {
+            "titre": "Le système monétaire international et la dette",
+            "objectifs": [
+              "Retracer l'évolution du SMI",
+              "Analyser le problème de la dette des pays africains"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Situation d'apprentissage 4 : L'intégration économique",
+        "lecons": [
+          {
+            "titre": "Les formes de l'intégration économique",
+            "objectifs": [
+              "Distinguer zone de libre-échange, union douanière, marché commun",
+              "Analyser UEMOA, CEDEAO et ZLECAf"
+            ]
+          },
+          {
+            "titre": "Le financement de l'économie",
+            "objectifs": [
+              "Distinguer financement direct et indirect",
+              "Présenter la BRVM et le système bancaire de l'UMOA"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ALL",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de allemand LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc allemand séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Thema 1 : Ich und meine Familie (moi et ma famille)",
+        "lecons": [
+          {
+            "titre": "Sich vorstellen (se présenter)",
+            "objectifs": [
+              "Se présenter et présenter quelqu'un",
+              "Conjuguer sein et haben au présent"
+            ]
+          },
+          {
+            "titre": "Die Familie (la famille)",
+            "objectifs": ["Décrire sa famille", "Employer les possessifs"]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 2 : Schule und Alltag (école et vie quotidienne)",
+        "lecons": [
+          {
+            "titre": "Der Schultag (la journée d'école)",
+            "objectifs": ["Décrire son emploi du temps", "Dire l'heure"]
+          },
+          {
+            "titre": "Freizeit (les loisirs)",
+            "objectifs": ["Parler de ses loisirs", "Employer les verbes à particule séparable"]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 3 : Wohnen und Essen (habitat et alimentation)",
+        "lecons": [
+          {
+            "titre": "Mein Haus, meine Stadt",
+            "objectifs": [
+              "Décrire son logement et sa ville",
+              "Employer les prépositions de lieu (datif/accusatif)"
+            ]
+          },
+          {
+            "titre": "Essen und Trinken in Benin",
+            "objectifs": [
+              "Parler des plats béninois",
+              "Exprimer goûts et préférences (gern, lieber)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Grammatik und Verstehen (grammaire et compréhension)",
+        "lecons": [
+          {
+            "titre": "Die Deklination (la déclinaison)",
+            "objectifs": [
+              "Décliner articles et noms aux quatre cas",
+              "Repérer la place du verbe dans la phrase"
+            ]
+          },
+          {
+            "titre": "Textverständnis (compréhension de texte)",
+            "objectifs": [
+              "Répondre à des questions sur un texte court",
+              "Rédiger cinq à huit phrases simples"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ALL",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de allemand LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc allemand séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Thema 1 : Gesundheit (santé)",
+        "lecons": [
+          {
+            "titre": "Beim Arzt (chez le médecin)",
+            "objectifs": ["Décrire des symptômes", "Employer les verbes de modalité"]
+          },
+          {
+            "titre": "Gesund leben (vivre sainement)",
+            "objectifs": ["Donner des conseils", "Employer l'impératif"]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 2 : Umwelt (environnement)",
+        "lecons": [
+          {
+            "titre": "Umweltverschmutzung (la pollution)",
+            "objectifs": [
+              "Identifier les causes de la pollution",
+              "Employer weil et dass (subordonnées)"
+            ]
+          },
+          {
+            "titre": "Natur schützen (protéger la nature)",
+            "objectifs": ["Proposer des solutions", "Exprimer le but avec um ... zu"]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 3 : Reisen und Kultur (voyages et culture)",
+        "lecons": [
+          {
+            "titre": "Eine Reise nach Deutschland",
+            "objectifs": ["Raconter un voyage au passé", "Employer le parfait (Perfekt)"]
+          },
+          {
+            "titre": "Feste in Deutschland und Benin",
+            "objectifs": ["Comparer des fêtes", "Employer le comparatif et le superlatif"]
+          }
+        ]
+      },
+      {
+        "titre": "Schreiben (expression écrite)",
+        "lecons": [
+          {
+            "titre": "Der Brief (la lettre)",
+            "objectifs": ["Rédiger une lettre personnelle", "Respecter les formules d'usage"]
+          },
+          {
+            "titre": "Textarbeit (travail sur texte)",
+            "objectifs": ["Résumer un texte en allemand", "Traduire des phrases courtes"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ALL",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de allemand LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc allemand séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Thema 1 : Jugend und Gesellschaft (jeunesse et société)",
+        "lecons": [
+          {
+            "titre": "Jugendprobleme (problèmes des jeunes)",
+            "objectifs": ["Discuter chômage et drogue chez les jeunes", "Employer le prétérit"]
+          },
+          {
+            "titre": "Die Rolle der Frau (le rôle de la femme)",
+            "objectifs": ["Débattre de l'égalité homme-femme", "Employer les relatives"]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 2 : Arbeit und Wirtschaft (travail et économie)",
+        "lecons": [
+          {
+            "titre": "Berufe und Zukunft (métiers et avenir)",
+            "objectifs": ["Parler de ses projets professionnels", "Employer le futur (werden)"]
+          },
+          {
+            "titre": "Bewerbung (la candidature)",
+            "objectifs": [
+              "Rédiger une lettre de candidature simple",
+              "Employer le subjonctif II de politesse"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Thema 3 : Deutschland und Afrika",
+        "lecons": [
+          {
+            "titre": "Deutschland heute",
+            "objectifs": ["Présenter l'Allemagne (géographie, réunification)", "Employer le passif"]
+          },
+          {
+            "titre": "Migration und Entwicklung",
+            "objectifs": [
+              "Discuter de l'émigration africaine",
+              "Argumenter avec des connecteurs (deshalb, trotzdem)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Vorbereitung auf das Abitur (préparation du BAC)",
+        "lecons": [
+          {
+            "titre": "Textverständnis und Grammatik",
+            "objectifs": [
+              "Répondre aux questions de compréhension",
+              "Réussir les exercices de grammaire"
+            ]
+          },
+          {
+            "titre": "Aufsatz (rédaction)",
+            "objectifs": ["Rédiger une rédaction argumentée de 120 mots", "Gérer son temps"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ESP",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de espagnol LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc espagnol séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Tema 1 : Yo y mi familia (moi et ma famille)",
+        "lecons": [
+          {
+            "titre": "Presentarse (se présenter)",
+            "objectifs": ["Se présenter et saluer", "Conjuguer ser, estar et tener au présent"]
+          },
+          {
+            "titre": "La familia (la famille)",
+            "objectifs": ["Décrire sa famille", "Employer les possessifs"]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 2 : La vida escolar y diaria (vie scolaire et quotidienne)",
+        "lecons": [
+          {
+            "titre": "Un día en el colegio",
+            "objectifs": ["Décrire sa journée", "Dire l'heure et employer les verbes pronominaux"]
+          },
+          {
+            "titre": "El tiempo libre (les loisirs)",
+            "objectifs": ["Parler de ses goûts", "Employer gustar et encantar"]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 3 : La ciudad y la casa (ville et maison)",
+        "lecons": [
+          {
+            "titre": "Mi casa, mi barrio",
+            "objectifs": ["Décrire son logement et son quartier", "Opposer ser, estar et hay"]
+          },
+          {
+            "titre": "En el mercado (au marché)",
+            "objectifs": [
+              "Acheter et demander un prix",
+              "Employer les nombres et les démonstratifs"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Gramática y comprensión",
+        "lecons": [
+          {
+            "titre": "Los verbos irregulares del presente",
+            "objectifs": [
+              "Conjuguer les verbes à diphtongue et irréguliers",
+              "Employer correctement les articles"
+            ]
+          },
+          {
+            "titre": "Comprensión de texto",
+            "objectifs": [
+              "Répondre à des questions sur un texte court",
+              "Rédiger un court paragraphe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ESP",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de espagnol LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc espagnol séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Tema 1 : La salud (la santé)",
+        "lecons": [
+          {
+            "titre": "En el médico (chez le médecin)",
+            "objectifs": [
+              "Décrire des symptômes",
+              "Employer doler et l'obligation (tener que, hay que)"
+            ]
+          },
+          {
+            "titre": "Una vida sana",
+            "objectifs": ["Donner des conseils", "Employer l'impératif affirmatif et négatif"]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 2 : El medio ambiente (l'environnement)",
+        "lecons": [
+          {
+            "titre": "La contaminación",
+            "objectifs": [
+              "Identifier les causes de la pollution",
+              "Employer le présent du subjonctif après les verbes de volonté"
+            ]
+          },
+          {
+            "titre": "Proteger la naturaleza",
+            "objectifs": ["Proposer des solutions", "Exprimer le but (para que + subjonctif)"]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 3 : El mundo hispánico",
+        "lecons": [
+          {
+            "titre": "España y América Latina",
+            "objectifs": [
+              "Situer les pays hispanophones",
+              "Employer le passé composé et le passé simple"
+            ]
+          },
+          {
+            "titre": "Fiestas y tradiciones",
+            "objectifs": ["Comparer des fêtes hispaniques et béninoises", "Employer le comparatif"]
+          }
+        ]
+      },
+      {
+        "titre": "Expresión escrita",
+        "lecons": [
+          {
+            "titre": "La carta (la lettre)",
+            "objectifs": ["Rédiger une lettre personnelle", "Respecter les formules d'usage"]
+          },
+          {
+            "titre": "Resumen y traducción",
+            "objectifs": ["Résumer un texte en espagnol", "Traduire des phrases courtes"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "LV2-ESP",
+    "confiance": "reconstitue",
+    "sources": [
+      "MESTFP / Direction de l'Inspection Pédagogique — programme de espagnol LV2 du second cycle (non accessible en ligne)",
+      "Office du Baccalauréat — liste des épreuves (arrêté n°016-2003) : LV2 coef. 2 en A1 et A2 — https://www.officedubacbenin.bj/spip.php?article11",
+      "apresbac.bj — sujets de BAC blanc espagnol séries A1, A2, B (épreuves d'entraînement)",
+      "Wikipédia — « Enseignement secondaire au Bénin » (langues vivantes : espagnol, allemand dans les séries littéraires)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Tema 1 : Juventud y sociedad (jeunesse et société)",
+        "lecons": [
+          {
+            "titre": "Los problemas de los jóvenes",
+            "objectifs": [
+              "Discuter chômage, drogue et délinquance",
+              "Employer l'imparfait et le plus-que-parfait"
+            ]
+          },
+          {
+            "titre": "La mujer en la sociedad",
+            "objectifs": ["Débattre de l'égalité homme-femme", "Employer les relatives"]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 2 : Trabajo y desarrollo (travail et développement)",
+        "lecons": [
+          {
+            "titre": "El empleo y el futuro",
+            "objectifs": [
+              "Parler de ses projets professionnels",
+              "Employer le futur et le conditionnel"
+            ]
+          },
+          {
+            "titre": "La emigración",
+            "objectifs": [
+              "Discuter des causes et conséquences de l'émigration",
+              "Employer le subjonctif imparfait (si + subjonctif)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Tema 3 : África y el mundo hispánico",
+        "lecons": [
+          {
+            "titre": "Guinea Ecuatorial, país africano hispanohablante",
+            "objectifs": ["Présenter la Guinée équatoriale", "Employer le passif"]
+          },
+          {
+            "titre": "La esclavitud y la herencia africana en América",
+            "objectifs": [
+              "Évoquer la présence africaine en Amérique latine",
+              "Argumenter avec des connecteurs (sin embargo, por eso)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Preparación del bachillerato",
+        "lecons": [
+          {
+            "titre": "Comprensión y gramática",
+            "objectifs": [
+              "Répondre aux questions de compréhension",
+              "Réussir les exercices de grammaire et de traduction"
+            ]
+          },
+          {
+            "titre": "Redacción",
+            "objectifs": ["Rédiger un texte argumenté de 120 mots", "Gérer son temps"]
+          }
+        ]
+      }
+    ]
+  }
+]

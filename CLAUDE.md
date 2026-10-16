@@ -45,7 +45,8 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - Dans une route d'établissement, toujours utiliser `req.db` (client isolé par `ecole_id`), jamais
   `prisma` directement. Exceptions documentées dans le code : parents (sans `ecole_id`), comptes
   nationaux, unicité globale des identifiants, vérification publique par numéro et dépôt/suivi
-  public des duplicatas (`/api/public`, CORS ouvert, limité par IP).
+  public des duplicatas (`/api/public`, CORS ouvert, limité par IP), catalogue national EduCourses
+  (modèles `Ec*`, hors tenant : un profil n'est lisible que par son titulaire, `profilDuCompte`).
 - Parents (sans `ecole_id`) : chaque enfant est lu avec `prismaPourEcole(lien.ecoleId)` après
   contrôle du lien (`contexts/suivi/serviceSuivi.js` → `accesEnfant`), jamais autrement.
 - SMS : uniquement via `planifier` (`contexts/notifications`) avec une clé d'unicité par
@@ -65,6 +66,16 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - Fichiers déposés : contrôle du contenu par signature (`utils/fichiers.js`), jamais par
   l'extension ; servis avec `Content-Disposition: inline` et une CSP `sandbox`.
 - Côté web : le jeton d'accès reste en mémoire (jamais `localStorage`).
+
+## EduCourses
+
+- Cours de la 6e à la Terminale : programmes `prisma/donnees/educourses/programmes/*.json`
+  (champ `confiance` honnête : officiel, recoupé, reconstitué), leçons
+  `prisma/donnees/educourses/cours/<NIVEAU>-<MATIERE>[-SERIES]/CC-LL.md`, format contrôlé par
+  `node scripts/verifier-cours.js`. Chargement idempotent (`prisma/educourses.js`, empreinte).
+- Markdown + LaTeX rendus côté serveur (`contexts/educourses/rendu.js`, liste blanche, pas de liens).
+- La bonne réponse d'un quiz ne quitte jamais le serveur. Offre payante (`EDUCOURSES_PAYANT`)
+  désactivée : la 1re leçon de chaque chapitre restera libre.
 
 ## Hors connexion
 

@@ -1,0 +1,2329 @@
+[
+  {
+    "niveau": "SECONDE",
+    "series": ["C"],
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de Mathématiques, Seconde C (MESTFP Bénin) — trois SA : configurations de l'espace, organisation des données, lieux géométriques — https://www.scribd.com/document/703809347/Guide-seconde-C",
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Géométrie dans l'espace : positions relatives",
+            "objectifs": [
+              "Reconnaître les positions relatives de droites et de plans",
+              "Utiliser les règles d'incidence et de parallélisme",
+              "Construire des sections planes de solides"
+            ]
+          },
+          {
+            "titre": "Orthogonalité dans l'espace",
+            "objectifs": [
+              "Démontrer l'orthogonalité d'une droite et d'un plan",
+              "Utiliser le théorème des trois perpendiculaires"
+            ]
+          },
+          {
+            "titre": "Vecteurs de l'espace",
+            "objectifs": [
+              "Effectuer des opérations sur les vecteurs de l'espace",
+              "Caractériser la colinéarité et la coplanarité"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Ensembles de nombres et calcul algébrique",
+            "objectifs": [
+              "Manipuler les ensembles N, Z, D, Q, R",
+              "Utiliser valeur absolue, intervalles et encadrements"
+            ]
+          },
+          {
+            "titre": "Polynômes et fractions rationnelles",
+            "objectifs": [
+              "Factoriser un polynôme",
+              "Étudier le signe d'un polynôme du second degré",
+              "Résoudre équations et inéquations du second degré"
+            ]
+          },
+          {
+            "titre": "Équations et inéquations, systèmes",
+            "objectifs": [
+              "Résoudre des systèmes linéaires à deux et trois inconnues",
+              "Résoudre graphiquement des inéquations à deux inconnues"
+            ]
+          },
+          {
+            "titre": "Généralités sur les fonctions",
+            "objectifs": [
+              "Déterminer l'ensemble de définition d'une fonction",
+              "Étudier parité, sens de variation et extremums",
+              "Représenter graphiquement les fonctions de référence"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Organiser une série statistique en classes",
+              "Calculer les caractéristiques de position et de dispersion"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Vecteurs et repérage du plan",
+            "objectifs": [
+              "Utiliser la relation de Chasles et la colinéarité",
+              "Calculer coordonnées et équations de droites"
+            ]
+          },
+          {
+            "titre": "Barycentre de deux ou trois points",
+            "objectifs": [
+              "Construire le barycentre de points pondérés",
+              "Utiliser l'associativité du barycentre"
+            ]
+          },
+          {
+            "titre": "Produit scalaire",
+            "objectifs": [
+              "Calculer un produit scalaire",
+              "Déterminer des lieux de points à l'aide du produit scalaire"
+            ]
+          },
+          {
+            "titre": "Angles orientés et trigonométrie",
+            "objectifs": [
+              "Utiliser la mesure principale d'un angle orienté",
+              "Résoudre des équations trigonométriques simples"
+            ]
+          },
+          {
+            "titre": "Transformations du plan",
+            "objectifs": [
+              "Utiliser translations, homothéties, symétries et rotations",
+              "Déterminer l'image d'une figure par une transformation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["D"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Guide du programme de Mathématiques, Seconde C (MESTFP Bénin) — trois SA : configurations de l'espace, organisation des données, lieux géométriques — https://www.scribd.com/document/703809347/Guide-seconde-C",
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Géométrie dans l'espace : positions relatives",
+            "objectifs": [
+              "Reconnaître les positions relatives de droites et de plans",
+              "Représenter un solide en perspective cavalière"
+            ]
+          },
+          {
+            "titre": "Orthogonalité dans l'espace",
+            "objectifs": [
+              "Démontrer l'orthogonalité d'une droite et d'un plan",
+              "Calculer des distances dans un solide"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Calcul algébrique et polynômes",
+            "objectifs": [
+              "Factoriser un polynôme",
+              "Résoudre équations et inéquations du second degré"
+            ]
+          },
+          {
+            "titre": "Systèmes d'équations",
+            "objectifs": [
+              "Résoudre un système linéaire de deux équations à deux inconnues",
+              "Modéliser une situation par un système"
+            ]
+          },
+          {
+            "titre": "Généralités sur les fonctions",
+            "objectifs": [
+              "Déterminer l'ensemble de définition",
+              "Étudier le sens de variation",
+              "Représenter les fonctions de référence"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Représenter une série statistique",
+              "Calculer moyenne, médiane, variance et écart-type"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Vecteurs et repérage du plan",
+            "objectifs": ["Utiliser la colinéarité", "Établir une équation de droite"]
+          },
+          {
+            "titre": "Barycentre",
+            "objectifs": [
+              "Construire le barycentre de deux ou trois points",
+              "Réduire une somme vectorielle"
+            ]
+          },
+          {
+            "titre": "Produit scalaire",
+            "objectifs": ["Calculer un produit scalaire", "Établir l'équation d'un cercle"]
+          },
+          {
+            "titre": "Angles orientés et trigonométrie",
+            "objectifs": [
+              "Utiliser le cercle trigonométrique",
+              "Résoudre des équations trigonométriques simples"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf",
+      "Association des Professeurs de Mathématiques du Bénin (APMB) — devoirs harmonisés Tle A2-B"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Vecteurs et repérage",
+            "objectifs": [
+              "Effectuer des opérations sur les vecteurs",
+              "Calculer des coordonnées dans un repère"
+            ]
+          },
+          {
+            "titre": "Droites du plan",
+            "objectifs": [
+              "Établir une équation de droite",
+              "Étudier le parallélisme de deux droites"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Calcul numérique et algébrique",
+            "objectifs": [
+              "Utiliser puissances, racines carrées et pourcentages",
+              "Développer et factoriser une expression"
+            ]
+          },
+          {
+            "titre": "Équations et inéquations",
+            "objectifs": [
+              "Résoudre équations et inéquations du premier degré",
+              "Résoudre un système de deux équations à deux inconnues"
+            ]
+          },
+          {
+            "titre": "Fonctions numériques",
+            "objectifs": [
+              "Lire et interpréter une représentation graphique",
+              "Étudier les fonctions affines"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Organiser des données en tableaux",
+              "Calculer moyenne, mode et médiane",
+              "Construire diagrammes et histogrammes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["C"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf",
+      "Collection SONON, Mathématiques Terminales C, D et E (APC) — plan : systèmes, arithmétique, lieux géométriques, coniques, similitudes, nombres complexes, organisation des données — https://sujetexa.com/wp-content/uploads/2023/09/SONON.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Vecteurs et repérage dans l'espace",
+            "objectifs": [
+              "Calculer coordonnées et composantes dans l'espace",
+              "Établir représentations paramétriques de droites et plans"
+            ]
+          },
+          {
+            "titre": "Produit scalaire dans l'espace",
+            "objectifs": [
+              "Calculer un produit scalaire dans l'espace",
+              "Établir l'équation cartésienne d'un plan",
+              "Calculer la distance d'un point à un plan"
+            ]
+          },
+          {
+            "titre": "Barycentre dans l'espace",
+            "objectifs": [
+              "Construire le barycentre de points de l'espace",
+              "Déterminer des lieux de points"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Équations, inéquations et systèmes",
+            "objectifs": [
+              "Résoudre des équations paramétriques du second degré",
+              "Résoudre un système par la méthode du pivot de Gauss"
+            ]
+          },
+          {
+            "titre": "Limites et continuité",
+            "objectifs": [
+              "Calculer des limites de fonctions",
+              "Interpréter graphiquement une limite (asymptotes)",
+              "Étudier la continuité d'une fonction"
+            ]
+          },
+          {
+            "titre": "Dérivation",
+            "objectifs": [
+              "Calculer le nombre dérivé et la fonction dérivée",
+              "Établir l'équation d'une tangente",
+              "Étudier les variations d'une fonction"
+            ]
+          },
+          {
+            "titre": "Étude de fonctions",
+            "objectifs": [
+              "Étudier et représenter les fonctions polynômes et rationnelles",
+              "Utiliser éléments de symétrie et branches infinies"
+            ]
+          },
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Étudier le sens de variation d'une suite",
+              "Utiliser suites arithmétiques et géométriques",
+              "Raisonner par récurrence"
+            ]
+          },
+          {
+            "titre": "Dénombrement",
+            "objectifs": [
+              "Utiliser les arrangements, permutations et combinaisons",
+              "Appliquer la formule du binôme de Newton"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Calculer les caractéristiques d'une série à une variable",
+              "Interpréter une série chronologique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Angles orientés et trigonométrie",
+            "objectifs": [
+              "Utiliser les formules d'addition et de duplication",
+              "Résoudre des équations et inéquations trigonométriques"
+            ]
+          },
+          {
+            "titre": "Produit scalaire et applications",
+            "objectifs": [
+              "Utiliser les relations métriques dans le triangle",
+              "Déterminer des lignes de niveau"
+            ]
+          },
+          {
+            "titre": "Rotations et isométries",
+            "objectifs": [
+              "Composer des translations et des rotations",
+              "Utiliser les isométries pour résoudre des problèmes"
+            ]
+          },
+          {
+            "titre": "Homothéties",
+            "objectifs": [
+              "Déterminer l'image d'une figure par une homothétie",
+              "Composer homothéties et translations"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["D"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf",
+      "Sujets du BAC béninois série D (Office du Baccalauréat) et examens blancs départementaux — https://epreuvesetcorriges.com/categories/benin/examens/bac"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Vecteurs et repérage dans l'espace",
+            "objectifs": [
+              "Calculer coordonnées dans l'espace",
+              "Étudier l'alignement et la coplanarité"
+            ]
+          },
+          {
+            "titre": "Produit scalaire dans l'espace",
+            "objectifs": [
+              "Calculer un produit scalaire",
+              "Établir l'équation d'un plan et d'une sphère"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Équations, inéquations et systèmes",
+            "objectifs": [
+              "Résoudre des équations du second degré à paramètre",
+              "Résoudre un système de trois équations à trois inconnues"
+            ]
+          },
+          {
+            "titre": "Limites et continuité",
+            "objectifs": ["Calculer des limites", "Déterminer les asymptotes d'une courbe"]
+          },
+          {
+            "titre": "Dérivation et étude de fonctions",
+            "objectifs": [
+              "Calculer une dérivée",
+              "Étudier et représenter une fonction rationnelle",
+              "Résoudre un problème d'optimisation"
+            ]
+          },
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Utiliser suites arithmétiques et géométriques",
+              "Calculer la somme de termes consécutifs"
+            ]
+          },
+          {
+            "titre": "Dénombrement",
+            "objectifs": [
+              "Utiliser arrangements, permutations et combinaisons",
+              "Dénombrer des tirages"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Calculer les caractéristiques d'une série",
+              "Représenter une série par ses effectifs cumulés"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Barycentre et lignes de niveau",
+            "objectifs": [
+              "Réduire une somme vectorielle à l'aide du barycentre",
+              "Déterminer des lieux de points"
+            ]
+          },
+          {
+            "titre": "Angles orientés et trigonométrie",
+            "objectifs": [
+              "Utiliser les formules de trigonométrie",
+              "Résoudre des équations trigonométriques"
+            ]
+          },
+          {
+            "titre": "Transformations du plan",
+            "objectifs": [
+              "Utiliser translations, rotations et homothéties",
+              "Déterminer l'image d'une figure"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf",
+      "Association des Professeurs de Mathématiques du Bénin (APMB) — devoirs harmonisés Tle A2-B"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Calcul numérique et pourcentages",
+            "objectifs": [
+              "Calculer des pourcentages et des taux d'évolution",
+              "Utiliser la proportionnalité"
+            ]
+          },
+          {
+            "titre": "Équations, inéquations et systèmes",
+            "objectifs": [
+              "Résoudre équations et inéquations du second degré",
+              "Résoudre un système de deux équations"
+            ]
+          },
+          {
+            "titre": "Fonctions numériques",
+            "objectifs": ["Étudier les fonctions de référence", "Lire un tableau de variation"]
+          },
+          {
+            "titre": "Suites arithmétiques et géométriques",
+            "objectifs": [
+              "Reconnaître une suite arithmétique ou géométrique",
+              "Calculer un terme et une somme de termes"
+            ]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Organiser une série statistique",
+              "Calculer moyenne, variance et écart-type"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["B"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf",
+      "Association des Professeurs de Mathématiques du Bénin (APMB) — devoirs harmonisés Tle A2-B"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Pourcentages et calculs commerciaux",
+            "objectifs": [
+              "Calculer des taux d'évolution successifs",
+              "Calculer des intérêts simples"
+            ]
+          },
+          {
+            "titre": "Équations, inéquations et systèmes",
+            "objectifs": [
+              "Résoudre équations et inéquations du second degré",
+              "Résoudre des systèmes linéaires et programmation linéaire simple"
+            ]
+          },
+          {
+            "titre": "Fonctions numériques",
+            "objectifs": [
+              "Calculer des limites simples",
+              "Calculer une dérivée",
+              "Étudier les variations d'une fonction polynôme ou rationnelle"
+            ]
+          },
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Utiliser suites arithmétiques et géométriques",
+              "Modéliser une évolution économique par une suite"
+            ]
+          },
+          {
+            "titre": "Statistique et dénombrement",
+            "objectifs": [
+              "Calculer les caractéristiques d'une série statistique",
+              "Dénombrer à l'aide de tableaux et d'arbres"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Repérage et droites",
+            "objectifs": [
+              "Établir une équation de droite",
+              "Résoudre graphiquement un système d'inéquations"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["C"],
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Cours Mathématiques Terminale C Bénin (Aviansou, Zogbe) — SA1 Configurations de l'espace, SA2 Organisation des données, SA3 Lieux géométriques dans le plan — https://www.scribd.com/document/832255719/New-Cours-Tle-C-Acobries-1",
+      "Collection SONON, Mathématiques Terminales C, D et E (APC) — plan : systèmes, arithmétique, lieux géométriques, coniques, similitudes, nombres complexes, organisation des données — https://sujetexa.com/wp-content/uploads/2023/09/SONON.pdf",
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Produit vectoriel",
+            "objectifs": [
+              "Calculer un produit vectoriel",
+              "Calculer aires et volumes à l'aide du produit vectoriel et du produit mixte"
+            ]
+          },
+          {
+            "titre": "Géométrie analytique de l'espace",
+            "objectifs": [
+              "Étudier les positions relatives de droites, plans et sphères",
+              "Calculer distances d'un point à une droite et à un plan"
+            ]
+          },
+          {
+            "titre": "Transformations de l'espace",
+            "objectifs": [
+              "Utiliser translations, homothéties et réflexions de l'espace",
+              "Déterminer l'expression analytique d'une transformation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Arithmétique",
+            "objectifs": [
+              "Utiliser la division euclidienne et les congruences",
+              "Calculer PGCD et PPCM",
+              "Résoudre des équations diophantiennes ax + by = c"
+            ]
+          },
+          {
+            "titre": "Systèmes d'équations linéaires",
+            "objectifs": [
+              "Résoudre un système par la méthode du pivot de Gauss",
+              "Discuter un système à paramètre"
+            ]
+          },
+          {
+            "titre": "Limites, continuité et dérivabilité",
+            "objectifs": [
+              "Utiliser le théorème des valeurs intermédiaires",
+              "Étudier la dérivabilité et les fonctions réciproques",
+              "Appliquer l'inégalité des accroissements finis"
+            ]
+          },
+          {
+            "titre": "Fonctions logarithmes",
+            "objectifs": [
+              "Étudier la fonction logarithme népérien",
+              "Résoudre équations et inéquations logarithmiques",
+              "Calculer les limites de référence"
+            ]
+          },
+          {
+            "titre": "Fonctions exponentielles et puissances",
+            "objectifs": [
+              "Étudier la fonction exponentielle",
+              "Étudier les fonctions x ↦ a^x et x ↦ x^a",
+              "Comparer les croissances comparées"
+            ]
+          },
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Étudier la convergence d'une suite",
+              "Utiliser les suites récurrentes et adjacentes",
+              "Raisonner par récurrence"
+            ]
+          },
+          {
+            "titre": "Primitives et calcul intégral",
+            "objectifs": [
+              "Déterminer des primitives",
+              "Calculer une intégrale par parties ou par changement de variable",
+              "Calculer aires et volumes"
+            ]
+          },
+          {
+            "titre": "Équations différentielles",
+            "objectifs": ["Résoudre y' = ay + b", "Résoudre y'' + ay' + by = 0"]
+          },
+          {
+            "titre": "Dénombrement et probabilités",
+            "objectifs": [
+              "Calculer des probabilités conditionnelles",
+              "Utiliser la formule des probabilités totales",
+              "Étudier une variable aléatoire et la loi binomiale"
+            ]
+          },
+          {
+            "titre": "Statistique à deux variables",
+            "objectifs": [
+              "Représenter un nuage de points",
+              "Calculer covariance et coefficient de corrélation",
+              "Déterminer une droite de régression"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Nombres complexes",
+            "objectifs": [
+              "Utiliser les formes algébrique, trigonométrique et exponentielle",
+              "Résoudre des équations dans C",
+              "Calculer les racines n-ièmes"
+            ]
+          },
+          {
+            "titre": "Nombres complexes et géométrie",
+            "objectifs": [
+              "Interpréter module et argument géométriquement",
+              "Déterminer des lieux de points à l'aide des complexes"
+            ]
+          },
+          {
+            "titre": "Isométries du plan",
+            "objectifs": [
+              "Classer les isométries planes",
+              "Composer des réflexions et des rotations"
+            ]
+          },
+          {
+            "titre": "Similitudes planes directes",
+            "objectifs": [
+              "Déterminer l'écriture complexe d'une similitude",
+              "Déterminer centre, rapport et angle",
+              "Composer des similitudes"
+            ]
+          },
+          {
+            "titre": "Applications affines du plan",
+            "objectifs": [
+              "Déterminer l'expression analytique d'une application affine",
+              "Étudier projections, affinités et symétries obliques"
+            ]
+          },
+          {
+            "titre": "Coniques",
+            "objectifs": [
+              "Définir une conique par foyer et directrice",
+              "Déterminer les éléments caractéristiques d'une ellipse, d'une parabole, d'une hyperbole",
+              "Tracer une conique à partir de son équation réduite"
+            ]
+          },
+          {
+            "titre": "Courbes paramétrées",
+            "objectifs": [
+              "Étudier une courbe définie par une représentation paramétrique",
+              "Déterminer les tangentes et tracer la courbe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["D"],
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Collection SONON, Mathématiques Terminales C, D et E (APC) — plan : systèmes, arithmétique, lieux géométriques, coniques, similitudes, nombres complexes, organisation des données — https://sujetexa.com/wp-content/uploads/2023/09/SONON.pdf",
+      "Sujets du BAC béninois série D (Office du Baccalauréat) et examens blancs départementaux — https://epreuvesetcorriges.com/categories/benin/examens/bac",
+      "Programme d'études Mathématiques second cycle séries C et D (MES Bénin, 2009, archive UNESCO-BIE) — https://www.ibe.unesco.org/curricula/benin/dm_us1_hsge_2009_fre_C_D.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Géométrie analytique de l'espace",
+            "objectifs": [
+              "Étudier positions relatives de droites et de plans",
+              "Calculer distances et produit vectoriel",
+              "Étudier l'intersection d'un plan et d'une sphère"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Limites, continuité et dérivabilité",
+            "objectifs": [
+              "Utiliser le théorème des valeurs intermédiaires",
+              "Étudier une bijection et sa réciproque"
+            ]
+          },
+          {
+            "titre": "Fonctions logarithmes",
+            "objectifs": [
+              "Étudier la fonction logarithme népérien",
+              "Résoudre équations et inéquations logarithmiques"
+            ]
+          },
+          {
+            "titre": "Fonctions exponentielles",
+            "objectifs": [
+              "Étudier la fonction exponentielle",
+              "Étudier des fonctions composées avec exp et ln"
+            ]
+          },
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Étudier la convergence d'une suite",
+              "Utiliser une suite auxiliaire géométrique",
+              "Raisonner par récurrence"
+            ]
+          },
+          {
+            "titre": "Primitives et calcul intégral",
+            "objectifs": [
+              "Déterminer des primitives",
+              "Calculer une intégrale par parties",
+              "Calculer une aire"
+            ]
+          },
+          {
+            "titre": "Équations différentielles",
+            "objectifs": ["Résoudre y' = ay + b", "Résoudre y'' + ay' + by = 0"]
+          },
+          {
+            "titre": "Dénombrement et probabilités",
+            "objectifs": [
+              "Dénombrer des tirages",
+              "Calculer des probabilités conditionnelles",
+              "Étudier une variable aléatoire et la loi binomiale"
+            ]
+          },
+          {
+            "titre": "Statistique à deux variables",
+            "objectifs": [
+              "Calculer le coefficient de corrélation linéaire",
+              "Déterminer une droite de régression et faire une estimation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Lieux géométriques dans le plan",
+        "lecons": [
+          {
+            "titre": "Nombres complexes",
+            "objectifs": [
+              "Utiliser les formes algébrique, trigonométrique et exponentielle",
+              "Résoudre des équations du second degré dans C",
+              "Linéariser à l'aide des formules d'Euler et de Moivre"
+            ]
+          },
+          {
+            "titre": "Nombres complexes et géométrie",
+            "objectifs": [
+              "Interpréter géométriquement module et argument",
+              "Déterminer des ensembles de points"
+            ]
+          },
+          {
+            "titre": "Similitudes planes directes",
+            "objectifs": [
+              "Déterminer l'écriture complexe d'une similitude",
+              "Déterminer centre, rapport et angle"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Sujets de BAC Terminale A-B Bénin (suites, logarithme) — https://fr.scribd.com/document/838530757/Bac-Terminale-a-B-benin",
+      "Association des Professeurs de Mathématiques du Bénin (APMB) — devoirs harmonisés Tle A2-B"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Reconnaître une suite arithmétique ou géométrique",
+              "Calculer terme général et somme",
+              "Modéliser une évolution par une suite"
+            ]
+          },
+          {
+            "titre": "Fonction logarithme népérien",
+            "objectifs": [
+              "Utiliser les propriétés algébriques de ln",
+              "Résoudre des équations simples avec ln"
+            ]
+          },
+          {
+            "titre": "Fonction exponentielle",
+            "objectifs": [
+              "Utiliser les propriétés de exp",
+              "Résoudre des équations simples avec exp"
+            ]
+          },
+          {
+            "titre": "Étude de fonctions",
+            "objectifs": [
+              "Calculer une dérivée",
+              "Dresser un tableau de variation",
+              "Tracer une courbe représentative"
+            ]
+          },
+          {
+            "titre": "Dénombrement et probabilités",
+            "objectifs": ["Dénombrer des issues", "Calculer une probabilité simple"]
+          },
+          {
+            "titre": "Statistique",
+            "objectifs": [
+              "Calculer les caractéristiques d'une série",
+              "Représenter une série à deux variables"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["B"],
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Sujets de BAC Terminale A-B Bénin (suites, logarithme) — https://fr.scribd.com/document/838530757/Bac-Terminale-a-B-benin",
+      "Association des Professeurs de Mathématiques du Bénin (APMB) — devoirs harmonisés Tle A2-B"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Suites numériques",
+            "objectifs": [
+              "Utiliser suites arithmétiques et géométriques",
+              "Calculer intérêts composés et annuités"
+            ]
+          },
+          {
+            "titre": "Limites, dérivation et étude de fonctions",
+            "objectifs": [
+              "Calculer des limites",
+              "Étudier les variations d'une fonction",
+              "Interpréter coût marginal et coût moyen"
+            ]
+          },
+          {
+            "titre": "Fonction logarithme népérien",
+            "objectifs": [
+              "Étudier la fonction ln",
+              "Résoudre équations et inéquations logarithmiques"
+            ]
+          },
+          {
+            "titre": "Fonction exponentielle",
+            "objectifs": ["Étudier la fonction exp", "Modéliser une croissance exponentielle"]
+          },
+          {
+            "titre": "Primitives et calcul intégral",
+            "objectifs": [
+              "Déterminer des primitives",
+              "Calculer une intégrale et une valeur moyenne"
+            ]
+          },
+          {
+            "titre": "Dénombrement et probabilités",
+            "objectifs": [
+              "Calculer des probabilités conditionnelles",
+              "Étudier une variable aléatoire et son espérance"
+            ]
+          },
+          {
+            "titre": "Statistique à deux variables",
+            "objectifs": [
+              "Représenter un nuage de points",
+              "Déterminer une droite d'ajustement",
+              "Calculer le coefficient de corrélation"
+            ]
+          },
+          {
+            "titre": "Programmation linéaire",
+            "objectifs": [
+              "Modéliser un problème d'optimisation sous contraintes",
+              "Résoudre graphiquement un programme linéaire"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["C", "D"],
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Collection l'Eveil, PCT 2nde C, D & E (SA1 Le courant électrique dans les composantes électriques ; SA2 La matière et ses transformations ; SA3 Réalisation d'un montage électronique) — https://ledefiscad.com/pct-2nde-c-d-e-collection-l-eveil.html",
+      "Guide du programme d'études SPCT 2nde séries C et D (MEPS Bénin) — S.A. Chocs et collisions entre solides en mouvement — https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-2nde.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le courant électrique dans les composantes électriques",
+        "lecons": [
+          {
+            "titre": "Intensité du courant électrique",
+            "objectifs": [
+              "Mesurer l'intensité d'un courant continu et alternatif",
+              "Appliquer la loi des nœuds"
+            ]
+          },
+          {
+            "titre": "Tension électrique",
+            "objectifs": [
+              "Mesurer une tension",
+              "Appliquer la loi des mailles",
+              "Utiliser un oscilloscope"
+            ]
+          },
+          {
+            "titre": "Dipôles passifs et dipôles actifs",
+            "objectifs": [
+              "Tracer la caractéristique d'un dipôle",
+              "Appliquer la loi d'Ohm",
+              "Déterminer le point de fonctionnement d'un circuit"
+            ]
+          },
+          {
+            "titre": "Énergie et puissance électriques",
+            "objectifs": ["Calculer puissance et énergie électriques", "Appliquer la loi de Joule"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : La matière et ses transformations",
+        "lecons": [
+          {
+            "titre": "Structure de l'atome",
+            "objectifs": [
+              "Décrire la constitution de l'atome",
+              "Établir la structure électronique d'un atome"
+            ]
+          },
+          {
+            "titre": "Classification périodique des éléments",
+            "objectifs": [
+              "Situer un élément dans le tableau périodique",
+              "Relier position et propriétés chimiques"
+            ]
+          },
+          {
+            "titre": "Liaisons chimiques, ions et molécules",
+            "objectifs": ["Représenter une molécule selon Lewis", "Expliquer la formation des ions"]
+          },
+          {
+            "titre": "Quantité de matière et équation-bilan",
+            "objectifs": [
+              "Calculer une quantité de matière",
+              "Équilibrer une équation-bilan",
+              "Exploiter le bilan molaire d'une réaction"
+            ]
+          },
+          {
+            "titre": "Solutions aqueuses",
+            "objectifs": ["Préparer une solution de concentration donnée", "Effectuer une dilution"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Réalisation d'un montage électronique",
+        "lecons": [
+          {
+            "titre": "La diode et le redressement",
+            "objectifs": [
+              "Tracer la caractéristique d'une diode",
+              "Réaliser un redressement simple"
+            ]
+          },
+          {
+            "titre": "Le transistor",
+            "objectifs": [
+              "Identifier les bornes d'un transistor",
+              "Utiliser le transistor en commutation"
+            ]
+          },
+          {
+            "titre": "Capteurs et montages simples",
+            "objectifs": [
+              "Utiliser une photorésistance ou une thermistance",
+              "Réaliser un montage d'alarme ou d'éclairage automatique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Chocs et collisions entre solides en mouvement",
+        "lecons": [
+          {
+            "titre": "Mouvement d'un solide",
+            "objectifs": [
+              "Décrire un mouvement dans un référentiel",
+              "Calculer vitesse moyenne et instantanée"
+            ]
+          },
+          {
+            "titre": "Forces et équilibre d'un solide",
+            "objectifs": [
+              "Représenter une force",
+              "Appliquer les conditions d'équilibre",
+              "Utiliser le moment d'une force"
+            ]
+          },
+          {
+            "titre": "Centre d'inertie et principe d'inertie",
+            "objectifs": [
+              "Déterminer le centre d'inertie d'un système",
+              "Énoncer le principe d'inertie"
+            ]
+          },
+          {
+            "titre": "Quantité de mouvement et chocs",
+            "objectifs": [
+              "Calculer la quantité de mouvement",
+              "Appliquer la conservation de la quantité de mouvement d'un système isolé"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["C", "D"],
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Collection l'Eveil, PCT 1ère C, D & E, 3e éd. (SA1 L'énergie mécanique au service du développement ; SA2 Étude de quelques composés organiques et leurs propriétés ; SA3 Réalisation d'une source de tension électrique ; SA4 Réactions d'oxydoréduction ; SA5 Température et chaleur ; SA6 Vibration, propagation et interférence) — https://ledefiscad.com/pct-1ere-c-d-e-collection-l-eveil.html",
+      "Guide du programme d'études SPCT Première série D (MES Bénin) — https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-premiere-serie-d.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : L'énergie mécanique au service du développement",
+        "lecons": [
+          {
+            "titre": "Travail et puissance d'une force",
+            "objectifs": [
+              "Calculer le travail d'une force constante",
+              "Calculer une puissance mécanique"
+            ]
+          },
+          {
+            "titre": "Énergie cinétique",
+            "objectifs": [
+              "Appliquer le théorème de l'énergie cinétique",
+              "Calculer l'énergie cinétique d'un solide en rotation"
+            ]
+          },
+          {
+            "titre": "Énergie potentielle et énergie mécanique",
+            "objectifs": [
+              "Calculer une énergie potentielle de pesanteur ou élastique",
+              "Étudier la conservation de l'énergie mécanique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Étude de quelques composés organiques et leurs propriétés",
+        "lecons": [
+          {
+            "titre": "Généralités sur la chimie organique",
+            "objectifs": [
+              "Identifier les éléments d'un composé organique",
+              "Déterminer une formule brute"
+            ]
+          },
+          {
+            "titre": "Les alcanes",
+            "objectifs": [
+              "Nommer les alcanes",
+              "Écrire les réactions de combustion et de substitution"
+            ]
+          },
+          {
+            "titre": "Les alcènes et les alcynes",
+            "objectifs": [
+              "Nommer alcènes et alcynes",
+              "Écrire les réactions d'addition et de polymérisation"
+            ]
+          },
+          {
+            "titre": "Les composés aromatiques",
+            "objectifs": ["Décrire la structure du benzène", "Écrire des réactions de substitution"]
+          },
+          {
+            "titre": "Les composés oxygénés",
+            "objectifs": [
+              "Identifier alcools, aldéhydes, cétones et acides",
+              "Écrire l'oxydation ménagée d'un alcool"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Réalisation d'une source de tension électrique",
+        "lecons": [
+          {
+            "titre": "Électrostatique : force et champ électriques",
+            "objectifs": ["Appliquer la loi de Coulomb", "Représenter un champ électrique"]
+          },
+          {
+            "titre": "Potentiel et énergie potentielle électriques",
+            "objectifs": [
+              "Calculer une différence de potentiel",
+              "Calculer le travail de la force électrique"
+            ]
+          },
+          {
+            "titre": "Condensateurs",
+            "objectifs": [
+              "Calculer la capacité d'un condensateur",
+              "Étudier la charge et l'énergie stockée",
+              "Associer des condensateurs"
+            ]
+          },
+          {
+            "titre": "Générateurs et récepteurs",
+            "objectifs": [
+              "Appliquer la loi de Pouillet",
+              "Réaliser une source de tension stabilisée"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Explication de quelques phénomènes chimiques par les réactions d'oxydoréduction",
+        "lecons": [
+          {
+            "titre": "Oxydants et réducteurs",
+            "objectifs": [
+              "Identifier un couple oxydant/réducteur",
+              "Écrire une demi-équation électronique"
+            ]
+          },
+          {
+            "titre": "Classification des couples redox",
+            "objectifs": [
+              "Classer des couples par leur potentiel standard",
+              "Prévoir une réaction d'oxydoréduction"
+            ]
+          },
+          {
+            "titre": "Piles et électrolyse",
+            "objectifs": ["Décrire le fonctionnement d'une pile", "Exploiter une électrolyse"]
+          },
+          {
+            "titre": "Dosage d'oxydoréduction",
+            "objectifs": [
+              "Réaliser un dosage redox",
+              "Déterminer une concentration à l'équivalence"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : Température et chaleur",
+        "lecons": [
+          {
+            "titre": "Température et thermomètres",
+            "objectifs": [
+              "Distinguer chaleur et température",
+              "Utiliser les échelles de température"
+            ]
+          },
+          {
+            "titre": "Calorimétrie",
+            "objectifs": [
+              "Calculer une quantité de chaleur",
+              "Déterminer une température d'équilibre",
+              "Calculer une chaleur latente"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 6 : Vibration, propagation et interférence",
+        "lecons": [
+          {
+            "titre": "Phénomènes périodiques",
+            "objectifs": ["Caractériser période et fréquence", "Utiliser la stroboscopie"]
+          },
+          {
+            "titre": "Propagation d'un ébranlement et ondes progressives",
+            "objectifs": [
+              "Calculer une célérité",
+              "Définir la longueur d'onde",
+              "Comparer l'état vibratoire de deux points"
+            ]
+          },
+          {
+            "titre": "Interférences mécaniques",
+            "objectifs": [
+              "Décrire les interférences à la surface de l'eau",
+              "Localiser franges d'amplitude maximale et nulle"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["C"],
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Collection l'Eveil, PCT Tle C, D & E, 6e éd. (SA1 Champs de forces et interactions ; SA2 Chimie des solutions aqueuses ; SA3 Oscillations mécaniques et électriques ; SA4 Chimie organique ; SA5 Optique ; SA6 Physique atomique et nucléaire) — https://ledefiscad.com/pct-eveil-tle-cde.html",
+      "Épreuves PCT BAC C, D Bénin 2022-2024 et examen blanc BAC 2026 série D Atlantique — https://epreuvesetcorriges.com/categories/benin/examens/bac"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Champs de forces et interactions",
+        "lecons": [
+          {
+            "titre": "Cinématique du point",
+            "objectifs": [
+              "Déterminer vitesse et accélération",
+              "Étudier les mouvements rectilignes et circulaires"
+            ]
+          },
+          {
+            "titre": "Relation fondamentale de la dynamique",
+            "objectifs": [
+              "Appliquer le théorème du centre d'inertie",
+              "Étudier un mouvement sur plan incliné"
+            ]
+          },
+          {
+            "titre": "Mouvement dans le champ de pesanteur",
+            "objectifs": [
+              "Établir l'équation de la trajectoire d'un projectile",
+              "Calculer portée et flèche"
+            ]
+          },
+          {
+            "titre": "Mouvement d'une particule chargée dans un champ électrique",
+            "objectifs": ["Étudier la déviation électrostatique", "Calculer la déflexion"]
+          },
+          {
+            "titre": "Mouvement d'une particule chargée dans un champ magnétique",
+            "objectifs": [
+              "Appliquer la force de Lorentz",
+              "Étudier le spectrographe de masse et le cyclotron"
+            ]
+          },
+          {
+            "titre": "Gravitation universelle",
+            "objectifs": ["Appliquer la loi de gravitation", "Étudier le mouvement des satellites"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 1 bis : Électromagnétisme",
+        "lecons": [
+          {
+            "titre": "Champ magnétique",
+            "objectifs": [
+              "Caractériser le champ créé par un courant",
+              "Calculer le champ dans un solénoïde"
+            ]
+          },
+          {
+            "titre": "Loi de Laplace",
+            "objectifs": [
+              "Appliquer la loi de Laplace",
+              "Expliquer le principe du moteur électrique"
+            ]
+          },
+          {
+            "titre": "Induction électromagnétique et auto-induction",
+            "objectifs": [
+              "Appliquer la loi de Lenz-Faraday",
+              "Calculer l'énergie emmagasinée dans une bobine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Chimie des solutions aqueuses",
+        "lecons": [
+          {
+            "titre": "Cinétique chimique",
+            "objectifs": [
+              "Déterminer une vitesse de réaction",
+              "Identifier les facteurs cinétiques"
+            ]
+          },
+          {
+            "titre": "pH et autoprotolyse de l'eau",
+            "objectifs": ["Mesurer et calculer un pH", "Utiliser le produit ionique de l'eau"]
+          },
+          {
+            "titre": "Acides forts, bases fortes, acides et bases faibles",
+            "objectifs": [
+              "Distinguer acides forts et faibles",
+              "Calculer pKa et constante d'acidité",
+              "Utiliser le diagramme de prédominance"
+            ]
+          },
+          {
+            "titre": "Réactions acido-basiques et dosages",
+            "objectifs": [
+              "Réaliser un dosage pH-métrique",
+              "Exploiter le point d'équivalence",
+              "Choisir un indicateur coloré"
+            ]
+          },
+          {
+            "titre": "Solutions tampons",
+            "objectifs": [
+              "Préparer une solution tampon",
+              "Expliquer les propriétés d'une solution tampon"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Les oscillations mécaniques et électriques",
+        "lecons": [
+          {
+            "titre": "Oscillateurs mécaniques",
+            "objectifs": [
+              "Établir l'équation différentielle d'un pendule élastique",
+              "Calculer période propre et énergie"
+            ]
+          },
+          {
+            "titre": "Pendule pesant et pendule simple",
+            "objectifs": [
+              "Établir l'équation du mouvement pour de petites oscillations",
+              "Calculer la période"
+            ]
+          },
+          {
+            "titre": "Circuit RC : charge et décharge du condensateur",
+            "objectifs": ["Établir l'équation différentielle", "Déterminer la constante de temps"]
+          },
+          {
+            "titre": "Oscillations électriques libres (LC, RLC)",
+            "objectifs": [
+              "Établir l'équation différentielle de la décharge dans une bobine",
+              "Étudier l'amortissement"
+            ]
+          },
+          {
+            "titre": "Oscillations électriques forcées",
+            "objectifs": [
+              "Étudier la résonance d'intensité",
+              "Utiliser l'impédance et la construction de Fresnel"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Chimie organique",
+        "lecons": [
+          {
+            "titre": "Alcools",
+            "objectifs": [
+              "Classer et nommer les alcools",
+              "Écrire les réactions d'oxydation ménagée"
+            ]
+          },
+          {
+            "titre": "Acides carboxyliques et dérivés",
+            "objectifs": [
+              "Nommer acides, chlorures d'acyle, anhydrides et amides",
+              "Écrire leurs réactions de formation"
+            ]
+          },
+          {
+            "titre": "Estérification et hydrolyse",
+            "objectifs": [
+              "Écrire une estérification",
+              "Calculer un rendement",
+              "Écrire une saponification"
+            ]
+          },
+          {
+            "titre": "Amines et acides α-aminés",
+            "objectifs": [
+              "Reconnaître le caractère basique des amines",
+              "Écrire la formation d'un dipeptide"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : Optique",
+        "lecons": [
+          {
+            "titre": "Interférences lumineuses",
+            "objectifs": ["Décrire l'expérience des fentes de Young", "Calculer l'interfrange"]
+          },
+          {
+            "titre": "Effet photoélectrique et photons",
+            "objectifs": ["Calculer l'énergie d'un photon", "Appliquer la relation d'Einstein"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 6 : Physique atomique et nucléaire",
+        "lecons": [
+          {
+            "titre": "Niveaux d'énergie de l'atome",
+            "objectifs": ["Interpréter un spectre de raies", "Calculer l'énergie d'une transition"]
+          },
+          {
+            "titre": "Radioactivité",
+            "objectifs": [
+              "Écrire une équation de désintégration",
+              "Appliquer la loi de décroissance radioactive",
+              "Utiliser la période radioactive"
+            ]
+          },
+          {
+            "titre": "Réactions nucléaires provoquées",
+            "objectifs": [
+              "Calculer l'énergie libérée par une fission ou une fusion",
+              "Utiliser l'énergie de liaison par nucléon"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["D"],
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Collection l'Eveil, PCT Tle C, D & E, 6e éd. (SA1 Champs de forces et interactions ; SA2 Chimie des solutions aqueuses ; SA3 Oscillations mécaniques et électriques ; SA4 Chimie organique ; SA5 Optique ; SA6 Physique atomique et nucléaire) — https://ledefiscad.com/pct-eveil-tle-cde.html",
+      "Programme révisé PCT Terminale D (MESTFP Bénin) — SA2 Chimie des solutions aqueuses et cinétique chimique ; SA3 Les oscillations mécaniques — https://www.scribd.com/document/763960211/PCT-PROGRAMME-Tle-D-REVISE",
+      "Épreuves PCT BAC C, D Bénin 2022-2024 et examen blanc BAC 2026 série D Atlantique — https://epreuvesetcorriges.com/categories/benin/examens/bac"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Champs de forces et interactions",
+        "lecons": [
+          {
+            "titre": "Cinématique du point",
+            "objectifs": [
+              "Déterminer vitesse et accélération",
+              "Étudier les mouvements rectilignes et circulaires"
+            ]
+          },
+          {
+            "titre": "Relation fondamentale de la dynamique",
+            "objectifs": [
+              "Appliquer le théorème du centre d'inertie",
+              "Étudier un mouvement sur plan incliné"
+            ]
+          },
+          {
+            "titre": "Mouvement dans le champ de pesanteur",
+            "objectifs": [
+              "Établir l'équation de la trajectoire d'un projectile",
+              "Calculer portée et flèche"
+            ]
+          },
+          {
+            "titre": "Mouvement d'une particule chargée dans un champ électrique",
+            "objectifs": ["Étudier la déviation électrostatique", "Calculer la déflexion"]
+          },
+          {
+            "titre": "Mouvement d'une particule chargée dans un champ magnétique",
+            "objectifs": [
+              "Appliquer la force de Lorentz",
+              "Étudier le spectrographe de masse et le cyclotron"
+            ]
+          },
+          {
+            "titre": "Gravitation universelle",
+            "objectifs": ["Appliquer la loi de gravitation", "Étudier le mouvement des satellites"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Chimie des solutions aqueuses et cinétique chimique",
+        "lecons": [
+          {
+            "titre": "Cinétique chimique",
+            "objectifs": [
+              "Déterminer une vitesse de réaction",
+              "Identifier les facteurs cinétiques"
+            ]
+          },
+          {
+            "titre": "pH et autoprotolyse de l'eau",
+            "objectifs": ["Mesurer et calculer un pH", "Utiliser le produit ionique de l'eau"]
+          },
+          {
+            "titre": "Acides forts, bases fortes, acides et bases faibles",
+            "objectifs": [
+              "Distinguer acides forts et faibles",
+              "Calculer pKa et constante d'acidité",
+              "Utiliser le diagramme de prédominance"
+            ]
+          },
+          {
+            "titre": "Réactions acido-basiques et dosages",
+            "objectifs": [
+              "Réaliser un dosage pH-métrique",
+              "Exploiter le point d'équivalence",
+              "Choisir un indicateur coloré"
+            ]
+          },
+          {
+            "titre": "Solutions tampons",
+            "objectifs": [
+              "Préparer une solution tampon",
+              "Expliquer les propriétés d'une solution tampon"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Les oscillations mécaniques et électriques",
+        "lecons": [
+          {
+            "titre": "Oscillateurs mécaniques",
+            "objectifs": [
+              "Établir l'équation différentielle d'un pendule élastique",
+              "Calculer période propre et énergie"
+            ]
+          },
+          {
+            "titre": "Pendule pesant et pendule simple",
+            "objectifs": [
+              "Établir l'équation du mouvement pour de petites oscillations",
+              "Calculer la période"
+            ]
+          },
+          {
+            "titre": "Circuit RC : charge et décharge du condensateur",
+            "objectifs": ["Établir l'équation différentielle", "Déterminer la constante de temps"]
+          },
+          {
+            "titre": "Oscillations électriques libres (LC, RLC)",
+            "objectifs": [
+              "Établir l'équation différentielle de la décharge dans une bobine",
+              "Étudier l'amortissement"
+            ]
+          },
+          {
+            "titre": "Oscillations électriques forcées",
+            "objectifs": [
+              "Étudier la résonance d'intensité",
+              "Utiliser l'impédance et la construction de Fresnel"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Chimie organique",
+        "lecons": [
+          {
+            "titre": "Alcools",
+            "objectifs": [
+              "Classer et nommer les alcools",
+              "Écrire les réactions d'oxydation ménagée"
+            ]
+          },
+          {
+            "titre": "Acides carboxyliques et dérivés",
+            "objectifs": [
+              "Nommer acides, chlorures d'acyle, anhydrides et amides",
+              "Écrire leurs réactions de formation"
+            ]
+          },
+          {
+            "titre": "Estérification et hydrolyse",
+            "objectifs": [
+              "Écrire une estérification",
+              "Calculer un rendement",
+              "Écrire une saponification"
+            ]
+          },
+          {
+            "titre": "Amines et acides α-aminés",
+            "objectifs": [
+              "Reconnaître le caractère basique des amines",
+              "Écrire la formation d'un dipeptide"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : Optique",
+        "lecons": [
+          {
+            "titre": "Interférences lumineuses",
+            "objectifs": ["Décrire l'expérience des fentes de Young", "Calculer l'interfrange"]
+          },
+          {
+            "titre": "Effet photoélectrique et photons",
+            "objectifs": ["Calculer l'énergie d'un photon", "Appliquer la relation d'Einstein"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 6 : Physique atomique et nucléaire",
+        "lecons": [
+          {
+            "titre": "Niveaux d'énergie de l'atome",
+            "objectifs": ["Interpréter un spectre de raies", "Calculer l'énergie d'une transition"]
+          },
+          {
+            "titre": "Radioactivité",
+            "objectifs": [
+              "Écrire une équation de désintégration",
+              "Appliquer la loi de décroissance radioactive",
+              "Utiliser la période radioactive"
+            ]
+          },
+          {
+            "titre": "Réactions nucléaires provoquées",
+            "objectifs": [
+              "Calculer l'énergie libérée par une fission ou une fusion",
+              "Utiliser l'énergie de liaison par nucléon"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["A1", "A2", "B", "C", "D"],
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Résumés SVT 2nde A1, A2, B, C, D (programme commun, SA1 et SA2) — https://touteslesepreuves.com/resumes-de-cours/18943-resume-de-cours-svt-2nde-abcd-sa1.html",
+      "EDiPrE — Étude didactique des pratiques de classe dans le secondaire au Bénin (AUF / UAC) — https://apprendre.auf.org/wp-content/uploads/2021/01/Etude-des-pratiques-de-classe-dans-le-secondaire-au-Benin-en-sciences-et-mathematiques.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Organisation et fonctionnement de la cellule",
+        "lecons": [
+          {
+            "titre": "La cellule, unité du vivant",
+            "objectifs": [
+              "Observer des cellules au microscope",
+              "Comparer cellules animale et végétale"
+            ]
+          },
+          {
+            "titre": "Ultrastructure cellulaire",
+            "objectifs": [
+              "Identifier les organites et leurs rôles",
+              "Distinguer cellules procaryotes et eucaryotes"
+            ]
+          },
+          {
+            "titre": "Échanges cellulaires",
+            "objectifs": ["Expliquer diffusion et osmose", "Interpréter plasmolyse et turgescence"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : L'Homme et son environnement",
+        "lecons": [
+          {
+            "titre": "Écosystèmes",
+            "objectifs": [
+              "Décrire les composantes d'un écosystème",
+              "Établir chaînes et réseaux trophiques"
+            ]
+          },
+          {
+            "titre": "Flux de matière et d'énergie",
+            "objectifs": [
+              "Construire une pyramide écologique",
+              "Expliquer les cycles du carbone et de l'azote"
+            ]
+          },
+          {
+            "titre": "Dégradation et protection de l'environnement",
+            "objectifs": [
+              "Identifier les causes de pollution et de déforestation",
+              "Proposer des mesures de protection"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Le sol et les roches",
+        "lecons": [
+          {
+            "titre": "Formation et constituants du sol",
+            "objectifs": ["Identifier les constituants du sol", "Expliquer la pédogenèse"]
+          },
+          {
+            "titre": "Les roches sédimentaires",
+            "objectifs": [
+              "Reconnaître des roches sédimentaires",
+              "Expliquer altération, transport et sédimentation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["D"],
+    "matiere": "SVT",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme SVT Première série D (MES Bénin) — SA1 Géodynamique interne (9 sem.), SA2 Mesure du temps de l'histoire de la Terre et de la vie (3 sem.), SA3 Bioénergétique (8 sem.) — https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-svt-premiere-serie-d.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Géodynamique interne",
+        "lecons": [
+          {
+            "titre": "Structure interne du globe",
+            "objectifs": ["Exploiter les données sismiques", "Décrire croûte, manteau et noyau"]
+          },
+          {
+            "titre": "Tectonique des plaques",
+            "objectifs": [
+              "Décrire les mouvements des plaques",
+              "Expliquer expansion océanique et subduction"
+            ]
+          },
+          {
+            "titre": "Magmatisme et métamorphisme",
+            "objectifs": [
+              "Relier volcanisme et limites de plaques",
+              "Identifier roches magmatiques et métamorphiques"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Mesure du temps de l'histoire de la Terre et de la vie",
+        "lecons": [
+          {
+            "titre": "Datation relative",
+            "objectifs": [
+              "Appliquer les principes de stratigraphie",
+              "Utiliser les fossiles stratigraphiques"
+            ]
+          },
+          {
+            "titre": "Datation absolue",
+            "objectifs": ["Utiliser la radiochronologie", "Situer les grandes ères géologiques"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Bioénergétique",
+        "lecons": [
+          {
+            "titre": "Photosynthèse",
+            "objectifs": [
+              "Mettre en évidence les échanges gazeux chlorophylliens",
+              "Décrire phase claire et phase sombre"
+            ]
+          },
+          {
+            "titre": "Respiration cellulaire",
+            "objectifs": [
+              "Décrire glycolyse, cycle de Krebs et chaîne respiratoire",
+              "Calculer le bilan énergétique en ATP"
+            ]
+          },
+          {
+            "titre": "Fermentations",
+            "objectifs": [
+              "Comparer fermentation et respiration",
+              "Expliquer les fermentations alcoolique et lactique"
+            ]
+          },
+          {
+            "titre": "Utilisation de l'énergie : la contraction musculaire",
+            "objectifs": [
+              "Décrire l'ultrastructure du muscle strié",
+              "Expliquer le rôle de l'ATP dans la contraction"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Constance du milieu intérieur",
+        "lecons": [
+          {
+            "titre": "Le milieu intérieur",
+            "objectifs": [
+              "Décrire les composants du sang et de la lymphe",
+              "Expliquer la notion d'homéostasie"
+            ]
+          },
+          {
+            "titre": "Régulation de la glycémie",
+            "objectifs": ["Expliquer le rôle du pancréas et du foie", "Interpréter le diabète"]
+          },
+          {
+            "titre": "Rôle du rein",
+            "objectifs": [
+              "Décrire la formation de l'urine",
+              "Expliquer la régulation hydrominérale"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["C"],
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Résumés SVT 1ère C par SA — https://touteslesepreuves.com/resumes-de-cours/15909-resume-de-cours-svt-1ere-c.html",
+      "Guide du programme SVT Première série D (MES Bénin) — SA1 Géodynamique interne (9 sem.), SA2 Mesure du temps de l'histoire de la Terre et de la vie (3 sem.), SA3 Bioénergétique (8 sem.) — https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-svt-premiere-serie-d.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Géodynamique interne",
+        "lecons": [
+          {
+            "titre": "Structure interne du globe",
+            "objectifs": ["Exploiter les données sismiques", "Décrire les enveloppes du globe"]
+          },
+          {
+            "titre": "Tectonique des plaques",
+            "objectifs": [
+              "Expliquer expansion océanique et subduction",
+              "Relier séismes et volcanisme aux limites de plaques"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Bioénergétique",
+        "lecons": [
+          {
+            "titre": "Photosynthèse",
+            "objectifs": [
+              "Mettre en évidence la production de matière organique",
+              "Décrire les deux phases de la photosynthèse"
+            ]
+          },
+          {
+            "titre": "Respiration et fermentation",
+            "objectifs": ["Comparer respiration et fermentation", "Établir le bilan énergétique"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Constance du milieu intérieur",
+        "lecons": [
+          {
+            "titre": "Régulation de la glycémie",
+            "objectifs": ["Expliquer le rôle des hormones pancréatiques", "Interpréter le diabète"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Résumés SVT 1ères A1, A2, B (SA1, SA2) — https://touteslesepreuves.com/resumes-de-cours/18952-resume-de-cours-svt-1eres-ab-sa1.html"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Nutrition et santé",
+        "lecons": [
+          {
+            "titre": "Aliments et besoins nutritionnels",
+            "objectifs": ["Classer les aliments", "Établir une ration alimentaire équilibrée"]
+          },
+          {
+            "titre": "Digestion et absorption",
+            "objectifs": ["Décrire la digestion des aliments", "Expliquer l'absorption intestinale"]
+          },
+          {
+            "titre": "Maladies nutritionnelles",
+            "objectifs": [
+              "Identifier les carences et les excès",
+              "Proposer des mesures de prévention"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : L'Homme et son milieu",
+        "lecons": [
+          {
+            "titre": "Ressources géologiques et énergétiques",
+            "objectifs": [
+              "Identifier les ressources du sous-sol béninois",
+              "Expliquer leur exploitation durable"
+            ]
+          },
+          {
+            "titre": "Protection de l'environnement",
+            "objectifs": ["Analyser une pollution locale", "Proposer des mesures de protection"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["D"],
+    "matiere": "SVT",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide de l'enseignant SVT Terminale D, version révisée (DIP Porto-Novo, 2011) — https://educmaster.bj/perso/files/GP/ESG/PROGR-et-GUIDES-SVT/GUIDES/Guide-revise-TD.pdf",
+      "Résumés de cours SVT Terminale D par SA (SA1 information génétique ; SA2 intégrité de l'organisme par les réactions immunitaires ; SA4 reproduction et maîtrise de la procréation) — https://touteslesepreuves.com/resumes-de-cours/18744-resume-du-cours-des-svt-terminale-d.html",
+      "Résumé SA1 SVT Terminale A, B, C, D (information génétique : nature, localisation, transmission) — https://touteslesepreuves.com/livres-manuels-scolaires/19159-resume-sa1-cours-svt-terminale-a-b-c-d.html"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : L'information génétique : nature, localisation et mécanisme de transmission",
+        "lecons": [
+          {
+            "titre": "Nature et localisation de l'information génétique",
+            "objectifs": [
+              "Décrire la structure de l'ADN",
+              "Localiser l'information génétique dans le noyau"
+            ]
+          },
+          {
+            "titre": "Réplication de l'ADN et mitose",
+            "objectifs": [
+              "Expliquer la réplication semi-conservative",
+              "Décrire les phases de la mitose"
+            ]
+          },
+          {
+            "titre": "Expression de l'information génétique",
+            "objectifs": [
+              "Décrire transcription et traduction",
+              "Utiliser le code génétique",
+              "Expliquer les mutations"
+            ]
+          },
+          {
+            "titre": "Méiose et fécondation",
+            "objectifs": [
+              "Décrire les phases de la méiose",
+              "Expliquer le brassage interchromosomique et intrachromosomique"
+            ]
+          },
+          {
+            "titre": "Génétique mendélienne",
+            "objectifs": [
+              "Analyser un monohybridisme et un dihybridisme",
+              "Interpréter dominance, codominance et gènes liés"
+            ]
+          },
+          {
+            "titre": "Hérédité humaine",
+            "objectifs": [
+              "Analyser un arbre généalogique",
+              "Déterminer le mode de transmission d'une maladie héréditaire"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Sauvegarde de l'intégrité de l'organisme par les réactions immunitaires",
+        "lecons": [
+          {
+            "titre": "Le soi et le non-soi",
+            "objectifs": [
+              "Définir les marqueurs du soi (CMH)",
+              "Expliquer les groupes sanguins et la transfusion"
+            ]
+          },
+          {
+            "titre": "Réponse immunitaire non spécifique",
+            "objectifs": ["Décrire la réaction inflammatoire", "Expliquer la phagocytose"]
+          },
+          {
+            "titre": "Réponses immunitaires spécifiques",
+            "objectifs": [
+              "Décrire la réponse à médiation humorale",
+              "Décrire la réponse à médiation cellulaire",
+              "Expliquer la coopération cellulaire"
+            ]
+          },
+          {
+            "titre": "Dysfonctionnements et aides au système immunitaire",
+            "objectifs": [
+              "Expliquer le mode d'action du VIH",
+              "Distinguer vaccination et sérothérapie"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : La transmission du message nerveux",
+        "lecons": [
+          {
+            "titre": "Organisation du système nerveux",
+            "objectifs": ["Décrire le neurone et le nerf", "Analyser un arc réflexe"]
+          },
+          {
+            "titre": "Le message nerveux",
+            "objectifs": [
+              "Expliquer potentiel de repos et potentiel d'action",
+              "Décrire la propagation de l'influx nerveux"
+            ]
+          },
+          {
+            "titre": "La synapse",
+            "objectifs": [
+              "Décrire la transmission synaptique",
+              "Expliquer l'effet de drogues sur la synapse"
+            ]
+          },
+          {
+            "titre": "Le muscle, organe effecteur",
+            "objectifs": ["Analyser un myogramme", "Expliquer le couplage excitation-contraction"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Reproduction humaine et maîtrise de la procréation",
+        "lecons": [
+          {
+            "titre": "Fonctionnement de l'appareil reproducteur masculin",
+            "objectifs": [
+              "Décrire la spermatogenèse",
+              "Expliquer la régulation hormonale testiculaire"
+            ]
+          },
+          {
+            "titre": "Fonctionnement de l'appareil reproducteur féminin",
+            "objectifs": [
+              "Décrire les cycles ovarien et utérin",
+              "Expliquer la régulation hormonale par le complexe hypothalamo-hypophysaire"
+            ]
+          },
+          {
+            "titre": "Fécondation, gestation et accouchement",
+            "objectifs": [
+              "Décrire la fécondation et la nidation",
+              "Expliquer le rôle des hormones placentaires"
+            ]
+          },
+          {
+            "titre": "Maîtrise de la procréation",
+            "objectifs": [
+              "Expliquer le mode d'action des contraceptifs",
+              "Décrire les techniques de procréation médicalement assistée"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["C"],
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Essentiel des SVT Terminale ABC / résumé des deux SA de Terminale C — https://touteslesepreuves.com/terminale/9687-essentiel-svt-tle-abc.html",
+      "Résumé SA1 SVT Terminale A, B, C, D (information génétique : nature, localisation, transmission) — https://touteslesepreuves.com/livres-manuels-scolaires/19159-resume-sa1-cours-svt-terminale-a-b-c-d.html"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : L'information génétique : nature, localisation et mécanisme de transmission",
+        "lecons": [
+          {
+            "titre": "Nature et expression de l'information génétique",
+            "objectifs": ["Décrire la structure de l'ADN", "Décrire transcription et traduction"]
+          },
+          {
+            "titre": "Méiose et brassage génétique",
+            "objectifs": ["Décrire les phases de la méiose", "Expliquer les brassages génétiques"]
+          },
+          {
+            "titre": "Hérédité",
+            "objectifs": ["Analyser un monohybridisme", "Analyser un arbre généalogique"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Sauvegarde de l'intégrité de l'organisme par les réactions immunitaires",
+        "lecons": [
+          {
+            "titre": "Le soi et le non-soi",
+            "objectifs": [
+              "Définir les marqueurs du soi",
+              "Expliquer la compatibilité transfusionnelle"
+            ]
+          },
+          {
+            "titre": "Réponses immunitaires",
+            "objectifs": [
+              "Distinguer réponses non spécifique et spécifiques",
+              "Expliquer l'immunodéficience due au VIH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["A1", "A2", "B"],
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Résumé SA1 SVT Terminale A, B, C, D (information génétique : nature, localisation, transmission) — https://touteslesepreuves.com/livres-manuels-scolaires/19159-resume-sa1-cours-svt-terminale-a-b-c-d.html",
+      "Résumés SVT Terminale A et B (SA2 « la physiologie ») — https://touteslesepreuves.com/resumes-de-cours/18998-cours-complet-sa1-tles-a-et-b-svt.html"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : L'information génétique : nature, localisation et mécanisme de transmission",
+        "lecons": [
+          {
+            "titre": "Support de l'information génétique",
+            "objectifs": ["Localiser l'information génétique", "Décrire chromosomes et ADN"]
+          },
+          {
+            "titre": "Transmission des caractères héréditaires",
+            "objectifs": [
+              "Expliquer le rôle de la méiose et de la fécondation",
+              "Analyser un arbre généalogique simple"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : La physiologie",
+        "lecons": [
+          {
+            "titre": "Système nerveux et comportement",
+            "objectifs": [
+              "Décrire un réflexe",
+              "Expliquer l'effet des drogues sur le système nerveux"
+            ]
+          },
+          {
+            "titre": "Reproduction humaine et santé",
+            "objectifs": [
+              "Décrire le cycle menstruel",
+              "Expliquer les méthodes contraceptives",
+              "Prévenir les IST et le VIH-SIDA"
+            ]
+          },
+          {
+            "titre": "Immunité",
+            "objectifs": [
+              "Expliquer le rôle de la vaccination",
+              "Décrire les défenses de l'organisme"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

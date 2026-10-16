@@ -53,3 +53,10 @@ export const limiterActivation = (max) =>
     max,
     message: 'Trop de tentatives d’activation depuis cette connexion. Réessayez plus tard.',
   });
+
+export const limiterCompteEduCourses = (max) =>
+  limiteur({
+    fenetreMs: 60 * 60 * 1000,
+    max,
+    message: 'Trop de comptes ouverts depuis cette connexion. Réessayez plus tard.',
+  });

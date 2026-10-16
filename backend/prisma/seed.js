@@ -89,6 +89,8 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const client = new PrismaClient();
   try {
     console.log(`✔ Référentiel chargé : ${await chargerReferentielNational(client)}`);
+    const { chargerEduCourses } = await import('./educourses.js');
+    console.log(`✔ EduCourses : ${await chargerEduCourses(client)}`);
   } finally {
     await client.$disconnect();
   }

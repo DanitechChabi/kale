@@ -1,18 +1,20 @@
 // Démarrage en production (Render ou tout hébergeur) :
 // 1. applique les migrations en attente ;
-// 2. charge ou met à jour le référentiel national (idempotent) ;
+// 2. charge ou met à jour le référentiel national et le catalogue EduCourses (idempotent) ;
 // 3. crée le premier SUPER_ADMIN si aucun n'existe et que les variables
 //    SUPER_ADMIN_* sont renseignées (aucun accès console n'est nécessaire) ;
 // 4. lance le serveur.
 import { execSync } from 'node:child_process';
 import { PrismaClient } from '@prisma/client';
 import { chargerReferentielNational } from '../prisma/seed.js';
+import { chargerEduCourses } from '../prisma/educourses.js';
 
 execSync('npx prisma migrate deploy', { stdio: 'inherit' });
 
 const prisma = new PrismaClient();
 try {
   console.log(`✔ Référentiel : ${await chargerReferentielNational(prisma)}`);
+  console.log(`✔ EduCourses : ${await chargerEduCourses(prisma)}`);
   await creerPremierSuperAdmin();
 } finally {
   await prisma.$disconnect();

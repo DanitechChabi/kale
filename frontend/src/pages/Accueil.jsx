@@ -301,6 +301,30 @@ export default function Accueil() {
         </div>
       </section>
 
+      <section className="pb-16 sm:pb-24">
+        <Apparition className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Link
+            to="/educourses"
+            className="cahier marge-rouge group flex flex-col gap-4 rounded-lg py-8 pr-6 pl-12 ring-1 ring-slate-200 transition hover:ring-marque-400 sm:flex-row sm:items-center sm:justify-between sm:pl-14"
+          >
+            <span className="max-w-2xl space-y-2">
+              <span className="etiquette block">EduCourses</span>
+              <span className="block text-2xl font-bold tracking-tight">
+                Les cours en ligne, de la 6e à la Terminale.
+              </span>
+              <span className="block text-slate-600">
+                Tout le programme, leçon par leçon, avec exercices corrigés et quiz. Pour les
+                élèves, et pour les parents qui veulent faire travailler leurs enfants à la maison.
+              </span>
+            </span>
+            <span className="inline-flex shrink-0 items-center gap-1 font-semibold text-marque-700">
+              Découvrir
+              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            </span>
+          </Link>
+        </Apparition>
+      </section>
+
       <section
         id="fonctionnement"
         className="scroll-mt-20 border-y border-slate-200 bg-white py-16 sm:py-24"

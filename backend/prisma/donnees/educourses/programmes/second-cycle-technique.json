@@ -1,0 +1,5080 @@
+[
+  {
+    "niveau": "SECONDE",
+    "series": ["E"],
+    "matiere": "SPE-E-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Représentation graphique des pièces",
+        "lecons": [
+          {
+            "titre": "Normalisation du dessin technique",
+            "objectifs": [
+              "Utiliser les formats, cartouches et échelles normalisés",
+              "Choisir les traits selon leur usage",
+              "Écrire en écriture normalisée"
+            ]
+          },
+          {
+            "titre": "Projections orthogonales",
+            "objectifs": [
+              "Disposer les vues selon la méthode européenne",
+              "Construire une troisième vue à partir de deux vues",
+              "Choisir le nombre minimal de vues"
+            ]
+          },
+          {
+            "titre": "Coupes et sections",
+            "objectifs": [
+              "Représenter une coupe simple ou brisée",
+              "Hachurer selon la matière",
+              "Distinguer coupe et section"
+            ]
+          },
+          {
+            "titre": "Perspectives",
+            "objectifs": [
+              "Tracer une perspective cavalière",
+              "Tracer une perspective isométrique simple"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Cotation et lecture de plans",
+        "lecons": [
+          {
+            "titre": "Cotation fonctionnelle de base",
+            "objectifs": [
+              "Coter une pièce simple selon les règles",
+              "Distinguer cotes de forme et de position"
+            ]
+          },
+          {
+            "titre": "Lecture d'un dessin d'ensemble",
+            "objectifs": [
+              "Identifier les pièces d'après la nomenclature",
+              "Repérer les classes d'équivalence"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Liaisons mécaniques élémentaires",
+        "lecons": [
+          {
+            "titre": "Les liaisons usuelles",
+            "objectifs": [
+              "Nommer les liaisons normalisées",
+              "Indiquer les degrés de liberté",
+              "Représenter leur symbole"
+            ]
+          },
+          {
+            "titre": "Schéma cinématique minimal",
+            "objectifs": [
+              "Établir le graphe des liaisons",
+              "Tracer le schéma cinématique d'un mécanisme simple"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["E"],
+    "matiere": "SPE-E-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Analyse fonctionnelle",
+        "lecons": [
+          {
+            "titre": "Expression du besoin",
+            "objectifs": [
+              "Énoncer le besoin (bête à cornes)",
+              "Rédiger les fonctions de service",
+              "Caractériser une fonction (critère, niveau)"
+            ]
+          },
+          {
+            "titre": "Diagramme FAST",
+            "objectifs": [
+              "Décomposer une fonction en fonctions techniques",
+              "Associer les solutions constructives"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Tolérances et ajustements",
+        "lecons": [
+          {
+            "titre": "Tolérances dimensionnelles",
+            "objectifs": [
+              "Lire une cote tolérancée ISO",
+              "Calculer jeux et serrages",
+              "Choisir un ajustement"
+            ]
+          },
+          {
+            "titre": "Tolérances géométriques",
+            "objectifs": [
+              "Interpréter un symbole de forme ou de position",
+              "Identifier la surface de référence"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Solutions constructives",
+        "lecons": [
+          {
+            "titre": "Assemblages démontables et permanents",
+            "objectifs": [
+              "Choisir un élément d'assemblage (vis, goupille, clavette)",
+              "Justifier un mode d'assemblage permanent"
+            ]
+          },
+          {
+            "titre": "Guidage en rotation par coussinets",
+            "objectifs": ["Dimensionner un coussinet (pression, pV)", "Proposer un montage"]
+          },
+          {
+            "titre": "Guidage en translation",
+            "objectifs": [
+              "Comparer les solutions par glissement et par roulement",
+              "Analyser l'arc-boutement"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["E"],
+    "matiere": "SPE-E-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Guidage par roulements",
+        "lecons": [
+          {
+            "titre": "Choix des roulements",
+            "objectifs": ["Identifier les types de roulements", "Calculer une durée de vie L10"]
+          },
+          {
+            "titre": "Montage des roulements",
+            "objectifs": [
+              "Appliquer les règles de montage (bague tournante)",
+              "Assurer l'arrêt axial et l'étanchéité"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Transmission de puissance",
+        "lecons": [
+          {
+            "titre": "Engrenages",
+            "objectifs": [
+              "Calculer un rapport de transmission",
+              "Déterminer les caractéristiques d'une denture droite",
+              "Analyser un train simple"
+            ]
+          },
+          {
+            "titre": "Poulies-courroies et chaînes",
+            "objectifs": [
+              "Calculer un rapport de vitesses",
+              "Choisir une transmission selon l'entraxe et le couple"
+            ]
+          },
+          {
+            "titre": "Embrayages, freins et accouplements",
+            "objectifs": ["Calculer un couple transmissible", "Choisir un accouplement"]
+          }
+        ]
+      },
+      {
+        "titre": "Étude de systèmes (préparation à l'épreuve)",
+        "lecons": [
+          {
+            "titre": "Étude d'un dossier technique",
+            "objectifs": [
+              "Analyser le fonctionnement d'un mécanisme",
+              "Compléter un dessin d'ensemble",
+              "Justifier une modification de conception"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["E"],
+    "matiere": "SPE-E-FABRICATION",
+    "nomMatiere": "Étude de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Matériaux et désignation",
+        "lecons": [
+          {
+            "titre": "Familles de matériaux",
+            "objectifs": [
+              "Classer métaux, polymères et composites",
+              "Lire la désignation normalisée d'un acier ou d'une fonte"
+            ]
+          },
+          {
+            "titre": "Propriétés mécaniques",
+            "objectifs": ["Interpréter un essai de traction", "Définir dureté et résilience"]
+          }
+        ]
+      },
+      {
+        "titre": "Procédés d'obtention des bruts",
+        "lecons": [
+          {
+            "titre": "Moulage, forgeage, découpage",
+            "objectifs": [
+              "Décrire les principaux procédés",
+              "Associer un procédé à une forme de pièce"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Usinage : notions de base",
+        "lecons": [
+          {
+            "titre": "Tournage et fraisage",
+            "objectifs": [
+              "Identifier les mouvements de coupe et d'avance",
+              "Nommer les surfaces usinables"
+            ]
+          },
+          {
+            "titre": "Conditions de coupe",
+            "objectifs": [
+              "Calculer une fréquence de rotation",
+              "Choisir une vitesse de coupe dans un abaque"
+            ]
+          },
+          {
+            "titre": "Sécurité à l'atelier",
+            "objectifs": ["Appliquer les consignes de sécurité", "Identifier les EPI adaptés"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["E"],
+    "matiere": "SPE-E-FABRICATION",
+    "nomMatiere": "Étude de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Mise en position et maintien",
+        "lecons": [
+          {
+            "titre": "Isostatisme",
+            "objectifs": [
+              "Placer les normales de repérage",
+              "Justifier une mise en position isostatique"
+            ]
+          },
+          {
+            "titre": "Porte-pièces",
+            "objectifs": ["Choisir un montage d'usinage", "Vérifier le maintien sans déformation"]
+          }
+        ]
+      },
+      {
+        "titre": "Outils et coupe",
+        "lecons": [
+          {
+            "titre": "Outils de coupe",
+            "objectifs": [
+              "Identifier les angles de l'outil",
+              "Choisir une nuance de plaquette carbure"
+            ]
+          },
+          {
+            "titre": "Puissance de coupe",
+            "objectifs": [
+              "Calculer l'effort et la puissance de coupe",
+              "Vérifier la puissance machine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Métrologie",
+        "lecons": [
+          {
+            "titre": "Instruments de contrôle",
+            "objectifs": [
+              "Lire un pied à coulisse et un micromètre",
+              "Choisir l'instrument selon la tolérance"
+            ]
+          },
+          {
+            "titre": "Contrôle géométrique",
+            "objectifs": [
+              "Contrôler une planéité ou une coaxialité",
+              "Rédiger un procès-verbal de contrôle"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["E"],
+    "matiere": "SPE-E-FABRICATION",
+    "nomMatiere": "Étude de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-e (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Gamme d'usinage",
+        "lecons": [
+          {
+            "titre": "Avant-projet de fabrication",
+            "objectifs": [
+              "Regrouper les surfaces en phases",
+              "Ordonner les phases selon les contraintes"
+            ]
+          },
+          {
+            "titre": "Contrat de phase",
+            "objectifs": [
+              "Rédiger un contrat de phase",
+              "Indiquer cotes fabriquées et conditions de coupe"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Cotation de fabrication",
+        "lecons": [
+          {
+            "titre": "Transfert de cotes",
+            "objectifs": [
+              "Établir une chaîne de cotes",
+              "Calculer une cote fabriquée et sa tolérance"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Production",
+        "lecons": [
+          {
+            "titre": "Commande numérique",
+            "objectifs": ["Décrire les axes d'une machine CN", "Lire un programme ISO simple"]
+          },
+          {
+            "titre": "Coût et temps d'usinage",
+            "objectifs": ["Calculer un temps de coupe", "Estimer le coût d'une pièce"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-AUTO",
+    "nomMatiere": "Automatique et automatismes",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Systèmes automatisés",
+        "lecons": [
+          {
+            "titre": "Structure d'un système automatisé",
+            "objectifs": [
+              "Distinguer partie commande et partie opérative",
+              "Identifier capteurs et actionneurs"
+            ]
+          },
+          {
+            "titre": "Logique combinatoire",
+            "objectifs": ["Écrire une équation logique", "Simplifier par Karnaugh"]
+          }
+        ]
+      },
+      {
+        "titre": "Représentation séquentielle",
+        "lecons": [
+          {
+            "titre": "GRAFCET",
+            "objectifs": ["Lire un GRAFCET", "Établir un GRAFCET de point de vue partie opérative"]
+          }
+        ]
+      },
+      {
+        "titre": "Pneumatique",
+        "lecons": [
+          {
+            "titre": "Actionneurs et distributeurs",
+            "objectifs": ["Identifier vérins et distributeurs", "Lire un schéma pneumatique"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-AUTO",
+    "nomMatiere": "Automatique et automatismes",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "GRAFCET avancé",
+        "lecons": [
+          {
+            "titre": "Structures du GRAFCET",
+            "objectifs": [
+              "Utiliser sélection de séquences et parallélisme",
+              "Gérer les modes de marche"
+            ]
+          },
+          {
+            "titre": "Mise en équation",
+            "objectifs": ["Traduire un GRAFCET en équations", "Réaliser la commande câblée"]
+          }
+        ]
+      },
+      {
+        "titre": "Automate programmable",
+        "lecons": [
+          {
+            "titre": "Programmation d'un API",
+            "objectifs": ["Affecter les entrées-sorties", "Programmer en langage à contacts"]
+          }
+        ]
+      },
+      {
+        "titre": "Asservissements",
+        "lecons": [
+          {
+            "titre": "Notions d'asservissement",
+            "objectifs": [
+              "Distinguer boucle ouverte et boucle fermée",
+              "Identifier les éléments d'un schéma-bloc"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Dessin technique",
+        "lecons": [
+          {
+            "titre": "Normalisation et tracés",
+            "objectifs": [
+              "Utiliser formats, échelles et traits normalisés",
+              "Réaliser un cartouche"
+            ]
+          },
+          {
+            "titre": "Projections orthogonales",
+            "objectifs": ["Placer les vues en méthode européenne", "Construire une vue manquante"]
+          },
+          {
+            "titre": "Coupes, sections et filetages",
+            "objectifs": ["Représenter une coupe", "Représenter un filetage et un taraudage"]
+          }
+        ]
+      },
+      {
+        "titre": "Lecture d'un dessin d'ensemble",
+        "lecons": [
+          {
+            "titre": "Nomenclature et repérage",
+            "objectifs": ["Identifier les pièces", "Colorier les classes d'équivalence"]
+          },
+          {
+            "titre": "Fonctionnement d'un mécanisme",
+            "objectifs": ["Décrire le fonctionnement", "Identifier les mouvements"]
+          }
+        ]
+      },
+      {
+        "titre": "Liaisons et schématisation",
+        "lecons": [
+          {
+            "titre": "Liaisons normalisées",
+            "objectifs": ["Nommer les liaisons", "Dénombrer les degrés de liberté"]
+          },
+          {
+            "titre": "Schéma cinématique",
+            "objectifs": ["Établir le graphe des liaisons", "Tracer le schéma cinématique"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Analyse fonctionnelle et cotation",
+        "lecons": [
+          {
+            "titre": "Analyse fonctionnelle",
+            "objectifs": ["Énoncer les fonctions de service", "Construire un diagramme FAST"]
+          },
+          {
+            "titre": "Cotation fonctionnelle",
+            "objectifs": ["Tracer une chaîne de cotes", "Calculer une condition fonctionnelle"]
+          },
+          {
+            "titre": "Tolérances et ajustements ISO",
+            "objectifs": ["Calculer jeux et serrages", "Choisir un ajustement normalisé"]
+          }
+        ]
+      },
+      {
+        "titre": "Assemblages",
+        "lecons": [
+          {
+            "titre": "Assemblages filetés",
+            "objectifs": ["Choisir vis, écrou et freinage", "Représenter un assemblage vissé"]
+          },
+          {
+            "titre": "Clavettes, cannelures, goupilles",
+            "objectifs": [
+              "Choisir un élément de liaison en rotation",
+              "Vérifier une clavette au matage"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Guidages",
+        "lecons": [
+          {
+            "titre": "Guidage en rotation",
+            "objectifs": ["Comparer coussinets et roulements", "Représenter un montage"]
+          },
+          {
+            "titre": "Guidage en translation",
+            "objectifs": ["Choisir une solution de guidage", "Vérifier le non-arc-boutement"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-CONSTRUCTION",
+    "nomMatiere": "Construction mécanique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Roulements et étanchéité",
+        "lecons": [
+          {
+            "titre": "Montage de roulements",
+            "objectifs": ["Appliquer les règles de montage", "Calculer une durée de vie"]
+          },
+          {
+            "titre": "Étanchéité et lubrification",
+            "objectifs": ["Choisir un joint", "Choisir un mode de lubrification"]
+          }
+        ]
+      },
+      {
+        "titre": "Transmission de puissance",
+        "lecons": [
+          {
+            "titre": "Engrenages et trains",
+            "objectifs": [
+              "Calculer les caractéristiques d'une denture",
+              "Calculer le rapport d'un train"
+            ]
+          },
+          {
+            "titre": "Poulies, chaînes, vis-écrou",
+            "objectifs": [
+              "Calculer un rapport de transmission",
+              "Calculer la vitesse d'une vis-écrou"
+            ]
+          },
+          {
+            "titre": "Embrayages et freins",
+            "objectifs": ["Calculer un couple transmissible", "Choisir un organe"]
+          }
+        ]
+      },
+      {
+        "titre": "Conception",
+        "lecons": [
+          {
+            "titre": "Avant-projet de conception",
+            "objectifs": [
+              "Proposer une solution répondant au cahier des charges",
+              "Représenter la solution sur un dessin d'ensemble"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-FABRICATION",
+    "nomMatiere": "Analyse de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Matériaux",
+        "lecons": [
+          {
+            "titre": "Métaux ferreux et non ferreux",
+            "objectifs": ["Lire une désignation normalisée", "Associer un matériau à un usage"]
+          },
+          {
+            "titre": "Traitements thermiques",
+            "objectifs": ["Décrire trempe, revenu, recuit", "Indiquer leur effet"]
+          }
+        ]
+      },
+      {
+        "titre": "Procédés de mise en forme",
+        "lecons": [
+          {
+            "titre": "Obtention des bruts",
+            "objectifs": ["Décrire moulage, forgeage, laminage", "Choisir un procédé"]
+          },
+          {
+            "titre": "Ajustage",
+            "objectifs": ["Réaliser traçage, sciage, limage", "Contrôler une pièce ajustée"]
+          }
+        ]
+      },
+      {
+        "titre": "Machines-outils",
+        "lecons": [
+          {
+            "titre": "Tournage",
+            "objectifs": ["Identifier les opérations de tournage", "Calculer N à partir de Vc"]
+          },
+          {
+            "titre": "Fraisage et perçage",
+            "objectifs": ["Identifier les opérations", "Choisir un outil"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-FABRICATION",
+    "nomMatiere": "Analyse de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Mise en position",
+        "lecons": [
+          {
+            "titre": "Isostatisme et repérage",
+            "objectifs": ["Placer les normales", "Justifier le choix des surfaces de référence"]
+          },
+          {
+            "titre": "Montages d'usinage",
+            "objectifs": ["Choisir un porte-pièce", "Vérifier le maintien"]
+          }
+        ]
+      },
+      {
+        "titre": "Coupe des métaux",
+        "lecons": [
+          {
+            "titre": "Géométrie et matériaux d'outils",
+            "objectifs": ["Identifier les angles", "Choisir un matériau d'outil"]
+          },
+          {
+            "titre": "Conditions de coupe et puissance",
+            "objectifs": ["Calculer Vc, f, a, Pc", "Vérifier la puissance machine"]
+          }
+        ]
+      },
+      {
+        "titre": "Métrologie",
+        "lecons": [
+          {
+            "titre": "Contrôle dimensionnel",
+            "objectifs": ["Utiliser les instruments", "Rédiger un rapport de contrôle"]
+          },
+          {
+            "titre": "Contrôle géométrique",
+            "objectifs": ["Interpréter une spécification", "Proposer un montage de contrôle"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-FABRICATION",
+    "nomMatiere": "Analyse de fabrication et technologie",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Processus de fabrication",
+        "lecons": [
+          {
+            "titre": "Analyse de fabrication",
+            "objectifs": [
+              "Établir l'avant-projet d'étude de fabrication",
+              "Justifier l'ordre des phases"
+            ]
+          },
+          {
+            "titre": "Contrat de phase",
+            "objectifs": [
+              "Rédiger un contrat de phase complet",
+              "Indiquer outils et conditions de coupe"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Cotation de fabrication",
+        "lecons": [
+          {
+            "titre": "Transfert de cotes",
+            "objectifs": [
+              "Établir une chaîne de cotes de fabrication",
+              "Calculer une cote fabriquée"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Étude d'outillage",
+        "lecons": [
+          {
+            "titre": "Conception d'un montage d'usinage",
+            "objectifs": [
+              "Définir les éléments d'appui et de serrage",
+              "Représenter un outillage simple"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Production",
+        "lecons": [
+          {
+            "titre": "Commande numérique et coûts",
+            "objectifs": ["Lire un programme CN", "Calculer un temps et un coût d'usinage"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-MECA",
+    "nomMatiere": "Mécanique appliquée",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Statique",
+        "lecons": [
+          {
+            "titre": "Modélisation des actions mécaniques",
+            "objectifs": ["Représenter une force", "Calculer un moment"]
+          },
+          {
+            "titre": "Principe fondamental de la statique",
+            "objectifs": ["Isoler un solide", "Résoudre un système à deux ou trois forces"]
+          }
+        ]
+      },
+      {
+        "titre": "Cinématique",
+        "lecons": [
+          {
+            "titre": "Mouvements de translation",
+            "objectifs": ["Calculer vitesse et accélération", "Tracer un diagramme des vitesses"]
+          },
+          {
+            "titre": "Mouvement de rotation",
+            "objectifs": [
+              "Relier vitesse angulaire et linéaire",
+              "Calculer une fréquence de rotation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-MECA",
+    "nomMatiere": "Mécanique appliquée",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Statique plane",
+        "lecons": [
+          {
+            "titre": "Statique graphique",
+            "objectifs": [
+              "Résoudre graphiquement un problème plan",
+              "Utiliser le dynamique et le funiculaire"
+            ]
+          },
+          {
+            "titre": "Frottement",
+            "objectifs": ["Appliquer les lois de Coulomb", "Déterminer une condition d'adhérence"]
+          }
+        ]
+      },
+      {
+        "titre": "Cinématique du solide",
+        "lecons": [
+          {
+            "titre": "Composition des mouvements",
+            "objectifs": ["Composer des vitesses", "Utiliser l'équiprojectivité"]
+          },
+          {
+            "titre": "Centre instantané de rotation",
+            "objectifs": ["Déterminer le CIR", "Calculer une vitesse"]
+          }
+        ]
+      },
+      {
+        "titre": "Énergétique",
+        "lecons": [
+          {
+            "titre": "Travail, puissance, rendement",
+            "objectifs": ["Calculer une puissance mécanique", "Calculer un rendement global"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F1"],
+    "matiere": "SPE-F1-MECA",
+    "nomMatiere": "Mécanique appliquée",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Dynamique",
+        "lecons": [
+          {
+            "titre": "Principe fondamental de la dynamique",
+            "objectifs": ["Appliquer le PFD en translation", "Appliquer le PFD en rotation"]
+          },
+          {
+            "titre": "Moment d'inertie",
+            "objectifs": ["Calculer un moment d'inertie simple", "Utiliser le théorème de Huygens"]
+          }
+        ]
+      },
+      {
+        "titre": "Énergétique",
+        "lecons": [
+          {
+            "titre": "Théorème de l'énergie cinétique",
+            "objectifs": ["Calculer une énergie cinétique", "Déterminer un temps de démarrage"]
+          }
+        ]
+      },
+      {
+        "titre": "Résistance des matériaux",
+        "lecons": [
+          {
+            "titre": "Traction et compression",
+            "objectifs": ["Calculer une contrainte", "Vérifier la condition de résistance"]
+          },
+          {
+            "titre": "Cisaillement et torsion",
+            "objectifs": ["Dimensionner un axe au cisaillement", "Vérifier un arbre en torsion"]
+          },
+          {
+            "titre": "Flexion simple",
+            "objectifs": ["Tracer les diagrammes T et Mf", "Vérifier une poutre en flexion"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-ELECTRONIQUE",
+    "nomMatiere": "Électronique analogique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Circuits électriques",
+        "lecons": [
+          {
+            "titre": "Grandeurs électriques",
+            "objectifs": ["Définir tension, courant, puissance", "Appliquer la loi d'Ohm"]
+          },
+          {
+            "titre": "Lois de Kirchhoff",
+            "objectifs": [
+              "Appliquer les lois des nœuds et des mailles",
+              "Calculer un pont diviseur"
+            ]
+          },
+          {
+            "titre": "Théorèmes généraux",
+            "objectifs": ["Appliquer Thévenin et Norton", "Utiliser la superposition"]
+          }
+        ]
+      },
+      {
+        "titre": "Composants passifs",
+        "lecons": [
+          {
+            "titre": "Résistances, condensateurs, bobines",
+            "objectifs": [
+              "Lire un code couleur",
+              "Calculer une association",
+              "Décrire charge et décharge d'un condensateur"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Diode",
+        "lecons": [
+          {
+            "titre": "Diode à jonction",
+            "objectifs": ["Tracer la caractéristique", "Analyser un redressement simple alternance"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-ELECTRONIQUE",
+    "nomMatiere": "Électronique analogique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Régime sinusoïdal",
+        "lecons": [
+          {
+            "titre": "Représentation des grandeurs sinusoïdales",
+            "objectifs": [
+              "Utiliser vecteurs de Fresnel et nombres complexes",
+              "Calculer une impédance"
+            ]
+          },
+          {
+            "titre": "Filtres passifs",
+            "objectifs": ["Tracer un diagramme de Bode", "Déterminer une fréquence de coupure"]
+          }
+        ]
+      },
+      {
+        "titre": "Alimentations",
+        "lecons": [
+          {
+            "titre": "Redressement et filtrage",
+            "objectifs": ["Analyser un pont de Graetz", "Dimensionner un condensateur de filtrage"]
+          },
+          {
+            "titre": "Régulation de tension",
+            "objectifs": ["Utiliser une diode Zener", "Mettre en œuvre un régulateur intégré"]
+          }
+        ]
+      },
+      {
+        "titre": "Transistor bipolaire",
+        "lecons": [
+          {
+            "titre": "Transistor en commutation",
+            "objectifs": ["Polariser un transistor", "Calculer une résistance de base"]
+          },
+          {
+            "titre": "Transistor en amplification",
+            "objectifs": ["Déterminer un point de repos", "Calculer un gain en tension"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-ELECTRONIQUE",
+    "nomMatiere": "Électronique analogique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Amplificateur opérationnel",
+        "lecons": [
+          {
+            "titre": "Montages linéaires",
+            "objectifs": ["Analyser inverseur, non-inverseur, sommateur", "Calculer un gain"]
+          },
+          {
+            "titre": "Montages non linéaires",
+            "objectifs": [
+              "Analyser un comparateur et un trigger de Schmitt",
+              "Tracer une caractéristique de transfert"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Oscillateurs et filtres actifs",
+        "lecons": [
+          {
+            "titre": "Filtres actifs",
+            "objectifs": ["Établir une fonction de transfert", "Tracer la réponse en fréquence"]
+          },
+          {
+            "titre": "Oscillateurs",
+            "objectifs": [
+              "Énoncer la condition d'oscillation",
+              "Analyser un multivibrateur astable"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Électronique de puissance et transmission",
+        "lecons": [
+          {
+            "titre": "Composants de puissance",
+            "objectifs": ["Commander un thyristor ou un triac", "Analyser un hacheur simple"]
+          },
+          {
+            "titre": "Modulation",
+            "objectifs": [
+              "Décrire la modulation d'amplitude et de fréquence",
+              "Identifier les blocs d'un émetteur-récepteur"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-MESURES",
+    "nomMatiere": "Mesures et essais de laboratoire",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Appareils de mesure",
+        "lecons": [
+          {
+            "titre": "Multimètre",
+            "objectifs": ["Mesurer tension, courant, résistance", "Choisir le calibre"]
+          },
+          {
+            "titre": "Erreurs de mesure",
+            "objectifs": ["Calculer une incertitude", "Présenter un résultat"]
+          }
+        ]
+      },
+      {
+        "titre": "Montages de base",
+        "lecons": [
+          {
+            "titre": "Mesures en courant continu",
+            "objectifs": ["Réaliser un montage amont ou aval", "Relever une caractéristique"]
+          },
+          {
+            "titre": "Sécurité électrique",
+            "objectifs": [
+              "Appliquer les règles de sécurité au laboratoire",
+              "Identifier les dangers du courant"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-MESURES",
+    "nomMatiere": "Mesures et essais de laboratoire",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Oscilloscope et générateur",
+        "lecons": [
+          {
+            "titre": "Utilisation de l'oscilloscope",
+            "objectifs": [
+              "Mesurer amplitude, période, déphasage",
+              "Choisir couplage et base de temps"
+            ]
+          },
+          {
+            "titre": "Générateur basse fréquence",
+            "objectifs": [
+              "Régler forme, fréquence et amplitude",
+              "Relever une réponse en fréquence"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Essais de composants",
+        "lecons": [
+          {
+            "titre": "Caractérisation de diodes et transistors",
+            "objectifs": ["Relever une caractéristique", "Interpréter les résultats"]
+          },
+          {
+            "titre": "Compte rendu d'essai",
+            "objectifs": ["Rédiger un compte rendu", "Tracer des courbes exploitables"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-MESURES",
+    "nomMatiere": "Mesures et essais de laboratoire",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Essais de fonctions électroniques",
+        "lecons": [
+          {
+            "titre": "Essai d'un amplificateur",
+            "objectifs": [
+              "Mesurer gain et bande passante",
+              "Mesurer impédances d'entrée et de sortie"
+            ]
+          },
+          {
+            "titre": "Essai d'un filtre et d'un oscillateur",
+            "objectifs": ["Relever un diagramme de Bode", "Mesurer une fréquence d'oscillation"]
+          }
+        ]
+      },
+      {
+        "titre": "Maintenance",
+        "lecons": [
+          {
+            "titre": "Dépannage d'une carte électronique",
+            "objectifs": [
+              "Appliquer une méthode de diagnostic",
+              "Remplacer un composant défectueux"
+            ]
+          },
+          {
+            "titre": "Réalisation d'un circuit imprimé",
+            "objectifs": ["Concevoir un typon", "Souder et tester une carte"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-NUMERIQUE",
+    "nomMatiere": "Électronique numérique et logique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Numération",
+        "lecons": [
+          {
+            "titre": "Systèmes de numération",
+            "objectifs": ["Convertir binaire, décimal, hexadécimal", "Utiliser le code BCD"]
+          }
+        ]
+      },
+      {
+        "titre": "Logique combinatoire",
+        "lecons": [
+          {
+            "titre": "Fonctions logiques de base",
+            "objectifs": ["Établir une table de vérité", "Identifier les portes logiques"]
+          },
+          {
+            "titre": "Algèbre de Boole",
+            "objectifs": ["Simplifier une équation", "Utiliser les théorèmes de De Morgan"]
+          },
+          {
+            "titre": "Tableaux de Karnaugh",
+            "objectifs": ["Simplifier une fonction à 4 variables", "Réaliser le logigramme"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-NUMERIQUE",
+    "nomMatiere": "Électronique numérique et logique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Circuits combinatoires",
+        "lecons": [
+          {
+            "titre": "Codeurs, décodeurs, multiplexeurs",
+            "objectifs": ["Décrire leur fonctionnement", "Utiliser un afficheur 7 segments"]
+          },
+          {
+            "titre": "Circuits arithmétiques",
+            "objectifs": ["Réaliser un additionneur", "Utiliser un comparateur"]
+          }
+        ]
+      },
+      {
+        "titre": "Logique séquentielle",
+        "lecons": [
+          {
+            "titre": "Bascules",
+            "objectifs": ["Décrire les bascules RS, D, JK", "Tracer un chronogramme"]
+          },
+          {
+            "titre": "Compteurs",
+            "objectifs": [
+              "Réaliser un compteur asynchrone",
+              "Réaliser un compteur synchrone modulo N"
+            ]
+          },
+          {
+            "titre": "Registres",
+            "objectifs": [
+              "Décrire un registre à décalage",
+              "Utiliser une conversion série-parallèle"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F2"],
+    "matiere": "SPE-F2-NUMERIQUE",
+    "nomMatiere": "Électronique numérique et logique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Conversion",
+        "lecons": [
+          {
+            "titre": "Conversion numérique-analogique",
+            "objectifs": ["Calculer le quantum", "Analyser un CNA à réseau R-2R"]
+          },
+          {
+            "titre": "Conversion analogique-numérique",
+            "objectifs": ["Décrire les types de CAN", "Calculer une résolution"]
+          }
+        ]
+      },
+      {
+        "titre": "Microcontrôleurs",
+        "lecons": [
+          {
+            "titre": "Architecture d'un microcontrôleur",
+            "objectifs": ["Identifier CPU, mémoires, ports", "Décrire le rôle d'une horloge"]
+          },
+          {
+            "titre": "Programmation",
+            "objectifs": ["Écrire un algorithme simple", "Commander une sortie et lire une entrée"]
+          }
+        ]
+      },
+      {
+        "titre": "Mémoires et transmission",
+        "lecons": [
+          {
+            "titre": "Mémoires",
+            "objectifs": ["Distinguer RAM, ROM, EEPROM", "Calculer une capacité"]
+          },
+          {
+            "titre": "Transmission de données",
+            "objectifs": ["Distinguer liaison série et parallèle", "Décrire une trame série"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-ELECTROTECH",
+    "nomMatiere": "Électrotechnique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Courant continu",
+        "lecons": [
+          {
+            "titre": "Lois fondamentales",
+            "objectifs": [
+              "Appliquer les lois d'Ohm et de Kirchhoff",
+              "Calculer puissance et énergie"
+            ]
+          },
+          {
+            "titre": "Générateurs et récepteurs",
+            "objectifs": ["Établir le bilan de puissance", "Calculer un rendement"]
+          }
+        ]
+      },
+      {
+        "titre": "Électromagnétisme",
+        "lecons": [
+          {
+            "titre": "Champ magnétique",
+            "objectifs": [
+              "Décrire le champ créé par un courant",
+              "Appliquer la règle de la main droite"
+            ]
+          },
+          {
+            "titre": "Force de Laplace et induction",
+            "objectifs": ["Calculer une force de Laplace", "Énoncer la loi de Lenz"]
+          }
+        ]
+      },
+      {
+        "titre": "Courant alternatif monophasé",
+        "lecons": [
+          {
+            "titre": "Grandeurs sinusoïdales",
+            "objectifs": [
+              "Définir valeur efficace, période, phase",
+              "Représenter un vecteur de Fresnel"
+            ]
+          },
+          {
+            "titre": "Puissances en monophasé",
+            "objectifs": ["Calculer P, Q, S", "Calculer un facteur de puissance"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-ELECTROTECH",
+    "nomMatiere": "Électrotechnique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Réseaux alternatifs",
+        "lecons": [
+          {
+            "titre": "Circuits RLC",
+            "objectifs": ["Calculer une impédance", "Étudier la résonance"]
+          },
+          {
+            "titre": "Systèmes triphasés",
+            "objectifs": [
+              "Distinguer couplage étoile et triangle",
+              "Calculer les puissances en triphasé"
+            ]
+          },
+          {
+            "titre": "Relèvement du facteur de puissance",
+            "objectifs": [
+              "Appliquer la méthode de Boucherot",
+              "Dimensionner une batterie de condensateurs"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Transformateur",
+        "lecons": [
+          {
+            "titre": "Transformateur monophasé",
+            "objectifs": [
+              "Décrire constitution et principe",
+              "Exploiter les essais à vide et en court-circuit",
+              "Calculer un rendement"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Machine à courant continu",
+        "lecons": [
+          {
+            "titre": "Génératrice à courant continu",
+            "objectifs": ["Établir la f.é.m.", "Tracer la caractéristique à vide"]
+          },
+          {
+            "titre": "Moteur à courant continu",
+            "objectifs": ["Établir couple et vitesse", "Établir le bilan des puissances"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-ELECTROTECH",
+    "nomMatiere": "Électrotechnique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Machines à courant alternatif",
+        "lecons": [
+          {
+            "titre": "Transformateur triphasé",
+            "objectifs": ["Identifier un couplage", "Calculer une chute de tension"]
+          },
+          {
+            "titre": "Moteur asynchrone triphasé",
+            "objectifs": [
+              "Calculer le glissement",
+              "Exploiter la caractéristique mécanique",
+              "Établir le bilan des puissances"
+            ]
+          },
+          {
+            "titre": "Alternateur",
+            "objectifs": ["Calculer la f.é.m.", "Appliquer le diagramme de Behn-Eschenburg"]
+          }
+        ]
+      },
+      {
+        "titre": "Électronique de puissance",
+        "lecons": [
+          {
+            "titre": "Redressement commandé",
+            "objectifs": ["Analyser un pont à thyristors", "Calculer une tension moyenne"]
+          },
+          {
+            "titre": "Hacheurs et onduleurs",
+            "objectifs": ["Analyser un hacheur série", "Décrire la variation de vitesse"]
+          }
+        ]
+      },
+      {
+        "titre": "Distribution de l'énergie",
+        "lecons": [
+          {
+            "titre": "Production, transport, distribution",
+            "objectifs": [
+              "Décrire la chaîne énergétique",
+              "Identifier les postes HTA/BT (réseau SBEE)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-EST",
+    "nomMatiere": "Étude de systèmes techniques et schémas",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Schéma électrique",
+        "lecons": [
+          {
+            "titre": "Symboles normalisés",
+            "objectifs": ["Identifier les symboles", "Lire un schéma développé"]
+          },
+          {
+            "titre": "Installations domestiques",
+            "objectifs": [
+              "Réaliser simple allumage, va-et-vient, télérupteur",
+              "Respecter les sections de conducteurs"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Appareillage",
+        "lecons": [
+          {
+            "titre": "Protection des personnes et des biens",
+            "objectifs": ["Choisir fusible et disjoncteur", "Expliquer le rôle du différentiel"]
+          },
+          {
+            "titre": "Mise à la terre",
+            "objectifs": ["Décrire une prise de terre", "Mesurer une résistance de terre"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-EST",
+    "nomMatiere": "Étude de systèmes techniques et schémas",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Commande des moteurs",
+        "lecons": [
+          {
+            "titre": "Démarrage direct",
+            "objectifs": [
+              "Réaliser schéma de puissance et de commande",
+              "Choisir contacteur et relais thermique"
+            ]
+          },
+          {
+            "titre": "Inversion du sens de marche",
+            "objectifs": ["Réaliser les verrouillages", "Câbler un inverseur"]
+          },
+          {
+            "titre": "Démarrage étoile-triangle",
+            "objectifs": ["Expliquer l'intérêt", "Établir le schéma"]
+          }
+        ]
+      },
+      {
+        "titre": "Installations",
+        "lecons": [
+          {
+            "titre": "Régimes de neutre",
+            "objectifs": ["Distinguer TT, TN, IT", "Choisir la protection associée"]
+          },
+          {
+            "titre": "Bilan de puissance d'une installation",
+            "objectifs": ["Calculer la puissance d'un local", "Dimensionner un câble"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-EST",
+    "nomMatiere": "Étude de systèmes techniques et schémas",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Automatismes industriels",
+        "lecons": [
+          {
+            "titre": "GRAFCET et automate",
+            "objectifs": ["Établir un GRAFCET", "Programmer un API en langage à contacts"]
+          },
+          {
+            "titre": "Variation de vitesse",
+            "objectifs": ["Mettre en œuvre un variateur de fréquence", "Paramétrer une rampe"]
+          }
+        ]
+      },
+      {
+        "titre": "Étude d'un système technique",
+        "lecons": [
+          {
+            "titre": "Analyse fonctionnelle d'un système",
+            "objectifs": [
+              "Décrire la chaîne d'énergie et d'information",
+              "Identifier les constituants"
+            ]
+          },
+          {
+            "titre": "Dimensionnement et choix des constituants",
+            "objectifs": ["Choisir un moteur", "Choisir les protections", "Justifier par le calcul"]
+          }
+        ]
+      },
+      {
+        "titre": "Énergies renouvelables",
+        "lecons": [
+          {
+            "titre": "Installation photovoltaïque",
+            "objectifs": ["Dimensionner panneaux et batteries", "Choisir un onduleur"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-MESURES",
+    "nomMatiere": "Mesures électriques et essais",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Instruments de mesure",
+        "lecons": [
+          {
+            "titre": "Appareils analogiques et numériques",
+            "objectifs": ["Lire un appareil à aiguille", "Choisir calibre et classe"]
+          },
+          {
+            "titre": "Incertitudes",
+            "objectifs": ["Calculer une incertitude absolue et relative", "Présenter un résultat"]
+          }
+        ]
+      },
+      {
+        "titre": "Mesures en continu",
+        "lecons": [
+          {
+            "titre": "Mesure de résistances",
+            "objectifs": ["Utiliser méthode voltampèremétrique", "Utiliser l'ohmmètre et le pont"]
+          },
+          {
+            "titre": "Sécurité au laboratoire",
+            "objectifs": ["Appliquer les consignes", "Consigner une installation"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-MESURES",
+    "nomMatiere": "Mesures électriques et essais",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Mesures en alternatif",
+        "lecons": [
+          {
+            "titre": "Mesure des puissances",
+            "objectifs": ["Utiliser le wattmètre", "Appliquer la méthode des deux wattmètres"]
+          },
+          {
+            "titre": "Mesure du déphasage",
+            "objectifs": ["Utiliser l'oscilloscope", "Calculer le facteur de puissance"]
+          }
+        ]
+      },
+      {
+        "titre": "Essais du transformateur",
+        "lecons": [
+          {
+            "titre": "Essai à vide et en court-circuit",
+            "objectifs": ["Réaliser les essais", "Déterminer pertes et rendement"]
+          }
+        ]
+      },
+      {
+        "titre": "Essais de la machine à courant continu",
+        "lecons": [
+          {
+            "titre": "Caractéristiques",
+            "objectifs": [
+              "Relever la caractéristique à vide",
+              "Relever la caractéristique en charge"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F3"],
+    "matiere": "SPE-F3-MESURES",
+    "nomMatiere": "Mesures électriques et essais",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f3 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Essais des machines alternatives",
+        "lecons": [
+          {
+            "titre": "Essais du moteur asynchrone",
+            "objectifs": [
+              "Mesurer glissement et rendement",
+              "Relever la caractéristique couple-vitesse"
+            ]
+          },
+          {
+            "titre": "Essais de l'alternateur",
+            "objectifs": [
+              "Relever caractéristique à vide et en court-circuit",
+              "Déterminer la réactance synchrone"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Mesures d'installation",
+        "lecons": [
+          {
+            "titre": "Contrôle d'une installation",
+            "objectifs": ["Mesurer isolement et continuité", "Vérifier un différentiel"]
+          },
+          {
+            "titre": "Compte rendu de mesures",
+            "objectifs": ["Rédiger un procès-verbal d'essai", "Interpréter les écarts"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-BETON",
+    "nomMatiere": "Béton armé",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Matériaux",
+        "lecons": [
+          {
+            "titre": "Béton",
+            "objectifs": ["Décrire les constituants", "Définir la résistance caractéristique fc28"]
+          },
+          {
+            "titre": "Aciers pour béton armé",
+            "objectifs": ["Distinguer ronds lisses et haute adhérence", "Lire une désignation"]
+          }
+        ]
+      },
+      {
+        "titre": "Principes du béton armé",
+        "lecons": [
+          {
+            "titre": "Règles de calcul",
+            "objectifs": ["Distinguer ELU et ELS", "Combiner les actions"]
+          },
+          {
+            "titre": "Adhérence et ancrage",
+            "objectifs": ["Calculer une longueur de scellement", "Respecter l'enrobage"]
+          }
+        ]
+      },
+      {
+        "titre": "Éléments comprimés",
+        "lecons": [
+          {
+            "titre": "Poteaux en compression simple",
+            "objectifs": ["Calculer la section d'acier", "Disposer les armatures transversales"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-BETON",
+    "nomMatiere": "Béton armé",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Flexion simple",
+        "lecons": [
+          {
+            "titre": "Poutre rectangulaire à l'ELU",
+            "objectifs": ["Calculer les armatures longitudinales", "Vérifier le pivot"]
+          },
+          {
+            "titre": "Effort tranchant",
+            "objectifs": ["Vérifier la contrainte tangente", "Calculer l'espacement des cadres"]
+          }
+        ]
+      },
+      {
+        "titre": "Planchers",
+        "lecons": [
+          {
+            "titre": "Dalles et poutrelles",
+            "objectifs": ["Calculer une dalle portant dans un sens", "Dimensionner une poutrelle"]
+          }
+        ]
+      },
+      {
+        "titre": "Fondations",
+        "lecons": [
+          {
+            "titre": "Semelles",
+            "objectifs": ["Dimensionner une semelle isolée", "Ferrailler une semelle filante"]
+          },
+          {
+            "titre": "Plans de ferraillage",
+            "objectifs": ["Établir un plan de ferraillage", "Réaliser une nomenclature d'aciers"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-METRE",
+    "nomMatiere": "Métré et étude de prix",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Métré",
+        "lecons": [
+          {
+            "titre": "Règles du métré",
+            "objectifs": ["Appliquer les conventions de mesurage", "Présenter un avant-métré"]
+          },
+          {
+            "titre": "Métré du gros œuvre",
+            "objectifs": ["Calculer terrassements, bétons, maçonneries", "Établir un quantitatif"]
+          }
+        ]
+      },
+      {
+        "titre": "Quantités de matériaux",
+        "lecons": [
+          {
+            "titre": "Dosages",
+            "objectifs": ["Calculer ciment, sable, gravier", "Calculer un poids d'acier"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-METRE",
+    "nomMatiere": "Métré et étude de prix",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Étude de prix",
+        "lecons": [
+          {
+            "titre": "Déboursé sec",
+            "objectifs": [
+              "Calculer main-d'œuvre, matériaux, matériel",
+              "Établir un sous-détail de prix"
+            ]
+          },
+          {
+            "titre": "Prix de vente",
+            "objectifs": [
+              "Appliquer frais généraux, bénéfice et TVA",
+              "Calculer un coefficient de vente"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Documents de marché",
+        "lecons": [
+          {
+            "titre": "Devis quantitatif et estimatif",
+            "objectifs": ["Établir un DQE", "Présenter un bordereau des prix"]
+          },
+          {
+            "titre": "Attachements et situations",
+            "objectifs": ["Établir une situation de travaux", "Calculer un décompte"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-PROCEDES",
+    "nomMatiere": "Technologie et procédés de construction",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le bâtiment",
+        "lecons": [
+          {
+            "titre": "Les intervenants de l'acte de bâtir",
+            "objectifs": [
+              "Identifier maître d'ouvrage, maître d'œuvre, entreprise",
+              "Décrire les étapes d'un projet"
+            ]
+          },
+          {
+            "titre": "Les parties d'un bâtiment",
+            "objectifs": [
+              "Nommer les ouvrages (fondations, élévation, toiture)",
+              "Décrire leur rôle"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Matériaux de construction",
+        "lecons": [
+          {
+            "titre": "Liants, granulats, mortiers",
+            "objectifs": ["Identifier les liants", "Doser un mortier"]
+          },
+          {
+            "titre": "Blocs, briques et bois",
+            "objectifs": ["Décrire les produits locaux", "Choisir un matériau"]
+          }
+        ]
+      },
+      {
+        "titre": "Dessin de bâtiment",
+        "lecons": [
+          {
+            "titre": "Conventions du dessin de bâtiment",
+            "objectifs": ["Lire un plan, une coupe, une façade", "Utiliser les échelles usuelles"]
+          },
+          {
+            "titre": "Relevé et plan d'un local",
+            "objectifs": ["Réaliser un relevé", "Dessiner un plan coté"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-PROCEDES",
+    "nomMatiere": "Technologie et procédés de construction",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Gros œuvre",
+        "lecons": [
+          {
+            "titre": "Implantation et terrassements",
+            "objectifs": ["Implanter un bâtiment", "Calculer un volume de fouille"]
+          },
+          {
+            "titre": "Fondations superficielles",
+            "objectifs": ["Décrire semelles et radiers", "Choisir une fondation"]
+          },
+          {
+            "titre": "Maçonnerie et chaînages",
+            "objectifs": ["Décrire la mise en œuvre", "Expliquer le rôle des chaînages"]
+          }
+        ]
+      },
+      {
+        "titre": "Topographie",
+        "lecons": [
+          {
+            "titre": "Nivellement",
+            "objectifs": ["Utiliser un niveau", "Calculer des altitudes"]
+          },
+          {
+            "titre": "Levé planimétrique",
+            "objectifs": ["Mesurer distances et angles", "Reporter un levé"]
+          }
+        ]
+      },
+      {
+        "titre": "Dessin",
+        "lecons": [
+          {
+            "titre": "Plans d'exécution",
+            "objectifs": ["Dessiner plan de fondation et coupe", "Coter un plan de bâtiment"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-PROCEDES",
+    "nomMatiere": "Technologie et procédés de construction",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Second œuvre",
+        "lecons": [
+          {
+            "titre": "Charpente et couverture",
+            "objectifs": ["Décrire une charpente", "Choisir une couverture"]
+          },
+          {
+            "titre": "Menuiseries, enduits, revêtements",
+            "objectifs": ["Décrire la mise en œuvre", "Choisir un revêtement"]
+          },
+          {
+            "titre": "Réseaux du bâtiment",
+            "objectifs": ["Décrire plomberie et électricité du bâtiment", "Lire un plan de réseaux"]
+          }
+        ]
+      },
+      {
+        "titre": "Travaux publics",
+        "lecons": [
+          {
+            "titre": "Routes et voiries",
+            "objectifs": ["Décrire la structure d'une chaussée", "Identifier les couches"]
+          },
+          {
+            "titre": "Ouvrages d'assainissement",
+            "objectifs": ["Décrire caniveaux et dalots", "Calculer une pente"]
+          }
+        ]
+      },
+      {
+        "titre": "Projet et organisation de chantier",
+        "lecons": [
+          {
+            "titre": "Planification",
+            "objectifs": ["Établir un planning à barres", "Organiser une installation de chantier"]
+          },
+          {
+            "titre": "Sécurité sur chantier",
+            "objectifs": ["Identifier les risques", "Proposer des mesures de prévention"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-RDM",
+    "nomMatiere": "Mécanique et résistance des matériaux",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Statique",
+        "lecons": [
+          {
+            "titre": "Forces et moments",
+            "objectifs": ["Représenter une force", "Calculer un moment"]
+          },
+          {
+            "titre": "Équilibre d'un solide",
+            "objectifs": [
+              "Appliquer le principe fondamental de la statique",
+              "Calculer des réactions d'appui"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Caractéristiques géométriques",
+        "lecons": [
+          {
+            "titre": "Centre de gravité",
+            "objectifs": [
+              "Calculer le centre de gravité d'une section composée",
+              "Utiliser le théorème des moments"
+            ]
+          },
+          {
+            "titre": "Moment quadratique",
+            "objectifs": [
+              "Calculer le moment quadratique d'un rectangle",
+              "Appliquer le théorème de Huygens"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-RDM",
+    "nomMatiere": "Mécanique et résistance des matériaux",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Sollicitations simples",
+        "lecons": [
+          {
+            "titre": "Traction et compression",
+            "objectifs": [
+              "Calculer contrainte et allongement",
+              "Vérifier la condition de résistance"
+            ]
+          },
+          {
+            "titre": "Cisaillement",
+            "objectifs": ["Calculer une contrainte de cisaillement", "Dimensionner un assemblage"]
+          }
+        ]
+      },
+      {
+        "titre": "Systèmes isostatiques",
+        "lecons": [
+          {
+            "titre": "Treillis",
+            "objectifs": [
+              "Déterminer les efforts par la méthode des nœuds",
+              "Utiliser la méthode de Ritter"
+            ]
+          },
+          {
+            "titre": "Poutres isostatiques",
+            "objectifs": [
+              "Calculer les réactions",
+              "Tracer les diagrammes de l'effort tranchant et du moment fléchissant"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["F4"],
+    "matiere": "SPE-F4-RDM",
+    "nomMatiere": "Mécanique et résistance des matériaux",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-f4 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Flexion",
+        "lecons": [
+          {
+            "titre": "Flexion simple",
+            "objectifs": ["Calculer la contrainte normale maximale", "Dimensionner une poutre"]
+          },
+          {
+            "titre": "Déformations",
+            "objectifs": ["Calculer une flèche", "Vérifier une condition de flèche"]
+          }
+        ]
+      },
+      {
+        "titre": "Flambement et sollicitations composées",
+        "lecons": [
+          {
+            "titre": "Flambement",
+            "objectifs": ["Calculer l'élancement", "Vérifier un poteau selon Euler"]
+          },
+          {
+            "titre": "Flexion composée",
+            "objectifs": [
+              "Calculer une contrainte en flexion composée",
+              "Déterminer le noyau central"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Hyperstatique",
+        "lecons": [
+          {
+            "titre": "Poutres continues",
+            "objectifs": ["Appliquer le théorème des trois moments", "Tracer les diagrammes"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ADMIN",
+    "nomMatiere": "Rédaction administrative et communication",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Communication écrite",
+        "lecons": [
+          {
+            "titre": "Règles de la correspondance",
+            "objectifs": [
+              "Appliquer les règles de présentation",
+              "Respecter le style administratif"
+            ]
+          },
+          {
+            "titre": "La lettre commerciale",
+            "objectifs": ["Rédiger une demande et une réponse", "Structurer la lettre"]
+          }
+        ]
+      },
+      {
+        "titre": "L'administration",
+        "lecons": [
+          {
+            "titre": "Organisation de l'administration béninoise",
+            "objectifs": [
+              "Décrire les ministères et collectivités territoriales",
+              "Identifier la hiérarchie"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ADMIN",
+    "nomMatiere": "Rédaction administrative et communication",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Documents administratifs",
+        "lecons": [
+          {
+            "titre": "La lettre administrative",
+            "objectifs": ["Rédiger une lettre à en-tête", "Respecter les formules"]
+          },
+          {
+            "titre": "Note de service et circulaire",
+            "objectifs": ["Distinguer leurs usages", "Rédiger une note de service"]
+          },
+          {
+            "titre": "Le bordereau d'envoi",
+            "objectifs": ["Établir un bordereau", "Viser les pièces"]
+          }
+        ]
+      },
+      {
+        "titre": "Communication orale",
+        "lecons": [
+          {
+            "titre": "Prise de parole",
+            "objectifs": ["Structurer une intervention", "Adapter son discours"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ADMIN",
+    "nomMatiere": "Rédaction administrative et communication",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Rapports et procès-verbaux",
+        "lecons": [
+          {
+            "titre": "Le compte rendu",
+            "objectifs": [
+              "Distinguer compte rendu et procès-verbal",
+              "Rédiger un compte rendu de réunion"
+            ]
+          },
+          {
+            "titre": "Le procès-verbal",
+            "objectifs": ["Rédiger un PV de réunion", "Respecter les mentions obligatoires"]
+          },
+          {
+            "titre": "Le rapport",
+            "objectifs": ["Construire un plan", "Formuler des propositions"]
+          }
+        ]
+      },
+      {
+        "titre": "Documents de synthèse",
+        "lecons": [
+          {
+            "titre": "Note de synthèse",
+            "objectifs": ["Sélectionner l'information", "Rédiger une note objective"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-COMPTA",
+    "nomMatiere": "Comptabilité et gestion administrative",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Bases de la comptabilité",
+        "lecons": [
+          {
+            "titre": "Le bilan",
+            "objectifs": ["Distinguer actif et passif", "Présenter un bilan simple"]
+          },
+          {
+            "titre": "Les comptes et la partie double",
+            "objectifs": ["Enregistrer une opération", "Tenir le journal"]
+          }
+        ]
+      },
+      {
+        "titre": "Documents commerciaux",
+        "lecons": [
+          {
+            "titre": "Facturation",
+            "objectifs": ["Établir une facture avec remises et TVA", "Calculer un net à payer"]
+          },
+          {
+            "titre": "Moyens de règlement",
+            "objectifs": ["Remplir un chèque", "Décrire virement et mobile money"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-COMPTA",
+    "nomMatiere": "Comptabilité et gestion administrative",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Gestion du personnel",
+        "lecons": [
+          {
+            "titre": "Paie",
+            "objectifs": [
+              "Établir un bulletin de paie simple",
+              "Calculer les cotisations CNSS et l'ITS"
+            ]
+          },
+          {
+            "titre": "Gestion des congés et absences",
+            "objectifs": ["Calculer des droits à congés", "Tenir un registre"]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion des stocks de fournitures",
+        "lecons": [
+          {
+            "titre": "Fiche de stock",
+            "objectifs": ["Tenir une fiche de stock", "Calculer un stock moyen"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Introduction au droit",
+        "lecons": [
+          {
+            "titre": "Notion de droit",
+            "objectifs": [
+              "Distinguer droit objectif et droits subjectifs",
+              "Distinguer droit public et privé"
+            ]
+          },
+          {
+            "titre": "Les sources du droit",
+            "objectifs": [
+              "Hiérarchiser Constitution, lois, règlements",
+              "Citer le rôle des traités OHADA"
+            ]
+          },
+          {
+            "titre": "L'organisation judiciaire au Bénin",
+            "objectifs": ["Décrire les juridictions", "Identifier le tribunal compétent"]
+          }
+        ]
+      },
+      {
+        "titre": "Les personnes",
+        "lecons": [
+          {
+            "titre": "Personnes physiques et morales",
+            "objectifs": [
+              "Définir la personnalité juridique",
+              "Citer les attributs de la personnalité"
+            ]
+          },
+          {
+            "titre": "La capacité juridique",
+            "objectifs": ["Distinguer majeurs et mineurs", "Décrire les régimes de protection"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le contrat",
+        "lecons": [
+          {
+            "titre": "Formation du contrat",
+            "objectifs": [
+              "Énoncer les conditions de validité",
+              "Identifier les vices du consentement"
+            ]
+          },
+          {
+            "titre": "Effets et inexécution du contrat",
+            "objectifs": ["Énoncer la force obligatoire", "Choisir une sanction de l'inexécution"]
+          }
+        ]
+      },
+      {
+        "titre": "La responsabilité civile",
+        "lecons": [
+          {
+            "titre": "Responsabilité délictuelle",
+            "objectifs": ["Identifier faute, dommage, lien de causalité", "Distinguer les régimes"]
+          }
+        ]
+      },
+      {
+        "titre": "Le droit commercial (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le commerçant",
+            "objectifs": [
+              "Définir les actes de commerce",
+              "Énoncer les obligations du commerçant (RCCM)"
+            ]
+          },
+          {
+            "titre": "Le fonds de commerce",
+            "objectifs": ["Identifier ses éléments", "Décrire le bail commercial"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Droit des sociétés (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le contrat de société",
+            "objectifs": ["Énoncer les éléments du contrat", "Décrire la constitution"]
+          },
+          {
+            "titre": "Les formes de sociétés",
+            "objectifs": ["Comparer SARL, SA, SNC", "Choisir une forme adaptée"]
+          }
+        ]
+      },
+      {
+        "titre": "Droit du travail",
+        "lecons": [
+          {
+            "titre": "Le contrat de travail",
+            "objectifs": ["Identifier les éléments du contrat", "Distinguer CDD et CDI"]
+          },
+          {
+            "titre": "Rupture du contrat de travail",
+            "objectifs": ["Distinguer démission et licenciement", "Calculer un préavis"]
+          },
+          {
+            "titre": "Les relations collectives",
+            "objectifs": [
+              "Décrire syndicats et délégués du personnel",
+              "Décrire la sécurité sociale (CNSS)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Les difficultés de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Procédures collectives",
+            "objectifs": [
+              "Distinguer règlement préventif, redressement et liquidation",
+              "Identifier les acteurs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "L'activité économique",
+        "lecons": [
+          {
+            "titre": "Besoins, biens et services",
+            "objectifs": ["Classer les besoins", "Distinguer biens et services"]
+          },
+          {
+            "titre": "Les agents économiques",
+            "objectifs": ["Identifier les agents", "Décrire le circuit économique"]
+          }
+        ]
+      },
+      {
+        "titre": "La production",
+        "lecons": [
+          {
+            "titre": "Facteurs de production",
+            "objectifs": ["Décrire travail, capital, terre", "Calculer une productivité"]
+          },
+          {
+            "titre": "Secteurs d'activité",
+            "objectifs": [
+              "Classer les activités par secteur",
+              "Décrire la place de l'informel au Bénin"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "L'entreprise",
+        "lecons": [
+          {
+            "titre": "Notion d'entreprise",
+            "objectifs": [
+              "Définir l'entreprise",
+              "Classer les entreprises selon la taille et le statut"
+            ]
+          },
+          {
+            "titre": "L'entreprise et son environnement",
+            "objectifs": [
+              "Identifier les partenaires",
+              "Analyser les contraintes de l'environnement"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Monnaie et financement",
+        "lecons": [
+          {
+            "titre": "La monnaie",
+            "objectifs": ["Définir les fonctions de la monnaie", "Décrire la création monétaire"]
+          },
+          {
+            "titre": "Le système bancaire de l'UEMOA",
+            "objectifs": ["Décrire le rôle de la BCEAO", "Citer les établissements de crédit"]
+          },
+          {
+            "titre": "Le financement de l'économie",
+            "objectifs": ["Distinguer financement direct et indirect", "Décrire la BRVM"]
+          }
+        ]
+      },
+      {
+        "titre": "Répartition et consommation",
+        "lecons": [
+          {
+            "titre": "Les revenus",
+            "objectifs": [
+              "Distinguer revenus primaires et de transfert",
+              "Décrire la redistribution"
+            ]
+          },
+          {
+            "titre": "La consommation et l'épargne",
+            "objectifs": [
+              "Calculer une propension à consommer",
+              "Analyser les déterminants de l'épargne"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Les fonctions de l'entreprise",
+            "objectifs": ["Décrire les fonctions de Fayol", "Lire un organigramme"]
+          },
+          {
+            "titre": "La fonction ressources humaines",
+            "objectifs": ["Décrire recrutement et formation", "Analyser la motivation"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Échanges internationaux",
+        "lecons": [
+          {
+            "titre": "Le commerce international",
+            "objectifs": ["Analyser une balance commerciale", "Calculer un taux de couverture"]
+          },
+          {
+            "titre": "L'intégration régionale",
+            "objectifs": ["Décrire l'UEMOA et la CEDEAO", "Analyser le rôle du franc CFA"]
+          }
+        ]
+      },
+      {
+        "titre": "Croissance et développement",
+        "lecons": [
+          {
+            "titre": "Croissance économique",
+            "objectifs": [
+              "Calculer un taux de croissance du PIB",
+              "Identifier les facteurs de croissance"
+            ]
+          },
+          {
+            "titre": "Développement",
+            "objectifs": ["Distinguer croissance et développement", "Interpréter l'IDH"]
+          }
+        ]
+      },
+      {
+        "titre": "Politiques économiques",
+        "lecons": [
+          {
+            "titre": "L'État et l'économie",
+            "objectifs": [
+              "Décrire politique budgétaire et monétaire",
+              "Analyser le budget de l'État"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Stratégie de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Décision et stratégie",
+            "objectifs": [
+              "Distinguer décisions stratégiques et opérationnelles",
+              "Réaliser un diagnostic interne et externe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-SECRETARIAT",
+    "nomMatiere": "Techniques de secrétariat et bureautique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le secrétariat",
+        "lecons": [
+          {
+            "titre": "Le poste de secrétaire",
+            "objectifs": ["Décrire les missions", "Énoncer les qualités professionnelles"]
+          },
+          {
+            "titre": "Organisation du poste de travail",
+            "objectifs": ["Aménager le poste", "Gérer son temps et ses priorités"]
+          }
+        ]
+      },
+      {
+        "titre": "Bureautique",
+        "lecons": [
+          {
+            "titre": "Dactylographie",
+            "objectifs": [
+              "Appliquer le doigté",
+              "Atteindre une vitesse de frappe",
+              "Respecter la ponctuation typographique"
+            ]
+          },
+          {
+            "titre": "Traitement de texte",
+            "objectifs": ["Saisir et mettre en forme", "Mettre en page un document"]
+          }
+        ]
+      },
+      {
+        "titre": "Accueil et communication",
+        "lecons": [
+          {
+            "titre": "Accueil physique et téléphonique",
+            "objectifs": ["Accueillir un visiteur", "Prendre un message téléphonique"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-SECRETARIAT",
+    "nomMatiere": "Techniques de secrétariat et bureautique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Gestion du courrier",
+        "lecons": [
+          {
+            "titre": "Courrier arrivée et départ",
+            "objectifs": ["Enregistrer le courrier", "Tenir un registre", "Assurer la diffusion"]
+          }
+        ]
+      },
+      {
+        "titre": "Classement et archivage",
+        "lecons": [
+          {
+            "titre": "Méthodes de classement",
+            "objectifs": [
+              "Choisir un classement alphabétique, numérique ou chronologique",
+              "Organiser un plan de classement"
+            ]
+          },
+          {
+            "titre": "Archivage",
+            "objectifs": ["Appliquer les durées de conservation", "Gérer l'archivage numérique"]
+          }
+        ]
+      },
+      {
+        "titre": "Bureautique avancée",
+        "lecons": [
+          {
+            "titre": "Tableur",
+            "objectifs": [
+              "Créer un tableau de calcul",
+              "Utiliser des formules",
+              "Réaliser un graphique"
+            ]
+          },
+          {
+            "titre": "Publipostage",
+            "objectifs": [
+              "Préparer une source de données",
+              "Fusionner un document type et une base de données"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G1"],
+    "matiere": "SPE-G1-SECRETARIAT",
+    "nomMatiere": "Techniques de secrétariat et bureautique",
+    "confiance": "reconstitue",
+    "sources": [
+      "Office du Baccalauréat du Bénin — liste des épreuves et coefficients (arrêté interministériel n°016-2003 modifié), recoupée via https://open-exam-prep.com/practice/bj-bac-g1 (source non officielle)",
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Organisation des réunions",
+        "lecons": [
+          {
+            "titre": "Préparation d'une réunion",
+            "objectifs": ["Établir une convocation et un ordre du jour", "Organiser la logistique"]
+          },
+          {
+            "titre": "Suivi des déplacements",
+            "objectifs": ["Organiser une mission", "Établir un ordre de mission"]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion de l'information",
+        "lecons": [
+          {
+            "titre": "Recherche et diffusion de l'information",
+            "objectifs": ["Exploiter une base documentaire", "Diffuser par messagerie"]
+          },
+          {
+            "titre": "Présentation assistée par ordinateur",
+            "objectifs": ["Concevoir un diaporama", "Présenter oralement"]
+          }
+        ]
+      },
+      {
+        "titre": "Épreuve pratique",
+        "lecons": [
+          {
+            "titre": "Étude de cas de secrétariat",
+            "objectifs": [
+              "Analyser une situation",
+              "Produire les documents demandés dans le temps imparti"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-ANALYTIQUE",
+    "nomMatiere": "Comptabilité analytique de gestion",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Les coûts",
+        "lecons": [
+          {
+            "titre": "Charges incorporables",
+            "objectifs": [
+              "Distinguer charges incorporables et non incorporables",
+              "Traiter les éléments supplétifs"
+            ]
+          },
+          {
+            "titre": "Gestion des stocks",
+            "objectifs": ["Valoriser les sorties (CMUP, PEPS)", "Tenir une fiche de stock"]
+          }
+        ]
+      },
+      {
+        "titre": "Méthode des centres d'analyse",
+        "lecons": [
+          {
+            "titre": "Répartition des charges indirectes",
+            "objectifs": [
+              "Réaliser répartitions primaire et secondaire",
+              "Calculer un coût d'unité d'œuvre"
+            ]
+          },
+          {
+            "titre": "Coût de revient et résultat analytique",
+            "objectifs": [
+              "Calculer coûts d'achat, de production, de revient",
+              "Calculer un résultat analytique"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-ANALYTIQUE",
+    "nomMatiere": "Comptabilité analytique de gestion",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Coûts partiels",
+        "lecons": [
+          {
+            "titre": "Coût variable",
+            "objectifs": [
+              "Calculer la marge sur coût variable",
+              "Déterminer le seuil de rentabilité"
+            ]
+          },
+          {
+            "titre": "Imputation rationnelle",
+            "objectifs": ["Calculer un coefficient d'imputation", "Interpréter le coût de chômage"]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion prévisionnelle",
+        "lecons": [
+          {
+            "titre": "Budgets",
+            "objectifs": ["Établir un budget des ventes", "Établir un budget de trésorerie"]
+          },
+          {
+            "titre": "Écarts",
+            "objectifs": ["Calculer un écart sur coût", "Analyser écart sur quantité et sur prix"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-COMPTA",
+    "nomMatiere": "Comptabilité générale (SYSCOHADA)",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Introduction à la comptabilité",
+        "lecons": [
+          {
+            "titre": "Rôle de la comptabilité",
+            "objectifs": ["Définir la comptabilité", "Identifier les utilisateurs de l'information"]
+          },
+          {
+            "titre": "Le cadre SYSCOHADA",
+            "objectifs": ["Présenter l'OHADA et l'Acte uniforme", "Décrire le plan des comptes"]
+          }
+        ]
+      },
+      {
+        "titre": "Le bilan et les comptes",
+        "lecons": [
+          {
+            "titre": "Le bilan",
+            "objectifs": ["Classer emplois et ressources", "Établir un bilan d'ouverture"]
+          },
+          {
+            "titre": "Le compte",
+            "objectifs": ["Distinguer débit et crédit", "Calculer un solde"]
+          },
+          {
+            "titre": "La partie double",
+            "objectifs": ["Analyser une opération", "Appliquer la règle de la partie double"]
+          }
+        ]
+      },
+      {
+        "titre": "Les documents comptables",
+        "lecons": [
+          {
+            "titre": "Journal et grand livre",
+            "objectifs": ["Enregistrer au journal", "Reporter au grand livre"]
+          },
+          {
+            "titre": "La balance",
+            "objectifs": ["Établir une balance", "Détecter une erreur"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-COMPTA",
+    "nomMatiere": "Comptabilité générale (SYSCOHADA)",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Opérations courantes",
+        "lecons": [
+          {
+            "titre": "Achats et ventes",
+            "objectifs": [
+              "Enregistrer factures avec réductions",
+              "Traiter frais accessoires et emballages"
+            ]
+          },
+          {
+            "titre": "La TVA",
+            "objectifs": ["Calculer la TVA à décaisser", "Enregistrer la déclaration"]
+          },
+          {
+            "titre": "Les règlements",
+            "objectifs": ["Enregistrer chèques et virements", "Traiter les effets de commerce"]
+          },
+          {
+            "titre": "La paie",
+            "objectifs": ["Comptabiliser les salaires", "Comptabiliser les charges sociales"]
+          }
+        ]
+      },
+      {
+        "titre": "Investissements et financement",
+        "lecons": [
+          {
+            "titre": "Acquisition d'immobilisations",
+            "objectifs": ["Déterminer le coût d'acquisition", "Enregistrer l'acquisition"]
+          },
+          {
+            "titre": "Emprunts",
+            "objectifs": ["Enregistrer un emprunt", "Comptabiliser les intérêts"]
+          }
+        ]
+      },
+      {
+        "titre": "Rapprochement bancaire",
+        "lecons": [
+          {
+            "titre": "État de rapprochement",
+            "objectifs": [
+              "Établir un état de rapprochement",
+              "Passer les écritures de régularisation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-COMPTA",
+    "nomMatiere": "Comptabilité générale (SYSCOHADA)",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Travaux de fin d'exercice",
+        "lecons": [
+          {
+            "titre": "Amortissements",
+            "objectifs": [
+              "Calculer un amortissement linéaire et dégressif",
+              "Enregistrer la dotation"
+            ]
+          },
+          {
+            "titre": "Cessions d'immobilisations",
+            "objectifs": ["Calculer la plus ou moins-value", "Enregistrer la cession"]
+          },
+          {
+            "titre": "Dépréciations et provisions",
+            "objectifs": ["Déprécier créances et stocks", "Enregistrer une provision pour risques"]
+          },
+          {
+            "titre": "Régularisation des charges et produits",
+            "objectifs": ["Enregistrer charges constatées d'avance et à payer", "Contrepasser"]
+          }
+        ]
+      },
+      {
+        "titre": "États financiers SYSCOHADA",
+        "lecons": [
+          {
+            "titre": "Bilan et compte de résultat",
+            "objectifs": ["Établir le compte de résultat", "Présenter le bilan"]
+          },
+          {
+            "titre": "Soldes significatifs de gestion",
+            "objectifs": ["Calculer marge, valeur ajoutée, EBE", "Interpréter le résultat"]
+          }
+        ]
+      },
+      {
+        "titre": "Analyse financière et sociétés",
+        "lecons": [
+          {
+            "titre": "Analyse du bilan",
+            "objectifs": ["Calculer FDR, BFR, trésorerie", "Calculer des ratios"]
+          },
+          {
+            "titre": "Comptabilité des sociétés",
+            "objectifs": [
+              "Enregistrer la constitution d'une société",
+              "Enregistrer l'affectation du résultat"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Introduction au droit",
+        "lecons": [
+          {
+            "titre": "Notion de droit",
+            "objectifs": [
+              "Distinguer droit objectif et droits subjectifs",
+              "Distinguer droit public et privé"
+            ]
+          },
+          {
+            "titre": "Les sources du droit",
+            "objectifs": [
+              "Hiérarchiser Constitution, lois, règlements",
+              "Citer le rôle des traités OHADA"
+            ]
+          },
+          {
+            "titre": "L'organisation judiciaire au Bénin",
+            "objectifs": ["Décrire les juridictions", "Identifier le tribunal compétent"]
+          }
+        ]
+      },
+      {
+        "titre": "Les personnes",
+        "lecons": [
+          {
+            "titre": "Personnes physiques et morales",
+            "objectifs": [
+              "Définir la personnalité juridique",
+              "Citer les attributs de la personnalité"
+            ]
+          },
+          {
+            "titre": "La capacité juridique",
+            "objectifs": ["Distinguer majeurs et mineurs", "Décrire les régimes de protection"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le contrat",
+        "lecons": [
+          {
+            "titre": "Formation du contrat",
+            "objectifs": [
+              "Énoncer les conditions de validité",
+              "Identifier les vices du consentement"
+            ]
+          },
+          {
+            "titre": "Effets et inexécution du contrat",
+            "objectifs": ["Énoncer la force obligatoire", "Choisir une sanction de l'inexécution"]
+          }
+        ]
+      },
+      {
+        "titre": "La responsabilité civile",
+        "lecons": [
+          {
+            "titre": "Responsabilité délictuelle",
+            "objectifs": ["Identifier faute, dommage, lien de causalité", "Distinguer les régimes"]
+          }
+        ]
+      },
+      {
+        "titre": "Le droit commercial (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le commerçant",
+            "objectifs": [
+              "Définir les actes de commerce",
+              "Énoncer les obligations du commerçant (RCCM)"
+            ]
+          },
+          {
+            "titre": "Le fonds de commerce",
+            "objectifs": ["Identifier ses éléments", "Décrire le bail commercial"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Droit des sociétés (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le contrat de société",
+            "objectifs": ["Énoncer les éléments du contrat", "Décrire la constitution"]
+          },
+          {
+            "titre": "Les formes de sociétés",
+            "objectifs": ["Comparer SARL, SA, SNC", "Choisir une forme adaptée"]
+          }
+        ]
+      },
+      {
+        "titre": "Droit du travail",
+        "lecons": [
+          {
+            "titre": "Le contrat de travail",
+            "objectifs": ["Identifier les éléments du contrat", "Distinguer CDD et CDI"]
+          },
+          {
+            "titre": "Rupture du contrat de travail",
+            "objectifs": ["Distinguer démission et licenciement", "Calculer un préavis"]
+          },
+          {
+            "titre": "Les relations collectives",
+            "objectifs": [
+              "Décrire syndicats et délégués du personnel",
+              "Décrire la sécurité sociale (CNSS)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Les difficultés de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Procédures collectives",
+            "objectifs": [
+              "Distinguer règlement préventif, redressement et liquidation",
+              "Identifier les acteurs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "L'activité économique",
+        "lecons": [
+          {
+            "titre": "Besoins, biens et services",
+            "objectifs": ["Classer les besoins", "Distinguer biens et services"]
+          },
+          {
+            "titre": "Les agents économiques",
+            "objectifs": ["Identifier les agents", "Décrire le circuit économique"]
+          }
+        ]
+      },
+      {
+        "titre": "La production",
+        "lecons": [
+          {
+            "titre": "Facteurs de production",
+            "objectifs": ["Décrire travail, capital, terre", "Calculer une productivité"]
+          },
+          {
+            "titre": "Secteurs d'activité",
+            "objectifs": [
+              "Classer les activités par secteur",
+              "Décrire la place de l'informel au Bénin"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "L'entreprise",
+        "lecons": [
+          {
+            "titre": "Notion d'entreprise",
+            "objectifs": [
+              "Définir l'entreprise",
+              "Classer les entreprises selon la taille et le statut"
+            ]
+          },
+          {
+            "titre": "L'entreprise et son environnement",
+            "objectifs": [
+              "Identifier les partenaires",
+              "Analyser les contraintes de l'environnement"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Monnaie et financement",
+        "lecons": [
+          {
+            "titre": "La monnaie",
+            "objectifs": ["Définir les fonctions de la monnaie", "Décrire la création monétaire"]
+          },
+          {
+            "titre": "Le système bancaire de l'UEMOA",
+            "objectifs": ["Décrire le rôle de la BCEAO", "Citer les établissements de crédit"]
+          },
+          {
+            "titre": "Le financement de l'économie",
+            "objectifs": ["Distinguer financement direct et indirect", "Décrire la BRVM"]
+          }
+        ]
+      },
+      {
+        "titre": "Répartition et consommation",
+        "lecons": [
+          {
+            "titre": "Les revenus",
+            "objectifs": [
+              "Distinguer revenus primaires et de transfert",
+              "Décrire la redistribution"
+            ]
+          },
+          {
+            "titre": "La consommation et l'épargne",
+            "objectifs": [
+              "Calculer une propension à consommer",
+              "Analyser les déterminants de l'épargne"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Les fonctions de l'entreprise",
+            "objectifs": ["Décrire les fonctions de Fayol", "Lire un organigramme"]
+          },
+          {
+            "titre": "La fonction ressources humaines",
+            "objectifs": ["Décrire recrutement et formation", "Analyser la motivation"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Échanges internationaux",
+        "lecons": [
+          {
+            "titre": "Le commerce international",
+            "objectifs": ["Analyser une balance commerciale", "Calculer un taux de couverture"]
+          },
+          {
+            "titre": "L'intégration régionale",
+            "objectifs": ["Décrire l'UEMOA et la CEDEAO", "Analyser le rôle du franc CFA"]
+          }
+        ]
+      },
+      {
+        "titre": "Croissance et développement",
+        "lecons": [
+          {
+            "titre": "Croissance économique",
+            "objectifs": [
+              "Calculer un taux de croissance du PIB",
+              "Identifier les facteurs de croissance"
+            ]
+          },
+          {
+            "titre": "Développement",
+            "objectifs": ["Distinguer croissance et développement", "Interpréter l'IDH"]
+          }
+        ]
+      },
+      {
+        "titre": "Politiques économiques",
+        "lecons": [
+          {
+            "titre": "L'État et l'économie",
+            "objectifs": [
+              "Décrire politique budgétaire et monétaire",
+              "Analyser le budget de l'État"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Stratégie de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Décision et stratégie",
+            "objectifs": [
+              "Distinguer décisions stratégiques et opérationnelles",
+              "Réaliser un diagnostic interne et externe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-MATHFI",
+    "nomMatiere": "Mathématiques financières et commerciales",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Calculs commerciaux",
+        "lecons": [
+          {
+            "titre": "Pourcentages et proportions",
+            "objectifs": ["Calculer un pourcentage", "Appliquer une règle de trois"]
+          },
+          {
+            "titre": "Prix et marges",
+            "objectifs": [
+              "Calculer prix d'achat, coût de revient, prix de vente",
+              "Calculer un taux de marge et de marque"
+            ]
+          },
+          {
+            "titre": "Réductions commerciales",
+            "objectifs": ["Calculer remise, rabais, ristourne", "Calculer un escompte"]
+          }
+        ]
+      },
+      {
+        "titre": "Intérêts simples",
+        "lecons": [
+          {
+            "titre": "Intérêt simple",
+            "objectifs": ["Calculer un intérêt", "Calculer une valeur acquise"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-MATHFI",
+    "nomMatiere": "Mathématiques financières et commerciales",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Opérations à court terme",
+        "lecons": [
+          {
+            "titre": "Escompte commercial",
+            "objectifs": ["Calculer escompte et valeur actuelle", "Établir un bordereau d'escompte"]
+          },
+          {
+            "titre": "Équivalence d'effets",
+            "objectifs": ["Déterminer l'échéance commune", "Calculer un effet de remplacement"]
+          },
+          {
+            "titre": "Comptes courants et d'intérêts",
+            "objectifs": ["Tenir un compte courant", "Calculer les intérêts"]
+          }
+        ]
+      },
+      {
+        "titre": "Intérêts composés",
+        "lecons": [
+          {
+            "titre": "Capitalisation",
+            "objectifs": ["Calculer une valeur acquise", "Calculer un taux équivalent"]
+          },
+          {
+            "titre": "Actualisation",
+            "objectifs": ["Calculer une valeur actuelle", "Comparer des capitaux"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-MATHFI",
+    "nomMatiere": "Mathématiques financières et commerciales",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Annuités",
+        "lecons": [
+          {
+            "titre": "Annuités constantes",
+            "objectifs": ["Calculer valeur acquise et valeur actuelle", "Déterminer une annuité"]
+          }
+        ]
+      },
+      {
+        "titre": "Emprunts",
+        "lecons": [
+          {
+            "titre": "Emprunt indivis",
+            "objectifs": [
+              "Établir un tableau d'amortissement",
+              "Comparer amortissements constants et annuités constantes"
+            ]
+          },
+          {
+            "titre": "Emprunts obligataires",
+            "objectifs": [
+              "Calculer une annuité de remboursement",
+              "Déterminer un taux de rendement"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Choix d'investissement",
+        "lecons": [
+          {
+            "titre": "Rentabilité d'un investissement",
+            "objectifs": [
+              "Calculer une VAN",
+              "Calculer un délai de récupération",
+              "Interpréter un TRI"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-STAT",
+    "nomMatiere": "Statistiques",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Statistique descriptive",
+        "lecons": [
+          {
+            "titre": "Vocabulaire statistique",
+            "objectifs": [
+              "Définir population, individu, caractère",
+              "Distinguer variables qualitatives et quantitatives"
+            ]
+          },
+          {
+            "titre": "Tableaux et graphiques",
+            "objectifs": [
+              "Construire un tableau d'effectifs",
+              "Réaliser diagrammes en bâtons et histogrammes"
+            ]
+          },
+          {
+            "titre": "Fréquences cumulées",
+            "objectifs": ["Calculer des fréquences cumulées", "Tracer une courbe cumulative"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-STAT",
+    "nomMatiere": "Statistiques",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Paramètres de position",
+        "lecons": [
+          {
+            "titre": "Moyenne, médiane, mode",
+            "objectifs": ["Calculer les paramètres", "Interpréter une médiane graphiquement"]
+          }
+        ]
+      },
+      {
+        "titre": "Paramètres de dispersion",
+        "lecons": [
+          {
+            "titre": "Variance et écart-type",
+            "objectifs": ["Calculer variance et écart-type", "Calculer un coefficient de variation"]
+          },
+          {
+            "titre": "Concentration",
+            "objectifs": ["Tracer une courbe de Lorenz", "Interpréter l'indice de Gini"]
+          }
+        ]
+      },
+      {
+        "titre": "Indices",
+        "lecons": [
+          {
+            "titre": "Indices simples et synthétiques",
+            "objectifs": [
+              "Calculer un indice simple",
+              "Calculer un indice de Laspeyres et de Paasche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G2"],
+    "matiere": "SPE-G2-STAT",
+    "nomMatiere": "Statistiques",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Acte uniforme OHADA relatif au droit comptable et à l'information financière (SYSCOHADA révisé, 2017)",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Statistique à deux variables",
+        "lecons": [
+          {
+            "titre": "Nuage de points",
+            "objectifs": ["Représenter une série double", "Calculer le point moyen"]
+          },
+          {
+            "titre": "Ajustement linéaire",
+            "objectifs": [
+              "Calculer une droite de moindres carrés",
+              "Calculer le coefficient de corrélation",
+              "Faire une prévision"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Séries chronologiques",
+        "lecons": [
+          {
+            "titre": "Tendance et saisonnalité",
+            "objectifs": [
+              "Calculer des moyennes mobiles",
+              "Calculer des coefficients saisonniers",
+              "Désaisonnaliser une série"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Probabilités appliquées",
+        "lecons": [
+          {
+            "titre": "Probabilités et loi binomiale",
+            "objectifs": ["Calculer une probabilité", "Utiliser la loi binomiale"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMMERCE",
+    "nomMatiere": "Techniques commerciales et de vente",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le commerce",
+        "lecons": [
+          {
+            "titre": "Notions de commerce",
+            "objectifs": [
+              "Distinguer commerce de gros et de détail",
+              "Décrire le commerce informel au Bénin"
+            ]
+          },
+          {
+            "titre": "Les circuits de distribution",
+            "objectifs": [
+              "Distinguer circuit direct, court et long",
+              "Identifier les intermédiaires"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Les documents commerciaux",
+        "lecons": [
+          {
+            "titre": "Bon de commande, bon de livraison, facture",
+            "objectifs": ["Établir les documents", "Respecter les mentions obligatoires"]
+          },
+          {
+            "titre": "Calculs commerciaux",
+            "objectifs": ["Calculer prix, marges et coefficients", "Calculer remises et TVA"]
+          }
+        ]
+      },
+      {
+        "titre": "La vente",
+        "lecons": [
+          {
+            "titre": "Le vendeur",
+            "objectifs": ["Décrire les qualités du vendeur", "Identifier les étapes de la vente"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMMERCE",
+    "nomMatiere": "Techniques commerciales et de vente",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Négociation-vente",
+        "lecons": [
+          {
+            "titre": "Préparation de la vente",
+            "objectifs": ["Préparer un argumentaire", "Identifier les besoins du client (SONCAS)"]
+          },
+          {
+            "titre": "Conduite de l'entretien",
+            "objectifs": ["Présenter un produit", "Traiter les objections", "Conclure la vente"]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion commerciale",
+        "lecons": [
+          {
+            "titre": "Approvisionnement et stocks",
+            "objectifs": [
+              "Calculer stock minimum et de sécurité",
+              "Calculer une quantité économique"
+            ]
+          },
+          {
+            "titre": "Le point de vente",
+            "objectifs": ["Organiser un linéaire", "Appliquer les règles du marchandisage"]
+          }
+        ]
+      },
+      {
+        "titre": "Commerce international",
+        "lecons": [
+          {
+            "titre": "Opérations d'import-export",
+            "objectifs": ["Décrire les incoterms", "Identifier les documents de dédouanement"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMMERCE",
+    "nomMatiere": "Techniques commerciales et de vente",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Force de vente",
+        "lecons": [
+          {
+            "titre": "Organisation de la force de vente",
+            "objectifs": ["Définir les secteurs", "Calculer l'effectif nécessaire"]
+          },
+          {
+            "titre": "Rémunération et animation des vendeurs",
+            "objectifs": ["Comparer fixe et commission", "Fixer des objectifs"]
+          }
+        ]
+      },
+      {
+        "titre": "Relation client",
+        "lecons": [
+          {
+            "titre": "Fidélisation et service après-vente",
+            "objectifs": ["Proposer des actions de fidélisation", "Traiter une réclamation"]
+          },
+          {
+            "titre": "Commerce électronique",
+            "objectifs": ["Décrire la vente en ligne", "Intégrer le paiement mobile"]
+          }
+        ]
+      },
+      {
+        "titre": "Étude de cas commerciale",
+        "lecons": [
+          {
+            "titre": "Résolution d'un cas commercial",
+            "objectifs": ["Analyser une situation", "Proposer et chiffrer des solutions"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMPTA",
+    "nomMatiere": "Comptabilité commerciale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Bases comptables",
+        "lecons": [
+          {
+            "titre": "Le bilan et les comptes",
+            "objectifs": ["Présenter un bilan", "Enregistrer une opération"]
+          },
+          {
+            "titre": "Le journal et le grand livre",
+            "objectifs": ["Tenir le journal", "Établir une balance"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMPTA",
+    "nomMatiere": "Comptabilité commerciale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Opérations commerciales",
+        "lecons": [
+          {
+            "titre": "Achats et ventes de marchandises",
+            "objectifs": ["Enregistrer les factures", "Traiter les retours et avoirs"]
+          },
+          {
+            "titre": "TVA et règlements",
+            "objectifs": ["Enregistrer la TVA", "Enregistrer les effets de commerce"]
+          }
+        ]
+      },
+      {
+        "titre": "Stocks",
+        "lecons": [
+          {
+            "titre": "Inventaire des marchandises",
+            "objectifs": ["Calculer la variation de stock", "Valoriser au CMUP"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-COMPTA",
+    "nomMatiere": "Comptabilité commerciale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Fin d'exercice",
+        "lecons": [
+          {
+            "titre": "Amortissements et provisions",
+            "objectifs": ["Calculer une dotation", "Déprécier une créance douteuse"]
+          },
+          {
+            "titre": "Résultat de l'exercice",
+            "objectifs": ["Établir un compte de résultat", "Calculer la marge commerciale"]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion commerciale chiffrée",
+        "lecons": [
+          {
+            "titre": "Seuil de rentabilité",
+            "objectifs": ["Calculer marge sur coût variable et seuil", "Interpréter le point mort"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Introduction au droit",
+        "lecons": [
+          {
+            "titre": "Notion de droit",
+            "objectifs": [
+              "Distinguer droit objectif et droits subjectifs",
+              "Distinguer droit public et privé"
+            ]
+          },
+          {
+            "titre": "Les sources du droit",
+            "objectifs": [
+              "Hiérarchiser Constitution, lois, règlements",
+              "Citer le rôle des traités OHADA"
+            ]
+          },
+          {
+            "titre": "L'organisation judiciaire au Bénin",
+            "objectifs": ["Décrire les juridictions", "Identifier le tribunal compétent"]
+          }
+        ]
+      },
+      {
+        "titre": "Les personnes",
+        "lecons": [
+          {
+            "titre": "Personnes physiques et morales",
+            "objectifs": [
+              "Définir la personnalité juridique",
+              "Citer les attributs de la personnalité"
+            ]
+          },
+          {
+            "titre": "La capacité juridique",
+            "objectifs": ["Distinguer majeurs et mineurs", "Décrire les régimes de protection"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Le contrat",
+        "lecons": [
+          {
+            "titre": "Formation du contrat",
+            "objectifs": [
+              "Énoncer les conditions de validité",
+              "Identifier les vices du consentement"
+            ]
+          },
+          {
+            "titre": "Effets et inexécution du contrat",
+            "objectifs": ["Énoncer la force obligatoire", "Choisir une sanction de l'inexécution"]
+          }
+        ]
+      },
+      {
+        "titre": "La responsabilité civile",
+        "lecons": [
+          {
+            "titre": "Responsabilité délictuelle",
+            "objectifs": ["Identifier faute, dommage, lien de causalité", "Distinguer les régimes"]
+          }
+        ]
+      },
+      {
+        "titre": "Le droit commercial (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le commerçant",
+            "objectifs": [
+              "Définir les actes de commerce",
+              "Énoncer les obligations du commerçant (RCCM)"
+            ]
+          },
+          {
+            "titre": "Le fonds de commerce",
+            "objectifs": ["Identifier ses éléments", "Décrire le bail commercial"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-DROIT",
+    "nomMatiere": "Droit civil, commercial et du travail",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Droit des sociétés (OHADA)",
+        "lecons": [
+          {
+            "titre": "Le contrat de société",
+            "objectifs": ["Énoncer les éléments du contrat", "Décrire la constitution"]
+          },
+          {
+            "titre": "Les formes de sociétés",
+            "objectifs": ["Comparer SARL, SA, SNC", "Choisir une forme adaptée"]
+          }
+        ]
+      },
+      {
+        "titre": "Droit du travail",
+        "lecons": [
+          {
+            "titre": "Le contrat de travail",
+            "objectifs": ["Identifier les éléments du contrat", "Distinguer CDD et CDI"]
+          },
+          {
+            "titre": "Rupture du contrat de travail",
+            "objectifs": ["Distinguer démission et licenciement", "Calculer un préavis"]
+          },
+          {
+            "titre": "Les relations collectives",
+            "objectifs": [
+              "Décrire syndicats et délégués du personnel",
+              "Décrire la sécurité sociale (CNSS)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Les difficultés de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Procédures collectives",
+            "objectifs": [
+              "Distinguer règlement préventif, redressement et liquidation",
+              "Identifier les acteurs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "L'activité économique",
+        "lecons": [
+          {
+            "titre": "Besoins, biens et services",
+            "objectifs": ["Classer les besoins", "Distinguer biens et services"]
+          },
+          {
+            "titre": "Les agents économiques",
+            "objectifs": ["Identifier les agents", "Décrire le circuit économique"]
+          }
+        ]
+      },
+      {
+        "titre": "La production",
+        "lecons": [
+          {
+            "titre": "Facteurs de production",
+            "objectifs": ["Décrire travail, capital, terre", "Calculer une productivité"]
+          },
+          {
+            "titre": "Secteurs d'activité",
+            "objectifs": [
+              "Classer les activités par secteur",
+              "Décrire la place de l'informel au Bénin"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "L'entreprise",
+        "lecons": [
+          {
+            "titre": "Notion d'entreprise",
+            "objectifs": [
+              "Définir l'entreprise",
+              "Classer les entreprises selon la taille et le statut"
+            ]
+          },
+          {
+            "titre": "L'entreprise et son environnement",
+            "objectifs": [
+              "Identifier les partenaires",
+              "Analyser les contraintes de l'environnement"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Monnaie et financement",
+        "lecons": [
+          {
+            "titre": "La monnaie",
+            "objectifs": ["Définir les fonctions de la monnaie", "Décrire la création monétaire"]
+          },
+          {
+            "titre": "Le système bancaire de l'UEMOA",
+            "objectifs": ["Décrire le rôle de la BCEAO", "Citer les établissements de crédit"]
+          },
+          {
+            "titre": "Le financement de l'économie",
+            "objectifs": ["Distinguer financement direct et indirect", "Décrire la BRVM"]
+          }
+        ]
+      },
+      {
+        "titre": "Répartition et consommation",
+        "lecons": [
+          {
+            "titre": "Les revenus",
+            "objectifs": [
+              "Distinguer revenus primaires et de transfert",
+              "Décrire la redistribution"
+            ]
+          },
+          {
+            "titre": "La consommation et l'épargne",
+            "objectifs": [
+              "Calculer une propension à consommer",
+              "Analyser les déterminants de l'épargne"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Gestion de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Les fonctions de l'entreprise",
+            "objectifs": ["Décrire les fonctions de Fayol", "Lire un organigramme"]
+          },
+          {
+            "titre": "La fonction ressources humaines",
+            "objectifs": ["Décrire recrutement et formation", "Analyser la motivation"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-ECO",
+    "nomMatiere": "Économie générale et économie d'entreprise",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Actes uniformes OHADA (droit commercial général, sociétés commerciales, procédures collectives) ; Code du travail du Bénin",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Échanges internationaux",
+        "lecons": [
+          {
+            "titre": "Le commerce international",
+            "objectifs": ["Analyser une balance commerciale", "Calculer un taux de couverture"]
+          },
+          {
+            "titre": "L'intégration régionale",
+            "objectifs": ["Décrire l'UEMOA et la CEDEAO", "Analyser le rôle du franc CFA"]
+          }
+        ]
+      },
+      {
+        "titre": "Croissance et développement",
+        "lecons": [
+          {
+            "titre": "Croissance économique",
+            "objectifs": [
+              "Calculer un taux de croissance du PIB",
+              "Identifier les facteurs de croissance"
+            ]
+          },
+          {
+            "titre": "Développement",
+            "objectifs": ["Distinguer croissance et développement", "Interpréter l'IDH"]
+          }
+        ]
+      },
+      {
+        "titre": "Politiques économiques",
+        "lecons": [
+          {
+            "titre": "L'État et l'économie",
+            "objectifs": [
+              "Décrire politique budgétaire et monétaire",
+              "Analyser le budget de l'État"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Stratégie de l'entreprise",
+        "lecons": [
+          {
+            "titre": "Décision et stratégie",
+            "objectifs": [
+              "Distinguer décisions stratégiques et opérationnelles",
+              "Réaliser un diagnostic interne et externe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-MARKETING",
+    "nomMatiere": "Mercatique (marketing)",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "La démarche mercatique",
+        "lecons": [
+          {
+            "titre": "Concept de mercatique",
+            "objectifs": ["Définir la mercatique", "Distinguer optique produit et optique marché"]
+          },
+          {
+            "titre": "Le marché",
+            "objectifs": ["Analyser l'offre et la demande", "Calculer une part de marché"]
+          }
+        ]
+      },
+      {
+        "titre": "Les études de marché",
+        "lecons": [
+          {
+            "titre": "Études documentaires et enquêtes",
+            "objectifs": [
+              "Construire un questionnaire",
+              "Déterminer un échantillon",
+              "Dépouiller les résultats"
+            ]
+          },
+          {
+            "titre": "Comportement du consommateur",
+            "objectifs": ["Identifier les motivations et freins", "Décrire le processus d'achat"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["G3"],
+    "matiere": "SPE-G3-MARKETING",
+    "nomMatiere": "Mercatique (marketing)",
+    "confiance": "reconstitue",
+    "sources": [
+      "Décret n°2002-097 portant organisation du baccalauréat (séries E, F, G) — https://sgg.gouv.bj/doc/decret-2002-097/download",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Stratégie mercatique",
+        "lecons": [
+          {
+            "titre": "Segmentation, ciblage, positionnement",
+            "objectifs": ["Segmenter un marché", "Choisir une cible", "Formuler un positionnement"]
+          }
+        ]
+      },
+      {
+        "titre": "Le plan de marchéage",
+        "lecons": [
+          {
+            "titre": "Politique de produit",
+            "objectifs": ["Analyser le cycle de vie", "Gérer une gamme"]
+          },
+          {
+            "titre": "Politique de prix",
+            "objectifs": ["Fixer un prix", "Calculer une élasticité-prix"]
+          },
+          {
+            "titre": "Politique de distribution",
+            "objectifs": ["Choisir un canal", "Justifier une stratégie"]
+          },
+          {
+            "titre": "Politique de communication",
+            "objectifs": ["Distinguer publicité et promotion", "Élaborer un plan média"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-ASSAINISSEMENT",
+    "nomMatiere": "Hygiène et assainissement",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Eau et santé",
+        "lecons": [
+          {
+            "titre": "Maladies liées à l'eau",
+            "objectifs": ["Identifier les maladies hydriques", "Proposer des mesures de prévention"]
+          },
+          {
+            "titre": "Hygiène du milieu",
+            "objectifs": ["Décrire les règles d'hygiène", "Identifier les sources de pollution"]
+          }
+        ]
+      },
+      {
+        "titre": "Assainissement individuel",
+        "lecons": [
+          {
+            "titre": "Latrines et fosses",
+            "objectifs": ["Décrire latrine améliorée et fosse septique", "Choisir un dispositif"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-ASSAINISSEMENT",
+    "nomMatiere": "Hygiène et assainissement",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Eaux usées et pluviales",
+        "lecons": [
+          {
+            "titre": "Réseaux d'assainissement",
+            "objectifs": ["Distinguer unitaire et séparatif", "Calculer un débit d'eaux usées"]
+          },
+          {
+            "titre": "Ouvrages annexes",
+            "objectifs": ["Décrire regards et déversoirs", "Placer un ouvrage"]
+          }
+        ]
+      },
+      {
+        "titre": "Déchets solides",
+        "lecons": [
+          {
+            "titre": "Gestion des ordures ménagères",
+            "objectifs": ["Décrire la filière de collecte", "Proposer un tri"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-ASSAINISSEMENT",
+    "nomMatiere": "Hygiène et assainissement",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Assainissement collectif",
+        "lecons": [
+          {
+            "titre": "Dimensionnement d'un collecteur",
+            "objectifs": ["Calculer pente et diamètre", "Vérifier une vitesse d'autocurage"]
+          }
+        ]
+      },
+      {
+        "titre": "Environnement",
+        "lecons": [
+          {
+            "titre": "Étude d'impact",
+            "objectifs": [
+              "Identifier les impacts d'un projet",
+              "Proposer des mesures d'atténuation"
+            ]
+          },
+          {
+            "titre": "Réglementation",
+            "objectifs": [
+              "Citer le cadre réglementaire de l'hygiène publique",
+              "Appliquer une norme de rejet"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SECONDE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-HYDRAULIQUE",
+    "nomMatiere": "Hydraulique générale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Propriétés des fluides",
+        "lecons": [
+          {
+            "titre": "Grandeurs physiques de l'eau",
+            "objectifs": ["Définir masse volumique, viscosité", "Utiliser les unités"]
+          },
+          {
+            "titre": "Hydrostatique",
+            "objectifs": ["Calculer une pression", "Calculer une poussée sur une paroi"]
+          }
+        ]
+      },
+      {
+        "titre": "Hydrodynamique",
+        "lecons": [
+          {
+            "titre": "Débit et continuité",
+            "objectifs": ["Calculer un débit", "Appliquer l'équation de continuité"]
+          },
+          {
+            "titre": "Théorème de Bernoulli",
+            "objectifs": ["Appliquer Bernoulli", "Interpréter une charge hydraulique"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-HYDRAULIQUE",
+    "nomMatiere": "Hydraulique générale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Écoulements en charge",
+        "lecons": [
+          {
+            "titre": "Pertes de charge",
+            "objectifs": [
+              "Calculer pertes de charge linéaires et singulières",
+              "Utiliser un abaque"
+            ]
+          },
+          {
+            "titre": "Pompes",
+            "objectifs": ["Calculer une hauteur manométrique", "Choisir une pompe"]
+          }
+        ]
+      },
+      {
+        "titre": "Écoulements à surface libre",
+        "lecons": [
+          {
+            "titre": "Canaux et caniveaux",
+            "objectifs": ["Appliquer la formule de Manning-Strickler", "Dimensionner une section"]
+          }
+        ]
+      },
+      {
+        "titre": "Hydrologie",
+        "lecons": [
+          {
+            "titre": "Cycle de l'eau et bassin versant",
+            "objectifs": ["Décrire le cycle de l'eau", "Délimiter un bassin versant"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-HYDRAULIQUE",
+    "nomMatiere": "Hydraulique générale",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Adduction d'eau potable",
+        "lecons": [
+          {
+            "titre": "Ressources et captages",
+            "objectifs": ["Décrire forages et captages", "Évaluer un besoin en eau"]
+          },
+          {
+            "titre": "Réseaux de distribution",
+            "objectifs": ["Dimensionner un réseau ramifié", "Dimensionner un château d'eau"]
+          }
+        ]
+      },
+      {
+        "titre": "Hydrologie appliquée",
+        "lecons": [
+          {
+            "titre": "Débits de crue",
+            "objectifs": ["Appliquer la méthode rationnelle", "Interpréter une intensité de pluie"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "PREMIERE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-TRAITEMENT",
+    "nomMatiere": "Traitement et qualité des eaux",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Qualité de l'eau",
+        "lecons": [
+          {
+            "titre": "Paramètres physico-chimiques",
+            "objectifs": [
+              "Mesurer pH, turbidité, conductivité",
+              "Interpréter une norme de potabilité"
+            ]
+          },
+          {
+            "titre": "Paramètres bactériologiques",
+            "objectifs": ["Décrire un indicateur de contamination", "Prélever un échantillon"]
+          }
+        ]
+      },
+      {
+        "titre": "Traitement de l'eau potable",
+        "lecons": [
+          {
+            "titre": "Filière de traitement",
+            "objectifs": [
+              "Décrire coagulation, décantation, filtration",
+              "Doser une désinfection au chlore"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TERMINALE",
+    "series": ["EA"],
+    "matiere": "SPE-EA-TRAITEMENT",
+    "nomMatiere": "Traitement et qualité des eaux",
+    "confiance": "reconstitue",
+    "sources": [
+      "Série EA (eau et assainissement) citée dans les résultats du BAC — https://beninwebtv.bj/benin-mention-tres-bien-au-bac-2021-la-serie-d-caracole-en-tete-infographie/",
+      "Reconstitution : contenus reconstitués d'après les épreuves du BAC technique béninois et les programmes des lycées techniques de la sous-région (UEMOA) — à valider par la Direction de l'enseignement technique (MESTFP)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Épuration des eaux usées",
+        "lecons": [
+          {
+            "titre": "Procédés d'épuration",
+            "objectifs": [
+              "Décrire lagunage et boues activées",
+              "Calculer une charge polluante (DBO5)"
+            ]
+          },
+          {
+            "titre": "Gestion des boues",
+            "objectifs": ["Décrire séchage et valorisation", "Choisir un mode d'élimination"]
+          }
+        ]
+      },
+      {
+        "titre": "Exploitation",
+        "lecons": [
+          {
+            "titre": "Exploitation d'une station",
+            "objectifs": ["Planifier la maintenance", "Tenir un registre d'exploitation"]
+          }
+        ]
+      }
+    ]
+  }
+]

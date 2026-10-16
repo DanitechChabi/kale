@@ -96,6 +96,9 @@ export default function Gabarit() {
             <a href="/verifier" className="hover:text-marque-700">
               Vérifier un document
             </a>
+            <Link to="/educourses" className="hover:text-marque-700">
+              EduCourses
+            </Link>
             <Link to="/duplicata" className="hover:text-marque-700">
               Demander un duplicata
             </Link>

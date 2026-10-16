@@ -150,6 +150,18 @@ enum TypeCours {
   LIEN // autre ressource en ligne
 }
 
+enum ConfianceProgramme {
+  OFFICIEL // texte officiel du ministère consulté
+  RECOUPE // plusieurs sources concordantes (guides, manuels, épreuves)
+  RECONSTITUE // reconstitué à partir des progressions et épreuves, à faire valider
+}
+
+enum StatutAbonnement {
+  EN_ATTENTE
+  ACTIF
+  ECHEC
+}
+
 enum TypeNotification {
   ABSENCE // absence ou retard relevé à l'appel
   BULLETIN // bulletin ou relevé délivré
@@ -397,6 +409,8 @@ model Utilisateur {
   notifications          Notification[]
   coursPublies           Cours[]
   devoirsDonnes          Devoir[]
+  profilsEduCourses      EcProfil[]
+  abonnementsEduCourses  EcAbonnement[]
   actionsAudit           JournalAudit[]
 
   @@index([ecoleId])
@@ -1070,4 +1084,124 @@ model RenduFichier {
   @@unique([renduId, ordre])
   @@index([ecoleId])
   @@map("rendus_fichiers")
+}
+
+// =============================================================================
+// EduCourses : cours en ligne de la 6e à la Terminale, selon le programme national.
+// Catalogue national (sans ecole_id, comme le référentiel) et profils d'apprenants
+// rattachés à un compte (élève, ou enfants d'un parent).
+// =============================================================================
+
+/// Programme d'une discipline pour une classe (et une ou plusieurs séries au second cycle).
+model EcProgramme {
+  id          String             @id @default(uuid()) @db.Uuid
+  /// « SIXIEME|MATH| », « TERMINALE|MATH|C », « SECONDE|SVT|A1+A2+B+C+D »
+  cle         String             @unique @db.VarChar(120)
+  niveau      Niveau
+  series      String[]           @db.VarChar(5)
+  matiereCode String             @map("matiere_code") @db.VarChar(40)
+  nomMatiere  String             @map("nom_matiere") @db.VarChar(150)
+  confiance   ConfianceProgramme
+  sources     Json
+  /// Validé par le ministère : jamais écrasé par le chargement des données
+  estVerifie  Boolean            @default(false) @map("est_verifie")
+  ordre       Int                @default(0) @db.SmallInt
+  majLe       DateTime           @updatedAt @map("maj_le") @db.Timestamptz(3)
+
+  chapitres EcChapitre[]
+
+  @@index([niveau])
+  @@map("ec_programmes")
+}
+
+model EcChapitre {
+  id          String @id @default(uuid()) @db.Uuid
+  programmeId String @map("programme_id") @db.Uuid
+  ordre       Int    @db.SmallInt
+  titre       String @db.VarChar(250)
+
+  programme EcProgramme @relation(fields: [programmeId], references: [id], onDelete: Cascade)
+  lecons    EcLecon[]
+
+  @@unique([programmeId, ordre])
+  @@map("ec_chapitres")
+}
+
+model EcLecon {
+  id          String    @id @default(uuid()) @db.Uuid
+  chapitreId  String    @map("chapitre_id") @db.Uuid
+  ordre       Int       @db.SmallInt
+  titre       String    @db.VarChar(250)
+  objectifs   String[]  @db.VarChar(300)
+  /// Contenu rédigé (vide tant que la leçon n'est pas écrite)
+  duree       Int?      @db.SmallInt
+  contenuHtml String?   @map("contenu_html")
+  /// [{ titre, niveau, enonceHtml, corrigeHtml }]
+  exercices   Json?
+  /// [{ question, choix[], bonne, explication }] — la bonne réponse ne quitte jamais le serveur
+  quiz        Json?
+  /// Empreinte du fichier source, pour ne recharger que les leçons modifiées
+  empreinte   String?   @db.Char(64)
+  redigeeLe   DateTime? @map("redigee_le") @db.Timestamptz(3)
+
+  chapitre     EcChapitre      @relation(fields: [chapitreId], references: [id], onDelete: Cascade)
+  progressions EcProgression[]
+
+  @@unique([chapitreId, ordre])
+  @@map("ec_lecons")
+}
+
+/// Apprenant : l'élève lui-même (profil automatique) ou un enfant suivi par un parent
+/// (même téléphone partagé : un profil par enfant, comme sur une application vidéo).
+model EcProfil {
+  id          String   @id @default(uuid()) @db.Uuid
+  titulaireId String   @map("titulaire_id") @db.Uuid
+  /// Élève EduRelevé correspondant (sa classe donne le niveau et la série)
+  eleveId     String?  @map("eleve_id") @db.Uuid
+  prenom      String   @db.VarChar(100)
+  niveau      Niveau
+  serie       String?  @db.VarChar(5)
+  creeLe      DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  titulaire    Utilisateur     @relation(fields: [titulaireId], references: [id], onDelete: Cascade)
+  progressions EcProgression[]
+
+  @@unique([titulaireId, eleveId])
+  @@index([titulaireId])
+  @@map("ec_profils")
+}
+
+model EcProgression {
+  id            String    @id @default(uuid()) @db.Uuid
+  profilId      String    @map("profil_id") @db.Uuid
+  leconId       String    @map("lecon_id") @db.Uuid
+  termineeLe    DateTime? @map("terminee_le") @db.Timestamptz(3)
+  meilleurScore Int?      @map("meilleur_score") @db.SmallInt
+  dernierScore  Int?      @map("dernier_score") @db.SmallInt
+  tentatives    Int       @default(0) @db.SmallInt
+  majLe         DateTime  @updatedAt @map("maj_le") @db.Timestamptz(3)
+
+  profil EcProfil @relation(fields: [profilId], references: [id], onDelete: Cascade)
+  lecon  EcLecon  @relation(fields: [leconId], references: [id], onDelete: Cascade)
+
+  @@unique([profilId, leconId])
+  @@map("ec_progressions")
+}
+
+/// Abonnement payant (Mobile Money), prévu mais inactif tant que EDUCOURSES_PAYANT=false.
+model EcAbonnement {
+  id          String           @id @default(uuid()) @db.Uuid
+  titulaireId String           @map("titulaire_id") @db.Uuid
+  statut      StatutAbonnement @default(EN_ATTENTE)
+  debut       DateTime?        @db.Timestamptz(3)
+  fin         DateTime?        @db.Timestamptz(3)
+  montantFcfa Int              @map("montant_fcfa")
+  fournisseur String           @db.VarChar(30)
+  reference   String           @unique @db.VarChar(100)
+  creeLe      DateTime         @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  titulaire Utilisateur @relation(fields: [titulaireId], references: [id], onDelete: Restrict)
+
+  @@index([titulaireId])
+  @@map("ec_abonnements")
 }

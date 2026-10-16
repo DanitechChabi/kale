@@ -18,11 +18,13 @@ import {
 import { ErreurApi } from '../middlewares/erreurs.js';
 import {
   limiterActivation,
+  limiterCompteEduCourses,
   limiterDuplicata,
   limiterSuivi,
   limiterVerification,
 } from '../middlewares/limites.js';
 import { activerCompteParent } from '../contexts/suivi/activationParent.js';
+import { ouvrirCompte } from '../contexts/educourses/serviceEduCourses.js';
 import { schemaMotDePasse } from '../utils/motDePasse.js';
 import { valider } from '../middlewares/valider.js';
 import { schemaEmail, schemaTelephone } from '../utils/identifiants.js';
@@ -62,6 +64,7 @@ export function creerRouteurPublic({
   limiteVerification = config.LIMITE_VERIFICATION,
   limiteDuplicata = config.LIMITE_DUPLICATA,
   limiteActivation = config.LIMITE_ACTIVATION,
+  limiteCompteEduCourses = config.LIMITE_INSCRIPTION_EDUCOURSES,
 } = {}) {
   const routeur = Router();
   const verification = limiterVerification(limiteVerification);
@@ -183,6 +186,24 @@ export function creerRouteurPublic({
     }),
     async (req, res) => {
       res.status(201).json(await activerCompteParent(req.valide.body, { adresseIp: req.ip }));
+    },
+  );
+
+  // --- Compte EduCourses (parent sans enfant inscrit sur EduRelevé) -------------------
+
+  routeur.post(
+    '/educourses/compte',
+    limiterCompteEduCourses(limiteCompteEduCourses),
+    valider({
+      body: z.object({
+        nom: texte(100),
+        prenoms: texte(150),
+        telephone: schemaTelephone,
+        motDePasse: schemaMotDePasse,
+      }),
+    }),
+    async (req, res) => {
+      res.status(201).json(await ouvrirCompte(req.valide.body));
     },
   );
 

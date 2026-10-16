@@ -51,6 +51,11 @@ const schemaEnv = z
     LIMITE_VERIFICATION: z.coerce.number().int().positive().default(60),
     // Demandes de duplicata par adresse IP et par heure
     LIMITE_DUPLICATA: z.coerce.number().int().positive().default(5),
+    // EduCourses : gratuit tant que « false » ; à « true », seule la première leçon de
+    // chaque chapitre reste libre sans abonnement actif
+    EDUCOURSES_PAYANT: z.stringbool().default(false),
+    // Ouvertures de compte EduCourses par adresse IP et par heure
+    LIMITE_INSCRIPTION_EDUCOURSES: z.coerce.number().int().positive().default(5),
   })
   .refine((env) => env.JWT_ACCESS_SECRET !== env.JWT_REFRESH_SECRET, {
     message: 'Les secrets JWT d’accès et de rafraîchissement doivent être différents',

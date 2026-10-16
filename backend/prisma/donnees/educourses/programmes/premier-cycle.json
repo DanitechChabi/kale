@@ -1,0 +1,2799 @@
+[
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "Épreuves de français du BEPC béninois (epreuvesetcorriges.com)",
+      "Reconstitution à partir de l'organisation APC béninoise (situations d'apprentissage par type de texte : lecture, expression orale et écrite, outils de la langue)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le texte narratif : le conte",
+        "lecons": [
+          {
+            "titre": "Lecture : le conte africain (structure et personnages)",
+            "objectifs": [
+              "Identifier la situation initiale, les péripéties et la situation finale",
+              "Dégager la morale d'un conte"
+            ]
+          },
+          {
+            "titre": "Grammaire : la phrase et ses types",
+            "objectifs": [
+              "Distinguer phrase déclarative, interrogative, exclamative, impérative",
+              "Ponctuer correctement une phrase"
+            ]
+          },
+          {
+            "titre": "Conjugaison : le présent de l'indicatif",
+            "objectifs": [
+              "Conjuguer les verbes des trois groupes au présent",
+              "Employer le présent de narration"
+            ]
+          },
+          {
+            "titre": "Orthographe : l'accord du verbe avec le sujet",
+            "objectifs": ["Identifier le sujet du verbe", "Accorder le verbe avec son sujet"]
+          },
+          {
+            "titre": "Expression orale et écrite : raconter un conte",
+            "objectifs": [
+              "Raconter oralement un conte de son terroir",
+              "Rédiger la suite d'un conte"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Le texte descriptif",
+        "lecons": [
+          {
+            "titre": "Lecture : la description d'un lieu",
+            "objectifs": [
+              "Repérer les éléments décrits et l'ordre de la description",
+              "Relever les expansions du nom"
+            ]
+          },
+          {
+            "titre": "Grammaire : le groupe nominal et l'adjectif qualificatif",
+            "objectifs": [
+              "Identifier déterminant, nom et adjectif",
+              "Accorder l'adjectif qualificatif"
+            ]
+          },
+          {
+            "titre": "Conjugaison : l'imparfait de l'indicatif",
+            "objectifs": ["Conjuguer à l'imparfait", "Employer l'imparfait dans une description"]
+          },
+          {
+            "titre": "Vocabulaire : les mots de la perception",
+            "objectifs": ["Enrichir une description par les cinq sens", "Utiliser des synonymes"]
+          },
+          {
+            "titre": "Expression écrite : décrire un lieu familier",
+            "objectifs": ["Organiser une description", "Rédiger un paragraphe descriptif"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : La lettre et la communication",
+        "lecons": [
+          {
+            "titre": "Lecture : la lettre amicale",
+            "objectifs": [
+              "Identifier les éléments de la lettre",
+              "Repérer l'émetteur, le destinataire et l'objet"
+            ]
+          },
+          {
+            "titre": "Grammaire : les pronoms personnels",
+            "objectifs": [
+              "Identifier les pronoms personnels",
+              "Remplacer un groupe nominal par un pronom"
+            ]
+          },
+          {
+            "titre": "Conjugaison : le passé composé",
+            "objectifs": [
+              "Former le passé composé avec avoir et être",
+              "Accorder le participe passé avec être"
+            ]
+          },
+          {
+            "titre": "Expression écrite : écrire une lettre amicale",
+            "objectifs": [
+              "Respecter la présentation d'une lettre",
+              "Rédiger une lettre pour donner des nouvelles"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Canevas des épreuves d'anglais du BEPC (ressource AUF) : https://apprendre.auf.org/wp-content/uploads/2021/08/27-Canevas-des-épreuves-danglais-BEPC.pdf",
+      "Manuels d'anglais en usage au premier cycle béninois (ex. « English for All »)",
+      "Reconstitution à partir des thèmes du BEPC (reading comprehension, language in use, writing)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning Situation 1 : Greetings and introductions",
+        "lecons": [
+          {
+            "titre": "Greetings and leave-taking",
+            "objectifs": ["Greet and respond to greetings", "Use formal and informal greetings"]
+          },
+          {
+            "titre": "Introducing oneself and others",
+            "objectifs": [
+              "Give one's name, age and nationality",
+              "Use the verb to be in the present"
+            ]
+          },
+          {
+            "titre": "The alphabet and numbers",
+            "objectifs": ["Spell names", "Count from 1 to 100"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 2 : My family and my home",
+        "lecons": [
+          {
+            "titre": "Family members",
+            "objectifs": ["Name family members", "Use possessive adjectives"]
+          },
+          {
+            "titre": "My house",
+            "objectifs": ["Describe the rooms of a house", "Use there is / there are"]
+          },
+          {
+            "titre": "Have got",
+            "objectifs": ["Talk about possessions", "Ask and answer questions with have got"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 3 : School life",
+        "lecons": [
+          {
+            "titre": "Classroom objects and instructions",
+            "objectifs": [
+              "Name classroom objects",
+              "Understand and give classroom instructions (imperative)"
+            ]
+          },
+          {
+            "titre": "Days, months and timetable",
+            "objectifs": ["Tell the time", "Talk about a school timetable"]
+          },
+          {
+            "titre": "Daily activities",
+            "objectifs": ["Describe a daily routine", "Use the simple present"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "MATH",
+    "confiance": "reconstitue",
+    "sources": [
+      "Guide du programme de mathématiques, classe de 5e (Bénin, MESTFP/DIP) — SA n°1 Configurations de l'espace, SA n°2 Configurations du plan, SA n°3 Applications du plan, SA n°4 Organisation des données (copies Scribd/PDFCoffee : https://pdfcoffee.com/guide-du-programme-5e-benin-pdf-free.html)",
+      "Rapport EDiPrE, Université d'Abomey-Calavi / AUF (2021) — SA n°1 Configurations du plan (vecteurs, distance d'un point à une droite) : https://apprendre.auf.org/wp-content/uploads/2021/05/AAP1-03-Benin-Universite-dAbomey-Calavi-Rapport-general-final-de-recherche-.pdf",
+      "Fascicules « New Activity » (Acobries) 4e et 5e, ordre des leçons par SA : https://www.fomesoutra.com/livres/fascicules-du-2nd-cycle-6e-tle/14180-new-activity-maths-5eme-version-2022/file",
+      "Épreuves de mathématiques du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Solides usuels : cube, pavé droit, cylindre, prisme droit",
+            "objectifs": [
+              "Reconnaître et nommer les solides usuels",
+              "Identifier faces, arêtes et sommets d'un solide"
+            ]
+          },
+          {
+            "titre": "Représentation du cube et du pavé droit (perspective cavalière)",
+            "objectifs": [
+              "Représenter un pavé droit en perspective cavalière",
+              "Lire une représentation en perspective"
+            ]
+          },
+          {
+            "titre": "Patrons du cube et du pavé droit",
+            "objectifs": [
+              "Construire un patron de cube ou de pavé droit",
+              "Reconnaître si une figure est un patron"
+            ]
+          },
+          {
+            "titre": "Volume du cube et du pavé droit",
+            "objectifs": [
+              "Calculer le volume d'un pavé droit",
+              "Convertir les unités de volume et de capacité"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Nombres entiers naturels et nombres décimaux",
+            "objectifs": [
+              "Lire, écrire et comparer des nombres décimaux",
+              "Ranger et encadrer des nombres décimaux"
+            ]
+          },
+          {
+            "titre": "Opérations sur les nombres décimaux",
+            "objectifs": [
+              "Effectuer les quatre opérations sur les décimaux",
+              "Utiliser les priorités opératoires"
+            ]
+          },
+          {
+            "titre": "Droites, demi-droites et segments",
+            "objectifs": [
+              "Utiliser le vocabulaire et les notations des droites et segments",
+              "Tracer à la règle des droites et segments"
+            ]
+          },
+          {
+            "titre": "Droites perpendiculaires et droites parallèles",
+            "objectifs": [
+              "Construire des droites perpendiculaires et parallèles à l'équerre",
+              "Utiliser les propriétés de parallélisme et de perpendicularité"
+            ]
+          },
+          {
+            "titre": "Le cercle",
+            "objectifs": [
+              "Utiliser le vocabulaire du cercle (centre, rayon, corde, diamètre)",
+              "Construire un cercle et des arcs au compas"
+            ]
+          },
+          {
+            "titre": "Angles : mesure et construction",
+            "objectifs": [
+              "Mesurer un angle au rapporteur",
+              "Construire un angle de mesure donnée",
+              "Distinguer angles aigu, droit, obtus"
+            ]
+          },
+          {
+            "titre": "Triangles et quadrilatères particuliers",
+            "objectifs": [
+              "Reconnaître triangles isocèle, équilatéral, rectangle",
+              "Construire rectangle, carré et losange"
+            ]
+          },
+          {
+            "titre": "Fractions",
+            "objectifs": [
+              "Écrire une fraction et l'utiliser comme partage",
+              "Comparer et simplifier des fractions simples"
+            ]
+          },
+          {
+            "titre": "Périmètres et aires",
+            "objectifs": [
+              "Calculer le périmètre et l'aire du carré, du rectangle, du triangle",
+              "Calculer la longueur et l'aire d'un disque"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Applications du plan",
+        "lecons": [
+          {
+            "titre": "Médiatrice d'un segment",
+            "objectifs": [
+              "Construire la médiatrice d'un segment",
+              "Utiliser la propriété d'équidistance"
+            ]
+          },
+          {
+            "titre": "Symétrie orthogonale (par rapport à une droite)",
+            "objectifs": [
+              "Construire le symétrique d'un point, d'une figure",
+              "Utiliser la conservation des distances et des angles"
+            ]
+          },
+          {
+            "titre": "Axes de symétrie des figures usuelles",
+            "objectifs": [
+              "Déterminer les axes de symétrie d'une figure",
+              "Construire la bissectrice d'un angle"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Proportionnalité",
+            "objectifs": [
+              "Reconnaître un tableau de proportionnalité",
+              "Calculer une quatrième proportionnelle"
+            ]
+          },
+          {
+            "titre": "Pourcentages et échelles",
+            "objectifs": ["Appliquer un pourcentage", "Utiliser l'échelle d'une carte ou d'un plan"]
+          },
+          {
+            "titre": "Tableaux et diagrammes",
+            "objectifs": [
+              "Lire et compléter un tableau de données",
+              "Construire un diagramme en bâtons"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme d'études révisé, relu : classe de 6e, PCT (MESTFP/DIP) — S.A.1 Le courant électrique, S.A.2 Fabrication d'une lampe de poche, S.A.3 Quelques combustions vives, annexe S.A.6 fabrication d'un tam-tam : https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-6c3a8me-spct-relu-compilc3a9.pdf"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le courant électrique",
+        "lecons": [
+          {
+            "titre": "Sources de courant électrique et dangers du courant",
+            "objectifs": [
+              "Citer des générateurs usuels (pile, batterie, secteur SBEE)",
+              "Énoncer des règles de sécurité électrique"
+            ]
+          },
+          {
+            "titre": "Le circuit électrique simple",
+            "objectifs": [
+              "Réaliser un circuit simple pile-lampe-interrupteur",
+              "Schématiser un circuit avec les symboles normalisés"
+            ]
+          },
+          {
+            "titre": "Conducteurs et isolants",
+            "objectifs": [
+              "Classer des matériaux en conducteurs et isolants",
+              "Expliquer le rôle d'un isolant dans la sécurité"
+            ]
+          },
+          {
+            "titre": "Circuits en série et en dérivation",
+            "objectifs": [
+              "Réaliser un montage en série et en dérivation",
+              "Comparer l'éclat des lampes dans les deux montages"
+            ]
+          },
+          {
+            "titre": "Le court-circuit",
+            "objectifs": [
+              "Identifier un court-circuit dans un montage",
+              "Expliquer le rôle d'un fusible"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Fabrication d'une lampe de poche",
+        "lecons": [
+          {
+            "titre": "Analyse d'une lampe de poche",
+            "objectifs": [
+              "Identifier les éléments d'une lampe de poche",
+              "Décrire le rôle de chaque élément"
+            ]
+          },
+          {
+            "titre": "Démarche technologique et réalisation",
+            "objectifs": [
+              "Établir le cahier des charges et la liste du matériel",
+              "Fabriquer et tester une lampe de poche"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Quelques combustions vives",
+        "lecons": [
+          {
+            "titre": "La combustion de la bougie",
+            "objectifs": [
+              "Décrire les parties de la flamme",
+              "Identifier les corps formés (eau, dioxyde de carbone)"
+            ]
+          },
+          {
+            "titre": "L'air et sa composition",
+            "objectifs": [
+              "Citer les principaux constituants de l'air",
+              "Mettre en évidence le rôle du dioxygène dans une combustion"
+            ]
+          },
+          {
+            "titre": "Combustion du bois de chauffe, du charbon et du pétrole",
+            "objectifs": [
+              "Identifier combustible et comburant",
+              "Distinguer combustion complète et incomplète"
+            ]
+          },
+          {
+            "titre": "Dangers des combustions et prévention des incendies",
+            "objectifs": [
+              "Citer les dangers du monoxyde de carbone",
+              "Énoncer les règles de prévention et d'extinction d'un feu"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Mesures de grandeurs physiques (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Longueurs et surfaces",
+            "objectifs": [
+              "Mesurer une longueur avec l'instrument adapté",
+              "Exprimer un résultat dans l'unité convenable"
+            ]
+          },
+          {
+            "titre": "Volumes des liquides et des solides",
+            "objectifs": [
+              "Mesurer un volume à l'éprouvette graduée",
+              "Déterminer le volume d'un solide par déplacement de liquide"
+            ]
+          },
+          {
+            "titre": "Masse des corps",
+            "objectifs": ["Mesurer une masse à la balance", "Distinguer masse et volume"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : La lumière et les objets (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Sources de lumière et corps éclairés",
+            "objectifs": [
+              "Distinguer sources primaires et objets diffusants",
+              "Classer des corps en transparents, translucides, opaques"
+            ]
+          },
+          {
+            "titre": "Propagation rectiligne de la lumière ; ombres",
+            "objectifs": [
+              "Mettre en évidence la propagation rectiligne",
+              "Expliquer la formation de l'ombre propre et de l'ombre portée"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 6 : Fabrication d'un tam-tam",
+        "lecons": [
+          {
+            "titre": "Production et propagation du son",
+            "objectifs": [
+              "Montrer qu'un son est produit par une vibration",
+              "Montrer que le son a besoin d'un milieu matériel pour se propager"
+            ]
+          },
+          {
+            "titre": "Réalisation d'un tam-tam selon la démarche technologique",
+            "objectifs": ["Choisir les matériaux d'un tam-tam", "Fabriquer et accorder un tam-tam"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Étude EDiPrE, SVT au Bénin (AUF, 2021) : https://apprendre.auf.org/wp-content/uploads/2021/01/Etude-des-pratiques-de-classe-dans-le-secondaire-au-Benin-en-sciences-et-mathematiques.pdf",
+      "Épreuves de SVT du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : L'environnement et les êtres vivants",
+        "lecons": [
+          {
+            "titre": "Les composantes de l'environnement",
+            "objectifs": [
+              "Distinguer êtres vivants et éléments non vivants",
+              "Décrire un milieu de vie proche (école, quartier)"
+            ]
+          },
+          {
+            "titre": "Caractéristiques des êtres vivants",
+            "objectifs": [
+              "Citer les caractères communs aux êtres vivants",
+              "Observer une cellule au microscope"
+            ]
+          },
+          {
+            "titre": "Classification des êtres vivants",
+            "objectifs": [
+              "Classer des êtres vivants selon des critères observables",
+              "Utiliser une clé de détermination simple"
+            ]
+          },
+          {
+            "titre": "Relations alimentaires dans un milieu",
+            "objectifs": [
+              "Construire une chaîne alimentaire",
+              "Distinguer producteurs et consommateurs"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : La plante à fleurs et sa vie",
+        "lecons": [
+          {
+            "titre": "Organisation d'une plante à fleurs",
+            "objectifs": [
+              "Identifier racine, tige, feuilles, fleurs",
+              "Schématiser une plante à fleurs"
+            ]
+          },
+          {
+            "titre": "La graine et la germination",
+            "objectifs": [
+              "Décrire les parties d'une graine",
+              "Identifier les conditions de la germination"
+            ]
+          },
+          {
+            "titre": "Les besoins nutritifs de la plante verte",
+            "objectifs": [
+              "Mettre en évidence l'absorption d'eau par les racines",
+              "Montrer la nécessité de la lumière (photosynthèse, initiation)"
+            ]
+          },
+          {
+            "titre": "Multiplication végétative et pratiques culturales",
+            "objectifs": [
+              "Citer des modes de multiplication végétative (bouturage, marcottage)",
+              "Relier ces techniques à l'agriculture au Bénin"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : L'homme et son alimentation",
+        "lecons": [
+          {
+            "titre": "Les aliments et leur rôle",
+            "objectifs": [
+              "Classer les aliments en groupes",
+              "Composer une ration équilibrée avec des produits locaux"
+            ]
+          },
+          {
+            "titre": "Hygiène alimentaire et maladies nutritionnelles",
+            "objectifs": [
+              "Citer des maladies liées à une mauvaise alimentation (kwashiorkor, carences)",
+              "Proposer des règles d'hygiène alimentaire"
+            ]
+          },
+          {
+            "titre": "Hygiène corporelle et santé",
+            "objectifs": [
+              "Énoncer des règles d'hygiène corporelle",
+              "Expliquer la prévention des maladies liées au manque d'hygiène"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Les roches et le sol (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Quelques roches du Bénin",
+            "objectifs": [
+              "Identifier des roches usuelles (latérite, sable, argile, granite)",
+              "Décrire leurs propriétés et leurs usages"
+            ]
+          },
+          {
+            "titre": "Le sol : constituants",
+            "objectifs": [
+              "Mettre en évidence les constituants du sol",
+              "Distinguer sol sableux, argileux et humifère"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "SIXIEME",
+    "series": null,
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » : https://www.researchgate.net/publication/390030953",
+      "Structure de l'épreuve d'Histoire-Géographie au BEPC (Bénin) : https://www.fomesoutra.com/bepc/sujets-d-histoire-et-geographie-3eme/4956-structure-de-l-evaluation-des-apprentissages-de-l-epreuve-d-histoire-geographie-au-bepc"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 (Histoire) : Les origines de l'humanité et les sources de l'histoire",
+        "lecons": [
+          {
+            "titre": "L'histoire et ses sources",
+            "objectifs": [
+              "Distinguer sources écrites, orales et archéologiques",
+              "Situer un fait sur une frise chronologique"
+            ]
+          },
+          {
+            "titre": "La Préhistoire : apparition et évolution de l'homme",
+            "objectifs": [
+              "Décrire les étapes de l'hominisation en Afrique",
+              "Distinguer Paléolithique et Néolithique"
+            ]
+          },
+          {
+            "titre": "La révolution néolithique",
+            "objectifs": [
+              "Expliquer les débuts de l'agriculture et de l'élevage",
+              "Décrire la sédentarisation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 (Histoire) : Les premières civilisations",
+        "lecons": [
+          {
+            "titre": "L'Égypte pharaonique",
+            "objectifs": [
+              "Expliquer le rôle du Nil",
+              "Décrire l'organisation de la société égyptienne"
+            ]
+          },
+          {
+            "titre": "Les civilisations anciennes d'Afrique (Nok, Koush, Axoum)",
+            "objectifs": [
+              "Situer ces civilisations sur une carte",
+              "Citer leurs apports (fer, art, commerce)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 (Géographie) : La Terre, planète des hommes",
+        "lecons": [
+          {
+            "titre": "La Terre dans le système solaire",
+            "objectifs": [
+              "Situer la Terre dans le système solaire",
+              "Expliquer l'alternance jour-nuit et les saisons"
+            ]
+          },
+          {
+            "titre": "La représentation de la Terre : globe, carte, échelle",
+            "objectifs": [
+              "Lire une carte (légende, orientation, échelle)",
+              "Calculer une distance réelle à partir de l'échelle"
+            ]
+          },
+          {
+            "titre": "Repérage : latitude et longitude",
+            "objectifs": [
+              "Définir latitude et longitude",
+              "Localiser un lieu par ses coordonnées géographiques"
+            ]
+          },
+          {
+            "titre": "Les grands ensembles du relief et les océans",
+            "objectifs": ["Nommer continents et océans", "Distinguer plaine, plateau, montagne"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 (Géographie) : Les éléments du climat et le milieu local",
+        "lecons": [
+          {
+            "titre": "Les éléments du climat",
+            "objectifs": [
+              "Mesurer température et pluviométrie",
+              "Construire un diagramme ombrothermique"
+            ]
+          },
+          {
+            "titre": "Mon milieu de vie : la commune",
+            "objectifs": [
+              "Décrire le milieu physique et humain de sa commune",
+              "Réaliser un croquis simple"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "Épreuves de français du BEPC béninois (epreuvesetcorriges.com)",
+      "Reconstitution à partir de l'organisation APC béninoise (situations d'apprentissage par type de texte : lecture, expression orale et écrite, outils de la langue)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le récit d'aventures",
+        "lecons": [
+          {
+            "titre": "Lecture : le récit d'aventures (extraits d'œuvres africaines)",
+            "objectifs": ["Identifier le schéma narratif", "Caractériser le héros"]
+          },
+          {
+            "titre": "Grammaire : les compléments du verbe (COD, COI)",
+            "objectifs": [
+              "Identifier COD et COI",
+              "Distinguer compléments essentiels et circonstanciels"
+            ]
+          },
+          {
+            "titre": "Conjugaison : le passé simple",
+            "objectifs": [
+              "Conjuguer au passé simple",
+              "Distinguer passé simple et imparfait dans un récit"
+            ]
+          },
+          {
+            "titre": "Orthographe : l'accord du participe passé avec avoir",
+            "objectifs": ["Repérer le COD placé avant", "Accorder le participe passé"]
+          },
+          {
+            "titre": "Expression écrite : rédiger un récit d'aventures",
+            "objectifs": ["Respecter le schéma narratif", "Employer les temps du récit"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Le portrait",
+        "lecons": [
+          {
+            "titre": "Lecture : le portrait physique et moral",
+            "objectifs": [
+              "Distinguer traits physiques et traits moraux",
+              "Identifier le point de vue du narrateur"
+            ]
+          },
+          {
+            "titre": "Grammaire : les expansions du nom (complément du nom, proposition relative)",
+            "objectifs": [
+              "Identifier les expansions du nom",
+              "Employer les pronoms relatifs simples"
+            ]
+          },
+          {
+            "titre": "Vocabulaire : comparaison et métaphore",
+            "objectifs": ["Identifier une comparaison", "Employer des images dans un portrait"]
+          },
+          {
+            "titre": "Expression écrite : faire le portrait d'une personne",
+            "objectifs": ["Organiser un portrait", "Rédiger un portrait mêlant physique et moral"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Le dialogue et le texte théâtral",
+        "lecons": [
+          {
+            "titre": "Lecture : le dialogue dans le récit et au théâtre",
+            "objectifs": ["Repérer les marques du dialogue", "Distinguer répliques et didascalies"]
+          },
+          {
+            "titre": "Grammaire : discours direct et discours indirect",
+            "objectifs": ["Identifier le discours direct", "Transposer du direct à l'indirect"]
+          },
+          {
+            "titre": "Conjugaison : le futur simple et le conditionnel présent",
+            "objectifs": [
+              "Conjuguer au futur et au conditionnel",
+              "Employer le conditionnel de politesse"
+            ]
+          },
+          {
+            "titre": "Expression orale : jouer une saynète",
+            "objectifs": ["Mémoriser et dire un texte", "Adapter la voix et le geste"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Canevas des épreuves d'anglais du BEPC (ressource AUF) : https://apprendre.auf.org/wp-content/uploads/2021/08/27-Canevas-des-épreuves-danglais-BEPC.pdf",
+      "Manuels d'anglais en usage au premier cycle béninois (ex. « English for All »)",
+      "Reconstitution à partir des thèmes du BEPC (reading comprehension, language in use, writing)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning Situation 1 : Food and health",
+        "lecons": [
+          {
+            "titre": "Food and drinks",
+            "objectifs": [
+              "Name local food and drinks",
+              "Use countable and uncountable nouns (some, any)"
+            ]
+          },
+          {
+            "titre": "At the market",
+            "objectifs": ["Ask for prices", "Use how much / how many"]
+          },
+          {
+            "titre": "Health and hygiene",
+            "objectifs": ["Describe common illnesses", "Give advice with should"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 2 : Town and village life",
+        "lecons": [
+          {
+            "titre": "Places in town",
+            "objectifs": ["Name places in a town", "Ask for and give directions"]
+          },
+          {
+            "titre": "Present continuous",
+            "objectifs": [
+              "Describe ongoing actions",
+              "Contrast simple present and present continuous"
+            ]
+          },
+          {
+            "titre": "Jobs",
+            "objectifs": ["Name common jobs", "Describe what people do at work"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 3 : Leisure and past events",
+        "lecons": [
+          {
+            "titre": "Hobbies and sports",
+            "objectifs": ["Talk about likes and dislikes", "Use like / love / hate + -ing"]
+          },
+          {
+            "titre": "The simple past",
+            "objectifs": [
+              "Form the simple past of regular and irregular verbs",
+              "Narrate a past event"
+            ]
+          },
+          {
+            "titre": "Writing a short letter",
+            "objectifs": [
+              "Write a short letter to a friend",
+              "Use appropriate opening and closing formulae"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de mathématiques, classe de 5e (Bénin, MESTFP/DIP) — SA n°1 Configurations de l'espace, SA n°2 Configurations du plan, SA n°3 Applications du plan, SA n°4 Organisation des données (copies Scribd/PDFCoffee : https://pdfcoffee.com/guide-du-programme-5e-benin-pdf-free.html)",
+      "Rapport EDiPrE, Université d'Abomey-Calavi / AUF (2021) — SA n°1 Configurations du plan (vecteurs, distance d'un point à une droite) : https://apprendre.auf.org/wp-content/uploads/2021/05/AAP1-03-Benin-Universite-dAbomey-Calavi-Rapport-general-final-de-recherche-.pdf",
+      "Fascicules « New Activity » (Acobries) 4e et 5e, ordre des leçons par SA : https://www.fomesoutra.com/livres/fascicules-du-2nd-cycle-6e-tle/14180-new-activity-maths-5eme-version-2022/file",
+      "Épreuves de mathématiques du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Prisme droit et cylindre de révolution",
+            "objectifs": [
+              "Décrire un prisme droit et un cylindre",
+              "Représenter ces solides en perspective cavalière"
+            ]
+          },
+          {
+            "titre": "Patrons du prisme droit et du cylindre",
+            "objectifs": [
+              "Construire le patron d'un prisme droit ou d'un cylindre",
+              "Calculer l'aire latérale et l'aire totale"
+            ]
+          },
+          {
+            "titre": "Volume du prisme droit et du cylindre",
+            "objectifs": [
+              "Calculer le volume d'un prisme droit et d'un cylindre",
+              "Effectuer des conversions d'unités"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Nombres décimaux relatifs",
+            "objectifs": [
+              "Repérer un point sur une droite graduée",
+              "Comparer et ranger des décimaux relatifs",
+              "Additionner et soustraire des décimaux relatifs"
+            ]
+          },
+          {
+            "titre": "Multiplication et division des décimaux relatifs",
+            "objectifs": ["Appliquer la règle des signes", "Calculer une expression avec priorités"]
+          },
+          {
+            "titre": "Fractions : opérations",
+            "objectifs": ["Additionner et soustraire des fractions", "Multiplier des fractions"]
+          },
+          {
+            "titre": "Repérage dans le plan",
+            "objectifs": [
+              "Placer un point de coordonnées données",
+              "Lire les coordonnées d'un point"
+            ]
+          },
+          {
+            "titre": "Angles : angles adjacents, complémentaires, supplémentaires, opposés par le sommet",
+            "objectifs": [
+              "Identifier les couples d'angles particuliers",
+              "Calculer des mesures d'angles"
+            ]
+          },
+          {
+            "titre": "Droites parallèles et sécante : angles alternes-internes, correspondants",
+            "objectifs": [
+              "Reconnaître angles alternes-internes et correspondants",
+              "Utiliser leurs propriétés pour démontrer un parallélisme"
+            ]
+          },
+          {
+            "titre": "Triangles : somme des angles, construction, inégalité triangulaire",
+            "objectifs": [
+              "Utiliser la somme des angles d'un triangle",
+              "Construire un triangle connaissant trois éléments"
+            ]
+          },
+          {
+            "titre": "Droites remarquables du triangle",
+            "objectifs": [
+              "Construire hauteurs, médiatrices, médianes, bissectrices",
+              "Construire le cercle circonscrit"
+            ]
+          },
+          {
+            "titre": "Parallélogrammes et quadrilatères particuliers",
+            "objectifs": [
+              "Utiliser les propriétés du parallélogramme",
+              "Reconnaître rectangle, losange, carré par leurs propriétés"
+            ]
+          },
+          {
+            "titre": "Aires du parallélogramme et du trapèze",
+            "objectifs": ["Calculer l'aire d'un parallélogramme", "Calculer l'aire d'un trapèze"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Applications du plan",
+        "lecons": [
+          {
+            "titre": "Symétrie centrale",
+            "objectifs": [
+              "Construire le symétrique d'un point et d'une figure par rapport à un point",
+              "Utiliser les propriétés de conservation"
+            ]
+          },
+          {
+            "titre": "Centre de symétrie d'une figure",
+            "objectifs": [
+              "Reconnaître une figure ayant un centre de symétrie",
+              "Relier symétrie centrale et parallélogramme"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Proportionnalité et pourcentages",
+            "objectifs": [
+              "Résoudre un problème de proportionnalité",
+              "Calculer un pourcentage d'augmentation ou de réduction"
+            ]
+          },
+          {
+            "titre": "Statistique : effectifs et fréquences",
+            "objectifs": ["Dépouiller une série statistique", "Calculer effectifs et fréquences"]
+          },
+          {
+            "titre": "Diagrammes statistiques",
+            "objectifs": [
+              "Construire un diagramme en bâtons ou circulaire",
+              "Interpréter un diagramme"
+            ]
+          },
+          {
+            "titre": "Calcul littéral et équations simples",
+            "objectifs": [
+              "Calculer la valeur d'une expression littérale",
+              "Résoudre une équation du type a + x = b ou ax = b"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "PCT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Guide du programme d'études par compétences révisé et relu, classe de 5e, PCT (août 2014) : https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-5c3a8me-spct_-aoc3bbt-2014.pdf",
+      "Programme PCT 5e certifié 2020 (copie Scribd) : https://www.scribd.com/document/663210434/PCT-PROG-5eme-CERTIFIE-2020-Version-finale"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Circuits électriques et sécurité",
+        "lecons": [
+          {
+            "titre": "Générateurs et récepteurs ; sens conventionnel du courant",
+            "objectifs": [
+              "Identifier générateur et récepteurs",
+              "Indiquer le sens conventionnel du courant"
+            ]
+          },
+          {
+            "titre": "Court-circuit d'un générateur et d'une lampe",
+            "objectifs": [
+              "Mettre en évidence l'échauffement en court-circuit (laine de fer)",
+              "Expliquer le risque d'incendie et le rôle du fusible"
+            ]
+          },
+          {
+            "titre": "Diodes et électroaimant",
+            "objectifs": [
+              "Utiliser une diode pour repérer le sens du courant",
+              "Mettre en évidence l'effet magnétique du courant"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : L'eau et les mélanges",
+        "lecons": [
+          {
+            "titre": "Les trois états de l'eau et les changements d'état",
+            "objectifs": [
+              "Nommer les changements d'état",
+              "Mesurer la température de fusion de la glace et d'ébullition de l'eau"
+            ]
+          },
+          {
+            "titre": "Mélanges homogènes et hétérogènes",
+            "objectifs": [
+              "Distinguer mélange homogène et hétérogène",
+              "Réaliser une solution aqueuse"
+            ]
+          },
+          {
+            "titre": "Techniques de séparation : décantation, filtration, distillation",
+            "objectifs": [
+              "Séparer les constituants d'un mélange",
+              "Obtenir de l'eau potable par traitement"
+            ]
+          },
+          {
+            "titre": "Corps purs ; tests de l'eau",
+            "objectifs": [
+              "Caractériser un corps pur par ses constantes physiques",
+              "Identifier l'eau par le sulfate de cuivre anhydre"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Masse volumique et pression (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Masse volumique",
+            "objectifs": [
+              "Calculer une masse volumique",
+              "Comparer la masse volumique de solides et liquides"
+            ]
+          },
+          {
+            "titre": "Flottaison des corps",
+            "objectifs": [
+              "Prévoir si un objet flotte",
+              "Expliquer la flottaison par la masse volumique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Lumière et vision (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Réflexion de la lumière et miroirs plans",
+            "objectifs": [
+              "Énoncer les lois de la réflexion",
+              "Construire l'image d'un objet dans un miroir plan"
+            ]
+          },
+          {
+            "titre": "L'œil et la vision",
+            "objectifs": [
+              "Décrire le trajet de la lumière jusqu'à l'œil",
+              "Citer des règles d'hygiène visuelle"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : Fabrication d'un objet technique (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Démarche technologique",
+            "objectifs": ["Rédiger un cahier des charges", "Établir une fiche de fabrication"]
+          },
+          {
+            "titre": "Réalisation et évaluation de l'objet",
+            "objectifs": [
+              "Fabriquer l'objet en respectant les règles de sécurité",
+              "Tester et améliorer l'objet"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Étude EDiPrE, SVT au Bénin (AUF, 2021) : https://apprendre.auf.org/wp-content/uploads/2021/01/Etude-des-pratiques-de-classe-dans-le-secondaire-au-Benin-en-sciences-et-mathematiques.pdf",
+      "Épreuves de SVT du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : La nutrition chez l'homme",
+        "lecons": [
+          {
+            "titre": "L'appareil digestif et la digestion",
+            "objectifs": [
+              "Décrire l'appareil digestif",
+              "Expliquer la transformation des aliments en nutriments"
+            ]
+          },
+          {
+            "titre": "L'absorption intestinale",
+            "objectifs": [
+              "Décrire le rôle de l'intestin grêle",
+              "Expliquer le passage des nutriments dans le sang"
+            ]
+          },
+          {
+            "titre": "La respiration chez l'homme",
+            "objectifs": [
+              "Décrire l'appareil respiratoire",
+              "Expliquer les échanges gazeux pulmonaires"
+            ]
+          },
+          {
+            "titre": "La circulation sanguine",
+            "objectifs": [
+              "Décrire le cœur et les vaisseaux",
+              "Expliquer le rôle du sang dans le transport"
+            ]
+          },
+          {
+            "titre": "L'excrétion",
+            "objectifs": ["Décrire l'appareil urinaire", "Expliquer le rôle des reins"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : La nutrition chez les animaux et les végétaux",
+        "lecons": [
+          {
+            "titre": "Régimes alimentaires des animaux",
+            "objectifs": [
+              "Classer les animaux selon leur régime",
+              "Relier denture et régime alimentaire"
+            ]
+          },
+          {
+            "titre": "Respiration chez les animaux et les végétaux",
+            "objectifs": [
+              "Identifier les organes respiratoires selon le milieu",
+              "Mettre en évidence la respiration des végétaux"
+            ]
+          },
+          {
+            "titre": "La photosynthèse",
+            "objectifs": [
+              "Mettre en évidence la production d'amidon et de dioxygène",
+              "Identifier les conditions de la photosynthèse"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Santé et maladies courantes",
+        "lecons": [
+          {
+            "titre": "Le paludisme",
+            "objectifs": [
+              "Décrire le cycle du plasmodium",
+              "Proposer des moyens de prévention (moustiquaires, assainissement)"
+            ]
+          },
+          {
+            "titre": "Les maladies hydriques et parasitaires",
+            "objectifs": [
+              "Citer des maladies liées à l'eau (choléra, bilharziose, ver de Guinée)",
+              "Expliquer les mesures de prévention"
+            ]
+          },
+          {
+            "titre": "Microbes et hygiène",
+            "objectifs": [
+              "Distinguer bactéries, virus et parasites",
+              "Expliquer le rôle de la vaccination"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : L'eau, ressource vitale (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Cycle de l'eau",
+            "objectifs": ["Décrire le cycle de l'eau", "Identifier les réserves d'eau du Bénin"]
+          },
+          {
+            "titre": "Potabilisation et gestion de l'eau",
+            "objectifs": [
+              "Décrire des méthodes de potabilisation",
+              "Proposer des gestes d'économie et de protection de l'eau"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "CINQUIEME",
+    "series": null,
+    "matiere": "HG",
+    "confiance": "recoupe",
+    "sources": [
+      "Mémoire UAC sur le matériel didactique en HG — SA 1 de géographie 5e « Milieux tempérés et activités humaines » : https://bu-uac.org/memoires/4084/link",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » : https://www.researchgate.net/publication/390030953",
+      "Structure de l'épreuve d'Histoire-Géographie au BEPC (Bénin) : https://www.fomesoutra.com/bepc/sujets-d-histoire-et-geographie-3eme/4956-structure-de-l-evaluation-des-apprentissages-de-l-epreuve-d-histoire-geographie-au-bepc"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 (Géographie) : Milieux tempérés et activités humaines",
+        "lecons": [
+          {
+            "titre": "Les milieux tempérés : climats et végétation",
+            "objectifs": [
+              "Localiser les zones tempérées",
+              "Décrire climat océanique, continental, méditerranéen"
+            ]
+          },
+          {
+            "titre": "Les activités humaines en milieu tempéré",
+            "objectifs": [
+              "Décrire l'agriculture et l'industrie en milieu tempéré",
+              "Expliquer l'adaptation de l'homme au milieu"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 (Géographie) : Milieux chauds et milieux froids",
+        "lecons": [
+          {
+            "titre": "Les milieux chauds : équatorial, tropical, désertique",
+            "objectifs": [
+              "Caractériser chaque milieu chaud",
+              "Situer le Bénin dans la zone intertropicale"
+            ]
+          },
+          {
+            "titre": "Les activités humaines en milieu chaud",
+            "objectifs": [
+              "Décrire les cultures vivrières et d'exportation",
+              "Identifier les contraintes du milieu"
+            ]
+          },
+          {
+            "titre": "Les milieux froids et de montagne",
+            "objectifs": [
+              "Localiser les milieux froids",
+              "Expliquer les contraintes pour l'occupation humaine"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 (Histoire) : Les grands empires et royaumes d'Afrique de l'Ouest",
+        "lecons": [
+          {
+            "titre": "Les empires du Soudan occidental : Ghana, Mali, Songhaï",
+            "objectifs": [
+              "Situer ces empires dans le temps et l'espace",
+              "Expliquer le rôle du commerce transsaharien"
+            ]
+          },
+          {
+            "titre": "L'islam en Afrique de l'Ouest",
+            "objectifs": [
+              "Décrire les voies de diffusion de l'islam",
+              "Citer des centres religieux et intellectuels (Tombouctou)"
+            ]
+          },
+          {
+            "titre": "Les royaumes du Golfe du Bénin : Allada, Danxomè, Xogbonou",
+            "objectifs": [
+              "Décrire la fondation de ces royaumes",
+              "Expliquer leur organisation politique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 (Histoire) : L'Europe et le monde du Moyen Âge au XVIIIe siècle",
+        "lecons": [
+          {
+            "titre": "Les grandes découvertes",
+            "objectifs": [
+              "Citer les grands navigateurs et leurs voyages",
+              "Expliquer les causes des grandes découvertes"
+            ]
+          },
+          {
+            "titre": "La traite négrière atlantique",
+            "objectifs": [
+              "Décrire le commerce triangulaire",
+              "Analyser les conséquences de la traite pour l'Afrique et le Bénin (Ouidah)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "Épreuves de français du BEPC béninois (epreuvesetcorriges.com)",
+      "Reconstitution à partir de l'organisation APC béninoise (situations d'apprentissage par type de texte : lecture, expression orale et écrite, outils de la langue)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le texte explicatif",
+        "lecons": [
+          {
+            "titre": "Lecture : le texte explicatif",
+            "objectifs": [
+              "Identifier la question traitée et les réponses",
+              "Repérer les connecteurs logiques de cause et de conséquence"
+            ]
+          },
+          {
+            "titre": "Grammaire : les propositions subordonnées circonstancielles de cause et de conséquence",
+            "objectifs": ["Identifier ces subordonnées", "Employer les conjonctions adaptées"]
+          },
+          {
+            "titre": "Vocabulaire : le champ lexical et les mots techniques",
+            "objectifs": ["Relever un champ lexical", "Définir un terme technique"]
+          },
+          {
+            "titre": "Expression écrite : expliquer un phénomène",
+            "objectifs": ["Organiser une explication", "Rédiger un texte explicatif"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Le récit et la nouvelle",
+        "lecons": [
+          {
+            "titre": "Lecture : la nouvelle réaliste",
+            "objectifs": ["Identifier le cadre spatio-temporel", "Analyser la chute d'une nouvelle"]
+          },
+          {
+            "titre": "Grammaire : la proposition subordonnée relative et complétive",
+            "objectifs": [
+              "Distinguer relative et complétive",
+              "Employer les pronoms relatifs composés"
+            ]
+          },
+          {
+            "titre": "Conjugaison : le subjonctif présent",
+            "objectifs": [
+              "Conjuguer au subjonctif présent",
+              "Employer le subjonctif après les verbes de volonté"
+            ]
+          },
+          {
+            "titre": "Expression écrite : le résumé de texte",
+            "objectifs": [
+              "Dégager les idées essentielles",
+              "Réduire un texte en respectant le système d'énonciation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : La poésie",
+        "lecons": [
+          {
+            "titre": "Lecture : le poème (vers, strophe, rime)",
+            "objectifs": [
+              "Identifier la structure d'un poème",
+              "Repérer les rimes et leur disposition"
+            ]
+          },
+          {
+            "titre": "Les figures de style",
+            "objectifs": [
+              "Identifier comparaison, métaphore, personnification, anaphore",
+              "Interpréter l'effet d'une figure"
+            ]
+          },
+          {
+            "titre": "Expression orale : réciter et commenter un poème",
+            "objectifs": ["Dire un poème de façon expressive", "Exprimer son ressenti"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Canevas des épreuves d'anglais du BEPC (ressource AUF) : https://apprendre.auf.org/wp-content/uploads/2021/08/27-Canevas-des-épreuves-danglais-BEPC.pdf",
+      "Manuels d'anglais en usage au premier cycle béninois (ex. « English for All »)",
+      "Reconstitution à partir des thèmes du BEPC (reading comprehension, language in use, writing)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning Situation 1 : Customs and traditions",
+        "lecons": [
+          {
+            "titre": "Festivals and ceremonies in Benin",
+            "objectifs": ["Describe a traditional ceremony", "Use the passive voice (present)"]
+          },
+          {
+            "titre": "Comparatives and superlatives",
+            "objectifs": ["Compare people and things", "Use irregular comparatives"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 2 : Environment",
+        "lecons": [
+          {
+            "titre": "Pollution and protection of the environment",
+            "objectifs": ["Identify causes of pollution", "Express obligation with must / have to"]
+          },
+          {
+            "titre": "The future",
+            "objectifs": ["Make predictions with will", "Express plans with be going to"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 3 : Travel and transport",
+        "lecons": [
+          {
+            "titre": "Means of transport",
+            "objectifs": ["Name means of transport", "Talk about journeys"]
+          },
+          {
+            "titre": "Present perfect",
+            "objectifs": ["Form the present perfect", "Use ever / never / already / yet"]
+          },
+          {
+            "titre": "Reading comprehension and writing",
+            "objectifs": ["Answer questions on a text", "Write a short narrative"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de mathématiques, classe de 5e (Bénin, MESTFP/DIP) — SA n°1 Configurations de l'espace, SA n°2 Configurations du plan, SA n°3 Applications du plan, SA n°4 Organisation des données (copies Scribd/PDFCoffee : https://pdfcoffee.com/guide-du-programme-5e-benin-pdf-free.html)",
+      "Rapport EDiPrE, Université d'Abomey-Calavi / AUF (2021) — SA n°1 Configurations du plan (vecteurs, distance d'un point à une droite) : https://apprendre.auf.org/wp-content/uploads/2021/05/AAP1-03-Benin-Universite-dAbomey-Calavi-Rapport-general-final-de-recherche-.pdf",
+      "Fascicules « New Activity » (Acobries) 4e et 5e, ordre des leçons par SA : https://www.fomesoutra.com/livres/fascicules-du-2nd-cycle-6e-tle/14180-new-activity-maths-5eme-version-2022/file",
+      "Épreuves de mathématiques du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Nombres décimaux relatifs et puissances",
+            "objectifs": [
+              "Calculer avec des décimaux relatifs",
+              "Utiliser les puissances d'exposant entier",
+              "Écrire un nombre en notation scientifique"
+            ]
+          },
+          {
+            "titre": "Nombres rationnels : calculs sur les fractions",
+            "objectifs": [
+              "Effectuer les quatre opérations sur les fractions",
+              "Simplifier une expression fractionnaire"
+            ]
+          },
+          {
+            "titre": "Calcul littéral : développement et factorisation",
+            "objectifs": [
+              "Développer et réduire une expression",
+              "Factoriser à l'aide d'un facteur commun"
+            ]
+          },
+          {
+            "titre": "Angles au centre et angles inscrits (initiation)",
+            "objectifs": [
+              "Identifier un angle au centre",
+              "Relier angle au centre et arc intercepté"
+            ]
+          },
+          {
+            "titre": "Triangle rectangle : propriété de Pythagore",
+            "objectifs": [
+              "Calculer une longueur avec la propriété de Pythagore",
+              "Démontrer qu'un triangle est rectangle (réciproque)"
+            ]
+          },
+          {
+            "titre": "Triangle rectangle et cercle circonscrit",
+            "objectifs": [
+              "Utiliser le milieu de l'hypoténuse comme centre du cercle circonscrit",
+              "Caractériser un triangle rectangle inscrit dans un demi-cercle"
+            ]
+          },
+          {
+            "titre": "Droite des milieux dans un triangle",
+            "objectifs": [
+              "Utiliser la propriété de la droite des milieux",
+              "Calculer une longueur avec cette propriété"
+            ]
+          },
+          {
+            "titre": "Projection orthogonale et cosinus d'un angle aigu",
+            "objectifs": [
+              "Construire le projeté orthogonal d'un point",
+              "Utiliser le cosinus dans un triangle rectangle"
+            ]
+          },
+          {
+            "titre": "Racine carrée d'un nombre positif",
+            "objectifs": [
+              "Calculer une racine carrée exacte ou approchée",
+              "Utiliser la racine carrée avec Pythagore"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Pyramide et cône de révolution",
+            "objectifs": [
+              "Décrire une pyramide et un cône",
+              "Représenter et construire leurs patrons"
+            ]
+          },
+          {
+            "titre": "Aires et volumes de la pyramide et du cône",
+            "objectifs": [
+              "Calculer le volume d'une pyramide et d'un cône",
+              "Calculer l'aire latérale d'un cône"
+            ]
+          },
+          {
+            "titre": "Positions relatives de droites et de plans",
+            "objectifs": [
+              "Reconnaître droites et plans parallèles ou sécants dans un solide",
+              "Utiliser les propriétés d'orthogonalité dans l'espace"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Applications du plan",
+        "lecons": [
+          {
+            "titre": "Translation et vecteurs",
+            "objectifs": [
+              "Construire l'image d'une figure par une translation",
+              "Relier translation, vecteur et parallélogramme"
+            ]
+          },
+          {
+            "titre": "Composée de deux symétries centrales",
+            "objectifs": [
+              "Construire l'image par deux symétries successives",
+              "Reconnaître la translation obtenue"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Équations du premier degré dans Q",
+            "objectifs": [
+              "Résoudre une équation du premier degré",
+              "Mettre un problème en équation"
+            ]
+          },
+          {
+            "titre": "Inéquations du premier degré",
+            "objectifs": [
+              "Résoudre une inéquation du premier degré",
+              "Représenter les solutions sur une droite graduée"
+            ]
+          },
+          {
+            "titre": "Proportionnalité et applications linéaires",
+            "objectifs": [
+              "Reconnaître une situation de proportionnalité",
+              "Représenter graphiquement une application linéaire"
+            ]
+          },
+          {
+            "titre": "Statistique : regroupement en classes, moyenne",
+            "objectifs": [
+              "Regrouper des données en classes",
+              "Calculer une moyenne pondérée",
+              "Construire un histogramme"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de PCT, classe de 4e, révisé (MESTFP) — SA 1 Appareils de mesure / loi d'Ohm, SA 2 Structure d'un atome / métaux usuels, SA 4 Liaisons dans les molécules, SA 6 Dynamomètre et chambre noire : https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide-du-programme-4c3a8me_rc3a9visc3a9_relu-vf_vf.pdf",
+      "Rapport EDiPrE (UAC/AUF) — SA 3 Interactions mécaniques : forces et poulies",
+      "Manuel « L'Éveil PCT 4e » : https://ledefiscad.com/pct-eveil-4eme.html"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Utilisation des appareils de mesure de quelques grandeurs électriques - Vérification de la loi d'Ohm",
+        "lecons": [
+          {
+            "titre": "Intensité du courant et ampèremètre",
+            "objectifs": [
+              "Brancher un ampèremètre en série",
+              "Mesurer une intensité en choisissant le calibre"
+            ]
+          },
+          {
+            "titre": "Tension électrique et voltmètre",
+            "objectifs": [
+              "Brancher un voltmètre en dérivation",
+              "Mesurer une tension aux bornes d'un dipôle"
+            ]
+          },
+          {
+            "titre": "Lois des intensités et des tensions",
+            "objectifs": [
+              "Appliquer la loi d'unicité de l'intensité en série",
+              "Appliquer la loi d'additivité des tensions et des intensités"
+            ]
+          },
+          {
+            "titre": "Résistance électrique et loi d'Ohm",
+            "objectifs": [
+              "Mesurer une résistance à l'ohmmètre",
+              "Tracer la caractéristique d'un conducteur ohmique",
+              "Appliquer la relation U = R × I"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Structure d'un atome - Quelques propriétés physiques et mécaniques de certains métaux usuels",
+        "lecons": [
+          {
+            "titre": "Structure de l'atome",
+            "objectifs": [
+              "Décrire l'atome (noyau, électrons)",
+              "Écrire la représentation symbolique d'un atome"
+            ]
+          },
+          {
+            "titre": "Éléments chimiques et classification",
+            "objectifs": [
+              "Citer les symboles d'éléments usuels",
+              "Situer quelques éléments dans la classification"
+            ]
+          },
+          {
+            "titre": "Propriétés physiques et mécaniques des métaux : fer, aluminium, cuivre, zinc",
+            "objectifs": [
+              "Comparer conductivité, masse volumique et malléabilité des métaux",
+              "Justifier l'usage d'un métal dans un objet technique"
+            ]
+          },
+          {
+            "titre": "Corrosion des métaux",
+            "objectifs": [
+              "Mettre en évidence la rouille du fer",
+              "Proposer des moyens de protection contre la corrosion"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Interactions mécaniques - Forces et poulies",
+        "lecons": [
+          {
+            "titre": "Actions mécaniques et notion de force",
+            "objectifs": [
+              "Identifier une action mécanique de contact ou à distance",
+              "Représenter une force par un vecteur"
+            ]
+          },
+          {
+            "titre": "Poids et masse",
+            "objectifs": ["Mesurer un poids au dynamomètre", "Appliquer la relation P = m × g"]
+          },
+          {
+            "titre": "Poulies fixes et mobiles",
+            "objectifs": [
+              "Décrire le rôle d'une poulie",
+              "Calculer la force à exercer avec une poulie mobile"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Comment les atomes sont-ils liés dans les molécules ?",
+        "lecons": [
+          {
+            "titre": "Molécules et liaisons covalentes",
+            "objectifs": ["Définir une molécule", "Représenter une molécule (formule développée)"]
+          },
+          {
+            "titre": "Formules chimiques et équation-bilan",
+            "objectifs": [
+              "Écrire la formule de molécules usuelles",
+              "Équilibrer une équation-bilan simple"
+            ]
+          },
+          {
+            "titre": "Conservation de la masse au cours d'une réaction",
+            "objectifs": ["Énoncer la loi de Lavoisier", "Vérifier la conservation des atomes"]
+          }
+        ]
+      },
+      {
+        "titre": "SA 5 : La lumière et les images (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Réfraction de la lumière",
+            "objectifs": [
+              "Mettre en évidence le phénomène de réfraction",
+              "Décrire le passage de la lumière de l'air à l'eau"
+            ]
+          },
+          {
+            "titre": "Lentilles minces et images",
+            "objectifs": [
+              "Distinguer lentille convergente et divergente",
+              "Obtenir l'image d'un objet par une lentille convergente"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 6 : Fabrication d'un objet technique selon la démarche technologique : le dynamomètre et la chambre noire",
+        "lecons": [
+          {
+            "titre": "Fabrication d'un dynamomètre",
+            "objectifs": ["Étalonner un ressort", "Fabriquer et graduer un dynamomètre"]
+          },
+          {
+            "titre": "Fabrication d'une chambre noire",
+            "objectifs": [
+              "Expliquer la formation de l'image dans une chambre noire",
+              "Fabriquer une chambre noire et observer l'image renversée"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "SVT",
+    "confiance": "recoupe",
+    "sources": [
+      "P. Aboto, « Sol, avenir de l'Homme » en 4e, Revue ACAREF (2023) : https://revues.acaref.net/wp-content/uploads/sites/3/2023/03/16-Paul-ABOTO.pdf",
+      "Guide pédagogique SVT 4e (MESTFP, 2015), cité par l'article ACAREF",
+      "Étude EDiPrE, SVT au Bénin (AUF, 2021) : https://apprendre.auf.org/wp-content/uploads/2021/01/Etude-des-pratiques-de-classe-dans-le-secondaire-au-Benin-en-sciences-et-mathematiques.pdf",
+      "Épreuves de SVT du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Sol, avenir de l'homme",
+        "lecons": [
+          {
+            "titre": "Naissance et évolution d'un paysage",
+            "objectifs": [
+              "Décrire les éléments d'un paysage",
+              "Expliquer l'action de l'érosion et de la sédimentation"
+            ]
+          },
+          {
+            "titre": "Formation et constituants du sol",
+            "objectifs": [
+              "Décrire les horizons d'un profil de sol",
+              "Expliquer la formation du sol à partir de la roche-mère"
+            ]
+          },
+          {
+            "titre": "Êtres vivants du sol et fertilité",
+            "objectifs": [
+              "Identifier la faune et la flore du sol",
+              "Expliquer la formation de l'humus"
+            ]
+          },
+          {
+            "titre": "Dégradation et protection des sols",
+            "objectifs": [
+              "Citer les causes de dégradation (érosion, feux de brousse, déforestation)",
+              "Proposer des techniques de conservation des sols"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : La reproduction chez les végétaux",
+        "lecons": [
+          {
+            "titre": "Reproduction sexuée des plantes à fleurs",
+            "objectifs": [
+              "Décrire la fleur et ses organes reproducteurs",
+              "Expliquer la pollinisation et la fécondation"
+            ]
+          },
+          {
+            "titre": "Formation du fruit et de la graine ; dissémination",
+            "objectifs": [
+              "Décrire la transformation de la fleur en fruit",
+              "Citer des modes de dissémination"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : La reproduction humaine",
+        "lecons": [
+          {
+            "titre": "Appareils reproducteurs de l'homme et de la femme",
+            "objectifs": [
+              "Décrire les appareils génitaux",
+              "Expliquer les transformations de la puberté"
+            ]
+          },
+          {
+            "titre": "Cycle menstruel, fécondation, grossesse",
+            "objectifs": [
+              "Décrire le cycle menstruel",
+              "Expliquer la fécondation et le développement de l'embryon"
+            ]
+          },
+          {
+            "titre": "Maîtrise de la reproduction et IST",
+            "objectifs": [
+              "Citer des méthodes contraceptives",
+              "Expliquer la prévention des IST et du VIH/SIDA"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Reproduction chez les animaux (reconstitué)",
+        "lecons": [
+          {
+            "titre": "Modes de reproduction des animaux",
+            "objectifs": [
+              "Distinguer ovipares et vivipares",
+              "Décrire la fécondation interne et externe"
+            ]
+          },
+          {
+            "titre": "Développement post-embryonnaire ; métamorphoses",
+            "objectifs": [
+              "Décrire la métamorphose de la grenouille ou d'un insecte",
+              "Relier cycle de vie et lutte contre les ravageurs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "QUATRIEME",
+    "series": null,
+    "matiere": "HG",
+    "confiance": "reconstitue",
+    "sources": [
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » : https://www.researchgate.net/publication/390030953",
+      "Structure de l'épreuve d'Histoire-Géographie au BEPC (Bénin) : https://www.fomesoutra.com/bepc/sujets-d-histoire-et-geographie-3eme/4956-structure-de-l-evaluation-des-apprentissages-de-l-epreuve-d-histoire-geographie-au-bepc"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 (Histoire) : Les révolutions en Europe et en Amérique",
+        "lecons": [
+          {
+            "titre": "La Révolution française",
+            "objectifs": [
+              "Expliquer les causes de la Révolution de 1789",
+              "Citer les principaux acquis (Déclaration des droits de l'homme)"
+            ]
+          },
+          {
+            "titre": "La révolution industrielle",
+            "objectifs": [
+              "Décrire les innovations techniques",
+              "Analyser les conséquences économiques et sociales"
+            ]
+          },
+          {
+            "titre": "L'abolition de l'esclavage",
+            "objectifs": [
+              "Situer les étapes de l'abolition",
+              "Identifier les acteurs du mouvement abolitionniste"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 (Histoire) : L'Afrique au XIXe siècle face à la pénétration européenne",
+        "lecons": [
+          {
+            "titre": "Les explorations et la conférence de Berlin",
+            "objectifs": [
+              "Expliquer les motivations de l'expansion européenne",
+              "Décrire le partage de l'Afrique"
+            ]
+          },
+          {
+            "titre": "La conquête coloniale et les résistances africaines",
+            "objectifs": [
+              "Citer des figures de la résistance (Béhanzin, Samory, Bio Guéra)",
+              "Expliquer les formes de résistance"
+            ]
+          },
+          {
+            "titre": "La conquête du Danxomè",
+            "objectifs": [
+              "Retracer les étapes de la conquête (1890-1894)",
+              "Analyser la résistance de Béhanzin"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 (Géographie) : L'Afrique, milieu physique et population",
+        "lecons": [
+          {
+            "titre": "Le relief et l'hydrographie de l'Afrique",
+            "objectifs": [
+              "Localiser les grands ensembles du relief africain",
+              "Nommer les principaux fleuves"
+            ]
+          },
+          {
+            "titre": "Climats et végétation de l'Afrique",
+            "objectifs": ["Décrire la répartition des climats", "Relier climat et végétation"]
+          },
+          {
+            "titre": "La population africaine",
+            "objectifs": [
+              "Décrire la répartition et la croissance de la population",
+              "Analyser les problèmes d'urbanisation"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 (Géographie) : Les activités économiques en Afrique",
+        "lecons": [
+          {
+            "titre": "Agriculture et élevage",
+            "objectifs": [
+              "Distinguer cultures vivrières et d'exportation",
+              "Identifier les difficultés de l'agriculture africaine"
+            ]
+          },
+          {
+            "titre": "Ressources minières, énergie et industries",
+            "objectifs": [
+              "Localiser les principales ressources",
+              "Expliquer la faiblesse de l'industrialisation"
+            ]
+          },
+          {
+            "titre": "Intégration régionale : CEDEAO, UEMOA",
+            "objectifs": [
+              "Citer les objectifs de la CEDEAO et de l'UEMOA",
+              "Montrer leur rôle dans les échanges"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "FR",
+    "confiance": "reconstitue",
+    "sources": [
+      "Épreuves de français du BEPC béninois (epreuvesetcorriges.com)",
+      "Reconstitution à partir de l'organisation APC béninoise (situations d'apprentissage par type de texte : lecture, expression orale et écrite, outils de la langue)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Le texte argumentatif",
+        "lecons": [
+          {
+            "titre": "Lecture : thèse, arguments, exemples",
+            "objectifs": ["Identifier la thèse défendue", "Distinguer argument et exemple"]
+          },
+          {
+            "titre": "Grammaire : subordonnées de concession, d'opposition, de but",
+            "objectifs": ["Identifier ces subordonnées", "Exprimer l'opposition et la concession"]
+          },
+          {
+            "titre": "Les connecteurs logiques",
+            "objectifs": ["Classer les connecteurs selon leur valeur", "Enchaîner des arguments"]
+          },
+          {
+            "titre": "Expression écrite : la dissertation (sujet de réflexion)",
+            "objectifs": [
+              "Analyser un sujet et rechercher des idées",
+              "Rédiger introduction, développement et conclusion"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Le résumé et la lecture méthodique",
+        "lecons": [
+          {
+            "titre": "Le résumé de texte argumentatif",
+            "objectifs": [
+              "Dégager la structure logique d'un texte",
+              "Résumer au quart en respectant le nombre de mots"
+            ]
+          },
+          {
+            "titre": "La lecture méthodique",
+            "objectifs": ["Formuler des axes de lecture", "Analyser les procédés d'écriture"]
+          },
+          {
+            "titre": "Grammaire : la modalisation et les niveaux de langue",
+            "objectifs": [
+              "Repérer les marques de la subjectivité",
+              "Distinguer les niveaux de langue"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : L'œuvre intégrale et l'engagement",
+        "lecons": [
+          {
+            "titre": "Lecture d'une œuvre intégrale (roman africain)",
+            "objectifs": ["Situer l'œuvre et son auteur", "Dégager les thèmes principaux"]
+          },
+          {
+            "titre": "Le texte engagé (poésie de la négritude, théâtre)",
+            "objectifs": ["Identifier la cause défendue", "Analyser les procédés de persuasion"]
+          },
+          {
+            "titre": "Conjugaison : concordance des temps",
+            "objectifs": [
+              "Appliquer la concordance des temps",
+              "Employer les temps composés de l'indicatif et du subjonctif"
+            ]
+          },
+          {
+            "titre": "Expression écrite : la lettre officielle et la demande",
+            "objectifs": [
+              "Respecter la présentation d'une lettre administrative",
+              "Rédiger une demande argumentée"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "ANG",
+    "confiance": "reconstitue",
+    "sources": [
+      "Canevas des épreuves d'anglais du BEPC (ressource AUF) : https://apprendre.auf.org/wp-content/uploads/2021/08/27-Canevas-des-épreuves-danglais-BEPC.pdf",
+      "Manuels d'anglais en usage au premier cycle béninois (ex. « English for All »)",
+      "Reconstitution à partir des thèmes du BEPC (reading comprehension, language in use, writing)"
+    ],
+    "chapitres": [
+      {
+        "titre": "Learning Situation 1 : Health and society",
+        "lecons": [
+          {
+            "titre": "HIV/AIDS and diseases",
+            "objectifs": ["Read and understand a text on health", "Give advice and warnings"]
+          },
+          {
+            "titre": "Conditional sentences (type 1 and 2)",
+            "objectifs": ["Form conditional sentences", "Express hypotheses"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 2 : Education and work",
+        "lecons": [
+          {
+            "titre": "School and future careers",
+            "objectifs": ["Talk about future careers", "Express wishes and ambitions"]
+          },
+          {
+            "titre": "Reported speech",
+            "objectifs": ["Report statements and questions", "Change tenses in reported speech"]
+          },
+          {
+            "titre": "Relative pronouns",
+            "objectifs": ["Use who, which, that, whose", "Combine sentences"]
+          }
+        ]
+      },
+      {
+        "titre": "Learning Situation 3 : Communication and technology",
+        "lecons": [
+          {
+            "titre": "Media and new technologies",
+            "objectifs": [
+              "Describe the uses of mobile phones and the Internet",
+              "Discuss advantages and disadvantages"
+            ]
+          },
+          {
+            "titre": "Passive voice (all tenses)",
+            "objectifs": ["Transform active sentences into passive", "Use the passive in a text"]
+          },
+          {
+            "titre": "BEPC preparation : reading, language in use, writing",
+            "objectifs": ["Answer comprehension questions", "Write a letter or a short essay"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "MATH",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de mathématiques, classe de 5e (Bénin, MESTFP/DIP) — SA n°1 Configurations de l'espace, SA n°2 Configurations du plan, SA n°3 Applications du plan, SA n°4 Organisation des données (copies Scribd/PDFCoffee : https://pdfcoffee.com/guide-du-programme-5e-benin-pdf-free.html)",
+      "Rapport EDiPrE, Université d'Abomey-Calavi / AUF (2021) — SA n°1 Configurations du plan (vecteurs, distance d'un point à une droite) : https://apprendre.auf.org/wp-content/uploads/2021/05/AAP1-03-Benin-Universite-dAbomey-Calavi-Rapport-general-final-de-recherche-.pdf",
+      "Fascicules « New Activity » (Acobries) 4e et 5e, ordre des leçons par SA : https://www.fomesoutra.com/livres/fascicules-du-2nd-cycle-6e-tle/14180-new-activity-maths-5eme-version-2022/file",
+      "Épreuves de mathématiques du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Configurations du plan",
+        "lecons": [
+          {
+            "titre": "Calcul dans IR : racines carrées",
+            "objectifs": [
+              "Simplifier des expressions contenant des radicaux",
+              "Rendre rationnel un dénominateur"
+            ]
+          },
+          {
+            "titre": "Calcul littéral : identités remarquables et factorisation",
+            "objectifs": [
+              "Utiliser les identités remarquables",
+              "Factoriser une expression du second degré simple"
+            ]
+          },
+          {
+            "titre": "Fractions rationnelles",
+            "objectifs": [
+              "Déterminer la condition d'existence d'une fraction rationnelle",
+              "Simplifier une fraction rationnelle"
+            ]
+          },
+          {
+            "titre": "Vecteurs : égalité, somme, produit par un réel",
+            "objectifs": [
+              "Construire la somme de deux vecteurs",
+              "Utiliser la relation de Chasles",
+              "Reconnaître des vecteurs colinéaires"
+            ]
+          },
+          {
+            "titre": "Repérage dans le plan : coordonnées d'un vecteur, distance",
+            "objectifs": [
+              "Calculer les coordonnées d'un vecteur et d'un milieu",
+              "Calculer la distance de deux points dans un repère orthonormé"
+            ]
+          },
+          {
+            "titre": "Équations de droites",
+            "objectifs": [
+              "Déterminer une équation de droite",
+              "Reconnaître des droites parallèles ou perpendiculaires par leurs coefficients"
+            ]
+          },
+          {
+            "titre": "Propriété de Thalès et sa réciproque",
+            "objectifs": [
+              "Calculer des longueurs avec Thalès",
+              "Démontrer un parallélisme avec la réciproque"
+            ]
+          },
+          {
+            "titre": "Relations trigonométriques dans le triangle rectangle",
+            "objectifs": [
+              "Utiliser cosinus, sinus et tangente d'un angle aigu",
+              "Calculer une longueur ou un angle dans un triangle rectangle"
+            ]
+          },
+          {
+            "titre": "Angles inscrits et polygones réguliers",
+            "objectifs": [
+              "Utiliser la propriété de l'angle inscrit",
+              "Construire un polygone régulier inscrit dans un cercle"
+            ]
+          },
+          {
+            "titre": "Distance d'un point à une droite ; tangente à un cercle",
+            "objectifs": [
+              "Déterminer la distance d'un point à une droite",
+              "Construire une tangente à un cercle"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Configurations de l'espace",
+        "lecons": [
+          {
+            "titre": "Sphère et boule",
+            "objectifs": [
+              "Calculer l'aire d'une sphère et le volume d'une boule",
+              "Décrire la section d'une sphère par un plan"
+            ]
+          },
+          {
+            "titre": "Sections planes de solides ; agrandissement et réduction",
+            "objectifs": [
+              "Décrire la section d'un pavé, d'une pyramide, d'un cône par un plan parallèle",
+              "Utiliser l'effet d'un agrandissement-réduction sur les aires et volumes"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Applications du plan",
+        "lecons": [
+          {
+            "titre": "Translation, symétries et rotation",
+            "objectifs": [
+              "Construire l'image d'une figure par une rotation",
+              "Utiliser les propriétés de conservation des applications du plan"
+            ]
+          },
+          {
+            "titre": "Homothétie (initiation) et configurations de Thalès",
+            "objectifs": [
+              "Construire l'image d'une figure par une homothétie",
+              "Relier homothétie et agrandissement-réduction"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Organisation des données",
+        "lecons": [
+          {
+            "titre": "Équations et inéquations dans IR",
+            "objectifs": [
+              "Résoudre une équation produit",
+              "Résoudre une inéquation du premier degré à une inconnue"
+            ]
+          },
+          {
+            "titre": "Systèmes de deux équations à deux inconnues",
+            "objectifs": [
+              "Résoudre un système par substitution, combinaison ou graphiquement",
+              "Mettre un problème en système"
+            ]
+          },
+          {
+            "titre": "Applications affines",
+            "objectifs": [
+              "Déterminer une application affine connaissant deux images",
+              "Représenter graphiquement une application affine",
+              "Résoudre un problème à l'aide d'applications affines"
+            ]
+          },
+          {
+            "titre": "Statistique : moyenne, mode, médiane, effectifs cumulés",
+            "objectifs": [
+              "Calculer moyenne, mode et médiane",
+              "Construire le polygone des effectifs cumulés"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "PCT",
+    "confiance": "recoupe",
+    "sources": [
+      "Guide du programme de PCT, classe de 3e, révisé et relu (août 2016) — SA 1 Équilibre d'un solide et transfert d'énergie, SA 2 Réactions chimiques en solutions aqueuses, SA 3 L'énergie électrique, SA 4 Détecteur de courant et électrolyseur : https://labosciences.wordpress.com/wp-content/uploads/2018/06/guide_3c3a8me_rc3a9visc3a9_relu_aoc3bbt-2016.pdf",
+      "« Réussir en PCT 3e » (Laha, 2020), médiathèque IF Bénin",
+      "Épreuves de PCT du BEPC béninois"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Équilibre d'un solide et transfert d'énergie",
+        "lecons": [
+          {
+            "titre": "Équilibre d'un solide soumis à deux ou trois forces",
+            "objectifs": ["Énoncer les conditions d'équilibre", "Déterminer une force inconnue"]
+          },
+          {
+            "titre": "Moment d'une force ; leviers et treuil",
+            "objectifs": [
+              "Calculer le moment d'une force",
+              "Appliquer le théorème des moments à un levier ou un treuil"
+            ]
+          },
+          {
+            "titre": "Travail et puissance mécaniques",
+            "objectifs": ["Calculer le travail d'une force", "Calculer une puissance mécanique"]
+          },
+          {
+            "titre": "Chaîne énergétique et rendement",
+            "objectifs": [
+              "Représenter une chaîne énergétique",
+              "Calculer le rendement et l'énergie perdue"
+            ]
+          },
+          {
+            "titre": "Énergie thermique : chaleur massique et capacité thermique",
+            "objectifs": [
+              "Calculer la quantité de chaleur Q = m·c·Δθ",
+              "Utiliser la capacité thermique d'un corps"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Réactions chimiques en solutions aqueuses",
+        "lecons": [
+          {
+            "titre": "Ions et solutions ioniques",
+            "objectifs": [
+              "Distinguer ions positifs et négatifs",
+              "Écrire la formule d'un composé ionique"
+            ]
+          },
+          {
+            "titre": "Solutions acides, basiques et neutres ; pH",
+            "objectifs": ["Mesurer le pH d'une solution", "Classer une solution selon son pH"]
+          },
+          {
+            "titre": "Réaction acide-base",
+            "objectifs": [
+              "Réaliser le dosage d'un acide par une base",
+              "Écrire l'équation-bilan de la réaction"
+            ]
+          },
+          {
+            "titre": "Action des acides sur les métaux ; tests d'ions",
+            "objectifs": [
+              "Décrire l'action de l'acide chlorhydrique sur le fer et le zinc",
+              "Identifier des ions par des tests caractéristiques"
+            ]
+          },
+          {
+            "titre": "Les hydrocarbures (alcanes)",
+            "objectifs": [
+              "Écrire la formule des premiers alcanes",
+              "Écrire l'équation de combustion d'un alcane"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : L'énergie électrique, un besoin indispensable",
+        "lecons": [
+          {
+            "titre": "Courant alternatif et oscilloscope",
+            "objectifs": [
+              "Distinguer courant continu et alternatif",
+              "Déterminer période, fréquence et tension maximale"
+            ]
+          },
+          {
+            "titre": "Transformateur",
+            "objectifs": [
+              "Décrire le rôle d'un transformateur",
+              "Appliquer la relation des tensions et du nombre de spires"
+            ]
+          },
+          {
+            "titre": "Redressement du courant alternatif",
+            "objectifs": [
+              "Réaliser un redressement à l'aide de diodes",
+              "Expliquer le principe d'un chargeur"
+            ]
+          },
+          {
+            "titre": "Puissance et énergie électriques",
+            "objectifs": [
+              "Calculer P = U × I et E = P × t",
+              "Lire une facture d'électricité et proposer des économies"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Fabrication d'un détecteur de courant et d'un électrolyseur",
+        "lecons": [
+          {
+            "titre": "Détecteur de courant",
+            "objectifs": [
+              "Fabriquer un détecteur de courant à diode",
+              "Tester le passage du courant dans des solutions"
+            ]
+          },
+          {
+            "titre": "Électrolyse et produits formés aux électrodes",
+            "objectifs": [
+              "Réaliser l'électrolyse d'une solution",
+              "Identifier les produits formés aux électrodes"
+            ]
+          },
+          {
+            "titre": "Applications de l'électrolyse",
+            "objectifs": [
+              "Citer des applications (dépôt métallique, purification)",
+              "Expliquer le principe de la galvanoplastie"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "SVT",
+    "confiance": "reconstitue",
+    "sources": [
+      "Étude EDiPrE, SVT au Bénin (AUF, 2021) : https://apprendre.auf.org/wp-content/uploads/2021/01/Etude-des-pratiques-de-classe-dans-le-secondaire-au-Benin-en-sciences-et-mathematiques.pdf",
+      "Épreuves de SVT du BEPC béninois (epreuvesetcorriges.com)"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 : Relation de l'organisme avec son milieu",
+        "lecons": [
+          {
+            "titre": "Le système nerveux et les organes des sens",
+            "objectifs": [
+              "Décrire l'organisation du système nerveux",
+              "Distinguer réflexe et acte volontaire"
+            ]
+          },
+          {
+            "titre": "La motricité : muscles et squelette",
+            "objectifs": ["Décrire une articulation", "Expliquer la contraction musculaire"]
+          },
+          {
+            "titre": "Drogues, alcool, tabac et système nerveux",
+            "objectifs": [
+              "Citer les effets des drogues sur l'organisme",
+              "Adopter des comportements responsables"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 : Défense de l'organisme et santé",
+        "lecons": [
+          {
+            "titre": "Le système immunitaire",
+            "objectifs": [
+              "Décrire les organes et cellules immunitaires",
+              "Distinguer réaction non spécifique et spécifique"
+            ]
+          },
+          {
+            "titre": "Vaccination et sérothérapie",
+            "objectifs": [
+              "Expliquer le principe de la vaccination",
+              "Distinguer vaccination et sérothérapie"
+            ]
+          },
+          {
+            "titre": "VIH/SIDA et IST",
+            "objectifs": [
+              "Expliquer l'action du VIH sur le système immunitaire",
+              "Citer les moyens de prévention"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 : Hérédité et génétique",
+        "lecons": [
+          {
+            "titre": "Chromosomes et caryotype",
+            "objectifs": ["Décrire un caryotype humain", "Expliquer la détermination du sexe"]
+          },
+          {
+            "titre": "Transmission des caractères héréditaires",
+            "objectifs": [
+              "Distinguer caractère héréditaire et acquis",
+              "Interpréter un arbre généalogique simple"
+            ]
+          },
+          {
+            "titre": "Division cellulaire",
+            "objectifs": [
+              "Décrire les étapes de la mitose",
+              "Expliquer la conservation de l'information génétique"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 : Géologie et ressources naturelles du Bénin",
+        "lecons": [
+          {
+            "titre": "Roches sédimentaires, magmatiques et métamorphiques",
+            "objectifs": [
+              "Classer des roches selon leur origine",
+              "Identifier des roches du sous-sol béninois"
+            ]
+          },
+          {
+            "titre": "Ressources du sous-sol et énergies",
+            "objectifs": [
+              "Citer les ressources minières et énergétiques du Bénin",
+              "Expliquer la formation du pétrole"
+            ]
+          },
+          {
+            "titre": "Protection de l'environnement et développement durable",
+            "objectifs": [
+              "Identifier des atteintes à l'environnement",
+              "Proposer des actions de protection"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "niveau": "TROISIEME",
+    "series": null,
+    "matiere": "HG",
+    "confiance": "recoupe",
+    "sources": [
+      "Épreuves BEPC HG Bénin 2023, 2025, sujet blanc 2026 Atlantique (impérialisme européen au XIXe siècle ; ressources touristiques et ligneuses du Bénin) : https://epreuvesetcorriges.com/categories/benin/examens/bepc/39849-epreuve-d-histoire-geographie-bepc-2025-benin",
+      "« L'histoire nationale dans les programmes du cours secondaire général au Bénin (1987-2016) » : https://www.researchgate.net/publication/390030953",
+      "Structure de l'épreuve d'Histoire-Géographie au BEPC (Bénin) : https://www.fomesoutra.com/bepc/sujets-d-histoire-et-geographie-3eme/4956-structure-de-l-evaluation-des-apprentissages-de-l-epreuve-d-histoire-geographie-au-bepc"
+    ],
+    "chapitres": [
+      {
+        "titre": "SA 1 (Histoire) : L'impérialisme européen et la colonisation au XIXe et XXe siècles",
+        "lecons": [
+          {
+            "titre": "L'impérialisme européen au XIXe siècle",
+            "objectifs": [
+              "Expliquer les causes économiques, politiques et idéologiques",
+              "Analyser un document sur l'impérialisme"
+            ]
+          },
+          {
+            "titre": "Le système colonial en Afrique (AOF, Dahomey)",
+            "objectifs": [
+              "Décrire l'administration coloniale française",
+              "Analyser l'exploitation économique (travaux forcés, impôt de capitation)"
+            ]
+          },
+          {
+            "titre": "Les révoltes contre la colonisation au Dahomey",
+            "objectifs": [
+              "Citer des révoltes (Kaba, Holli, Sakété...)",
+              "Expliquer leurs causes et leurs conséquences"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 2 (Histoire) : Le monde de 1914 à nos jours",
+        "lecons": [
+          {
+            "titre": "La Première Guerre mondiale",
+            "objectifs": [
+              "Expliquer les causes et les phases",
+              "Montrer la participation africaine (tirailleurs)"
+            ]
+          },
+          {
+            "titre": "La crise de 1929 et la Seconde Guerre mondiale",
+            "objectifs": [
+              "Expliquer la crise et la montée des totalitarismes",
+              "Analyser les conséquences de la guerre"
+            ]
+          },
+          {
+            "titre": "L'ONU et la guerre froide",
+            "objectifs": ["Citer les objectifs de l'ONU", "Décrire l'opposition des deux blocs"]
+          },
+          {
+            "titre": "La décolonisation de l'Afrique",
+            "objectifs": [
+              "Expliquer les facteurs de la décolonisation",
+              "Retracer l'accession du Dahomey à l'indépendance (1er août 1960)"
+            ]
+          },
+          {
+            "titre": "Le Bénin de l'indépendance à nos jours",
+            "objectifs": [
+              "Décrire l'instabilité politique (1960-1972) et la période révolutionnaire",
+              "Expliquer la Conférence des forces vives de la Nation (1990)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 3 (Géographie) : Le Bénin, milieu physique et population",
+        "lecons": [
+          {
+            "titre": "Situation, relief, climat et hydrographie du Bénin",
+            "objectifs": [
+              "Localiser le Bénin et ses départements",
+              "Décrire les grands ensembles du relief et les climats"
+            ]
+          },
+          {
+            "titre": "La population béninoise",
+            "objectifs": [
+              "Décrire la répartition et la croissance de la population",
+              "Expliquer l'exode rural et l'urbanisation"
+            ]
+          },
+          {
+            "titre": "Les ressources ligneuses et leur dégradation",
+            "objectifs": [
+              "Identifier les causes de la déforestation",
+              "Proposer des mesures de gestion durable"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "SA 4 (Géographie) : Les activités économiques du Bénin",
+        "lecons": [
+          {
+            "titre": "Agriculture, élevage et pêche",
+            "objectifs": [
+              "Citer les principales cultures (coton, maïs, anacarde)",
+              "Analyser les problèmes du secteur agricole"
+            ]
+          },
+          {
+            "titre": "Industrie, commerce et Port autonome de Cotonou",
+            "objectifs": [
+              "Décrire le rôle du port et du commerce avec le Nigeria",
+              "Identifier les principales unités industrielles"
+            ]
+          },
+          {
+            "titre": "Tourisme et ressources touristiques",
+            "objectifs": [
+              "Citer les sites touristiques (Ouidah, Abomey, Pendjari, Ganvié)",
+              "Proposer des moyens de valorisation"
+            ]
+          },
+          {
+            "titre": "Transports et communications",
+            "objectifs": [
+              "Décrire les réseaux routier, ferroviaire et portuaire",
+              "Expliquer le rôle du Bénin comme pays de transit"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

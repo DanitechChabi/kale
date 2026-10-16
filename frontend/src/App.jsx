@@ -45,6 +45,11 @@ const EmploiDuTemps = lazy(() => import('./pages/espace/EmploiDuTemps.jsx'));
 const CoursEnseignant = lazy(() => import('./pages/espace/CoursEnseignant.jsx'));
 const MesCours = lazy(() => import('./pages/espace/MesCours.jsx'));
 const MesDevoirs = lazy(() => import('./pages/espace/MesDevoirs.jsx'));
+const PresentationEduCourses = lazy(() => import('./pages/educourses/Presentation.jsx'));
+const Apprenants = lazy(() => import('./pages/educourses/Apprenants.jsx'));
+const TableauApprenant = lazy(() => import('./pages/educourses/TableauApprenant.jsx'));
+const ProgrammeEduCourses = lazy(() => import('./pages/educourses/Programme.jsx'));
+const Lecon = lazy(() => import('./pages/educourses/Lecon.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -57,6 +62,7 @@ export default function App() {
           <Route path="duplicata" element={<DemandeDuplicata />} />
           <Route path="duplicata/suivi" element={<SuiviDuplicata />} />
           <Route path="parents" element={<ActivationParent />} />
+          <Route path="educourses" element={<PresentationEduCourses />} />
           <Route path="*" element={<PageIntrouvable />} />
         </Route>
         <Route path="connexion" element={<Connexion />} />
@@ -95,6 +101,15 @@ export default function App() {
               <Route path="mes-notes" element={<MesNotes />} />
               <Route path="mes-cours" element={<MesCours />} />
               <Route path="devoirs" element={<MesDevoirs />} />
+            </Route>
+            <Route element={<RouteProtegee roles={['ELEVE', 'PARENT']} />}>
+              <Route path="educourses" element={<Apprenants />} />
+              <Route path="educourses/:profilId" element={<TableauApprenant />} />
+              <Route
+                path="educourses/:profilId/programmes/:programmeId"
+                element={<ProgrammeEduCourses />}
+              />
+              <Route path="educourses/:profilId/lecons/:leconId" element={<Lecon />} />
             </Route>
             <Route element={<RouteProtegee roles={['PARENT']} />}>
               <Route path="enfants/:id" element={<EnfantDetail />} />
