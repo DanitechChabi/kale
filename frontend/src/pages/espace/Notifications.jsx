@@ -1,14 +1,32 @@
 import { useState } from 'react';
-import { RotateCcw } from 'lucide-react';
+import { CalendarCheck, RotateCcw } from 'lucide-react';
 import EnTetePage from '../../components/EnTetePage.jsx';
 import Alerte from '../../components/ui/Alerte.jsx';
 import Badge from '../../components/ui/Badge.jsx';
+import Bouton from '../../components/ui/Bouton.jsx';
 import Chargement from '../../components/ui/Chargement.jsx';
 import Onglets from '../../components/ui/Onglets.jsx';
 import { useAuth } from '../../contexte/Auth.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
 import { appelApi } from '../../lib/api.js';
 import { formaterDate, formaterTelephone } from '../../lib/navigation.js';
+
+const MOIS = [
+  'janvier',
+  'février',
+  'mars',
+  'avril',
+  'mai',
+  'juin',
+  'juillet',
+  'août',
+  'septembre',
+  'octobre',
+  'novembre',
+  'décembre',
+];
+/** « 2026-10 » → « octobre 2026 » */
+const nomMois = (mois) => `${MOIS[Number(mois.slice(5, 7)) - 1]} ${mois.slice(0, 4)}`;
 
 const STATUTS = {
   EN_ATTENTE: ['En file', 'ambre'],
@@ -68,6 +86,23 @@ export default function Notifications() {
       setErreurAction(err.message);
     }
   }
+  const [recap, setRecap] = useState({ envoi: false, resultat: null });
+  async function envoyerRecapitulatif() {
+    setRecap({ envoi: true, resultat: null });
+    setErreurAction(null);
+    try {
+      const resultat = await appelApi('/notifications/recapitulatif', {
+        methode: 'POST',
+        corps: { mois: config.moisRecapitulatif },
+      });
+      setRecap({ envoi: false, resultat });
+      recharger();
+    } catch (err) {
+      setRecap({ envoi: false, resultat: null });
+      setErreurAction(err.message);
+    }
+  }
+
   async function relancer(id) {
     await appelApi(`/notifications/${id}/relance`, { methode: 'POST' }).catch((err) =>
       setErreurAction(err.message),
@@ -80,7 +115,7 @@ export default function Notifications() {
     <div className="space-y-6">
       <EnTetePage
         titre="SMS aux parents"
-        description="Absences et bulletins sont signalés aux parents par SMS, même sans smartphone ni compte."
+        description="Absences, notes du mois et bulletins sont signalés aux parents par SMS, même sans smartphone ni compte."
       />
 
       {config && (
@@ -92,6 +127,13 @@ export default function Notifications() {
               actif={config.reglages.smsAbsences}
               desactive={!estDirection}
               onChange={(v) => regler('smsAbsences', v)}
+            />
+            <Interrupteur
+              libelle="Récapitulatif mensuel des notes"
+              description="Au début de chaque mois, les notes du mois écoulé par matière et la moyenne à ce jour."
+              actif={config.reglages.smsRecapNotes}
+              desactive={!estDirection}
+              onChange={(v) => regler('smsRecapNotes', v)}
             />
             <Interrupteur
               libelle="Bulletins disponibles"
@@ -106,6 +148,25 @@ export default function Notifications() {
               Destinataires : le téléphone du parent enregistré sur la fiche de l’élève et les
               comptes parents reliés. Un même événement ne produit jamais deux SMS.
             </p>
+            {estDirection && config.reglages.smsRecapNotes && (
+              <div className="flex flex-wrap items-center gap-3">
+                <Bouton
+                  variante="secondaire"
+                  icone={CalendarCheck}
+                  chargement={recap.envoi}
+                  onClick={envoyerRecapitulatif}
+                >
+                  Envoyer le récapitulatif de {nomMois(config.moisRecapitulatif)}
+                </Bouton>
+                {recap.resultat && (
+                  <span className="text-sm text-marque-700">
+                    {recap.resultat.smsEnFile
+                      ? `${recap.resultat.smsEnFile} SMS préparés`
+                      : 'Déjà envoyé à tous les parents'}
+                  </span>
+                )}
+              </div>
+            )}
             {config.fournisseur === 'journal' && (
               <Alerte type="info" titre="Aucun opérateur SMS raccordé">
                 Les messages sont préparés et enregistrés ci-dessous, mais pas encore transmis : ils

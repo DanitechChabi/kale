@@ -39,3 +39,66 @@ export function messageBulletin({ eleve, donnees, numero, url }) {
   const r = donnees.resultats;
   return `EduRelevé : ${document} de ${qui} est disponible. Moyenne ${note(r.moyenneGenerale)}/20, rang ${rang(r.rang, r.exAequo)} sur ${r.classes}. N° ${formaterNumero(numero)}, vérifiable sur ${url.replace(/^https?:\/\//, '')}`;
 }
+
+const MOIS = [
+  'janvier',
+  'février',
+  'mars',
+  'avril',
+  'mai',
+  'juin',
+  'juillet',
+  'août',
+  'septembre',
+  'octobre',
+  'novembre',
+  'décembre',
+];
+
+/** « 2026-10 » → « octobre » */
+export const nomMois = (mois) => MOIS[Number(mois.slice(5, 7)) - 1];
+
+const MOTS_VIDES = new Set(['de', 'du', 'des', 'la', 'le', 'les', 'et', 'en', "l'", "d'"]);
+
+/**
+ * Nom court d'une matière pour un SMS : sigle usuel pour les intitulés longs
+ * (« Sciences de la Vie et de la Terre » → « SVT », « Physique-Chimie et
+ * Technologie » → « PCT »), nom complet sinon.
+ */
+export function matiereCourte(nom) {
+  const mots = nom.split(/[\s-]+/).filter((m) => m && !MOTS_VIDES.has(m.toLowerCase()));
+  if (mots.length >= 3) {
+    return mots.map((m) => m.normalize('NFD').replace(/\p{M}/gu, '')[0].toUpperCase()).join('');
+  }
+  return nom.length <= 20 ? nom : mots[0];
+}
+
+/**
+ * Récapitulatif mensuel : moyenne des notes du mois dans chaque matière (sur 20),
+ * puis moyenne générale de la période à ce jour. Les matières qui ne tiennent pas
+ * dans la longueur maximale sont résumées par « … ».
+ */
+export function messageRecapNotes(
+  { eleve, mois, matieres, periode, moyenneGenerale, url },
+  max = 480,
+) {
+  const debut = `EduRelevé : notes de ${prenomUsuel(eleve.prenoms)} ${eleve.nom} en ${nomMois(mois)} : `;
+  const fin = [
+    moyenneGenerale !== null && moyenneGenerale !== undefined
+      ? ` Moyenne du ${libellePeriode(periode)} à ce jour : ${note(moyenneGenerale)}/20.`
+      : '',
+    url ? ` Détail : ${url.replace(/^https?:\/\//, '')}` : '',
+  ].join('');
+  const elements = matieres.map((m) => `${matiereCourte(m.matiere)} ${note(m.moyenne)}`);
+  let liste = '';
+  for (const [i, element] of elements.entries()) {
+    const suivant = `${liste}${i ? ' ; ' : ''}${element}`;
+    const reste = i < elements.length - 1 ? ' ; …' : '';
+    if ((debut + suivant + reste + '.' + fin).length > max) {
+      liste += ' ; …';
+      break;
+    }
+    liste = suivant;
+  }
+  return `${debut}${liste}.${fin}`;
+}

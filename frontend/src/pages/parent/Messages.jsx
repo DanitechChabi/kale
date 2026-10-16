@@ -1,4 +1,4 @@
-import { CalendarX2, MessageSquareText, ScrollText } from 'lucide-react';
+import { CalendarX2, ChartColumn, MessageSquareText, ScrollText } from 'lucide-react';
 import EnTetePage from '../../components/EnTetePage.jsx';
 import SimulateurUssd from '../../components/SimulateurUssd.jsx';
 import Alerte from '../../components/ui/Alerte.jsx';
@@ -6,7 +6,7 @@ import Chargement from '../../components/ui/Chargement.jsx';
 import { useRequete } from '../../hooks/useRequete.js';
 import { formaterDate } from '../../lib/navigation.js';
 
-const ICONES = { ABSENCE: CalendarX2, BULLETIN: ScrollText };
+const ICONES = { ABSENCE: CalendarX2, BULLETIN: ScrollText, RECAP_NOTES: ChartColumn };
 
 /** Messages reçus par SMS, et le service par code USSD pour les téléphones simples. */
 export default function Messages() {
@@ -47,8 +47,8 @@ export default function Messages() {
               </ul>
             ) : (
               <Alerte type="info">
-                Aucun message pour le moment. Vous serez prévenu par SMS d’une absence ou d’un
-                nouveau bulletin.
+                Aucun message pour le moment. Vous serez prévenu par SMS de chaque absence, des
+                notes de chaque mois et des nouveaux bulletins.
               </Alerte>
             ))}
         </section>

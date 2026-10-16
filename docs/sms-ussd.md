@@ -8,10 +8,16 @@ l'établissement voit tout dans « SMS aux parents », marqué « Enregistré »
 
 Événements :
 
-| Événement                          | Réglage de l'établissement | Exemple                                                                          |
-| ---------------------------------- | -------------------------- | -------------------------------------------------------------------------------- |
-| Absence ou retard relevé à l'appel | `smsAbsences`              | « Sèna HOUNKPATIN était absent(e) le 16/10 à 7h (CEG Les Cocotiers)… »           |
-| Bulletin ou relevé délivré         | `smsBulletins`             | « Le bulletin du 1er trimestre de … est disponible. Moyenne 12,50/20, rang 5e… » |
+| Événement                          | Réglage de l'établissement | Exemple                                                                                                               |
+| ---------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Absence ou retard relevé à l'appel | `smsAbsences`              | « Sèna HOUNKPATIN était absent(e) le 16/10 à 7h (CEG Les Cocotiers)… »                                                |
+| Début de mois (1er au 7)           | `smsRecapNotes`            | « notes de Koffi AGOSSOU en octobre : Mathématiques 12,75 ; SVT 9,00… Moyenne du 1er trimestre à ce jour : 11,20/20 » |
+| Bulletin ou relevé délivré         | `smsBulletins`             | « Le bulletin du 1er trimestre de … est disponible. Moyenne 12,50/20, rang 5e… »                                      |
+
+Le récapitulatif mensuel est préparé automatiquement au démarrage du serveur puis toutes les
+6 heures pendant les 7 premiers jours du mois (rattrapage si le service était en veille le 1er).
+La direction peut aussi l'envoyer elle-même ; un élève ne reçoit jamais deux récapitulatifs pour
+le même mois.
 
 Destinataires : le téléphone du parent saisi sur la fiche de l'élève et les comptes parents
 reliés (un seul SMS par numéro). Rejouer un événement ne renvoie jamais de second SMS.

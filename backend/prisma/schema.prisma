@@ -147,6 +147,7 @@ enum StatutDemande {
 enum TypeNotification {
   ABSENCE // absence ou retard relevé à l'appel
   BULLETIN // bulletin ou relevé délivré
+  RECAP_NOTES // récapitulatif mensuel des notes
 }
 
 enum StatutNotification {
@@ -276,6 +277,7 @@ model Ecole {
   /// Notifications SMS aux parents (activables par l'établissement)
   smsAbsences          Boolean             @default(true) @map("sms_absences")
   smsBulletins         Boolean             @default(true) @map("sms_bulletins")
+  smsRecapNotes        Boolean             @default(true) @map("sms_recap_notes")
   /// Un établissement n'accède à la plateforme qu'une fois VERIFIEE
   statutVerification   StatutVerification  @default(EN_ATTENTE) @map("statut_verification")
   verifieeLe           DateTime?           @map("verifiee_le") @db.Timestamptz(3)

@@ -128,7 +128,7 @@ http://localhost:4173 dans Chrome (menu « Installer l'application »).
 - **Espace parent** : un compte, plusieurs enfants, même dans plusieurs établissements. Notes au fil
   de la période, moyennes, absences, bulletins. Le parent ouvre lui-même son compte sur `/parents`
   avec l'identifiant de l'enfant, sa date de naissance et le téléphone enregistré par l'école.
-- **SMS** : absence ou retard relevé, bulletin délivré (moyenne, rang, numéro de vérification).
+- **SMS** : chaque absence ou retard relevé, récapitulatif mensuel des notes, bulletin délivré (moyenne, rang, numéro de vérification).
   File d'envoi en base, un seul SMS par événement et par téléphone, 3 tentatives. Brancher un
   opérateur : [docs/sms-ussd.md](docs/sms-ussd.md).
 - **USSD** : moyennes, absences et bulletins depuis un téléphone simple, sans internet. Passerelle

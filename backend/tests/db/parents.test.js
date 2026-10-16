@@ -326,6 +326,43 @@ describe('espace parent', () => {
   });
 });
 
+describe('récapitulatif mensuel des notes', () => {
+  it('envoie un SMS par élève noté dans le mois, une seule fois', async () => {
+    const mois = `${new Date().getUTCFullYear() - 1}-10`;
+    expect(
+      (await ctx.secretariat.api.post('/api/notifications/recapitulatif', { mois })).status,
+    ).toBe(403);
+    const reponse = await ctx.admin.api.post('/api/notifications/recapitulatif', { mois });
+    expect(reponse.status).toBe(200);
+    // 3 élèves notés ; le troisième n'a aucun téléphone de parent
+    expect(reponse.body).toMatchObject({ mois, eleves: 3, smsEnFile: 2 });
+    await declencherEnvoi();
+    const sms = envoyes.filter((m) => m.telephone === ctx.telephones[0]).at(-1);
+    expect(sms.message).toMatch(
+      /^EduRelevé : notes de Prénom0 AHOUANDJINOU en octobre : Mathématiques 15,00\. Moyenne du 1er trimestre à ce jour : 15,00\/20\. Détail : /,
+    );
+    const encore = await ctx.admin.api.post('/api/notifications/recapitulatif', { mois });
+    expect(encore.body.smsEnFile).toBe(0);
+    const vide = await ctx.admin.api.post('/api/notifications/recapitulatif', {
+      mois: `${new Date().getUTCFullYear() - 1}-08`,
+    });
+    expect(vide.body).toMatchObject({ eleves: 0, smsEnFile: 0 });
+  });
+
+  it('ne s’envoie automatiquement qu’en début de mois', async () => {
+    const { recapitulatifsAutomatiques } =
+      await import('../../src/contexts/notifications/recapitulatif.js');
+    expect(await recapitulatifsAutomatiques(new Date('2026-11-15T10:00:00Z'))).toMatchObject({
+      etablissements: 0,
+    });
+    const debut = await recapitulatifsAutomatiques(
+      new Date(`${new Date().getUTCFullYear() - 1}-11-02T10:00:00Z`),
+    );
+    expect(debut.mois).toBe(`${new Date().getUTCFullYear() - 1}-10`);
+    expect(debut.smsEnFile).toBe(0); // déjà envoyé à la main : aucun doublon
+  });
+});
+
 describe('suivi de l’élève connecté', () => {
   it('voit ses propres notes', async () => {
     const compteEleve = await creerCompte('ELEVE', { ecoleId: ctx.ecole.id });
