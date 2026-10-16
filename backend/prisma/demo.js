@@ -165,6 +165,7 @@ const NIVEAUX = [
   'TERMINALE',
 ];
 const ELEVES_PAR_CLASSE = 24;
+const IDENTIFIANT_ELEVE_CORPS = 'SENAH6EA2'; // élève de démonstration : SENAH-6EA2Q
 
 // Générateur pseudo-aléatoire déterministe : la démonstration est identique à chaque chargement
 let graine = 20262027;
@@ -261,7 +262,8 @@ export async function chargerDemo(prisma, { journal = console.log } = {}) {
     return null;
   }
   const { hacherMotDePasse } = await import('../src/utils/motDePasse.js');
-  const { genererIdentifiantEleve } = await import('../src/utils/identifiantEleve.js');
+  const { caractereControle, genererIdentifiantEleve } =
+    await import('../src/utils/identifiantEleve.js');
   const { creerApp } = await import('../src/app.js');
   const { normaliserNumero } = await import('../src/utils/numeroDocument.js');
   const hache = await hacherMotDePasse(MOT_DE_PASSE);
@@ -665,6 +667,8 @@ export async function chargerDemo(prisma, { journal = console.log } = {}) {
       where: { id: sixieme.eleve.id },
       data: {
         utilisateurId: eleveCompte.id,
+        // Identifiant fixe : le même sur chaque installation de démonstration
+        identifiant: IDENTIFIANT_ELEVE_CORPS + caractereControle(IDENTIFIANT_ELEVE_CORPS),
         nom: 'HOUNKPATIN',
         prenoms: 'Sèna Marie-Ange',
         sexe: 'F',
@@ -733,7 +737,10 @@ export async function chargerDemo(prisma, { journal = console.log } = {}) {
       });
     }
 
-    return { resume, identifiantEleve: sixieme.eleve.identifiant };
+    return {
+      resume,
+      identifiantEleve: IDENTIFIANT_ELEVE_CORPS + caractereControle(IDENTIFIANT_ELEVE_CORPS),
+    };
   } finally {
     serveur.close();
   }
