@@ -277,61 +277,68 @@ model ProgrammeMatiere {
 // -----------------------------------------------------------------------------
 
 model Ecole {
-  id                   String              @id @default(uuid()) @db.Uuid
-  code                 String              @unique @db.VarChar(30) // code officiel de l'établissement
-  nom                  String              @db.VarChar(200)
-  sigle                String?             @db.VarChar(30)
-  statut               StatutEcole
-  type                 TypeEtablissement
+  id                           String              @id @default(uuid()) @db.Uuid
+  code                         String              @unique @db.VarChar(30) // code officiel de l'établissement
+  nom                          String              @db.VarChar(200)
+  sigle                        String?             @db.VarChar(30)
+  statut                       StatutEcole
+  type                         TypeEtablissement
   /// Ordres d'enseignement proposés (général, technique ou les deux)
-  ordres               OrdreEnseignement[]
-  nomChefEtablissement String?             @map("nom_chef_etablissement") @db.VarChar(200)
-  communeId            String              @map("commune_id") @db.Uuid
-  adresse              String?             @db.VarChar(255)
-  telephone            String?             @db.VarChar(30)
-  email                String?             @db.VarChar(255)
+  ordres                       OrdreEnseignement[]
+  nomChefEtablissement         String?             @map("nom_chef_etablissement") @db.VarChar(200)
+  communeId                    String              @map("commune_id") @db.Uuid
+  adresse                      String?             @db.VarChar(255)
+  telephone                    String?             @db.VarChar(30)
+  email                        String?             @db.VarChar(255)
   /// Type de découpage de l'année appliqué par l'établissement
-  typePeriode          TypePeriode         @default(TRIMESTRE) @map("type_periode")
+  typePeriode                  TypePeriode         @default(TRIMESTRE) @map("type_periode")
   /// Notifications SMS aux parents (activables par l'établissement)
-  smsAbsences          Boolean             @default(true) @map("sms_absences")
-  smsBulletins         Boolean             @default(true) @map("sms_bulletins")
-  smsRecapNotes        Boolean             @default(true) @map("sms_recap_notes")
+  smsAbsences                  Boolean             @default(true) @map("sms_absences")
+  smsBulletins                 Boolean             @default(true) @map("sms_bulletins")
+  smsRecapNotes                Boolean             @default(true) @map("sms_recap_notes")
+  /// EduMail : la direction délègue au secrétariat les décisions sur les demandes
+  edumailDelegationSecretariat Boolean             @default(false) @map("edumail_delegation_secretariat")
   /// Un établissement n'accède à la plateforme qu'une fois VERIFIEE
-  statutVerification   StatutVerification  @default(EN_ATTENTE) @map("statut_verification")
-  verifieeLe           DateTime?           @map("verifiee_le") @db.Timestamptz(3)
-  verifieeParId        String?             @map("verifiee_par_id") @db.Uuid
-  motifDecision        String?             @map("motif_decision") @db.VarChar(500)
-  actif                Boolean             @default(true)
-  creeLe               DateTime            @default(now()) @map("cree_le") @db.Timestamptz(3)
-  modifieLe            DateTime            @updatedAt @map("modifie_le") @db.Timestamptz(3)
+  statutVerification           StatutVerification  @default(EN_ATTENTE) @map("statut_verification")
+  verifieeLe                   DateTime?           @map("verifiee_le") @db.Timestamptz(3)
+  verifieeParId                String?             @map("verifiee_par_id") @db.Uuid
+  motifDecision                String?             @map("motif_decision") @db.VarChar(500)
+  actif                        Boolean             @default(true)
+  creeLe                       DateTime            @default(now()) @map("cree_le") @db.Timestamptz(3)
+  modifieLe                    DateTime            @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
-  commune           Commune                @relation(fields: [communeId], references: [id], onDelete: Restrict)
-  verifieePar       Utilisateur?           @relation("VerificationEcole", fields: [verifieeParId], references: [id], onDelete: Restrict)
-  documents         DocumentEcole[]
-  utilisateurs      Utilisateur[]
-  anneesScolaires   AnneeScolaire[]
-  periodes          Periode[]
-  classes           Classe[]
-  matieres          Matiere[]
-  enseignements     Enseignement[]
-  eleves            Eleve[]
-  liensParentEleve  LienParentEleve[]
-  inscriptions      Inscription[]
-  evaluations       Evaluation[]
-  notes             Note[]
-  creneaux          CreneauEmploiDuTemps[]
-  choixOptions      ChoixOption[]
-  appels            Appel[]
-  presences         Presence[]
-  relevesArchives   ReleveArchive[]
-  demandesDuplicata DemandeDuplicata[]
-  journalAudit      JournalAudit[]
-  notifications     Notification[]
-  cours             Cours[]
-  devoirs           Devoir[]
-  devoirsFaits      DevoirFait[]
-  rendus            RenduDevoir[]
-  rendusFichiers    RenduFichier[]
+  commune              Commune                @relation(fields: [communeId], references: [id], onDelete: Restrict)
+  verifieePar          Utilisateur?           @relation("VerificationEcole", fields: [verifieeParId], references: [id], onDelete: Restrict)
+  documents            DocumentEcole[]
+  utilisateurs         Utilisateur[]
+  anneesScolaires      AnneeScolaire[]
+  periodes             Periode[]
+  classes              Classe[]
+  matieres             Matiere[]
+  enseignements        Enseignement[]
+  eleves               Eleve[]
+  liensParentEleve     LienParentEleve[]
+  inscriptions         Inscription[]
+  evaluations          Evaluation[]
+  notes                Note[]
+  creneaux             CreneauEmploiDuTemps[]
+  choixOptions         ChoixOption[]
+  appels               Appel[]
+  presences            Presence[]
+  relevesArchives      ReleveArchive[]
+  demandesDuplicata    DemandeDuplicata[]
+  journalAudit         JournalAudit[]
+  notifications        Notification[]
+  cours                Cours[]
+  devoirs              Devoir[]
+  devoirsFaits         DevoirFait[]
+  rendus               RenduDevoir[]
+  rendusFichiers       RenduFichier[]
+  edumailIdentifiants  EduMailIdentifiant[]
+  edumailComptes       EduMailCompte[]
+  edumailConsentements EduMailConsentement[]
+  edumailEvenements    EduMailEvenement[]
+  edumailSignalements  EduMailSignalement[]
 
   @@index([communeId])
   @@index([statutVerification])
@@ -593,17 +600,20 @@ model Eleve {
   creeLe                 DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
   modifieLe              DateTime @updatedAt @map("modifie_le") @db.Timestamptz(3)
 
-  ecole             Ecole              @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
-  utilisateur       Utilisateur?       @relation(fields: [utilisateurId], references: [id], onDelete: SetNull)
-  parents           LienParentEleve[]
-  inscriptions      Inscription[]
-  notes             Note[]
-  presences         Presence[]
-  relevesArchives   ReleveArchive[]
-  demandesDuplicata DemandeDuplicata[]
-  notifications     Notification[]
-  devoirsFaits      DevoirFait[]
-  rendus            RenduDevoir[]
+  ecole               Ecole                @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  utilisateur         Utilisateur?         @relation(fields: [utilisateurId], references: [id], onDelete: SetNull)
+  parents             LienParentEleve[]
+  inscriptions        Inscription[]
+  notes               Note[]
+  presences           Presence[]
+  relevesArchives     ReleveArchive[]
+  demandesDuplicata   DemandeDuplicata[]
+  notifications       Notification[]
+  devoirsFaits        DevoirFait[]
+  rendus              RenduDevoir[]
+  edumailIdentifiant  EduMailIdentifiant?
+  edumailComptes      EduMailCompte[]
+  edumailSignalements EduMailSignalement[]
 
   @@unique([ecoleId, matricule])
   @@unique([ecoleId, npi])
@@ -1204,4 +1214,177 @@ model EcAbonnement {
 
   @@index([titulaireId])
   @@map("ec_abonnements")
+}
+
+// -----------------------------------------------------------------------------
+// EduMail : adresse électronique éducative des élèves (voir docs/edumail.md)
+// -----------------------------------------------------------------------------
+
+enum StatutEduMail {
+  A_VERIFIER // données scolaires insuffisantes : l'établissement doit vérifier
+  EN_ATTENTE_CONSENTEMENT // consentement du représentant légal requis et absent
+  EN_ATTENTE_DECISION // dossier complet, décision de la direction attendue
+  APPROUVE // approuvé, création chez le fournisseur à lancer
+  EN_COURS // création en cours chez le fournisseur
+  ERREUR // la création a échoué : relance possible sans doublon
+  ACTIF // boîte réellement créée chez le fournisseur
+  SUSPENDU
+  REFUSE
+  CLOTURE // désactivé ; l'adresse n'est jamais réattribuée
+}
+
+enum ModeConsentementEduMail {
+  ESPACE_PARENT // donné par le parent relié, depuis son espace
+  ATTESTATION_ECRITE // écrit signé, déposé et vérifié par l'établissement
+}
+
+enum CategorieSignalementEduMail {
+  IDENTITE
+  INSCRIPTION
+  AUTRE
+}
+
+enum StatutSignalementEduMail {
+  OUVERT
+  TRAITE
+  REJETE
+}
+
+/// Partie locale de l'adresse, générée et stable, propre à un élève ; jamais réattribuée
+model EduMailIdentifiant {
+  id           String   @id @default(uuid()) @db.Uuid
+  ecoleId      String   @map("ecole_id") @db.Uuid
+  eleveId      String   @unique @map("eleve_id") @db.Uuid
+  partieLocale String   @unique @map("partie_locale") @db.VarChar(32)
+  creeLe       DateTime @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole   Ecole           @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve   Eleve           @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  comptes EduMailCompte[]
+
+  @@index([ecoleId])
+  @@map("edumail_identifiants")
+}
+
+/// Demande puis compte EduMail d'un élève (une ligne par demande ; jamais supprimée)
+model EduMailCompte {
+  id                     String        @id @default(uuid()) @db.Uuid
+  ecoleId                String        @map("ecole_id") @db.Uuid
+  eleveId                String        @map("eleve_id") @db.Uuid
+  identifiantId          String        @map("identifiant_id") @db.Uuid
+  demandeurId            String        @map("demandeur_id") @db.Uuid
+  statut                 StatutEduMail
+  /// Adresse complète, fixée à la création chez le fournisseur
+  adresse                String?       @unique @db.VarChar(255)
+  fournisseur            String?       @db.VarChar(30)
+  idExterne              String?       @map("id_externe") @db.VarChar(200)
+  /// Compte créé par le fournisseur de simulation (développement et tests uniquement)
+  simule                 Boolean       @default(false)
+  consentementRequis     Boolean       @map("consentement_requis")
+  demandeLe              DateTime      @default(now()) @map("demande_le") @db.Timestamptz(3)
+  decisionParId          String?       @map("decision_par_id") @db.Uuid
+  decisionLe             DateTime?     @map("decision_le") @db.Timestamptz(3)
+  decisionParDelegation  Boolean       @default(false) @map("decision_par_delegation")
+  motifDecision          String?       @map("motif_decision") @db.VarChar(500)
+  activeLe               DateTime?     @map("active_le") @db.Timestamptz(3)
+  derniereVerificationLe DateTime?     @map("derniere_verification_le") @db.Timestamptz(3)
+  /// Situation scolaire à réexaminer par l'établissement (aucune action automatique)
+  aReexaminer            String?       @map("a_reexaminer") @db.VarChar(40)
+  motifSuspension        String?       @map("motif_suspension") @db.VarChar(500)
+  motifCloture           String?       @map("motif_cloture") @db.VarChar(500)
+  tentatives             Int           @default(0) @db.SmallInt
+  derniereErreur         String?       @map("derniere_erreur") @db.VarChar(300)
+  /// Début de la création en cours (reprise après une interruption)
+  verrouLe               DateTime?     @map("verrou_le") @db.Timestamptz(3)
+  modifieLe              DateTime      @updatedAt @map("modifie_le") @db.Timestamptz(3)
+
+  ecole         Ecole                 @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve         Eleve                 @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  identifiant   EduMailIdentifiant    @relation(fields: [identifiantId], references: [id], onDelete: Restrict)
+  consentements EduMailConsentement[]
+  evenements    EduMailEvenement[]
+  signalements  EduMailSignalement[]
+
+  @@unique([fournisseur, idExterne])
+  @@index([ecoleId, statut])
+  @@index([eleveId])
+  @@map("edumail_comptes")
+}
+
+/// Consentement du représentant légal (une ligne par consentement ; retrait daté, jamais effacé)
+model EduMailConsentement {
+  id               String                  @id @default(uuid()) @db.Uuid
+  ecoleId          String                  @map("ecole_id") @db.Uuid
+  compteId         String                  @map("compte_id") @db.Uuid
+  mode             ModeConsentementEduMail
+  /// Parent relié qui consent (mode ESPACE_PARENT)
+  parentId         String?                 @map("parent_id") @db.Uuid
+  /// Représentant légal signataire (mode ATTESTATION_ECRITE)
+  representantNom  String?                 @map("representant_nom") @db.VarChar(200)
+  representantLien String?                 @map("representant_lien") @db.VarChar(30)
+  signeLe          DateTime?               @map("signe_le") @db.Date
+  /// Personne qui a recueilli ou saisi le consentement
+  recueilliParId   String                  @map("recueilli_par_id") @db.Uuid
+  methode          String                  @db.VarChar(60)
+  preuveChemin     String?                 @map("preuve_chemin") @db.VarChar(500)
+  preuveType       String?                 @map("preuve_type") @db.VarChar(50)
+  preuveEmpreinte  String?                 @map("preuve_empreinte") @db.Char(64)
+  /// Vérification de la preuve par une autre personne que celle qui l'a saisie
+  valideParId      String?                 @map("valide_par_id") @db.Uuid
+  valideLe         DateTime?               @map("valide_le") @db.Timestamptz(3)
+  retireLe         DateTime?               @map("retire_le") @db.Timestamptz(3)
+  retireParId      String?                 @map("retire_par_id") @db.Uuid
+  motifRetrait     String?                 @map("motif_retrait") @db.VarChar(500)
+  creeLe           DateTime                @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole  Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  compte EduMailCompte @relation(fields: [compteId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId])
+  @@index([compteId])
+  @@map("edumail_consentements")
+}
+
+/// Historique du cycle de vie d'un compte (ajout seul, sans secret)
+model EduMailEvenement {
+  id          String         @id @default(uuid()) @db.Uuid
+  ecoleId     String         @map("ecole_id") @db.Uuid
+  compteId    String         @map("compte_id") @db.Uuid
+  type        String         @db.VarChar(40)
+  statutAvant StatutEduMail? @map("statut_avant")
+  statutApres StatutEduMail? @map("statut_apres")
+  auteurId    String?        @map("auteur_id") @db.Uuid
+  motif       String?        @db.VarChar(500)
+  details     Json?
+  creeLe      DateTime       @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole  Ecole         @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  compte EduMailCompte @relation(fields: [compteId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId, creeLe])
+  @@index([compteId, creeLe])
+  @@map("edumail_evenements")
+}
+
+/// Erreur d'identité ou d'inscription signalée par l'élève
+model EduMailSignalement {
+  id          String                      @id @default(uuid()) @db.Uuid
+  ecoleId     String                      @map("ecole_id") @db.Uuid
+  eleveId     String                      @map("eleve_id") @db.Uuid
+  compteId    String?                     @map("compte_id") @db.Uuid
+  auteurId    String                      @map("auteur_id") @db.Uuid
+  categorie   CategorieSignalementEduMail
+  message     String                      @db.VarChar(1000)
+  statut      StatutSignalementEduMail    @default(OUVERT)
+  reponse     String?                     @db.VarChar(1000)
+  traiteParId String?                     @map("traite_par_id") @db.Uuid
+  traiteLe    DateTime?                   @map("traite_le") @db.Timestamptz(3)
+  creeLe      DateTime                    @default(now()) @map("cree_le") @db.Timestamptz(3)
+
+  ecole  Ecole          @relation(fields: [ecoleId], references: [id], onDelete: Restrict)
+  eleve  Eleve          @relation(fields: [eleveId], references: [id], onDelete: Restrict)
+  compte EduMailCompte? @relation(fields: [compteId], references: [id], onDelete: Restrict)
+
+  @@index([ecoleId, statut])
+  @@map("edumail_signalements")
 }

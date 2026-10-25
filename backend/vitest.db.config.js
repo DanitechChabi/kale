@@ -23,6 +23,10 @@ export default defineConfig({
       LIMITE_ACTIVATION: '10000',
       LIMITE_CONNEXION: '10000',
       LIMITE_INSCRIPTION: '10000',
+      // EduMail : fournisseur simulé et domaine réservé aux tests (RFC 2606)
+      EDUMAIL_FOURNISSEUR: 'simulation',
+      EDUMAIL_DOMAINE: 'edumail.test',
+      LIMITE_EDUMAIL: '10000',
     },
   },
 });

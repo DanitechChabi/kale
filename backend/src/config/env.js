@@ -2,7 +2,7 @@
 // L'application refuse de démarrer si la configuration est invalide.
 import { z } from 'zod';
 
-const schemaEnv = z
+export const schemaEnv = z
   .object({
     NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
     PORT: z.coerce.number().int().positive().default(4000),
@@ -56,6 +56,37 @@ const schemaEnv = z
     EDUCOURSES_PAYANT: z.stringbool().default(false),
     // Ouvertures de compte EduCourses par adresse IP et par heure
     LIMITE_INSCRIPTION_EDUCOURSES: z.coerce.number().int().positive().default(5),
+    // --- EduMail (docs/edumail.md) ---
+    // « aucun » : création réelle désactivée ; « simulation » : développement et tests seulement
+    EDUMAIL_FOURNISSEUR: z.enum(['aucun', 'simulation']).default('aucun'),
+    // Domaine des adresses, une fois acquis et vérifié chez le fournisseur (ex. eleves.exemple.bj)
+    EDUMAIL_DOMAINE: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .regex(
+        /^(?=.{4,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/,
+        'Domaine invalide',
+      )
+      .optional(),
+    // Adresse de la messagerie en ligne du fournisseur (lien donné aux élèves)
+    EDUMAIL_URL_WEBMAIL: z.url({ protocol: /^https$/ }).optional(),
+    // Consentement du représentant légal : toujours, avant un âge fixé par l'établissement
+    // gestionnaire après validation juridique, ou jamais (aucun âge n'est fixé par défaut)
+    EDUMAIL_CONSENTEMENT: z.enum(['toujours', 'avant_age', 'jamais']).default('toujours'),
+    EDUMAIL_AGE_CONSENTEMENT: z.coerce.number().int().min(1).max(30).optional(),
+    // Délai maximal d'un appel au fournisseur (ms)
+    EDUMAIL_DELAI_FOURNISSEUR_MS: z.coerce.number().int().min(1000).max(120000).default(15000),
+    // Demandes et réinitialisations EduMail par compte et par heure
+    LIMITE_EDUMAIL: z.coerce.number().int().positive().default(10),
+  })
+  .refine((env) => !(env.NODE_ENV === 'production' && env.EDUMAIL_FOURNISSEUR === 'simulation'), {
+    message: 'Le fournisseur « simulation » est interdit en production',
+    path: ['EDUMAIL_FOURNISSEUR'],
+  })
+  .refine((env) => env.EDUMAIL_CONSENTEMENT !== 'avant_age' || env.EDUMAIL_AGE_CONSENTEMENT, {
+    message: 'EDUMAIL_AGE_CONSENTEMENT est obligatoire avec EDUMAIL_CONSENTEMENT=avant_age',
+    path: ['EDUMAIL_AGE_CONSENTEMENT'],
   })
   .refine((env) => env.JWT_ACCESS_SECRET !== env.JWT_REFRESH_SECRET, {
     message: 'Les secrets JWT d’accès et de rafraîchissement doivent être différents',

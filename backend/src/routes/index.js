@@ -6,6 +6,7 @@ import { routeurCours } from './cours.js';
 import { routeurEmploiDuTemps } from './emploiDuTemps.js';
 import { routeurEleve } from './eleve.js';
 import { routeurEduCourses } from './educourses.js';
+import { creerRouteurEduMail } from './edumail.js';
 import { routeurNotifications } from './notifications.js';
 import { routeurParent } from './parent.js';
 import { creerRouteurUssd } from './ussd.js';
@@ -43,6 +44,7 @@ export function creerRouteurApi(options = {}) {
   routeur.use('/parent', routeurParent);
   routeur.use('/moi', routeurEleve);
   routeur.use('/educourses', routeurEduCourses);
+  routeur.use('/edumail', creerRouteurEduMail(options.edumail));
   routeur.use('/ussd', creerRouteurUssd());
   routeur.use('/', routeurAppels);
   routeur.use('/', routeurEmploiDuTemps);

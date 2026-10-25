@@ -2,6 +2,8 @@
 import { config } from './config/env.js';
 import { prisma } from './config/prisma.js';
 import { creerApp } from './app.js';
+import { reprendreCreationsInterrompues } from './contexts/edumail/cycleDeVie.js';
+import { planifierVerifications } from './contexts/edumail/serviceEduMail.js';
 import { planifierRecapitulatifs } from './contexts/notifications/recapitulatif.js';
 import { reprendreEnvoisInterrompus } from './contexts/notifications/serviceNotifications.js';
 
@@ -13,6 +15,10 @@ const serveur = app.listen(config.PORT, () => {
   reprendreEnvoisInterrompus().catch((erreur) => console.error('Reprise des SMS :', erreur));
   // Récapitulatif mensuel des notes (début de mois)
   planifierRecapitulatifs();
+  // EduMail : créations interrompues repassées en erreur, puis vérification quotidienne
+  reprendreCreationsInterrompues(prisma)
+    .catch((erreur) => console.error('Reprise EduMail :', erreur))
+    .finally(planifierVerifications);
 });
 
 // Arrêt propre : on ferme le serveur puis la connexion à la base

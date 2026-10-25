@@ -38,6 +38,11 @@ const MODELES_ISOLES = new Set([
   'DevoirFait',
   'RenduDevoir',
   'RenduFichier',
+  'EduMailIdentifiant',
+  'EduMailCompte',
+  'EduMailConsentement',
+  'EduMailEvenement',
+  'EduMailSignalement',
 ]);
 
 /** Référentiels nationaux : lecture seule pour un établissement */
