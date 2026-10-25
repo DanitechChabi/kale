@@ -14,6 +14,7 @@ import {
   Library,
   LayoutDashboard,
   LogOut,
+  Mail,
   MessageSquareText,
   NotebookPen,
   PenLine,
@@ -91,6 +92,14 @@ const NAVIGATION = [
     icone: ScrollText,
     roles: ['ELEVE'],
   },
+  { vers: '/espace/edumail', libelle: 'EduMail', icone: Mail, roles: ['ELEVE'] },
+  {
+    vers: '/espace/edumail/etablissement',
+    libelle: 'EduMail',
+    icone: Mail,
+    roles: ['ADMIN_ECOLE', 'SECRETARIAT'],
+    verifiee: true,
+  },
   {
     vers: '/espace/educourses',
     libelle: 'EduCourses',
@@ -110,6 +119,12 @@ const NAVIGATION = [
     vers: '/espace/tableau-de-bord',
     libelle: 'Tableau de bord',
     icone: ChartColumn,
+    roles: ['SUPER_ADMIN', 'MINISTERE'],
+  },
+  {
+    vers: '/espace/edumail/national',
+    libelle: 'EduMail',
+    icone: Mail,
     roles: ['SUPER_ADMIN', 'MINISTERE'],
   },
   {

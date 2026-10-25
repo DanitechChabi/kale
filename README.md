@@ -166,6 +166,16 @@ et des duplicatas, pour le pays, un département, une commune ou un établisseme
   pondérée par ses élèves, jamais une moyenne de moyennes.
 - **Carte** des 12 départements (contours geoBoundaries, domaine public), export CSV pour tableur.
 
+## EduMail (messagerie scolaire)
+
+Les élèves du secondaire demandent une adresse neutre (`k7m2q9x4bd@<domaine>`). L'établissement
+vérifie l'inscription, le consentement du représentant légal est recueilli (en ligne par le
+parent, ou par attestation écrite vérifiée par une seconde personne), puis la direction décide
+(ou le secrétariat sur délégation tracée). **Aucun fournisseur réel n'est raccordé** : par défaut
+(`EDUMAIL_FOURNISSEUR=aucun`), rien n'est créé ; `simulation` est réservé au développement et aux
+tests. Configuration, comparatif des fournisseurs, points juridiques et étapes d'activation :
+[docs/edumail.md](docs/edumail.md).
+
 ## Commandes utiles
 
 | Commande                                  | Rôle                                |
@@ -192,3 +202,4 @@ relevés immuables, code commenté en français.
 8. ✅ Emplois du temps (conflits refusés, appel par créneau), cours en ligne (PDF, vidéo, lien), devoirs
 9. ✅ Tableau de bord ministère (indicateurs par zone, carte des départements, export CSV)
 10. ✅ Données de démonstration et parcours jury ([DEMO.md](DEMO.md))
+11. ✅ EduMail : architecture, instruction des demandes, consentement, cycle de vie (fournisseur réel à choisir)

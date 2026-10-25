@@ -483,6 +483,12 @@ describe('EduMail : secrets et réinitialisation', () => {
     expect(evenements.map((e) => e.type)).toEqual(
       expect.arrayContaining(['REINITIALISATION_REFUSEE', 'REINITIALISATION']),
     );
+    // Côté établissement : réservé à qui peut décider (le secrétariat sans délégation, non)
+    const url = `/api/edumail/ecole/dossiers/${id}/reinitialisation`;
+    expect((await ctx.secretariat.api.post(url)).status).toBe(403);
+    const parDirection = await ctx.admin.api.post(url);
+    expect(parDirection.status).toBe(200);
+    expect(parDirection.body.motDePasseTemporaire).toBeTruthy();
   });
 
   it("la direction peut réinitialiser ; un compte non actif ne l'est jamais", async () => {

@@ -77,6 +77,20 @@ et `frontend/` (React + Vite, Tailwind, PWA, interface en français, mobile-firs
 - La bonne réponse d'un quiz ne quitte jamais le serveur. Offre payante (`EDUCOURSES_PAYANT`)
   désactivée : la 1re leçon de chaque chapitre restera libre.
 
+## EduMail
+
+- Messagerie scolaire des élèves du secondaire (`contexts/edumail`, `docs/edumail.md`). Fournisseur
+  par défaut `aucun` ; `simulation` jamais en production et toujours affiché comme simulé. Aucun
+  partenariat revendiqué (page « Avantages numériques » : liens officiels seulement).
+- Adresse : identifiant aléatoire neutre (jamais nom, téléphone, NPI, matricule), immuable, jamais
+  réattribué (triggers). Aucun mot de passe de messagerie stocké ; le temporaire est remis une fois.
+- Consentement selon `EDUMAIL_CONSENTEMENT` (aucun âge en dur) ; attestation écrite = pièce +
+  empreinte + validation par une autre personne. Décisions : direction, ou secrétariat sur
+  délégation tracée. Jamais de suspension, clôture ni suppression automatique : « à réexaminer ».
+- Appels au fournisseur via `appelFournisseur` (délai, pas de message brut) ; création idempotente
+  (réservation, recherche par clé/adresse avant création). Nouveau fournisseur : pilote dans
+  `fournisseurs.js` et valeur autorisée de `EDUMAIL_FOURNISSEUR`.
+
 ## Hors connexion
 
 - Saisie des notes : `frontend/src/lib/horsLigne.js` (IndexedDB : file d'envoi, brouillons, copies

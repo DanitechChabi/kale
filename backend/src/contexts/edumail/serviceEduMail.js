@@ -685,6 +685,8 @@ export async function terminerReexamen(db, utilisateur, id, note) {
 }
 
 export async function reinitialiserParEtablissement(db, utilisateur, id) {
+  // Le mot de passe temporaire donne accès à la boîte : réservé à qui peut décider
+  await exigerDecideur(utilisateur);
   const compte = await chargerCompte(db, id);
   return reinitialiser(db, compte, utilisateur, { parEtablissement: true });
 }

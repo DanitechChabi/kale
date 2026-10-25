@@ -94,13 +94,25 @@ export function creerRouteurEduMail({ limite = config.LIMITE_EDUMAIL } = {}) {
   routeur.get('/parent/enfants/:eleveId', parent, enfant, async (req, res) =>
     res.json(await vueParent(req.utilisateur.id, req.valide.params.eleveId)),
   );
-  routeur.put('/parent/enfants/:eleveId/consentement', parent, enfant, async (req, res) =>
+  routeur.put('/parent/enfants/:eleveId/consentement', parent, limiter, enfant, async (req, res) =>
     res.json(await consentir(auteur(req), req.valide.params.eleveId)),
   );
-  routeur.delete('/parent/enfants/:eleveId/consentement', parent, enfant, async (req, res) =>
-    res.json(
-      await retirerConsentementParent(auteur(req), req.valide.params.eleveId, req.body?.motif),
-    ),
+  routeur.delete(
+    '/parent/enfants/:eleveId/consentement',
+    parent,
+    limiter,
+    valider({
+      params: z.object({ eleveId: z.uuid() }),
+      body: z.object({ motif: z.string().trim().max(500).optional() }).optional(),
+    }),
+    async (req, res) =>
+      res.json(
+        await retirerConsentementParent(
+          auteur(req),
+          req.valide.params.eleveId,
+          req.valide.body?.motif || undefined,
+        ),
+      ),
   );
 
   // --- Établissement ----------------------------------------------------------------------
@@ -196,6 +208,7 @@ export function creerRouteurEduMail({ limite = config.LIMITE_EDUMAIL } = {}) {
   routeur.post(
     '/ecole/dossiers/:id/reinitialisation',
     ecole,
+    limiter,
     dossier,
     sansCache,
     async (req, res) =>

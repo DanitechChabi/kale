@@ -1,6 +1,7 @@
 import { useParams, useSearchParams } from 'react-router-dom';
 import EnTetePage from '../../components/EnTetePage.jsx';
 import GrilleEmploiDuTemps from '../../components/GrilleEmploiDuTemps.jsx';
+import ConsentementParent from '../../components/edumail/ConsentementParent.jsx';
 import SuiviScolarite from '../../components/SuiviScolarite.jsx';
 import Alerte from '../../components/ui/Alerte.jsx';
 import Chargement from '../../components/ui/Chargement.jsx';
@@ -39,6 +40,7 @@ export default function EnfantDetail() {
           ['devoirs', 'Devoirs'],
           ['emploi', 'Emploi du temps'],
           ['cours', 'Cours'],
+          ['edumail', 'EduMail'],
         ]}
         actif={onglet}
         onChange={(v) => setParametres({ onglet: v }, { replace: true })}
@@ -60,6 +62,9 @@ export default function EnfantDetail() {
           chemin={`${base}/cours`}
           cheminFichier={(c) => `${base}/cours/${c.id}/fichier`}
         />
+      )}
+      {onglet === 'edumail' && (
+        <ConsentementParent eleveId={id} prenom={suivi.eleve.prenoms.split(' ')[0]} />
       )}
     </div>
   );

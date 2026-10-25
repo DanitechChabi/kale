@@ -51,6 +51,11 @@ const TableauApprenant = lazy(() => import('./pages/educourses/TableauApprenant.
 const ProgrammeEduCourses = lazy(() => import('./pages/educourses/Programme.jsx'));
 const Lecon = lazy(() => import('./pages/educourses/Lecon.jsx'));
 const TableauMinistere = lazy(() => import('./pages/espace/TableauMinistere.jsx'));
+const MonEduMail = lazy(() => import('./pages/espace/MonEduMail.jsx'));
+const AvantagesNumeriques = lazy(() => import('./pages/espace/AvantagesNumeriques.jsx'));
+const EduMailEcole = lazy(() => import('./pages/espace/EduMailEcole.jsx'));
+const EduMailDossier = lazy(() => import('./pages/espace/EduMailDossier.jsx'));
+const EduMailNational = lazy(() => import('./pages/espace/EduMailNational.jsx'));
 
 // Table des routes de l'application.
 export default function App() {
@@ -96,12 +101,16 @@ export default function App() {
               <Route path="bulletins" element={<Bulletins />} />
               <Route path="duplicatas" element={<Duplicatas />} />
               <Route path="duplicatas/:id" element={<DuplicataDetail />} />
+              <Route path="edumail/etablissement" element={<EduMailEcole />} />
+              <Route path="edumail/dossiers/:id" element={<EduMailDossier />} />
             </Route>
             <Route element={<RouteProtegee roles={['ELEVE']} />}>
               <Route path="mes-documents" element={<MesDocuments />} />
               <Route path="mes-notes" element={<MesNotes />} />
               <Route path="mes-cours" element={<MesCours />} />
               <Route path="devoirs" element={<MesDevoirs />} />
+              <Route path="edumail" element={<MonEduMail />} />
+              <Route path="avantages-numeriques" element={<AvantagesNumeriques />} />
             </Route>
             <Route element={<RouteProtegee roles={['ELEVE', 'PARENT']} />}>
               <Route path="educourses" element={<Apprenants />} />
@@ -138,6 +147,7 @@ export default function App() {
             </Route>
             <Route element={<RouteProtegee roles={['SUPER_ADMIN', 'MINISTERE']} />}>
               <Route path="tableau-de-bord" element={<TableauMinistere />} />
+              <Route path="edumail/national" element={<EduMailNational />} />
               <Route path="verification" element={<Verification />} />
               <Route path="verification/:id" element={<VerificationDetail />} />
             </Route>
