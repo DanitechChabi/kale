@@ -19,6 +19,12 @@ export function creerApp(options = {}) {
   // Nécessaire derrière un proxy (Render, Nginx…) pour récupérer la vraie IP du client
   app.set('trust proxy', 1);
 
+  // Sonde de disponibilité (tâche « keep-awake », hébergeur) : déclarée avant tout
+  // middleware, sans base de données, sans page ni journal, réponse de 2 octets
+  app.get('/health', (_req, res) => {
+    res.set('Cache-Control', 'no-store').type('text/plain').send('ok');
+  });
+
   app.use(helmet());
   // API publique (vérification, duplicata) : ouverte à toutes les origines, sans cookie
   app.use('/api/public', cors({ origin: '*', credentials: false }));

@@ -12,6 +12,18 @@ describe('API — initialisation', () => {
     expect(res.body.service).toBe('edureleve-api');
   });
 
+  it('GET /health répond 200 « ok », en texte, sans cache', async () => {
+    const res = await request(app).get('/health');
+    expect(res.status).toBe(200);
+    expect(res.text).toBe('ok');
+    expect(res.headers['content-type']).toMatch(/^text\/plain/);
+    expect(res.headers['cache-control']).toBe('no-store');
+  });
+
+  it('HEAD /health répond aussi 200', async () => {
+    expect((await request(app).head('/health')).status).toBe(200);
+  });
+
   it('renvoie une 404 au format standard pour une route inconnue', async () => {
     const res = await request(app).get('/api/inexistante');
     expect(res.status).toBe(404);
