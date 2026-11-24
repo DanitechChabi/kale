@@ -26,14 +26,17 @@ try {
 
 await import('../src/server.js');
 
-// Rechargement de la démonstration, en arrière-plan (ne bloque pas la sonde de santé)
+// Rechargement de la démonstration, en arrière-plan (ne bloque pas la sonde de santé).
+// Puis réparation du compte élève si un chargement précédent s'est interrompu.
 if (['1', 'true', 'oui'].includes((process.env.CHARGER_DEMO ?? '').toLowerCase())) {
   const clientDemo = new PrismaClient();
-  const { chargerDemo } = await import('../prisma/demo.js');
-  chargerDemo(clientDemo, { journal: (m) => console.log(`[démo] ${m}`) })
-    .then((r) =>
-      console.log(r ? '✔ Données de démonstration rechargées.' : '✔ Démonstration déjà présente.'),
-    )
+  (async () => {
+    const { chargerDemo } = await import('../prisma/demo.js');
+    const r = await chargerDemo(clientDemo, { journal: (m) => console.log(`[démo] ${m}`) });
+    console.log(r ? '✔ Données de démonstration rechargées.' : '✔ Démonstration déjà présente.');
+    const { reparerEleveDemo } = await import('../prisma/reparer-demo-eleve.js');
+    await reparerEleveDemo(clientDemo, { journal: (m) => console.log(`[démo] ${m}`) });
+  })()
     .catch((e) => console.error('✖ Rechargement de la démonstration :', e.message))
     .finally(() => clientDemo.$disconnect());
 }
